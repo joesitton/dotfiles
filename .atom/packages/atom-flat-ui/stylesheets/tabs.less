@@ -1,0 +1,75 @@
+@import "ui-variables";
+@modified-icon-width: 10px;
+@tab-top-padding: 3px;
+@tab-bottom-border-height: 1px;
+@close-icon-color-hover: #f55;
+
+.tab-bar {
+  height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+  background: @tab-bar-background-color;
+  padding: @tab-top-padding 13px 0 10px;
+  box-sizing: border-box;
+  border-bottom: @tab-bottom-border-height solid @tab-border-color;
+
+
+  .tab {
+    position: relative;
+    top: 1px;
+    height: @tab-height;
+    line-height: @tab-height;
+    color: @text-color;
+    margin-left: 3px;
+    transition: all .5s, color .3s, line-height,border-bottom-color,margin-left 0s;
+    border: 1px solid @tab-border-color;
+    background-color: @tab-background-color;
+    min-width: 40px;
+    font-size: @font-size-tabs;
+
+    .close-icon {
+      z-index: 3;
+      line-height: @tab-height;
+    }
+
+    .close-icon:hover { color: #f55;}
+
+    &.modified:not(:hover) .close-icon {
+      top: @tab-height/2 - @modified-icon-width/2 + 1px;
+      right: 14px;
+      width: @modified-icon-width;
+      height: @modified-icon-width;
+    }
+
+    &:first-child {
+      margin-left: 10px;
+      padding-left: 10px;
+
+    }
+  }
+
+  .tab.active {
+    z-index: 10;
+    color: @text-color-highlight;
+    border-bottom: 1px solid @tab-background-color-active;
+    min-width: 100px;
+    background-color: @tab-background-color-active;
+  }
+
+  .tab:hover {
+    color: @text-color-highlight;
+  }
+
+  .tab.active:hover .close-icon {
+    color: @text-color-highlight;
+  }
+
+  .tab.active:hover .close-icon:hover {
+    color: @close-icon-color-hover;
+  }
+
+  .placeholder {
+    height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    &:after {
+      top: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    }
+  }
+}

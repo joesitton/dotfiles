@@ -1,0 +1,28 @@
+@import "ui-variables";
+
+.tree-view {
+  font-size: @font-size;
+  background-color: @tree-view-background-color;
+
+  .selected:before {
+  	background: #444;
+  }
+}
+
+.focusable-panel {
+  //opacity: 1;
+  background-color: @tree-view-background-color;
+
+  &:focus {
+    .selected:before {
+      background: @background-color-selected;
+    }
+
+    .selected > .name,
+    .selected > .name:before,
+    .selected > .list-item > .name,
+    .selected > .list-item > .name:before {
+      color: @text-color-selected !important;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "linter-clang",
+  "linter-package": true,
+  "activationEvents": [],
+  "main": "./lib/init",
+  "version": "2.9.0",
+  "description": "Lint C / C++ on the fly using clang",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AtomLinter/linter-clang"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {},
+  "readme": "# linter-clang package\n\nThis linter plugin for [Linter](https://github.com/AtomLinter/Linter) provides an interface to clang. It will be used with files that have the \"C++\"\" and \"C\" syntax.\n\n## Installation\nLinter package must be installed in order to use this plugin. If Linter is not installed, please follow the instructions [here](https://github.com/AtomLinter/Linter).\n\n### Plugin installation\n```\n$ apm install linter-clang\n```\n\n### Select C / C++ linter\n- C linter, select C Grammar\n- C++ linter, select C++ Grammar\n\n### Project-specific include paths\nIf your project has some extra include directories, put them in a file called \".linter-clang-includes\" and list them line by line or seperated by spaces.\nThe linter will open the file in those directories and use the specified paths when linting in your project.\n\n## Contributing\nIf you would like to contribute enhancements or fixes, please do the following:\n\n1. Fork the plugin repository.\n1. Hack on a separate topic branch created from the latest `master`.\n1. Commit and push the topic branch.\n1. Make a pull request.\n1. welcome to the club\n\nPlease note that modifications should follow these coding guidelines:\n\n- Indent is 2 spaces.\n- Code should pass coffeelint linter.\n- Vertical whitespace helps readability, don’t be afraid to use it.\n\nThank you for helping out!\n\n## TODO\nWhen there are errors in other files, sign them on the first line of the current file\n(Example: deleted constructor)\n## Other Available linters\n- [linter-php](https://atom.io/packages/linter-php), for PHP using `php -l`\n- [linter-phpcs](https://atom.io/packages/linter-phpcs), for PHP, using `phpc`\n- [linter-phpmd](https://atom.io/packages/linter-phpmd), for PHP, using `phpmd`\n- [linter-pylint](https://atom.io/packages/linter-pylint), for Python, using `pylint`\n- [linter-javac](https://atom.io/packages/linter-javac), for Java, using `javac`\n- [linter-jshint](https://atom.io/packages/linter-jshint), for JavaScript and JSON, using `jshint`\n- [linter-jscs](https://atom.io/packages/linter-jscs), for JavaScript, using `jscs`\n- [linter-scss-lint](https://atom.io/packages/linter-scss-lint), for SASS/SCSS, using `scss-lint`\n- [linter-coffeelint](https://atom.io/packages/linter-coffeelint), for CoffeeScript, using `coffeelint`\n- [linter-csslint](https://atom.io/packages/linter-csslint), for CSS, using `csslint`\n- [linter-rubocop](https://atom.io/packages/linter-rubocop), for Ruby, using `rubocop`\n- [linter-tslint](https://atom.io/packages/linter-tslint), for Typescript, using `tslint`\n- [linter-xmllint](https://atom.io/packages/linter-xmllint), for XML, using `xmllint`\n- [linter-shellcheck](https://atom.io/packages/linter-shellcheck), for Bash, using `shellcheck`\n- [linter-scalac](https://atom.io/packages/linter-scalac), for Scala, using `scalac`\n\nCheck out [AtomLinter](https://github.com/AtomLinter)!\n\n## Donation\n[![Share the love!](https://chewbacco-stuff.s3.amazonaws.com/donate.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KXUYS4ARNHCN8)\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/AtomLinter/linter-clang/issues"
+  },
+  "homepage": "https://github.com/AtomLinter/linter-clang",
+  "_id": "linter-clang@2.9.0",
+  "dist": {
+    "shasum": "162f5a128812bd861f312715e5f1fca00d9ad621"
+  },
+  "_resolved": "/tmp/d-1141122-14852-1wcy50s/package.tgz",
+  "_from": "/tmp/d-1141122-14852-1wcy50s/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".coffee": [
+        "lib/init.coffee",
+        "lib/linter-clang.coffee"
+      ],
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

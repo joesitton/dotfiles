@@ -1,0 +1,831 @@
+{
+  "name": "autocomplete-snippets",
+  "main": "./lib/autocomplete-snippets",
+  "version": "0.3.1",
+  "description": "Adds snippets to autocomplete+ suggestions",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atom-community/autocomplete-snippets"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+    "async": "~0.7.0",
+    "autocomplete-plus": "git://github.com/atom-community/autocomplete-plus.git",
+    "fs-plus": "~2.2.1",
+    "fuzzaldrin": "~1.0.0",
+    "jquery": ">=2.0.0",
+    "season": "~2.0.0",
+    "underscore-plus": "~1.1.2"
+  },
+  "readme": "# autocomplete+ snippet suggestions\n\n[View the changelog](https://github.com/atom-community/autocomplete-snippets/blob/master/CHANGELOG.md)\n\nAdds snippets to autocomplete+ suggestions\n\n![autocomplete-snippets](http://s7.directupload.net/images/140411/kgdlgsgx.gif)\n\n## Installation\n\nYou can install autocomplete-snippets using the Preferences pane.\n\n**Please make sure you have autocomplete-plus installed as well**\n\n## Features\n\n* Adds user snippets and language snippets to the autocomplete+ suggestions list\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/atom-community/autocomplete-snippets/issues"
+  },
+  "homepage": "https://github.com/atom-community/autocomplete-snippets",
+  "_id": "autocomplete-snippets@0.3.1",
+  "dist": {
+    "shasum": "e0662f0a3837f91e269d151d153e5a86968bd204"
+  },
+  "_resolved": "/tmp/d-1141122-13805-z59r0k/package.tgz",
+  "_from": "/tmp/d-1141122-13805-z59r0k/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "async",
+        "version": "0.7.0",
+        "path": "node_modules/async/lib/async.js"
+      },
+      {
+        "name": "autocomplete-plus",
+        "version": "1.0.0",
+        "path": "node_modules/async/lib/async.js"
+      },
+      {
+        "name": "async",
+        "version": "0.9.0",
+        "path": "node_modules/autocomplete-plus/node_modules/async/lib/async.js"
+      },
+      {
+        "name": "event-kit",
+        "version": "0.8.1",
+        "path": "node_modules/autocomplete-plus/node_modules/event-kit/lib/event-kit.js"
+      },
+      {
+        "name": "grim",
+        "version": "0.12.0",
+        "path": "node_modules/autocomplete-plus/node_modules/grim/lib/grim.js"
+      },
+      {
+        "name": "emissary",
+        "version": "1.3.1",
+        "path": "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/lib/emissary.js"
+      },
+      {
+        "name": "harmony-collections",
+        "version": "0.3.7",
+        "path": "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/node_modules/harmony-collections/harmony-collections.js"
+      },
+      {
+        "name": "mixto",
+        "version": "1.0.0",
+        "path": "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/node_modules/mixto/lib/mixin.js"
+      },
+      {
+        "name": "property-accessors",
+        "version": "1.1.0",
+        "path": "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/node_modules/property-accessors/lib/property-accessors.js"
+      },
+      {
+        "name": "harmony-collections",
+        "version": "0.3.7",
+        "path": "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/node_modules/property-accessors/node_modules/harmony-collections/harmony-collections.js"
+      },
+      {
+        "name": "minimatch",
+        "version": "2.0.1",
+        "path": "node_modules/autocomplete-plus/node_modules/minimatch/minimatch.js"
+      },
+      {
+        "name": "brace-expansion",
+        "version": "1.1.0",
+        "path": "node_modules/autocomplete-plus/node_modules/minimatch/node_modules/brace-expansion/index.js"
+      },
+      {
+        "name": "balanced-match",
+        "version": "0.2.0",
+        "path": "node_modules/autocomplete-plus/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/index.js"
+      },
+      {
+        "name": "concat-map",
+        "version": "0.0.1",
+        "path": "node_modules/autocomplete-plus/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/index.js"
+      },
+      {
+        "name": "temp",
+        "version": "0.8.1",
+        "path": "node_modules/autocomplete-plus/node_modules/temp/lib/temp.js"
+      },
+      {
+        "name": "rimraf",
+        "version": "2.2.8",
+        "path": "node_modules/autocomplete-plus/node_modules/temp/node_modules/rimraf/rimraf.js"
+      },
+      {
+        "name": "fs-plus",
+        "version": "2.2.6",
+        "path": "node_modules/fs-plus/lib/fs-plus.js"
+      },
+      {
+        "name": "async",
+        "version": "0.2.10",
+        "path": "node_modules/fs-plus/node_modules/async/lib/async.js"
+      },
+      {
+        "name": "mkdirp",
+        "version": "0.3.5",
+        "path": "node_modules/fs-plus/node_modules/mkdirp/index.js"
+      },
+      {
+        "name": "rimraf",
+        "version": "2.2.8",
+        "path": "node_modules/fs-plus/node_modules/rimraf/rimraf.js"
+      },
+      {
+        "name": "fuzzaldrin",
+        "version": "1.0.0",
+        "path": "node_modules/fuzzaldrin/lib/fuzzaldrin.js"
+      },
+      {
+        "name": "jquery",
+        "version": "2.1.3",
+        "path": "node_modules/jquery/dist/jquery.js"
+      },
+      {
+        "name": "season",
+        "version": "2.0.0",
+        "path": "node_modules/season/lib/cson.js"
+      },
+      {
+        "name": "cson-safe",
+        "version": "0.1.1",
+        "path": "node_modules/season/node_modules/cson-safe/lib/cson-safe.js"
+      },
+      {
+        "name": "coffee-script-redux",
+        "version": "2.0.0-beta8",
+        "path": "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/lib/module.js"
+      },
+      {
+        "name": "cscodegen",
+        "version": "0.1.0",
+        "path": "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/cscodegen/lib/cscodegen.js"
+      },
+      {
+        "name": "escodegen",
+        "version": "0.0.28",
+        "path": "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/escodegen/escodegen.js"
+      },
+      {
+        "name": "esprima",
+        "version": "1.0.4",
+        "path": "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/escodegen/node_modules/esprima/esprima.js"
+      },
+      {
+        "name": "estraverse",
+        "version": "1.3.2",
+        "path": "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/escodegen/node_modules/estraverse/estraverse.js"
+      },
+      {
+        "name": "esmangle",
+        "version": "0.0.17",
+        "path": "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/esmangle.js"
+      },
+      {
+        "name": "escope",
+        "version": "1.0.1",
+        "path": "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/escope/escope.js"
+      },
+      {
+        "name": "esprima",
+        "version": "1.0.4",
+        "path": "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/esprima/esprima.js"
+      },
+      {
+        "name": "esshorten",
+        "version": "0.0.2",
+        "path": "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/esshorten/lib/esshorten.js"
+      },
+      {
+        "name": "estraverse",
+        "version": "1.2.0",
+        "path": "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/esshorten/node_modules/estraverse/estraverse.js"
+      },
+      {
+        "name": "estraverse",
+        "version": "1.3.2",
+        "path": "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/estraverse/estraverse.js"
+      },
+      {
+        "name": "nopt",
+        "version": "2.1.2",
+        "path": "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/nopt/lib/nopt.js"
+      },
+      {
+        "name": "abbrev",
+        "version": "1.0.5",
+        "path": "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/nopt/node_modules/abbrev/abbrev.js"
+      },
+      {
+        "name": "source-map",
+        "version": "0.1.11",
+        "path": "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/lib/source-map.js"
+      },
+      {
+        "name": "amdefine",
+        "version": "0.1.0",
+        "path": "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/node_modules/amdefine/amdefine.js"
+      },
+      {
+        "name": "StringScanner",
+        "version": "0.0.3",
+        "path": "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/StringScanner/lib/StringScanner.js"
+      },
+      {
+        "name": "optimist",
+        "version": "0.4.0",
+        "path": "node_modules/season/node_modules/optimist/index.js"
+      },
+      {
+        "name": "wordwrap",
+        "version": "0.0.2",
+        "path": "node_modules/season/node_modules/optimist/node_modules/wordwrap/index.js"
+      },
+      {
+        "name": "underscore-plus",
+        "version": "1.1.2",
+        "path": "node_modules/underscore-plus/lib/underscore-plus.js"
+      },
+      {
+        "name": "underscore",
+        "version": "1.5.2",
+        "path": "node_modules/underscore-plus/node_modules/underscore/underscore.js"
+      }
+    ],
+    "extensions": {
+      ".coffee": [
+        "lib/autocomplete-snippets.coffee",
+        "lib/snippets-loader.coffee",
+        "lib/snippets-provider.coffee",
+        "node_modules/autocomplete-plus/lib/autocomplete-manager.coffee",
+        "node_modules/autocomplete-plus/lib/fuzzy-provider.coffee",
+        "node_modules/autocomplete-plus/lib/main.coffee",
+        "node_modules/autocomplete-plus/lib/provider.coffee",
+        "node_modules/autocomplete-plus/lib/select-list-element.coffee",
+        "node_modules/autocomplete-plus/lib/suggestion.coffee",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/StringScanner/src/StringScanner.coffee",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/cscodegen/src/cscodegen.coffee"
+      ],
+      ".json": [
+        "node_modules/async/component.json",
+        "node_modules/async/package.json",
+        "node_modules/autocomplete-plus/node_modules/async/component.json",
+        "node_modules/autocomplete-plus/node_modules/async/package.json",
+        "node_modules/autocomplete-plus/node_modules/event-kit/api.json",
+        "node_modules/autocomplete-plus/node_modules/event-kit/package.json",
+        "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/node_modules/harmony-collections/package.json",
+        "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/node_modules/mixto/package.json",
+        "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/node_modules/property-accessors/node_modules/harmony-collections/package.json",
+        "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/node_modules/property-accessors/package.json",
+        "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/package.json",
+        "node_modules/autocomplete-plus/node_modules/grim/package.json",
+        "node_modules/autocomplete-plus/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/package.json",
+        "node_modules/autocomplete-plus/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/package.json",
+        "node_modules/autocomplete-plus/node_modules/minimatch/node_modules/brace-expansion/package.json",
+        "node_modules/autocomplete-plus/node_modules/minimatch/package.json",
+        "node_modules/autocomplete-plus/node_modules/temp/node_modules/rimraf/package.json",
+        "node_modules/autocomplete-plus/node_modules/temp/package.json",
+        "node_modules/autocomplete-plus/package.json",
+        "node_modules/fs-plus/node_modules/async/component.json",
+        "node_modules/fs-plus/node_modules/async/package.json",
+        "node_modules/fs-plus/node_modules/mkdirp/package.json",
+        "node_modules/fs-plus/node_modules/rimraf/package.json",
+        "node_modules/fs-plus/package.json",
+        "node_modules/fuzzaldrin/package.json",
+        "node_modules/jquery/bower.json",
+        "node_modules/jquery/package.json",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/StringScanner/package.json",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/cscodegen/package.json",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/escodegen/node_modules/esprima/package.json",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/escodegen/node_modules/estraverse/package.json",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/escodegen/package.json",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/escope/bower.json",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/escope/package.json",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/esprima/package.json",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/esshorten/node_modules/estraverse/package.json",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/esshorten/package.json",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/estraverse/package.json",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/package.json",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/nopt/node_modules/abbrev/package.json",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/nopt/package.json",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/node_modules/amdefine/package.json",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/package.json",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/package.json",
+        "node_modules/season/node_modules/cson-safe/package.json",
+        "node_modules/season/node_modules/optimist/node_modules/wordwrap/package.json",
+        "node_modules/season/node_modules/optimist/package.json",
+        "node_modules/season/package.json",
+        "node_modules/underscore-plus/node_modules/underscore/package.json",
+        "node_modules/underscore-plus/package.json",
+        "package.json"
+      ],
+      ".js": [
+        "node_modules/async/lib/async.js",
+        "node_modules/autocomplete-plus/node_modules/async/lib/async.js",
+        "node_modules/autocomplete-plus/node_modules/event-kit/lib/composite-disposable.js",
+        "node_modules/autocomplete-plus/node_modules/event-kit/lib/disposable.js",
+        "node_modules/autocomplete-plus/node_modules/event-kit/lib/emitter.js",
+        "node_modules/autocomplete-plus/node_modules/event-kit/lib/event-kit.js",
+        "node_modules/autocomplete-plus/node_modules/grim/lib/deprecation.js",
+        "node_modules/autocomplete-plus/node_modules/grim/lib/grim.js",
+        "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/lib/behavior.js",
+        "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/lib/emissary.js",
+        "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/lib/emitter.js",
+        "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/lib/helpers.js",
+        "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/lib/signal.js",
+        "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/lib/subscriber.js",
+        "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/lib/subscription.js",
+        "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/node_modules/harmony-collections/harmony-collections.js",
+        "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/node_modules/harmony-collections/harmony-collections.min.js",
+        "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/node_modules/mixto/lib/mixin.js",
+        "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/node_modules/property-accessors/lib/property-accessors.js",
+        "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/node_modules/property-accessors/node_modules/harmony-collections/harmony-collections.js",
+        "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/node_modules/property-accessors/node_modules/harmony-collections/harmony-collections.min.js",
+        "node_modules/autocomplete-plus/node_modules/minimatch/benchmark.js",
+        "node_modules/autocomplete-plus/node_modules/minimatch/browser.js",
+        "node_modules/autocomplete-plus/node_modules/minimatch/minimatch.js",
+        "node_modules/autocomplete-plus/node_modules/minimatch/node_modules/brace-expansion/example.js",
+        "node_modules/autocomplete-plus/node_modules/minimatch/node_modules/brace-expansion/index.js",
+        "node_modules/autocomplete-plus/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/example.js",
+        "node_modules/autocomplete-plus/node_modules/minimatch/node_modules/brace-expansion/node_modules/balanced-match/index.js",
+        "node_modules/autocomplete-plus/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/example/map.js",
+        "node_modules/autocomplete-plus/node_modules/minimatch/node_modules/brace-expansion/node_modules/concat-map/index.js",
+        "node_modules/autocomplete-plus/node_modules/temp/examples/grepcount.js",
+        "node_modules/autocomplete-plus/node_modules/temp/examples/pdfcreator.js",
+        "node_modules/autocomplete-plus/node_modules/temp/lib/temp.js",
+        "node_modules/autocomplete-plus/node_modules/temp/no_cleanup.js",
+        "node_modules/autocomplete-plus/node_modules/temp/no_cleanup_on_exit.js",
+        "node_modules/autocomplete-plus/node_modules/temp/no_cleanup_on_exit.spec.js",
+        "node_modules/autocomplete-plus/node_modules/temp/node_modules/rimraf/bin.js",
+        "node_modules/autocomplete-plus/node_modules/temp/node_modules/rimraf/rimraf.js",
+        "node_modules/fs-plus/lib/fs-plus.js",
+        "node_modules/fs-plus/node_modules/async/lib/async.js",
+        "node_modules/fs-plus/node_modules/mkdirp/examples/pow.js",
+        "node_modules/fs-plus/node_modules/mkdirp/index.js",
+        "node_modules/fs-plus/node_modules/rimraf/bin.js",
+        "node_modules/fs-plus/node_modules/rimraf/rimraf.js",
+        "node_modules/fuzzaldrin/lib/filter.js",
+        "node_modules/fuzzaldrin/lib/fuzzaldrin.js",
+        "node_modules/fuzzaldrin/vendor/stringscore.js",
+        "node_modules/jquery/dist/cdn/jquery-2.1.3.js",
+        "node_modules/jquery/dist/cdn/jquery-2.1.3.min.js",
+        "node_modules/jquery/dist/jquery.js",
+        "node_modules/jquery/dist/jquery.min.js",
+        "node_modules/jquery/src/ajax/jsonp.js",
+        "node_modules/jquery/src/ajax/load.js",
+        "node_modules/jquery/src/ajax/parseJSON.js",
+        "node_modules/jquery/src/ajax/parseXML.js",
+        "node_modules/jquery/src/ajax/script.js",
+        "node_modules/jquery/src/ajax/var/nonce.js",
+        "node_modules/jquery/src/ajax/var/rquery.js",
+        "node_modules/jquery/src/ajax/xhr.js",
+        "node_modules/jquery/src/ajax.js",
+        "node_modules/jquery/src/attributes/attr.js",
+        "node_modules/jquery/src/attributes/classes.js",
+        "node_modules/jquery/src/attributes/prop.js",
+        "node_modules/jquery/src/attributes/support.js",
+        "node_modules/jquery/src/attributes/val.js",
+        "node_modules/jquery/src/attributes.js",
+        "node_modules/jquery/src/callbacks.js",
+        "node_modules/jquery/src/core/access.js",
+        "node_modules/jquery/src/core/init.js",
+        "node_modules/jquery/src/core/parseHTML.js",
+        "node_modules/jquery/src/core/ready.js",
+        "node_modules/jquery/src/core/var/rsingleTag.js",
+        "node_modules/jquery/src/core.js",
+        "node_modules/jquery/src/css/addGetHookIf.js",
+        "node_modules/jquery/src/css/curCSS.js",
+        "node_modules/jquery/src/css/defaultDisplay.js",
+        "node_modules/jquery/src/css/hiddenVisibleSelectors.js",
+        "node_modules/jquery/src/css/support.js",
+        "node_modules/jquery/src/css/swap.js",
+        "node_modules/jquery/src/css/var/cssExpand.js",
+        "node_modules/jquery/src/css/var/getStyles.js",
+        "node_modules/jquery/src/css/var/isHidden.js",
+        "node_modules/jquery/src/css/var/rmargin.js",
+        "node_modules/jquery/src/css/var/rnumnonpx.js",
+        "node_modules/jquery/src/css.js",
+        "node_modules/jquery/src/data/Data.js",
+        "node_modules/jquery/src/data/accepts.js",
+        "node_modules/jquery/src/data/var/data_priv.js",
+        "node_modules/jquery/src/data/var/data_user.js",
+        "node_modules/jquery/src/data.js",
+        "node_modules/jquery/src/deferred.js",
+        "node_modules/jquery/src/deprecated.js",
+        "node_modules/jquery/src/dimensions.js",
+        "node_modules/jquery/src/effects/Tween.js",
+        "node_modules/jquery/src/effects/animatedSelector.js",
+        "node_modules/jquery/src/effects.js",
+        "node_modules/jquery/src/event/ajax.js",
+        "node_modules/jquery/src/event/alias.js",
+        "node_modules/jquery/src/event/support.js",
+        "node_modules/jquery/src/event.js",
+        "node_modules/jquery/src/exports/amd.js",
+        "node_modules/jquery/src/exports/global.js",
+        "node_modules/jquery/src/intro.js",
+        "node_modules/jquery/src/jquery.js",
+        "node_modules/jquery/src/manipulation/_evalUrl.js",
+        "node_modules/jquery/src/manipulation/support.js",
+        "node_modules/jquery/src/manipulation/var/rcheckableType.js",
+        "node_modules/jquery/src/manipulation.js",
+        "node_modules/jquery/src/offset.js",
+        "node_modules/jquery/src/outro.js",
+        "node_modules/jquery/src/queue/delay.js",
+        "node_modules/jquery/src/queue.js",
+        "node_modules/jquery/src/selector-native.js",
+        "node_modules/jquery/src/selector-sizzle.js",
+        "node_modules/jquery/src/selector.js",
+        "node_modules/jquery/src/serialize.js",
+        "node_modules/jquery/src/sizzle/dist/sizzle.js",
+        "node_modules/jquery/src/sizzle/dist/sizzle.min.js",
+        "node_modules/jquery/src/traversing/findFilter.js",
+        "node_modules/jquery/src/traversing/var/rneedsContext.js",
+        "node_modules/jquery/src/traversing.js",
+        "node_modules/jquery/src/var/arr.js",
+        "node_modules/jquery/src/var/class2type.js",
+        "node_modules/jquery/src/var/concat.js",
+        "node_modules/jquery/src/var/hasOwn.js",
+        "node_modules/jquery/src/var/indexOf.js",
+        "node_modules/jquery/src/var/pnum.js",
+        "node_modules/jquery/src/var/push.js",
+        "node_modules/jquery/src/var/rnotwhite.js",
+        "node_modules/jquery/src/var/slice.js",
+        "node_modules/jquery/src/var/strundefined.js",
+        "node_modules/jquery/src/var/support.js",
+        "node_modules/jquery/src/var/toString.js",
+        "node_modules/jquery/src/wrap.js",
+        "node_modules/season/lib/cson.js",
+        "node_modules/season/lib/csonc.js",
+        "node_modules/season/node_modules/cson-safe/lib/cson-safe.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/lib/browser.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/lib/cli.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/lib/compiler.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/lib/functional-helpers.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/lib/helpers.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/lib/js-nodes.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/lib/module.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/lib/nodes.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/lib/optimiser.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/lib/parser.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/lib/preprocessor.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/lib/register.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/lib/repl.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/lib/run.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/StringScanner/lib/StringScanner.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/cscodegen/lib/cscodegen.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/escodegen/Gruntfile.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/escodegen/bin/escodegen.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/escodegen/bin/esgenerate.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/escodegen/escodegen.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/escodegen/node_modules/esprima/bin/esparse.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/escodegen/node_modules/esprima/bin/esvalidate.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/escodegen/node_modules/esprima/esprima.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/escodegen/node_modules/estraverse/estraverse.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/Gruntfile.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/bin/esmangle.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/annotate-directive.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/common.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/esmangle.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/evaluator.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/map.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/options.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/concatenate-variable-definition.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/dead-code-elimination.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/drop-variable-definition.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/eliminate-duplicate-function-declarations.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/hoist-variable-to-arguments.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/reduce-branch-jump.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/reduce-multiple-if-statements.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/reduce-sequence-expression.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/remove-context-sensitive-expressions.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/remove-empty-statement.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/remove-side-effect-free-expressions.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/remove-unreachable-branch.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/remove-unused-label.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/remove-wasted-blocks.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/reordering-function-declarations.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/transform-branch-to-expression.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/transform-dynamic-to-static-property-access.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/transform-dynamic-to-static-property-definition.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/transform-immediate-function-call.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/transform-logical-association.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/transform-to-compound-assignment.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/transform-to-sequence-expression.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/transform-typeof-undefined.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass/tree-based-constant-folding.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/post/omit-parens-in-void-context-iife.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/post/rewrite-boolean.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/post/rewrite-conditional-expression.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/post/transform-infinity.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/post/transform-static-to-dynamic-property-access.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/query.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/set.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/escope/Gruntfile.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/escope/escope.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/esprima/bin/esparse.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/esprima/bin/esvalidate.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/esprima/esprima.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/esshorten/Gruntfile.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/esshorten/lib/esshorten.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/esshorten/lib/map.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/esshorten/lib/utility.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/esshorten/node_modules/estraverse/estraverse.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/estraverse/estraverse.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/nopt/bin/nopt.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/nopt/examples/my-program.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/nopt/lib/nopt.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/nopt/node_modules/abbrev/abbrev.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/nopt/node_modules/abbrev/test.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/Makefile.dryice.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/build/assert-shim.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/build/mini-require.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/build/suffix-browser.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/build/test-prefix.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/build/test-suffix.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/lib/source-map/array-set.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/lib/source-map/base64-vlq.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/lib/source-map/base64.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/lib/source-map/binary-search.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/lib/source-map/source-map-consumer.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/lib/source-map/source-map-generator.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/lib/source-map/source-node.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/lib/source-map/util.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/lib/source-map.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/node_modules/amdefine/amdefine.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/node_modules/amdefine/intercept.js",
+        "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/register.js",
+        "node_modules/season/node_modules/optimist/example/bool.js",
+        "node_modules/season/node_modules/optimist/example/boolean_double.js",
+        "node_modules/season/node_modules/optimist/example/boolean_single.js",
+        "node_modules/season/node_modules/optimist/example/default_hash.js",
+        "node_modules/season/node_modules/optimist/example/default_singles.js",
+        "node_modules/season/node_modules/optimist/example/divide.js",
+        "node_modules/season/node_modules/optimist/example/line_count.js",
+        "node_modules/season/node_modules/optimist/example/line_count_options.js",
+        "node_modules/season/node_modules/optimist/example/line_count_wrap.js",
+        "node_modules/season/node_modules/optimist/example/nonopt.js",
+        "node_modules/season/node_modules/optimist/example/reflect.js",
+        "node_modules/season/node_modules/optimist/example/short.js",
+        "node_modules/season/node_modules/optimist/example/string.js",
+        "node_modules/season/node_modules/optimist/example/usage-options.js",
+        "node_modules/season/node_modules/optimist/example/xup.js",
+        "node_modules/season/node_modules/optimist/index.js",
+        "node_modules/season/node_modules/optimist/node_modules/wordwrap/example/center.js",
+        "node_modules/season/node_modules/optimist/node_modules/wordwrap/example/meat.js",
+        "node_modules/season/node_modules/optimist/node_modules/wordwrap/index.js",
+        "node_modules/underscore-plus/lib/underscore-plus.js",
+        "node_modules/underscore-plus/node_modules/underscore/underscore-min.js",
+        "node_modules/underscore-plus/node_modules/underscore/underscore.js"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "lib",
+          "",
+          "spec",
+          "spec/fixtures"
+        ],
+        "dependencies": {
+          "async": "~0.7.0",
+          "fs-plus": "~2.2.1",
+          "fuzzaldrin": "~1.0.0",
+          "jquery": ">=2.0.0",
+          "season": "~2.0.0",
+          "underscore-plus": "~1.1.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/autocomplete-plus/lib",
+          "node_modules/autocomplete-plus",
+          "node_modules/autocomplete-plus/spec",
+          "node_modules/autocomplete-plus/spec/fixtures/issues",
+          "node_modules/autocomplete-plus/spec/fixtures",
+          "node_modules/autocomplete-plus/spec/issues",
+          "node_modules/autocomplete-plus/spec/lib"
+        ],
+        "dependencies": {
+          "async": ">=0.9.0",
+          "event-kit": ">=0.8.1",
+          "fuzzaldrin": ">=1.0.0",
+          "grim": ">=0.12.0",
+          "minimatch": ">=0.2.14",
+          "temp": ">=0.7.0",
+          "underscore-plus": ">=1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/autocomplete-plus/node_modules/event-kit",
+          "node_modules/autocomplete-plus/node_modules/event-kit/lib"
+        ],
+        "dependencies": {
+          "grim": "^0.12.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/autocomplete-plus/node_modules/grim/lib",
+          "node_modules/autocomplete-plus/node_modules/grim"
+        ],
+        "dependencies": {
+          "underscore-plus": "^1.0.0",
+          "emissary": "^1.2.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/lib",
+          "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary"
+        ],
+        "dependencies": {
+          "underscore-plus": "1.x",
+          "mixto": "1.x",
+          "property-accessors": "^1.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/node_modules/property-accessors/lib",
+          "node_modules/autocomplete-plus/node_modules/grim/node_modules/emissary/node_modules/property-accessors"
+        ],
+        "dependencies": {
+          "mixto": "1.x"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/autocomplete-plus/node_modules/minimatch",
+          "node_modules/autocomplete-plus/node_modules/minimatch/test"
+        ],
+        "dependencies": {
+          "brace-expansion": "^1.0.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/autocomplete-plus/node_modules/minimatch/node_modules/brace-expansion",
+          "node_modules/autocomplete-plus/node_modules/minimatch/node_modules/brace-expansion/test"
+        ],
+        "dependencies": {
+          "balanced-match": "^0.2.0",
+          "concat-map": "0.0.1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/autocomplete-plus/node_modules/temp/examples",
+          "node_modules/autocomplete-plus/node_modules/temp/lib",
+          "node_modules/autocomplete-plus/node_modules/temp",
+          "node_modules/autocomplete-plus/node_modules/temp/test"
+        ],
+        "dependencies": {
+          "rimraf": "~2.2.6"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/fs-plus/lib",
+          "node_modules/fs-plus"
+        ],
+        "dependencies": {
+          "underscore-plus": "1.x",
+          "mkdirp": "~0.3.5",
+          "rimraf": "~2.2.2",
+          "async": "~0.2.9"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/season/lib",
+          "node_modules/season"
+        ],
+        "dependencies": {
+          "underscore-plus": "1.x",
+          "cson-safe": "~0.1.1",
+          "optimist": "~0.4.0",
+          "fs-plus": "2.x"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/season/node_modules/cson-safe/lib",
+          "node_modules/season/node_modules/cson-safe"
+        ],
+        "dependencies": {
+          "coffee-script-redux": "2.0.0-beta8"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/lib",
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux"
+        ],
+        "dependencies": {
+          "StringScanner": "~0.0.3",
+          "nopt": "~2.1.2",
+          "esmangle": "~0.0.8",
+          "source-map": "0.1.11",
+          "escodegen": "~0.0.24"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/escodegen",
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/escodegen/bin"
+        ],
+        "dependencies": {
+          "esprima": "~1.0.2",
+          "estraverse": "~1.3.0",
+          "source-map": ">= 0.1.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle",
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/bin",
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib",
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/pass",
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/lib/post"
+        ],
+        "dependencies": {
+          "esprima": "~ 1.0.2",
+          "escope": "~ 1.0.0",
+          "escodegen": "~ 0.0.28",
+          "estraverse": "~ 1.3.2",
+          "source-map": "~ 0.1.8",
+          "esshorten": "~ 0.0.2",
+          "optimist": "*"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/escope"
+        ],
+        "dependencies": {
+          "estraverse": ">= 0.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/esshorten",
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/esmangle/node_modules/esshorten/lib"
+        ],
+        "dependencies": {
+          "escope": "~ 1.0.0",
+          "estraverse": "~ 1.2.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/nopt/bin",
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/nopt/examples",
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/nopt/lib",
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/nopt"
+        ],
+        "dependencies": {
+          "abbrev": "1"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map",
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/build",
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/lib/source-map",
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/lib",
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/test",
+          "node_modules/season/node_modules/cson-safe/node_modules/coffee-script-redux/node_modules/source-map/test/source-map"
+        ],
+        "dependencies": {
+          "amdefine": ">=0.0.4"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/season/node_modules/optimist/example",
+          "node_modules/season/node_modules/optimist",
+          "node_modules/season/node_modules/optimist/test/_",
+          "node_modules/season/node_modules/optimist/test"
+        ],
+        "dependencies": {
+          "wordwrap": "~0.0.2"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/underscore-plus/lib",
+          "node_modules/underscore-plus"
+        ],
+        "dependencies": {
+          "underscore": "~1.5.2"
+        }
+      }
+    ]
+  }
+}

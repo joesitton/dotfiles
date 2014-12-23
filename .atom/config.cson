@@ -1,0 +1,36 @@
+'global':
+  'editor':
+    'scrollPastEnd': true
+    'tabLength': 4
+    'fontSize': 15
+    'invisibles': {}
+  'core':
+    'themes': [
+      'spacegray-atom-dark-ui'
+      'base16-ocean-dark-spacegray'
+    ]
+    'audioBeep': false
+    'disabledPackages': [
+      'wrap-guide'
+      'linter'
+    ]
+  'exception-reporting':
+    'userId': 'c96db4af-3778-7ed9-4eb0-c40e413e2128'
+  'welcome':
+    'showOnStartup': false
+  'minimap':
+    'minimapScrollIndicator': false
+  'atom-beautify':
+    'python_autopep8_path': '/usr/local/bin/autopep8'
+    '_analyticsUserId': '8d10d46f-6c78-449a-b349-d46eb9840666'
+    'beautifyOnSave': true
+  'linter-clang':
+    'clangSuppressWarnings': true
+  'inline-autocomplete':
+    'includeCompletionsFromAllBuffers': true
+  'autocomplete-plus':
+    'autoActivationDelay': 200
+  'autosave':
+    'enabled': true
+  'script':
+    'enableExecTime': false

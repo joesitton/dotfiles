@@ -1,0 +1,36 @@
+{
+  "name": "atom-flat-ui",
+  "theme": "ui",
+  "version": "1.1.0",
+  "description": "Flat theme for interface components",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gnomus/atom-flat-ui"
+  },
+  "engines": {
+    "atom": ">0.40.0"
+  },
+  "readme": "# Atom Flat UI theme\n\nCompletly Flat UI theme for Atom.\nNo ugly Shadows, no ugly Gradients.\n\n\n![](https://raw.github.com/gnomus/atom-flat-ui/master/screen.png)\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/gnomus/atom-flat-ui/issues"
+  },
+  "homepage": "https://github.com/gnomus/atom-flat-ui",
+  "_id": "atom-flat-ui@1.1.0",
+  "dist": {
+    "shasum": "af6c06b8ab7f628fe786ebb99796dbfcc27d3be0"
+  },
+  "_resolved": "/tmp/d-1141122-9920-12s5xf9/package.tgz",
+  "_from": "/tmp/d-1141122-9920-12s5xf9/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

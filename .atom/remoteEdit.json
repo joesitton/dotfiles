@@ -1,0 +1,1 @@
+{"hostList":"[{\"alias\":\"\",\"hostname\":\"noonecares.me\",\"directory\":\"/\",\"username\":\"joe\",\"port\":\"22\",\"localFiles\":\"[]\",\"useAgent\":false,\"usePrivateKey\":false,\"usePassword\":true,\"password\":\"jaxson\",\"passphrase\":\"\",\"privateKeyPath\":\"/home/joe\",\"deserializer\":\"SftpHost\"}]","deserializer":"InterProcessData"}
