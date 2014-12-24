@@ -1,5 +1,5 @@
 ".autocomplete-plus":
-  "enter": "autocomplete-plus:confirm"
+  "tab": "autocomplete-plus:confirm"
   "down": "autocomplete-plus:select-next"
   "ctrl-n": "autocomplete-plus:select-next"
   "up": "autocomplete-plus:select-previous"
