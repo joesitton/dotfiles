@@ -1,12 +1,12 @@
 alias s='sudo'
 alias please='s $(history -p \!\!)'
-alias pls='please' 
+alias pls='please'
 
-alias pac='s apt-get' 
-alias pacsearch='s apt search' 
-alias addrepo='s add-apt-repository' 
+alias pac='s apt-get'
+alias pacsearch='s apt search'
+alias pacclean='pac clean; pac autoclean; pac autoremove'
+alias addrepo='s add-apt-repository'
 alias remrepo='s add-apt-repository --remove'
 
-alias ..='cd ..'
-
 export PS1='\u@\[\033[01m\]\h\[\033[0m\] \[\033[01;35m\]\w\[\033[0m\] > '
+export VIMINIT="let \$MYVIMRC='$SSHHOME/.sshrc.d/.vimrc' | source \$MYVIMRC"
