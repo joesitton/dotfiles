@@ -1,0 +1,23 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_dependencies":
+	[
+		"0_package_control_loader",
+		"bz2",
+		"ssl-linux"
+	],
+	"installed_packages":
+	[
+		"Alignment",
+		"ApplySyntax",
+		"Base16 Color Schemes",
+		"BracketHighlighter",
+		"Package Control",
+		"SublimeCodeIntel",
+		"Theme - Soda",
+		"Theme - Soda SolarizedDark",
+		"Vintageous"
+	]
+}
