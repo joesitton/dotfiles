@@ -12,7 +12,9 @@ alias sshx='ssh -X -C'
 
 alias ..='cd ..'
 
-alias shadowon='s shadowvpn -c /etc/shadowvpn/client.conf -s start'
 alias shadowoff='s shadowvpn -c /etc/shadowvpn/client.conf -s stop'
+alias shadowon='s shadowoff; s shadowvpn -c /etc/shadowvpn/client.conf -s start'
 
 alias minimize='xdotool windowminimize $(xdotool getactivewindow)'
+
+alias screenfetch='screenfetch -A "Ubuntu-3color"'
