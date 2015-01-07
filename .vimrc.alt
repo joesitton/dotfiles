@@ -1,26 +1,26 @@
 " Pathogen
-" filetype off
-" call pathogen#infect()
-" call pathogen#helptags()
-" filetype plugin indent on
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
+filetype plugin indent on
 
 " Solarized settings
 let g:solarized_termcolors=256
 
 " Color scheme and background
 colo solarized
-set bg=dark
+set bg=light
 set t_Co=256
 
 " Powerline / airline
 set laststatus=2
 set noshowmode
 
-" let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=1
 
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+" python from powerline.vim import setup as powerline_setup
+" python powerline_setup()
+" python del powerline_setup
 
 " Highlight current line
 set cursorline

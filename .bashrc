@@ -5,6 +5,13 @@
 export PS1='\u@\[\033[01m\]\h\[\033[0m\] \[\033[01;35m\]\w\[\033[0m\] > '
 source .bash_profile
 
+function swap() {
+    local TMPFILE=tmp.$$
+    mv "$1" $TMPFILE
+    mv "$2" "$1"
+    mv $TMPFILE "$2"
+}
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -98,7 +105,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
+# ~/.bash_bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
