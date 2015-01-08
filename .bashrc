@@ -5,12 +5,9 @@
 export PS1='\u@\[\033[01m\]\h\[\033[0m\] \[\033[01;35m\]\w\[\033[0m\] > '
 source .bash_profile
 
-function swap() {
-    local TMPFILE=tmp.$$
-    mv "$1" $TMPFILE
-    mv "$2" "$1"
-    mv $TMPFILE "$2"
-}
+if [ -f ~/.functions ]; then
+    . ~/.functions
+fi
 
 # If not running interactively, don't do anything
 case $- in
@@ -122,4 +119,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-

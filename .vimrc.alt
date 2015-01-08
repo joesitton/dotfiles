@@ -1,6 +1,6 @@
 " Pathogen
 filetype off
-call pathogen#infect()
+execute pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
 
@@ -86,5 +86,5 @@ syntax enable
 set wrap
 
 " Mappings
-map j gj
-map k gk
+nmap j gj
+nmap k gk

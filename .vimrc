@@ -9,7 +9,7 @@ let g:solarized_termcolors=256
 
 " Color scheme and background
 colo solarized
-set bg=dark
+set bg=light
 set t_Co=256
 
 " Powerline / airline
