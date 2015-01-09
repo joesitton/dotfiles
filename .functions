@@ -9,7 +9,7 @@ mcd() { mkdir "$1" && cd "$1"; }
 
 javar() { javac "$1" && java $(basename "$1" .java); }
 
-cl() { cd "$1" && ls; }
+cl() { cd "$1" && ls --color=auto; }
 
 extract() {
     if [ -z ${1} ]; then
