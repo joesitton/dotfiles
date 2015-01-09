@@ -1,11 +1,17 @@
-function swap() {
+swap() {
     local TMPFILE=tmp.$$
     mv "$1" $TMPFILE
     mv "$2" "$1"
     mv $TMPFILE "$2"
 }
 
-function extract() {
+mcd() { mkdir "$1" && cd "$1"; }
+
+javar() { javac "$1" && java $(basename "$1" .java); }
+
+cl() { cd "$1" && ls; }
+
+extract() {
     if [ -z ${1} ]; then
         echo "usage: extract file.zip"
         return
