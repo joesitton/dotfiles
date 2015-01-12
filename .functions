@@ -11,9 +11,9 @@ javar() { javac "$1" && java $(basename "$1" .java); }
 
 cl() { cd "$1" && ls --color=auto; }
 
-extract() {
+x() {
     if [ -z ${1} ]; then
-        echo "usage: extract file.zip"
+        echo "usage: x file.xxx"
         return
     fi
 

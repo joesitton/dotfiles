@@ -8,5 +8,3 @@ alias addrepo='s add-apt-repository'
 alias remrepo='s add-apt-repository --remove'
 
 alias ..='cd ..'
-
-export PS1='\u@\[\033[01m\]\h\[\033[0m\] \[\033[01;35m\]\w\[\033[0m\] > '
