@@ -16,6 +16,7 @@ alias ....='cd ../../..'
 
 alias screenfetch='screenfetch -A "Ubuntu-3color"'
 alias vimswap='swap ~/.vimrc ~/.vimrc.alt'
+alias shadow2='shadow; shadow'
 
 alias ls='ls --color=auto'
 alias la='ls -A'
