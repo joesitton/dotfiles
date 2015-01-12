@@ -1,5 +1,5 @@
 alias s='sudo'
-alias please='s $(history !!)'
+alias please='s $(fc -ln -1)'
 alias pls='please'
 
 alias pac='s apt-get'
