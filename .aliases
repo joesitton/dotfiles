@@ -1,5 +1,5 @@
 alias s='sudo'
-alias please='s $(history -p \!\!)'
+alias please='s $(history !!)'
 alias pls='please'
 
 alias pac='s apt-get'
@@ -12,8 +12,11 @@ alias sshx='ssh -X -C'
 
 alias ..='cd ..'
 
-alias minimize='xdotool windowminimize $(xdotool getactivewindow)'
-
 alias screenfetch='screenfetch -A "Ubuntu-3color"'
 
 alias vimswap='swap ~/.vimrc ~/.vimrc.alt'
+
+alias ls='ls --color=auto'
+alias la='ls -A'
+alias ll='ls -l'
+alias l='ls -cF'
