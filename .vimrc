@@ -22,6 +22,17 @@ python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
 
+" Neocomplcache
+let g:acp_enableAtStartup = 0
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+inoremap <expr><TAB>    pumvisible() ? "\<C-n>" : "\<TAB>"
+
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+
 " Highlight current line
 set cursorline
 

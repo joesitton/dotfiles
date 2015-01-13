@@ -13,6 +13,7 @@ cl() { cd "$1" && ls; }
 wl() { wd "$1" && ls; }
 
 psg() { ps -e | grep "$1"; }
+cag() { cat "$1" | grep -i "$2"; }
 
 x() {
     if [ -z ${1} ]; then

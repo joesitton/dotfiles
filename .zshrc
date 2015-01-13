@@ -29,7 +29,6 @@ setopt CORRECT
 setopt HIST_REDUCE_BLANKS
 setopt AUTO_CD
 setopt HIST_IGNORE_ALL_DUPS
-setopt RM_STAR_WAIT
 unsetopt CASE_GLOB
 
 # Editor
