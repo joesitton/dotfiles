@@ -9,7 +9,10 @@ mcd() { mkdir "$1" && cd "$1"; }
 
 javar() { javac "$1" && java $(basename "$1" .java); }
 
-cl() { cd "$1" && ls --color=auto; }
+cl() { cd "$1" && ls; }
+wl() { wd "$1" && ls; }
+
+psg() { ps -e | grep "$1"; }
 
 x() {
     if [ -z ${1} ]; then
