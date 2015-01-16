@@ -10,13 +10,13 @@ alias remrepo='s add-apt-repository --remove'
 alias ssh='sshrc'
 alias sshx='ssh -X -C'
 
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
+alias -g ..='cd ..'
+alias -g ...='cd ../..'
+alias -g ....='cd ../../..'
 
 alias screenfetch='screenfetch -A "Ubuntu-3color"'
-alias vimswap='swap ~/.vimrc ~/.vimrc.alt'
 alias shadow2='shadow; shadow'
+alias hw='homework'
 
 alias ls='ls --color=auto'
 alias la='ls -A'

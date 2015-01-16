@@ -1,26 +1,11 @@
 " Pathogen
-" filetype off
-" call pathogen#infect()
-" call pathogen#helptags()
-" filetype plugin indent on
+filetype off
+execute pathogen#infect()
+filetype plugin indent on
 
-" Solarized settings
-let g:solarized_termcolors=256
-
-" Color scheme and background
-colo solarized
-set bg=light
-set t_Co=256
-
-" Powerline / airline
-set laststatus=2
-set noshowmode
-
-" let g:airline_powerline_fonts=1
-
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+" Airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'solarized'
 
 " Neocomplcache
 let g:acp_enableAtStartup = 0
@@ -32,6 +17,17 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 inoremap <expr><TAB>    pumvisible() ? "\<C-n>" : "\<TAB>"
 
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+
+" Solarized settings
+let g:solarized_termcolors = 256
+
+" Enable syntax highlighting
+syntax enable
+
+" Color scheme and background
+colo solarized
+set bg=light
+set t_Co=256
 
 " Highlight current line
 set cursorline
@@ -49,6 +45,10 @@ set smartcase
 set hlsearch
 set incsearch
 
+" Statusline
+set laststatus=2
+set noshowmode
+
 " Set utf8
 set encoding=utf8
 
@@ -65,6 +65,7 @@ set tw=500
 set expandtab
 set smarttab
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 
 " Indents
@@ -74,9 +75,6 @@ set cindent
 
 " Matching brackets blink
 set mat=2
-
-" Sudo save the file
-command W w !sudo tee % > /dev/null
 
 " Hide the buffer when its abandoned
 set hid
@@ -90,11 +88,14 @@ set novisualbell
 set t_vb =
 set tm=500
 
-" Enable syntax highlighting
-syntax enable
-
 " Wrap lines
 set wrap
+
+" Timeout length
+set timeoutlen=50
+
+" Sudo save the file
+command W w !sudo tee % > /dev/null
 
 " Mappings
 map j gj
