@@ -10,13 +10,16 @@ alias remrepo='s add-apt-repository --remove'
 alias ssh='sshrc'
 alias sshx='ssh -X -C'
 
-alias -g ..='cd ..'
-alias -g ...='cd ../..'
-alias -g ....='cd ../../..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 alias screenfetch='screenfetch -A "Ubuntu-3color"'
 alias shadow2='shadow; shadow'
 alias hw='homework'
+
+alias wls='wd ls'
+alias wp='wd path'
 
 alias ls='ls --color=auto'
 alias la='ls -A'

@@ -1,10 +1,9 @@
 " Pathogen
-filetype off
 execute pathogen#infect()
-filetype plugin indent on
 
 " Airline
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'solarized'
 
 " Neocomplcache
@@ -22,7 +21,9 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 let g:solarized_termcolors = 256
 
 " Enable syntax highlighting
-syntax enable
+filetype off
+syntax on
+filetype plugin indent on
 
 " Color scheme and background
 colo solarized
@@ -61,6 +62,9 @@ set noswapfile
 set lbr
 set tw=500
 
+" Scrolloff
+set scrolloff=3
+
 " Tabbing
 set expandtab
 set smarttab
@@ -95,8 +99,9 @@ set wrap
 set timeoutlen=50
 
 " Sudo save the file
-command W w !sudo tee % > /dev/null
+command! W w !sudo tee % > /dev/null
 
 " Mappings
-map j gj
-map k gk
+nmap j gj
+nmap k gk
+noremap U :redo<CR>
