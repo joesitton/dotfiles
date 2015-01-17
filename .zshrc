@@ -4,14 +4,18 @@ export ZSH=$HOME/.oh-my-zsh
 # Prompt theme
 ZSH_THEME="gallifrey"
 
+# Compinit
+autoload -U compinit && compinit
+
 # Plugins
-plugins=(wd)
+plugins=()
 
 # Set PATH
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
 # Source files
 source $ZSH/oh-my-zsh.sh
+source /usr/share/autojump/autojump.zsh
 
 for f in ~/.{aliases,functions}; do
     source "$f"

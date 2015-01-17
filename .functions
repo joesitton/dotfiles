@@ -10,7 +10,7 @@ mcd() { mkdir "$1" && cd "$1"; }
 javar() { javac "$1" && java $(basename "$1" .java); }
 
 cl() { cd "$1" && ls; }
-wl() { wd "$1" && ls; }
+jl() { j "$1" && ls; }
 
 psg() { ps -e | grep "$1"; }
 cag() { cat "$1" | grep -i "$2"; }

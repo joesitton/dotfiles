@@ -18,9 +18,6 @@ alias screenfetch='screenfetch -A "Ubuntu-3color"'
 alias shadow2='shadow; shadow'
 alias hw='homework'
 
-alias wls='wd ls'
-alias wp='wd path'
-
 alias ls='ls --color=auto'
 alias la='ls -A'
 alias ll='ls -l'
