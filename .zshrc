@@ -4,6 +4,10 @@ export ZSH=$HOME/.oh-my-zsh
 # Prompt theme
 ZSH_THEME="gallifrey"
 
+# Base16 colors
+BASE16_SHELL="$HOME/.config/base16-shell/base16-flat.light.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 # Compinit
 autoload -U compinit && compinit
 
