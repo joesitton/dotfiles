@@ -1,10 +1,12 @@
 " Pathogen
+filetype off
 execute pathogen#infect()
+filetype plugin indent on
 
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'solarized'
+let g:airline_theme = 'powerlineish'
 
 " Neocomplcache
 let g:acp_enableAtStartup = 0
@@ -17,18 +19,15 @@ inoremap <expr><TAB>    pumvisible() ? "\<C-n>" : "\<TAB>"
 
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
-" Solarized settings
+" Syntax highlighting
+syntax on
+
+" Color settings
 let g:solarized_termcolors = 256
 
-" Enable syntax highlighting
-filetype off
-syntax on
-filetype plugin indent on
-
 " Color scheme and background
+set bg=dark
 colo solarized
-set bg=light
-set t_Co=256
 
 " Highlight current line
 set cursorline
@@ -109,6 +108,9 @@ command! W w !sudo tee % > /dev/null
 nmap j gj
 nmap k gk
 nnoremap U :redo<CR>
+
+nnoremap d "_d
+vnoremap d "_d
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>

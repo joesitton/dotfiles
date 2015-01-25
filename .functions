@@ -9,8 +9,20 @@ mcd() { mkdir "$1" && cd "$1"; }
 
 javar() { javac "$1" && java $(basename "$1" .java); }
 
-cl() { cd "$1" && ls; }
-jl() { j "$1" && ls; }
+cl() {
+    if [ $# -eq 1 ]; then
+        cd "$1" && ls
+    elif [ $# -eq 2 ]; then
+        cd "$2" && ls "$1"
+    fi
+}
+jl() {
+    if [ $# -eq 1 ]; then
+        j "$1" && ls
+    elif [ $# -eq 2 ]; then
+        j "$2" && ls "$1"
+    fi
+}
 
 psg() { ps -e | grep "$1"; }
 cag() { cat "$1" | grep -i "$2"; }

@@ -7,15 +7,15 @@ alias pacsearch='apt-cache search'
 alias addrepo='s add-apt-repository'
 alias remrepo='s add-apt-repository --remove'
 
-alias ssh='sshrc'
 alias sshx='ssh -X -C'
+alias top='htop'
+alias chwp='autowall-next'
 
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
 alias screenfetch='screenfetch -A "Ubuntu-3color"'
-alias shadow2='shadow; shadow'
 alias hw='homework'
 
 alias ls='ls --color=auto'

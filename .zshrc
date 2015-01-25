@@ -8,6 +8,8 @@ ZSH_THEME="gallifrey"
 BASE16_SHELL="$HOME/.config/base16-shell/base16-flat.light.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
+export TERM=xterm-256color
+
 # Compinit
 autoload -U compinit && compinit
 
