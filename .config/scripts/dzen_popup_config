@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Edited for February 2015 desktop. See panel config and termcolors.
+
+#FONT="tamsynmod:pixelsize=11"
+FONT="-lucy-tewi-medium-r-normal--11-90-75-75-p-58-iso10646-1"
+PAD='  '
+ACT='onstart=uncollapse;button1=exit;button3=exit'
+YPOS='20'
+XPOS='1100'
+TIME='4'
+
+# Colors
+FG="#657b83"
+BG="#fdf6e3"
+
+bar_bg="#d0d0d0"
+bar_fg="#859900"
+label="#073642"
+highlight="#002b36"
+highlight2="#eee8d5"
+warn="#cb4b16"
+
+OPTIONS="-bg ${BG} -fg ${FG} -y ${YPOS} -x ${XPOS} -e ${ACT} -ta 'c'"
+

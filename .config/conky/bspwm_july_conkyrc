@@ -1,0 +1,30 @@
+# conky for bspwm (july)
+# Tuesday, 1 July 2014
+# Modified Sunday, 01 February 2015 20:06 IST for tewi font
+
+# conky settings
+
+
+background no
+update_interval 2
+cpu_avg_samples 1
+total_run_times 0
+override_utf8_locale yes
+short_units yes
+pad_percents 2
+top_name_width 9
+uppercase no
+out_to_console yes
+out_to_x no
+
+TEXT
+S\
+%{F\#ffcccccc}${if_existing /proc/net/route wlp1s0}\
+%{F\#FF2aa198} ⮷ %{F-}${wireless_essid wlp1s0} %{A}${else}\
+%{F\#FF2aa198}%{F\#FF2aa198} ⮹ %{F-} None %{F-}${endif}\
+%{F\#ffcccccc}${if_match "${acpiacadapter}" == "on-line"}\
+%{F\#FF859900} ⮒%{F-} ${battery_percent}%% ${else}\
+${if_match ${battery_percent BAT0} <= 50}\
+%{F\#FFcb4b16} ⮑%{F-} ${else}\
+%{F\#FF859900} ⮏%{F-} ${endif}${battery_percent}%% ${endif}\
+%{F\#ffcccccc} ${time %a %d [%I %M %p]} %{A}\
