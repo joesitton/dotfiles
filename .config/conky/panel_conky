@@ -1,0 +1,23 @@
+background no
+update_interval 2
+cpu_avg_samples 1
+total_run_times 0
+override_utf8_locale yes
+short_units yes
+pad_percents 2
+top_name_width 9
+uppercase no
+out_to_console yes
+out_to_x no
+
+TEXT
+S\
+%{F\#FF2aa198}${if_existing /proc/net/route wlp1s0}\
+%{F\#FF2aa198}  %{F-}${wireless_essid wlp1s0} %{A}${else}\
+%{F\#FF2aa198}%{F\#FF2aa198}  %{F-} None %{F-}${endif}\
+%{F\#FF7B8748}${if_match "${acpiacadapter}" == "on-line"}\
+%{F\#FF7B8748} ⮒%{F-} ${battery_percent}%% ${else}\
+${if_match ${battery_percent BAT0} <= 40}\
+%{F\#FFcb4b16} ⮑%{F-} ${else}\
+%{F\#FF7B8748} ⮏%{F-} ${endif}${battery_percent}%% ${endif}\
+%{F\#FFD17B49} %{F-} ${time %I %M %p} %{A}\
