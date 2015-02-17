@@ -3,7 +3,7 @@
 #
 
 super + alt + Escape
-	bspc quit
+	pkill -x panel; bspc quit
 
 super + w
 	bspc window -c
@@ -84,7 +84,7 @@ super + Return
 	urxvt
 
 super + space
-    dmenu_run
+    lighthouse | sh
 
 # make sxhkd reload its configuration files:
 super + Escape
