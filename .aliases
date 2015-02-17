@@ -1,22 +1,21 @@
 alias s='sudo'
 alias please='s $(fc -ln -1)'
 alias pls='please'
+alias fuck='please'
 
-alias pac='s apt-get'
-alias pacsearch='apt-cache search'
-alias addrepo='s add-apt-repository'
-alias remrepo='s add-apt-repository --remove'
+alias pac='s pacman'
+alias yao='yaourt'
 
 alias sshx='ssh -X -C'
 alias top='htop'
-alias chwp='autowall-next'
 
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-alias screenfetch='screenfetch -A "Ubuntu-3color"'
-alias hw='homework'
+alias fixbrightness='s chmod 777 /sys/class/backlight/intel_backlight/{brightness,actual_brightness}'
+alias shadow='shadow;shadow'
+alias vim='vim +"set bg=dark" +AirlineRefresh +AirlineRefresh'
 
 alias ls='ls --color=auto'
 alias la='ls -A'

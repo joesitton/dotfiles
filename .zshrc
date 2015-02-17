@@ -5,8 +5,8 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="gallifrey"
 
 # Base16 colors
-BASE16_SHELL="$HOME/.config/base16-shell/base16-flat.light.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+#BASE16_SHELL="$HOME/.config/base16-shell/base16-flat.dark.sh"
+#[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 export TERM=xterm-256color
 
@@ -17,7 +17,7 @@ autoload -U compinit && compinit
 plugins=()
 
 # Set PATH
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/core_perl/:/home/joe/.config/scripts/"
 
 # Source files
 source $ZSH/oh-my-zsh.sh

@@ -6,7 +6,7 @@ filetype plugin indent on
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'solarized'
 
 " Neocomplcache
 let g:acp_enableAtStartup = 0
@@ -20,14 +20,12 @@ inoremap <expr><TAB>    pumvisible() ? "\<C-n>" : "\<TAB>"
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
 " Syntax highlighting
-syntax on
+syntax enable
 
-" Color settings
+" Color scheme
 let g:solarized_termcolors = 256
-
-" Color scheme and background
 set bg=dark
-colo solarized
+colorscheme solarized
 
 " Highlight current line
 set cursorline
