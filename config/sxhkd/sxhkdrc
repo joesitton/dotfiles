@@ -11,6 +11,9 @@ super + w
 super + t
 	bspc desktop -l next
 
+super + d
+    bspc window -t pseudo_tiled
+
 super + b
 	bspc desktop -B
 
