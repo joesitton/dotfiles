@@ -12,6 +12,11 @@ out_to_x no
 
 TEXT
 S\
+# Pacman
+${if_match "${execpi 3600 pacman -Qu | wc -l}" == "0"}\
+${else}\
+%{F\#FFFFDC00}  %{F-} ${exec pacman -Qu | wc -l} updates ${endif}\
+\
 # Network
 %{F\#FF2aa198}${if_existing /proc/net/route wlp1s0}\
 %{F\#FF2aa198}  %{F-}${wireless_essid wlp1s0} ${else}\
@@ -19,8 +24,8 @@ S\
 \
 # Volume
 ${if_match "${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 8 | cut -d '[' -f 2 | cut -d ']' -f 1}" == "on"}\
-%{F\#FFA7527D}  %{F-}${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 6 | cut -d '[' -f 2 | cut -d ']' -f 1}%% %{A}${else}\
-%{F\#FFA7527D}  %{F-}off ${endif}\
+%{F\#FFA7527D}  %{F-}${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 6 | cut -d '[' -f 2 | cut -d ']' -f 1}%% %{A}${else}\
+%{F\#FFA7527D}  %{F-}off ${endif}\
 \
 # Battery
 %{F\#FF2ECC40}${if_match "${acpiacadapter}" == "on-line"}\
