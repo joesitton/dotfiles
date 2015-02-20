@@ -17,6 +17,8 @@ S\
 %{F\#FF2aa198}  %{F-}${wireless_essid wlp1s0} ${else}\
 %{F\#FF2aa198}%{F\#FF2aa198}  %{F-} None %{F-}${endif}\
 \
+# Volume
+%{F\#FFA7527D}  %{F-}${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 6 | cut -d '[' -f 2 | cut -d ']' -f 1}%% %{A}\
 # Battery
 %{F\#FF2ECC40}${if_match "${acpiacadapter}" == "on-line"}\
 %{F\#FF7B8748} %{F-} ${battery_percent}%% ${else}\
@@ -25,4 +27,4 @@ ${if_match ${battery_percent BAT0} <= 50}\
 %{F\#FF7B8748} %{F-} ${endif}${battery_percent}%% ${endif}\
 \
 # Time
-%{F\#FFD17B49} %{F-} ${time %I%M %P}\
+%{F\#FFD17B49} %{F-} ${time %I%M %P} %{F-}\

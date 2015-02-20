@@ -20,7 +20,7 @@ BAR_HEIGHT="2"     # height of bar
 ICON='^i(/home/joe/.icons/brightness.xbm)'
 
 #Probably do not customize
-PIPE="/home/joe/.dbright_pipe"
+PIPE="/tmp/.dzen_brightness_pipe"
 
 err() {
   echo "$1"

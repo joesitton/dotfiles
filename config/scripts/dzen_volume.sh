@@ -19,7 +19,7 @@ ICON='^i(/home/joe/.icons/volume100.xbm)'
 MUTEICON='^i(/home/joe/.icons/volume0.xbm)'
 
 #Probably do not customize
-PIPE="/home/joe/.dvolpipe"
+PIPE="/tmp/.dzen_volume_pipe"
 
 err() {
   echo "$1"
