@@ -13,9 +13,10 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-alias fixbrightness='s chmod 777 /sys/class/backlight/intel_backlight/{brightness,actual_brightness}'
-alias shadow='shadow;shadow'
-alias vim='vim +"set bg=dark" +AirlineRefresh +AirlineRefresh'
+alias wifi-menu='s wifi-menu'
+
+alias von='s shadowvpn -c /etc/shadowvpn/client.conf -s start'
+alias voff='s shadowvpn -c /etc/shadowvpn/client.conf -s stop'
 
 alias ls='ls --color=auto'
 alias la='ls -A'

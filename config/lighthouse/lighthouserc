@@ -1,6 +1,6 @@
 backspace_exit=0
 font_name=Roboto
-font_size=13
+font_size=12
 cmd=~/.config/lighthouse/cmd.py
 query_fg=0.9,0.9,0.9
 query_bg=0.1,0.1,0.1

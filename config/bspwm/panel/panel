@@ -16,8 +16,8 @@ conky -c ~/.config/conky/panel_conky > "$PANEL_FIFO" &
      | bar -p \
            -g "$geometry" \
            -f "$FONTS" \
-           -B "$BAR_BG" \
-           -F "$BAR_FG" \
+           -B "#FF$BAR_BG" \
+           -F "#FF$BAR_FG" \
            | while read line; do eval "$line"; done &
 wait
 

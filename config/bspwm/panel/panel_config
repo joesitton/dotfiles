@@ -6,5 +6,7 @@ FONTS="-*-stlarch-*-*-*--10-*-*-*-*-*-*-*,-*-Uushi-*-*-*--11-*-*-*-*-*-*-*"
 PAD='  '
 LPAD='    '
 
-BAR_BG="#FF262626"
-BAR_FG="#FFc0b18b"
+BAR_BG="262626"
+BAR_FG="cccccc"
+
+FOCUS_DESK="3D9970"

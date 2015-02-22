@@ -5,6 +5,8 @@ swap() {
     mv $TMPFILE "$2"
 }
 
+glyph() { echo -e '\uE'$1; }
+
 mcd() { mkdir "$1" && cd "$1"; }
 
 javar() { javac "$1" && java $(basename "$1" .java); }

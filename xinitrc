@@ -1,15 +1,16 @@
 #!/bin/sh
 
-export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
-
 # Background
-feh --bg-scale ~/Pictures/blurredtrees.png &
+feh --no-fehbg --bg-scale ~/Pictures/Absence.jpg &
 
 # Xresources
 xrdb -load ~/.Xresources
 
 # Trackpad/mouse speed
 xset m 5/3
+
+# Keyboard repeat rate
+xset r rate 300 40
 
 # Fonts
 xset +fp ~/.fonts
@@ -20,9 +21,10 @@ xset fp rehash
 xsetroot -cursor_name left_ptr
 
 # Other
-unclutter -root -idle 3 &
+unclutter -noevents -idle 3 &
 compton -b --config ~/.config/compton/compton.conf &
-redshift -l 30:-81 -t 6400:4400 &
+redshift -l 30:-81 -t 6400:3400 &
+systemctl restart brightness-fix.service
 
 sxhkd &
 exec bspwm

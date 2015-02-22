@@ -1,5 +1,6 @@
 #!/bin/bash
-# Edited for February 2015 desktop. See panel config and termcolors.
+
+source /home/joe/.config/bspwm/panel/panel_config
 
 FONT="-*-Uushi-*-*-*--11-*-*-*-*-*-*-*"
 PAD='  '
@@ -9,10 +10,10 @@ XPOS='1100'
 TIME='3'
 
 # Colors
-FG="#c0b18b"
-BG="#262626"
+FG="#$BAR_FG"
+BG="#$BAR_BG"
 
-bar_bg="#c0b18b"
+bar_bg="$BAR_FG"
 bar_fg="#3d9970"
 label="#073642"
 highlight="#002b36"
@@ -20,4 +21,3 @@ highlight2="#eee8d5"
 warn="#cb4b16"
 
 OPTIONS="-bg ${BG} -fg ${FG} -y ${YPOS} -x ${XPOS} -e ${ACT} -ta 'c'"
-

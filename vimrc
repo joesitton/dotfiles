@@ -25,7 +25,7 @@ syntax enable
 " Color scheme
 let g:solarized_termcolors = 256
 set bg=dark
-colorscheme solarized
+colo Tomorrow-Night-Eighties
 
 " Highlight current line
 set cursorline

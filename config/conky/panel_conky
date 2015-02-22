@@ -10,33 +10,29 @@ out_to_x no
 
 TEXT
 S\
-# Pacman
-${if_match "${texeci 1800 pacman -Qu | wc -l}" == "0"}\
+# IP
+${if_match "${addr wlp1s0}" == "No Address"}\
 ${else}\
-%{F\#FFFFDC00}  %{F-} ${execp pacman -Qu | wc -l} updates\
+%{F\#FFb5bd68}  %{F-}${texeci 10 wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'} \
 ${endif}\
 \
 # Network
 ${if_existing /proc/net/route wlp1s0}\
-%{F\#FF2aa198}  %{F-}${wireless_essid wlp1s0}${else}\
-%{F\#FF2aa198}  %{F-}None  %{F-}\
+%{F\#FF2aa198}  %{F-}${wireless_essid wlp1s0} ${else}\
+%{F\#FF2aa198}  %{F-}None %{F-}\
 ${endif}\
 \
 # Volume
 ${if_match "${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 8 | cut -d '[' -f 2 | cut -d ']' -f 1}" == "on"}\
-%{F\#FFA7527D}  %{F-}${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 6 | cut -d '[' -f 2 | cut -d ']' -f 1}%${else}\
-%{F\#FFA7527D}  %{F-}off${endif}\
+%{F\#FFA7527D}  %{F-}${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 6 | cut -d '[' -f 2 | cut -d ']' -f 1}% ${else}\
+%{F\#FFA7527D}  %{F-}off ${endif}\
 \
 # Battery
 ${if_match "${acpiacadapter}" == "on-line"}\
-%{F\#FF7B8748}  %{F-}${battery_percent}%%${else}\
-${if_match ${battery_percent BAT0} <= 50}${if_match ${battery_percent} > 16}\
-%{F\#FFcb4b16}  %{F-}${battery_percent}%%${else}\
-${if_match ${battery_percent BAT0} <= 15}\
-%{F\#FFcb4b16}  %{F-}${battery_percent}%%${else}\
-%{F\#FF7B8748}  %{F-}${battery_percent}%%\
-${endif}\
-${endif}\
+%{F\#FF7B8748}  %{F-}${battery_percent}%% ${else}\
+${if_match ${battery_percent BAT0} <= 40}\
+%{F\#FFcb4b16}  %{F-}${battery_percent}%% ${else}\
+%{F\#FFcb4b16}  %{F-}${battery_percent}%% \
 ${endif}\
 ${endif}\
 \

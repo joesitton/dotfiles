@@ -25,19 +25,19 @@ while read -r line ; do
                         case $item in
                             O*)
                                 # focused occupied desktop
-                                desk="%{F#FF3d9970}■%{F-}"
+                                desk="%{F#FF$FOCUS_DESK}■%{F-}"
                                 ;;
                             F*)
                                 # focused free desktop
-                                desk="%{F#FF3d9970}■%{F-}"
+                                desk="%{F#FF$FOCUS_DESK}■%{F-}"
                                 ;;
                             o*)
                                 # occupied desktop
-                                desk="%{F#FFc0b18b}■%{F-}"
+                                desk="%{F#FF$BAR_FG}■%{F-}"
                                 ;;
                             f*)
                                 # free desktop
-                                desk="%{F#FFc0b18b}□%{F-}"
+                                desk="%{F#FF$BAR_FG}□%{F-}"
                                 ;;
                         esac
                         wm_infos="${wm_infos}%{A:bspc desktop -f ${name}:}${PAD}${desk}${PAD}%{A}"
@@ -48,5 +48,5 @@ while read -r line ; do
             IFS=$NORMIFS
             ;;
     esac
-    printf "%s\n" "%{l #FFc0b18b} %{F#FF0074D9}%{F-} $wm_infos %{F#FFc0b18b B-}%{F-} %{c}${title} %{r}$sys_infos%{B-}"
+    printf "%s\n" " %{F#FF0074D9}%{F-} $wm_infos %{c}${title} %{r}$sys_infos%{B-}"
 done
