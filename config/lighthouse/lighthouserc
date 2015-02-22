@@ -1,3 +1,4 @@
+backspace_exit=0
 font_name=Roboto
 font_size=13
 cmd=~/.config/lighthouse/cmd.py
@@ -6,5 +7,5 @@ query_bg=0.1,0.1,0.1
 result_fg=0.5,0.5,0.5
 result_bg=0.2,0.2,0.2
 highlight_fg=0.9,0.9,0.9
-highlight_bg=0.2,0.2,0.2
+highlight_bg=0.3,0.3,0.3
 y=30

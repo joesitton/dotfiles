@@ -1,0 +1,22 @@
+alias s='sudo'
+alias please='s $(fc -ln -1)'
+alias pls='please'
+alias fuck='please'
+
+alias pac='s pacman'
+alias yao='yaourt'
+
+alias sshx='ssh -X -C'
+alias top='htop'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias shadow='shadow;shadow'
+alias vim='vim +"set bg=dark" +AirlineRefresh +AirlineRefresh'
+
+alias ls='ls --color=auto'
+alias la='ls -A'
+alias ll='ls -l'
+alias l='ls -cF'

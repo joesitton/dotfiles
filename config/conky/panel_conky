@@ -1,7 +1,5 @@
 background no
-update_interval 2
-cpu_avg_samples 1
-total_run_times 0
+update_interval 0.1
 override_utf8_locale yes
 short_units yes
 pad_percents 2
@@ -13,26 +11,34 @@ out_to_x no
 TEXT
 S\
 # Pacman
-${if_match "${execpi 3600 pacman -Qu | wc -l}" == "0"}\
+${if_match "${texeci 1800 pacman -Qu | wc -l}" == "0"}\
 ${else}\
-%{F\#FFFFDC00}  %{F-} ${exec pacman -Qu | wc -l} updates ${endif}\
+%{F\#FFFFDC00}  %{F-} ${execp pacman -Qu | wc -l} updates\
+${endif}\
 \
 # Network
-%{F\#FF2aa198}${if_existing /proc/net/route wlp1s0}\
-%{F\#FF2aa198}  %{F-}${wireless_essid wlp1s0} ${else}\
-%{F\#FF2aa198}%{F\#FF2aa198}  %{F-} None %{F-}${endif}\
+${if_existing /proc/net/route wlp1s0}\
+%{F\#FF2aa198}  %{F-}${wireless_essid wlp1s0}${else}\
+%{F\#FF2aa198}  %{F-}None  %{F-}\
+${endif}\
 \
 # Volume
 ${if_match "${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 8 | cut -d '[' -f 2 | cut -d ']' -f 1}" == "on"}\
-%{F\#FFA7527D}  %{F-}${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 6 | cut -d '[' -f 2 | cut -d ']' -f 1}%% %{A}${else}\
-%{F\#FFA7527D}  %{F-}off ${endif}\
+%{F\#FFA7527D}  %{F-}${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 6 | cut -d '[' -f 2 | cut -d ']' -f 1}%${else}\
+%{F\#FFA7527D}  %{F-}off${endif}\
 \
 # Battery
-%{F\#FF2ECC40}${if_match "${acpiacadapter}" == "on-line"}\
-%{F\#FF7B8748} %{F-} ${battery_percent}%% ${else}\
-${if_match ${battery_percent BAT0} <= 50}\
-%{F\#FFcb4b16} %{F-} ${else}\
-%{F\#FF7B8748} %{F-} ${endif}${battery_percent}%% ${endif}\
+${if_match "${acpiacadapter}" == "on-line"}\
+%{F\#FF7B8748}  %{F-}${battery_percent}%%${else}\
+${if_match ${battery_percent BAT0} <= 50}${if_match ${battery_percent} > 16}\
+%{F\#FFcb4b16}  %{F-}${battery_percent}%%${else}\
+${if_match ${battery_percent BAT0} <= 15}\
+%{F\#FFcb4b16}  %{F-}${battery_percent}%%${else}\
+%{F\#FF7B8748}  %{F-}${battery_percent}%%\
+${endif}\
+${endif}\
+${endif}\
+${endif}\
 \
 # Time
-%{F\#FFD17B49} %{F-} ${time %I%M %P} %{A}\
+%{F\#FFD17B49}  %{F-}${time %I%M %p} %{A}\

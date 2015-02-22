@@ -141,7 +141,9 @@ special = {
     "chro": (lambda x: ("chromium", "chromium")),
     "gimp": (lambda x: ("gimp", "gimp")),
     "thun": (lambda x: ("thunar", "thunar")),
-    "mine": (lambda x: ("minecraft", "minecraft"))
+    "mine": (lambda x: ("minecraft", "minecraft")),
+    "top": (lambda x: ("top", "urxvt -g 90x6 -e htop")),
+    "stlarch": (lambda x: ("gbdfed stlarch", "gbdfed /home/joe/Downloads/stlarch.bdf"))
 }
 
 while 1:
@@ -193,7 +195,7 @@ while 1:
   # Spawn worker threads
   google_thr = Process(target=google, args=(userInput,))
   google_thr.start()
-  find_thr = Process(target=find, args=(userInput,))
-  find_thr.start()
+  #find_thr = Process(target=find, args=(userInput,))
+  #find_thr.start()
 
   update_output()
