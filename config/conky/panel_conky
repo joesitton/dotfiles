@@ -13,14 +13,11 @@ S\
 # IP
 ${if_match "${addr wlp1s0}" == "No Address"}\
 ${else}\
-%{F\#FFb5bd68}  %{F-}${texeci 10 wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'} \
+%{F\#FFb5bd68}  %{F-}${texeci 10 curl -s curlmyip.com} \
 ${endif}\
 \
 # Network
-${if_existing /proc/net/route wlp1s0}\
-%{F\#FF2aa198}  %{F-}${wireless_essid wlp1s0} ${else}\
-%{F\#FF2aa198}  %{F-}None %{F-}\
-${endif}\
+%{F\#FF2aa198}  %{F-}${wireless_essid wlp1s0} %{A}\
 \
 # Volume
 ${if_match "${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 8 | cut -d '[' -f 2 | cut -d ']' -f 1}" == "on"}\
