@@ -1,25 +1,18 @@
 #!/bin/bash
-#
-# dvolbar - OSD Volume utility
-#
-#source /home/sunn/.xmonad/scripts/config.sh
 
 source $(dirname $0)/dzen_popup_config
 
-#Customize this stuff
-IF="Master"         # audio channel: Master|PCM
-SECS="2"            # sleep $SECS
-XPOS="1000"          # horizontal positioning
-#YPOS="30"          # vertical positioning
-HEIGHT="30"         # window height
-WIDTH="250"         # window width
-BAR_WIDTH="150"     # width of volume bar
-BAR_HEIGHT="2"     # height of volume bar
+IF="Master"
+SECS="2"
+XPOS="1000"
+HEIGHT="30"
+WIDTH="250"
+BAR_WIDTH="150"
+BAR_HEIGHT="2"
 ICON='^i(/home/joe/.icons/volume100.xbm)'
 MUTEICON='^i(/home/joe/.icons/volume0.xbm)'
 
-#Probably do not customize
-PIPE="/tmp/.dzen_volume_pipe"
+PIPE="/tmp/.volume_pipe"
 
 err() {
   echo "$1"
@@ -37,7 +30,6 @@ usage() {
   exit
 }
 
-#Argument Parsing
 case "$1" in
   '-i'|'--increase')
     [ -z "$2" ] && err "No argument specified for increase."
@@ -60,7 +52,6 @@ case "$1" in
     ;;
 esac
 
-#Actual volume changing (readability low)
 AMIXOUT="$(amixer -M set "$IF" "$AMIXARG" | tail -n 1)"
 MUTE="$(cut -d '[' -f 4 <<<"$AMIXOUT")"
 if [ "$MUTE" = "off]" ]; then
@@ -70,8 +61,6 @@ else
   VOL="$(cut -d '[' -f 2 <<<"$AMIXOUT" | sed 's/%.*//g')"
 fi
 
-#Using named pipe to determine whether previous call still exists
-#Also prevents multiple volume bar instances
 if [ ! -e "$PIPE" ]; then
   mkfifo "$PIPE"
   (dzen2 -tw "$WIDTH" -h "$HEIGHT" -x "$XPOS" -fn "$FONT" ${OPTIONS} < "$PIPE"
@@ -80,5 +69,4 @@ fi
 
 BAR=$(echo "$VOL" | gdbar -fg "$bar_fg" -bg "$bar_bg" -w "$BAR_WIDTH" -h "$BAR_HEIGHT")
 
-#Feed the pipe!
 (echo "$ICON  $BAR  $VOL%"; sleep "$SECS"  ) > "$PIPE"

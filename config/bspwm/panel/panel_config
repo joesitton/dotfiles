@@ -1,6 +1,6 @@
 # bspwm panel config
 
-geometry="1366x15"
+geometry="1366x16"
 FONTS="-*-stlarch-*-*-*--10-*-*-*-*-*-*-*,-*-Uushi-*-*-*--11-*-*-*-*-*-*-*"
 
 PAD='  '

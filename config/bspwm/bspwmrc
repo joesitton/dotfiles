@@ -15,10 +15,12 @@ bspc config urgent_border_color     "#f92672"
 
 bspc monitor -d 1 2 3 4 5 6
 
+# bspc rule -a Chromium desktop=^1
 bspc rule -a urxvt floating=on
-bspc rule -a Chromium desktop=^1
 bspc rule -a Gimp floating=on desktop=^5
 bspc rule -a Minecraft floating=on
 bspc rule -a Thunar floating=on
+bspc rule -a feh floating=on
+bspc rule -a teamspeak3 floating=on
 
 ~/.config/bspwm/panel/panel &

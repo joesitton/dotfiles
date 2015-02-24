@@ -11,10 +11,10 @@ out_to_x no
 TEXT
 S\
 # IP
-${if_match "${addr wlp1s0}" == "No Address"}\
-${else}\
-%{F\#FFb5bd68}  %{F-}${texeci 10 curl -s curlmyip.com} \
-${endif}\
+#${if_match "${addr wlp1s0}" == "No Address"}\
+#${else}\
+#%{F\#FFb5bd68}  %{F-}${texeci 10 curl -s curlmyip.com} \
+#${endif}\
 \
 # Network
 %{F\#FF2aa198}  %{F-}${wireless_essid wlp1s0} %{A}\
@@ -27,11 +27,11 @@ ${if_match "${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 8 | cut -
 # Battery
 ${if_match "${acpiacadapter}" == "on-line"}\
 %{F\#FF7B8748}  %{F-}${battery_percent}%% ${else}\
-${if_match ${battery_percent BAT0} <= 40}\
-%{F\#FFcb4b16}  %{F-}${battery_percent}%% ${else}\
+${if_match ${battery_percent BAT0} >= 40}\
+%{F\#FF7B8748}  %{F-}${battery_percent}%% ${else}\
 %{F\#FFcb4b16}  %{F-}${battery_percent}%% \
 ${endif}\
 ${endif}\
 \
 # Time
-%{F\#FFD17B49}  %{F-}${time %I%M %p} %{A}\
+%{F\#FFD17B49}  %{F-}${time %b %d %I%M %p} %{A}\

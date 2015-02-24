@@ -97,10 +97,10 @@ ctrl + F3
     scrot
 
 F10
-    dzen_volume.sh -i 5
+    dzen_volume.sh -i 1
 
 F9
-    dzen_volume.sh -d 5
+    dzen_volume.sh -d 1
 
 F8
     dzen_volume.sh -t
