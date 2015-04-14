@@ -2,9 +2,12 @@
 
 source $(dirname $0)/panel/panel_config
 
-bspc config border_width            2
-bspc config top_padding             15
-bspc config window_gap              15
+bspc config border_width            3
+bspc config top_padding             25
+bspc config left_padding            -2
+bspc config right_padding           -2
+bspc config bottom_padding          -2
+bspc config window_gap              10
 bspc config split_ratio             0.52
 bspc config borderless_monocle      true
 bspc config gapless_monocle         true
@@ -12,15 +15,17 @@ bspc config focus_follows_pointer   true
 bspc config focused_border_color    "#$FOCUS_DESK"
 bspc config unfocused_border_color  "#dddddd"
 bspc config urgent_border_color     "#f92672"
+bspc config normal_frame_opacity    0.0
+bspc config focused_frame_opacity   0.25
 
 bspc monitor -d 1 2 3 4 5 6
 
-# bspc rule -a Chromium desktop=^1
 bspc rule -a urxvt floating=on
 bspc rule -a Gimp floating=on desktop=^5
 bspc rule -a Minecraft floating=on
 bspc rule -a Thunar floating=on
 bspc rule -a feh floating=on
 bspc rule -a teamspeak3 floating=on
+bspc rule -a xv floating=on
 
 ~/.config/bspwm/panel/panel &

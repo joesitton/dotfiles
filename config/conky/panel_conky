@@ -1,5 +1,5 @@
 background no
-update_interval 0.1
+update_interval 0.3
 override_utf8_locale yes
 short_units yes
 pad_percents 2
@@ -10,28 +10,28 @@ out_to_x no
 
 TEXT
 S\
-# IP
-#${if_match "${addr wlp1s0}" == "No Address"}\
-#${else}\
-#%{F\#FFb5bd68}  %{F-}${texeci 10 curl -s curlmyip.com} \
-#${endif}\
-\
 # Network
-%{F\#FF2aa198}  %{F-}${wireless_essid wlp1s0} %{A}\
+%{F\#FFffdda5}  %{F-}${wireless_essid wlp1s0} \
 \
 # Volume
 ${if_match "${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 8 | cut -d '[' -f 2 | cut -d ']' -f 1}" == "on"}\
-%{F\#FFA7527D}  %{F-}${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 6 | cut -d '[' -f 2 | cut -d ']' -f 1}% ${else}\
-%{F\#FFA7527D}  %{F-}off ${endif}\
+%{F\#FFffdda5}  %{F-}${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 6 | cut -d '[' -f 2 | cut -d ']' -f 1}% ${else}\
+%{F\#FFffdda5}  %{F-}off ${endif}\
 \
 # Battery
 ${if_match "${acpiacadapter}" == "on-line"}\
-%{F\#FF7B8748}  %{F-}${battery_percent}%% ${else}\
-${if_match ${battery_percent BAT0} >= 40}\
-%{F\#FF7B8748}  %{F-}${battery_percent}%% ${else}\
-%{F\#FFcb4b16}  %{F-}${battery_percent}%% \
+%{F\#FF8ac67f}  %{F-}${battery_percent}%% ${else}\
+${if_match ${battery_percent BAT0} >= 35}\
+%{F\#FF8ac67f}  %{F-}${battery_percent}%% ${else}\
+${if_match ${battery_percent BAT0} == 15}\
+%{F\#FFda4b4a}  %{F-}${battery_percent}%% ${else}\
+${if_match ${battery_percent BAT0} == 5}\
+%{F\#FFda4b4a}  %{F-}${battery_percent}%% ${else}\
+%{F\#FFda4b4a}  %{F-}${battery_percent}%% \
+${endif}\
+${endif}\
 ${endif}\
 ${endif}\
 \
 # Time
-%{F\#FFD17B49}  %{F-}${time %b %d %I%M %p} %{A}\
+%{F\#FFffdda5}  %{F-}${time %b %d %I%M %p}  %{A}\

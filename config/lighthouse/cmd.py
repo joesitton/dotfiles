@@ -157,9 +157,9 @@ special = {
     "gimp": (lambda x: ("gimp", "gimp")),
     "thun": (lambda x: ("thunar", "thunar")),
     "mine": (lambda x: ("minecraft", "minecraft")),
+    "battl": (lambda x: ("battle.net", "wine /home/joe/.wow/Battle.net/World-of-Warcraft-Setup-enUS.exe")),
 
     # System stuff
-    "top": (lambda x: ("top", "urxvt -g 90x6 -e htop")),
     "rebo": (lambda x: ("reboot", "reboot")),
     "shutd": (lambda x: ("shutdown", "shutdown now")),
     "log": (lambda x: ("log out", "pkill -KILL -u joe")),
@@ -188,7 +188,11 @@ while 1:
                   "chromium 'https://duckduckgo.com/?q={}'".format(userInput))
 
     # Run someting
-    append_output("run '{}'".format(userInput), userInput)
+    append_output("execute '{}'".format(userInput), userInput)
+
+    # Run something in a shell
+    append_output("run '{}' in a shell".format(userInput),
+                  "urxvt -e '{}'".format(userInput))
 
     # Scan for keywords
     for keyword in special:

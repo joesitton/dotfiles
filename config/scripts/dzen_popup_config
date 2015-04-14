@@ -2,11 +2,11 @@
 
 source /home/joe/.config/bspwm/panel/panel_config
 
-FONT="-*-Uushi-*-*-*--11-*-*-*-*-*-*-*"
+FONT="-*-Uushi-*-*-*--10-*-*-*-*-*-*-*"
 PAD='  '
 ACT='onstart=uncollapse;button1=exit;button3=exit'
-YPOS='20'
-XPOS='1100'
+YPOS='32'
+XPOS='1108'
 TIME='3'
 
 # Colors
@@ -14,7 +14,7 @@ FG="#$BAR_FG"
 BG="#$BAR_BG"
 
 bar_bg="$BAR_FG"
-bar_fg="#3d9970"
+bar_fg="#$FOCUS_DESK"
 label="#073642"
 highlight="#002b36"
 highlight2="#eee8d5"

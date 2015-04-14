@@ -97,16 +97,16 @@ ctrl + F3
     scrot
 
 F10
-    dzen_volume.sh -i 1
+    volume.sh -i 1
 
 F9
-    dzen_volume.sh -d 1
+    volume.sh -d 1
 
 F8
-    dzen_volume.sh -t
+    volume.sh -t
 
 F7
-    dzen_brightness.sh up
+    brightness.sh up
 
 F6
-    dzen_brightness.sh down
+    brightness.sh down

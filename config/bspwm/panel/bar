@@ -48,5 +48,6 @@ while read -r line ; do
             IFS=$NORMIFS
             ;;
     esac
-    printf "%s\n" " %{F#FF0074D9}%{F-} $wm_infos %{c}${title} %{r}$sys_infos%{B-}"
+    #printf "%s\n" "  %{F#FF0074D9}%{F-}  |$wm_infos %{c}${title} %{r}$sys_infos%{B-}"
+    printf "%s\n" "$wm_infos %{c}${title} %{r}$sys_infos%{B-}"
 done

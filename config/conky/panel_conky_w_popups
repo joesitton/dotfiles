@@ -1,0 +1,38 @@
+background no
+update_interval 0.1
+override_utf8_locale yes
+short_units yes
+pad_percents 2
+top_name_width 9
+uppercase no
+out_to_console yes
+out_to_x no
+
+TEXT
+S\
+# Network
+%{F\#FF2aa198}  %{F-}${wireless_essid wlp1s0} \
+\
+# Volume
+${if_match "${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 8 | cut -d '[' -f 2 | cut -d ']' -f 1}" == "on"}\
+%{F\#FFA7527D}  %{F-}${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 6 | cut -d '[' -f 2 | cut -d ']' -f 1}% ${else}\
+%{F\#FFA7527D}  %{F-}off ${endif}\
+\
+# Battery
+${if_match "${acpiacadapter}" == "on-line"}\
+%{F\#FF7B8748}  %{F-}${battery_percent}%% ${else}\
+${if_match ${battery_percent BAT0} >= 45}\
+%{F\#FF7B8748}  %{F-}${battery_percent}%% ${else}\
+${if_match ${battery_percent BAT0} == 15}\
+${texeci 600 low_battery.sh.sh}\
+%{F\#FFcb4b16}  %{F-}${battery_percent}%% ${else}\
+${if_match ${battery_percent BAT0} == 5}\
+%{F\#FFcb4b16}  %{F-}${battery_percent}%% ${else}\
+%{F\#FFcb4b16}  %{F-}${battery_percent}%% \
+${endif}\
+${endif}\
+${endif}\
+${endif}\
+\
+# Time
+%{F\#FFD17B49}  %{F-}${time %b %d %I%M %p} %{A}\

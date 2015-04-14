@@ -1,12 +1,11 @@
 # bspwm panel config
 
-geometry="1366x16"
+geometry="1347x18+10+5"
 FONTS="-*-stlarch-*-*-*--10-*-*-*-*-*-*-*,-*-Uushi-*-*-*--11-*-*-*-*-*-*-*"
 
 PAD='  '
-LPAD='    '
 
 BAR_BG="262626"
-BAR_FG="cccccc"
+BAR_FG="dddddd"
 
-FOCUS_DESK="3D9970"
+FOCUS_DESK="3d9970"
