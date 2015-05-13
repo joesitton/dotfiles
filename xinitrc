@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Background
-feh --no-fehbg --bg-scale ~/Pictures/Absence.jpg &
+feh --no-fehbg --bg-scale ~/Pictures/trees.jpg &
 
 # Xresources
 xrdb -load ~/.Xresources
@@ -13,7 +13,6 @@ xset m 5/3
 xset r rate 300 40
 
 # Fonts
-xset +fp ~/.fonts
 xset +fp /usr/share/fonts/local
 xset fp rehash
 
@@ -21,10 +20,18 @@ xset fp rehash
 xsetroot -cursor_name left_ptr
 
 # Other
-unclutter -noevents -idle 3 &
+# unclutter -idle 3 &
 compton -b --config ~/.config/compton/compton.conf &
 redshift -l 30:-81 -t 6400:3400 &
-systemctl restart brightness-fix.service
 
+# Volume
+amixer set Master on &
+amixer set Headphone on &
+amixer set Speaker on &
+
+amixer set Headphone 100 &
+amixer set Speaker 100 &
+
+# Start DE/WM
 sxhkd &
 exec bspwm

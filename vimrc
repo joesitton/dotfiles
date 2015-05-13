@@ -1,7 +1,11 @@
+" History
+set history=700
+
 " Pathogen
 filetype off
 execute pathogen#infect()
-filetype plugin indent on
+filetype plugin on
+filetype indent on
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -18,14 +22,13 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 inoremap <expr><TAB>    pumvisible() ? "\<C-n>" : "\<TAB>"
 
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType markdown let b:dispatch = 'octodown --live-reload %'
 
-" Syntax highlighting
-syntax enable
-
-" Color scheme
+" Color scheme and syntax
 let g:solarized_termcolors = 256
 set bg=dark
 colo Tomorrow-Night-Eighties
+syntax on
 
 " Highlight current line
 set cursorline
@@ -64,7 +67,7 @@ set lbr
 set tw=500
 
 " Scrolloff
-set scrolloff=3
+set scrolloff=5
 
 " Tabbing
 set expandtab
@@ -90,7 +93,7 @@ set showmatch
 " Turn off stupid error effects
 set noerrorbells
 set novisualbell
-set t_vb =
+set t_vb=
 set tm=500
 
 " Wrap lines
@@ -99,16 +102,16 @@ set wrap
 " Timeout length
 set timeoutlen=50
 
-" Sudo save the file
+set lazyredraw
+set magic
+
+" Sudo save a file
 command! W w !sudo tee % > /dev/null
 
 " Mappings
 nmap j gj
 nmap k gk
 nnoremap U :redo<CR>
-
-nnoremap d "_d
-vnoremap d "_d
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>

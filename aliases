@@ -1,24 +1,22 @@
 alias s='sudo'
-alias please='s $(fc -ln -1)'
-alias pls='please'
-alias fuck='please'
+alias pls='s $(fc -ln -1)'
 
 alias pac='s pacman'
 alias yao='yaourt'
 
-alias sshx='ssh -X -C'
 alias top='htop'
+alias du='du -h'
+alias ytdl='youtube-dl'
+alias x='extract'
+alias tree='tree -C'
+alias usbkill='s python3 /home/joe/Documents/usbkill.py'
+alias cat='ccat'
+alias srm='shred -f -n 0 -z -u'
 
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-alias wifi-menu='s wifi-menu'
-
-alias von='s shadowvpn -c /etc/shadowvpn/client.conf -s start'
-alias voff='s shadowvpn -c /etc/shadowvpn/client.conf -s stop'
-
-alias ls='ls --color=auto'
-alias la='ls -A'
-alias ll='ls -l'
-alias l='ls -cF'
+alias ls='exa'
+alias la='exa -a'
+alias ll='exa -hl'

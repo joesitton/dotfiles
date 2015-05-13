@@ -1,3 +1,6 @@
+#!/bin/sh
+
+# Swap two files
 swap() {
     local TMPFILE=tmp.$$
     mv "$1" $TMPFILE
@@ -5,12 +8,22 @@ swap() {
     mv $TMPFILE "$2"
 }
 
+# Search man page
+sman() {
+    LESS="+/$2"
+    man $1
+}
+
+# Print a glyph from font
 glyph() { echo -e '\uE'$1; }
 
+# Create a directory and cd into it
 mcd() { mkdir "$1" && cd "$1"; }
 
-javar() { javac "$1" && java $(basename "$1" .java); }
+# Compile a .java and run the .class
+javar() { javac "$1" && java $(basename "$1" .java) && rm *.class; }
 
+# cd into a directory and show files
 cl() {
     if [ $# -eq 1 ]; then
         cd "$1" && ls
@@ -18,6 +31,8 @@ cl() {
         cd "$2" && ls "$1"
     fi
 }
+
+# Autojump (j) into a directory and show files
 jl() {
     if [ $# -eq 1 ]; then
         j "$1" && ls
@@ -26,30 +41,25 @@ jl() {
     fi
 }
 
-psg() { ps -e | grep "$1"; }
-cag() { cat "$1" | grep -i "$2"; }
+# Look for something in cat output
+cag() { highlight -O ansi "$1" | grep -i "$2"; }
 
-x() {
-    if [ -z ${1} ]; then
-        echo "usage: x file.xxx"
-        return
-    fi
-
-    if [ -f $1 ]; then
+# Extract an archive
+extract() {
+    if [ -f $1 ] ; then
         case $1 in
-            *.tar.bz2)  tar zjf $1  ;;
-            *.tar.gz)   tar zxvf $1 ;;
-            *.bz2)      bunzip2 $1  ;;
-            *.rar)      unrar e $1  ;;
-            *.gz)       gunzip $1   ;;
-            *.tar)      tar xf $1   ;;
-            *.tbz2)     tar xjf $1  ;;
-            *.tgz)      tar zxf $1  ;;
-            *.zip)      unzip $1    ;;
-            *.Z)        uncompress $1   ;;
-            *.7z)       7z x $1     ;;
-            *)  echo "'$1' cannot be extracted with extract"
-    ;;
+            *.tar.bz2)   tar xjf $1     ;;
+            *.tar.gz)    tar xzf $1     ;;
+            *.bz2)       bunzip2 $1     ;;
+            *.rar)       unrar e $1     ;;
+            *.gz)        gunzip $1      ;;
+            *.tar)       tar xf $1      ;;
+            *.tbz2)      tar xjf $1     ;;
+            *.tgz)       tar xzf $1     ;;
+            *.zip)       unzip $1       ;;
+            *.Z)         uncompress $1  ;;
+            *.7z)        7z x $1        ;;
+            *)     echo "'$1' cannot be extracted via extract()" ;;
         esac
     else
         echo "'$1' is not a valid file"

@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/joe/.config'
+let g:netrw_dirhist_2='/home/joe/.config/conky'
+let g:netrw_dirhist_3='/etc/netctl/interfaces'
+let g:netrw_dirhist_4='/home/joe/.config/conky'
+let g:netrw_dirhist_5='/etc/systemd/system/getty.target.wants'
+let g:netrw_dirhist_6='/home/joe/.config/conky'
+let g:netrw_dirhist_7='/home/joe/Music'

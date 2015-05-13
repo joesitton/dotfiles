@@ -153,16 +153,29 @@ def get_xdg_cmd(cmd):
 
 special = {
     # Apps
-    "chro": (lambda x: ("chromium", "chromium")),
-    "gimp": (lambda x: ("gimp", "gimp")),
-    "thun": (lambda x: ("thunar", "thunar")),
-    "mine": (lambda x: ("minecraft", "minecraft")),
-    "battl": (lambda x: ("battle.net", "wine /home/joe/.wow/Battle.net/World-of-Warcraft-Setup-enUS.exe")),
+    "chro": (lambda x: ("Google Chrome", "google-chrome-stable")),
+    "gimp": (lambda x: ("Gimp", "gimp")),
+    "thun": (lambda x: ("Thunar", "thunar")),
+    "mine": (lambda x: ("Minecraft", "minecraft")),
+    "vim": (lambda x: ("Vim", "urxvt -e vim")),
+    "vlc": (lambda x: ("VLC", "vlc")),
 
-    # System stuff
-    "rebo": (lambda x: ("reboot", "reboot")),
-    "shutd": (lambda x: ("shutdown", "shutdown now")),
-    "log": (lambda x: ("log out", "pkill -KILL -u joe")),
+    # Websites
+    "netf": (lambda x: ("Netflix", "google-chrome-stable http://netflix.com")),
+    "twit": (lambda x: ("Twitter", "google-chrome-stable http://twitter.com")),
+    "yout": (lambda x: ("YouTube", "google-chrome-stable http://youtube.com")),
+    "redd": (lambda x: ("Reddit", "google-chrome-stable http://reddit.com")),
+    "soun": (lambda x: ("SoundCloud", "google-chrome-stable http://soundcloud.com")),
+    "gith": (lambda x: ("GitHub", "google-chrome-stable http://github.com")),
+
+    "driv": (lambda x: ("Google Drive", "google-chrome-stable http://drive.google.com")),
+    "maps": (lambda x: ("Google Maps", "google-chrome-stable http://maps.google.com")),
+    "gmai": (lambda x: ("GMail", "google-chrome-stable http://mail.google.com")),
+
+    # System
+    "reboo": (lambda x: ("Reboot", "reboot")),
+    "shutd": (lambda x: ("Shutdown", "shutdown now")),
+    "log out": (lambda x: ("Log out", "pkill -KILL -u joe")),
 }
 
 while 1:
@@ -185,14 +198,14 @@ while 1:
 
     # Look something up
     append_output("look up '{}'".format(userInput),
-                  "chromium 'https://duckduckgo.com/?q={}'".format(userInput))
+                  "google-chrome-stable 'https://duckduckgo.com/?q={}'".format(userInput))
 
     # Run someting
     append_output("execute '{}'".format(userInput), userInput)
 
     # Run something in a shell
     append_output("run '{}' in a shell".format(userInput),
-                  "urxvt -e '{}'".format(userInput))
+                  "urxvt -e \"{}\"".format(userInput))
 
     # Scan for keywords
     for keyword in special:
