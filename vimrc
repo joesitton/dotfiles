@@ -1,33 +1,40 @@
-" History
-set history=700
-
-" Pathogen
+" Vundle
+set nocompatible
 filetype off
-execute pathogen#infect()
-filetype plugin on
-filetype indent on
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" Airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'solarized'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Shougo/neocomplcache.vim'
+
+call vundle#end()
+filetype plugin indent on
 
 " Neocomplcache
 let g:acp_enableAtStartup = 0
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_min_syntax_length = 1
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
 inoremap <expr><TAB>    pumvisible() ? "\<C-n>" : "\<TAB>"
 
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType markdown let b:dispatch = 'octodown --live-reload %'
+
+" History
+set history=700
+
+" Airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'bubblegum'
 
 " Color scheme and syntax
-let g:solarized_termcolors = 256
+let g:solarized_termcolors=256
 set bg=dark
-colo Tomorrow-Night-Eighties
+colo eighties
 syntax on
 
 " Highlight current line

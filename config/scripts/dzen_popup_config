@@ -2,11 +2,11 @@
 
 source /home/joe/.config/bspwm/panel/panel_config
 
-FONT="-*-Uushi-*-*-*--10-*-*-*-*-*-*-*"
+FONT="$FN"
 PAD='  '
 ACT='onstart=uncollapse;button1=exit;button3=exit'
-YPOS='32'
-XPOS='1108'
+YPOS='35'
+XPOS='1107'
 TIME='3'
 
 # Colors

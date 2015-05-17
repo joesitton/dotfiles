@@ -11,27 +11,27 @@ out_to_x no
 TEXT
 S\
 # Network
-%{F\#FFffdda5}  %{F-}${wireless_essid wlp1s0} \
+%{F\#FF005cad}  %{F-}${wireless_essid wlp1s0} \
 \
 # Volume
 ${if_match "${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 8 | cut -d '[' -f 2 | cut -d ']' -f 1}" == "on"}\
-%{F\#FFffdda5}  %{F-}${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 6 | cut -d '[' -f 2 | cut -d ']' -f 1}% ${else}\
-%{F\#FFffdda5}  %{F-}off ${endif}\
+%{F\#FF005cad}  %{F-}${exec amixer -M get Master | grep 'Mono:' | cut -d ' ' -f 6 | cut -d '[' -f 2 | cut -d ']' -f 1}% ${else}\
+%{F\#FF005cad}  %{F-}off ${endif}\
 \
 # Battery
 ${if_match "${acpiacadapter}" == "on-line"}\
-%{F\#FF8ac67f}  %{F-}${battery_percent}%% ${else}\
+%{F\#FF005cad}  %{F-}${battery_percent}%% ${else}\
 ${if_match ${battery_percent BAT0} >= 35}\
-%{F\#FF8ac67f}  %{F-}${battery_percent}%% ${else}\
+%{F\#FF005cad}  %{F-}${battery_percent}%% ${else}\
 ${if_match ${battery_percent BAT0} == 15}\
-%{F\#FFda4b4a}  %{F-}${battery_percent}%% ${else}\
+%{F\#FF005cad}  %{F-}${battery_percent}%% ${else}\
 ${if_match ${battery_percent BAT0} == 5}\
-%{F\#FFda4b4a}  %{F-}${battery_percent}%% ${else}\
-%{F\#FFda4b4a}  %{F-}${battery_percent}%% \
+%{F\#FFda4b4a}  %{F-}${battery_percent}%% ${else}\
+%{F\#FFda4b4a}  %{F-}${battery_percent}%% \
 ${endif}\
 ${endif}\
 ${endif}\
 ${endif}\
 \
 # Time
-%{F\#FFffdda5}  %{F-}${time %b %d %I%M %p}  %{A}\
+%{F\#FF005cad}  %{F-}${time %A %b %d %I:%M %p}  %{A}\

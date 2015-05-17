@@ -12,6 +12,7 @@ alias tree='tree -C'
 alias usbkill='s python3 /home/joe/Documents/usbkill.py'
 alias cat='ccat'
 alias srm='shred -f -n 0 -z -u'
+alias rm='rm.py'
 
 alias ..='cd ..'
 alias ...='cd ../..'

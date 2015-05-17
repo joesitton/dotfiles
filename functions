@@ -18,7 +18,7 @@ sman() {
 glyph() { echo -e '\uE'$1; }
 
 # Create a directory and cd into it
-mcd() { mkdir "$1" && cd "$1"; }
+mkcd() { mkdir "$1" && cd "$1"; }
 
 # Compile a .java and run the .class
 javar() { javac "$1" && java $(basename "$1" .java) && rm *.class; }

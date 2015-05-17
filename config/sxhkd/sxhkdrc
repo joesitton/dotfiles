@@ -87,7 +87,7 @@ super + Return
 	urxvt
 
 super + space
-    lighthouse | sh
+    dmenuw
 
 # make sxhkd reload its configuration files:
 super + Escape

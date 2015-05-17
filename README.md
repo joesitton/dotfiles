@@ -3,6 +3,6 @@ dotfiles
 
 Current setup:
 
-![dirty](http://i.imgur.com/DRQSf3o.png)
+![dirty](http://i.imgur.com/zsz6Wo0.png)
 
-![clean](http://i.imgur.com/gaVUBw3.jpg)
+![clean](http://i.imgur.com/e1RN1lh.png)

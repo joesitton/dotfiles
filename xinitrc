@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Background
-feh --no-fehbg --bg-scale ~/Pictures/trees.jpg &
+feh --no-fehbg --bg-scale ~/Pictures/unicube.jpg &
 
 # Xresources
 xrdb -load ~/.Xresources
@@ -20,7 +20,6 @@ xset fp rehash
 xsetroot -cursor_name left_ptr
 
 # Other
-# unclutter -idle 3 &
 compton -b --config ~/.config/compton/compton.conf &
 redshift -l 30:-81 -t 6400:3400 &
 

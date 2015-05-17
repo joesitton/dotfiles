@@ -64,4 +64,4 @@ fi
 
 BAR=$(echo "$PERC" | gdbar -fg "$bar_fg" -bg "#dddddd" -w "$BAR_WIDTH" -h "$BAR_HEIGHT")
 
-(echo "$ICON  $BAR  ^fg(#cccccc)$CURR"; sleep "$SECS"  ) > "$PIPE"
+(echo "$ICON  $BAR  ^fg(#cccccc)$PERC%"; sleep "$SECS"  ) > "$PIPE"
