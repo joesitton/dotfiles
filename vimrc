@@ -8,6 +8,12 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Shougo/neocomplcache.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'vim-perl/vim-perl'
+Plugin 'crusoexia/vim-monokai'
+Plugin 'chriskempson/base16-vim'
+Plugin 'amoffat/snake'
+Plugin 'terryma/vim-multiple-cursors'
 
 call vundle#end()
 filetype plugin indent on
@@ -29,13 +35,13 @@ set history=700
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'bubblegum'
+let g:airline_theme = 'base16'
 
 " Color scheme and syntax
-let g:solarized_termcolors=256
+let base16colorspace=256
 set bg=dark
-colo eighties
-syntax on
+syntax enable
+colo base16-eighties
 
 " Highlight current line
 set cursorline
@@ -106,14 +112,18 @@ set tm=500
 " Wrap lines
 set wrap
 
-" Timeout length
-set timeoutlen=50
-
+" Lazy redraw
 set lazyredraw
+
+" Magic
 set magic
 
 " Sudo save a file
 command! W w !sudo tee % > /dev/null
+
+" Leader key
+let mapleader = ","
+set showcmd
 
 " Mappings
 nmap j gj

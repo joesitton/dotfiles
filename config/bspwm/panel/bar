@@ -1,9 +1,9 @@
 #! /bin/sh
 
+source /home/joe/.config/colors/global.conf
+
 NORMIFS=$IFS
 FIELDIFS=':'
-
-source $(dirname $0)/panel_config
 
 while read -r line ; do
     case $line in
@@ -25,22 +25,22 @@ while read -r line ; do
                         case $item in
                             O*)
                                 # focused occupied desktop
-                                desk="%{F#FF$FOCUS_DESK}■%{F-}"
+                                desk="%{F#FF${MAIN_COLOR#\#}}■%{F-}"
                                 ;;
                             F*)
                                 # focused free desktop
-                                desk="%{F#FF$FOCUS_DESK}■%{F-}"
+                                desk="%{F#FF${MAIN_COLOR#\#}}■%{F-}"
                                 ;;
                             o*)
                                 # occupied desktop
-                                desk="%{F#FF$BAR_FG}■%{F-}"
+                                desk="%{F#FF${BAR_FOREGROUND#\#}}■%{F-}"
                                 ;;
                             f*)
                                 # free desktop
-                                desk="%{F#FF$BAR_FG}□%{F-}"
+                                desk="%{F#FF${BAR_FOREGROUND#\#}}□%{F-}"
                                 ;;
                         esac
-                        wm_infos="${wm_infos}%{A:bspc desktop -f ${name}:}${PAD}${desk}${PAD}%{A}"
+                        wm_infos="${wm_infos}%{A:bspc desktop -f ${name}:}    ${desk}${PAD}%{A}"
                         ;;
                 esac
                 shift
@@ -48,6 +48,5 @@ while read -r line ; do
             IFS=$NORMIFS
             ;;
     esac
-    #printf "%s\n" "  %{F#FF0074D9}%{F-}  |$wm_infos %{c}${title} %{r}$sys_infos%{B-}"
     printf "%s\n" "$wm_infos %{c}${title} %{r}$sys_infos%{B-}"
 done

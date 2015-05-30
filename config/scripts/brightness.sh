@@ -1,67 +1,37 @@
-#!/bin/bash
+#!/bin/sh
 
-source $(dirname $0)/dzen_popup_config
-
-SECS="2"
-XPOS="1000"
-YPOS="30"
-HEIGHT="30"
-WIDTH="250"
-BAR_WIDTH="150"
-BAR_HEIGHT="2"
-ICON='^fg(#cccccc)^i(/home/joe/.icons/brightness.xbm)'
+source /home/joe/.config/scripts/popup.conf
 
 PIPE="/tmp/.brightness_pipe"
 
-err() {
-  echo "$1"
-  exit 1
-}
+ICON="^fg($BAR_FOREGROUND)^i(/home/joe/.icons/brightness.xbm)"
 
-usage() {
-  echo "usage: dvol [option]"
-  echo
-  echo "Options:"
-  echo "     up - increase brightness "
-  echo "     down - decrease brightness"
-  echo "     -h, --help     - display this"
-  exit
-}
-
-#Argument Parsing
-
-CURR=$(< /sys/class/backlight/intel_backlight/brightness)
-MAX=$(< /sys/class/backlight/intel_backlight/max_brightness)
+CURRENT=$(< /home/joe/.config/scripts/brightness)
+MAXIMUM=$(< /home/joe/.config/scripts/max_brightness)
 
 case $1 in
-    up)
-        if [[ $CURR -lt $MAX ]]; then
-            CURR=$((CURR+10))
-            echo $CURR > /sys/class/backlight/intel_backlight/brightness
+    "up")
+        if [[ $CURRENT -lt $MAXIMUM ]]; then
+            CURRENT=$((CURRENT + 10))
+            echo $CURRENT > /home/joe/.config/scripts/brightness
         fi
     ;;
-    down)
-        if [[ $CURR -gt 0 ]]; then
-            CURR=$((CURR-10))
-            echo $CURR > /sys/class/backlight/intel_backlight/brightness
+    "down")
+        if [[ $CURRENT -gt 0 ]]; then
+            CURRENT=$((CURRENT - 10))
+            echo $CURRENT > /home/joe/.config/scripts/brightness
         fi
-    ;;
-    ''|'-h'|'--help')
-        usage
-    ;;
-    *)
-        err "Unrecognized option \`$1', see --help"
     ;;
 esac
 
-PERC=$((CURR*100/MAX))
+PERCENT=$((CURRENT * 100 / MAXIMUM))
 
-if [ ! -e "$PIPE" ]; then
-  mkfifo "$PIPE"
-  (dzen2 -tw "$WIDTH" -h "$HEIGHT" -x "$XPOS" -fn "$FONT" ${OPTIONS} < "$PIPE"
-   rm -f "$PIPE") &
+if [ ! -e $PIPE ]; then
+    mkfifo $PIPE
+    (dzen2 -tw 250 -h 30 -x 1000 -fn $FONT2 ${OPTIONS} < $PIPE
+    rm -f $PIPE) &
 fi
 
-BAR=$(echo "$PERC" | gdbar -fg "$bar_fg" -bg "#dddddd" -w "$BAR_WIDTH" -h "$BAR_HEIGHT")
+BAR=$(echo $PERCENT | gdbar -fg $BAR_COLOR -bg $BAR_FOREGROUND -w 150 -h 2)
 
-(echo "$ICON  $BAR  ^fg(#cccccc)$PERC%"; sleep "$SECS"  ) > "$PIPE"
+(echo "$ICON  $BAR  ^fg($BAR_FOREGROUND)$PERCENT%"; sleep 3 ) > $PIPE

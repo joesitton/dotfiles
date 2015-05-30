@@ -1,72 +1,40 @@
-#!/bin/bash
+#!/bin/sh
 
-source $(dirname $0)/dzen_popup_config
-
-IF="Master"
-SECS="2"
-XPOS="1000"
-HEIGHT="30"
-WIDTH="250"
-BAR_WIDTH="150"
-BAR_HEIGHT="2"
-ICON='^fg(#cccccc)^i(/home/joe/.icons/volume100.xbm)'
-MUTEICON='^fg(#b45a5a)^i(/home/joe/.icons/volume0.xbm)'
+source /home/joe/.config/scripts/popup.conf
 
 PIPE="/tmp/.volume_pipe"
 
-err() {
-  echo "$1"
-  exit 1
-}
+ICON="^fg($BAR_FOREGROUND)^i(/home/joe/.icons/volume100.xbm)"
+ICON2="^fg($BAR_FOREGROUND)^i(/home/joe/.icons/volume0.xbm)"
 
-usage() {
-  echo "usage: dvol [option] [argument]"
-  echo
-  echo "Options:"
-  echo "     -i, --increase - increase volume by \`argument'"
-  echo "     -d, --decrease - decrease volume by \`argument'"
-  echo "     -t, --toggle   - toggle mute on and off"
-  echo "     -h, --help     - display this"
-  exit
-}
-
-case "$1" in
-  '-i'|'--increase')
-    [ -z "$2" ] && err "No argument specified for increase."
-    [ -n "$(tr -d [0-9] <<<$2)" ] && err "The argument needs to be an integer."
-    AMIXARG="${2}%+"
-    ;;
-  '-d'|'--decrease')
-    [ -z "$2" ] && err "No argument specified for decrease."
-    [ -n "$(tr -d [0-9] <<<$2)" ] && err "The argument needs to be an integer."
-    AMIXARG="${2}%-"
-    ;;
-  '-t'|'--toggle')
-    AMIXARG="toggle"
-    ;;
-  ''|'-h'|'--help')
-    usage
-    ;;
-  *)
-    err "Unrecognized option \`$1', see dvol --help"
-    ;;
+case $1 in
+    "-i"|"--increase")
+        VOLUME="$2%+"
+        ;;
+    "-d"|"--decrease")
+        VOLUME="$2%-"
+        ;;
+    "-t"|"--toggle")
+        VOLUME="toggle"
+        ;;
 esac
 
-AMIXOUT="$(amixer -M set "$IF" "$AMIXARG" | tail -n 1)"
-MUTE="$(cut -d '[' -f 4 <<<"$AMIXOUT")"
-if [ "$MUTE" = "off]" ]; then
-  VOL="0"
-  ICON="$MUTEICON"
+AMIXER=$(amixer -M set Master $VOLUME | tail -n 1)
+MUTE=$(cut -d '[' -f 4 <<< $AMIXER)
+
+if [ $MUTE = "off]" ]; then
+    VOLUME=0
+    ICON=$ICON2
 else
-  VOL="$(cut -d '[' -f 2 <<<"$AMIXOUT" | sed 's/%.*//g')"
+    VOLUME=$(cut -d '[' -f 2 <<< $AMIXER | sed "s/%.*//g")
 fi
 
-if [ ! -e "$PIPE" ]; then
-  mkfifo "$PIPE"
-  (dzen2 -tw "$WIDTH" -h "$HEIGHT" -x "$XPOS" -fn "$FONT" ${OPTIONS} < "$PIPE"
-   rm -f "$PIPE") &
+if [ ! -e $PIPE ]; then
+    mkfifo $PIPE
+    (dzen2 -tw 250 -h 30 -x 1000 -fn $FONT2 ${OPTIONS} < $PIPE
+    rm -f $PIPE) &
 fi
 
-BAR=$(echo "$VOL" | gdbar -fg "$bar_fg" -bg "#dddddd" -w "$BAR_WIDTH" -h "$BAR_HEIGHT")
+BAR=$(echo $VOLUME | gdbar -fg $BAR_COLOR -bg $BAR_FOREGROUND -w 150 -h 2)
 
-(echo "$ICON  ^fg(#dddddd)$BAR  ^fg(#cccccc)$VOL%"; sleep "$SECS"  ) > "$PIPE"
+(echo "$ICON  ^fg($BAR_FOREGROUND)$BAR  ^fg($BAR_FOREGROUND)$VOLUME%"; sleep 3 ) > $PIPE

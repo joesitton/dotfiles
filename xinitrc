@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Background
-feh --no-fehbg --bg-scale ~/Pictures/unicube.jpg &
+feh --bg-scale --no-fehbg /home/joe/Pictures/.wallhaven
 
 # Xresources
 xrdb -load ~/.Xresources
