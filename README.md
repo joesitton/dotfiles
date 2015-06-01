@@ -7,4 +7,6 @@ Current setup:
 
 ![dmenu](http://i.imgur.com/uSdzmae.png)
 
+![colors](http://i.imgur.com/5gfekt4.png)
+
 ![clean](http://i.imgur.com/ozyz4ou.png)
