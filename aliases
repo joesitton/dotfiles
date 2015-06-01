@@ -4,6 +4,7 @@ alias pls='s $(fc -ln -1)'
 alias pac='s pacman'
 alias yao='yaourt'
 alias systemctl='s systemctl'
+alias x='extract'
 
 alias ..='cd ..'
 alias ...='cd ../..'

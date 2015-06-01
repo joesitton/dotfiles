@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source /home/joe/.config/colors/global.conf
+source /home/joe/.config/global.conf
 
 bspc config border_width            3
 bspc config top_padding             25
