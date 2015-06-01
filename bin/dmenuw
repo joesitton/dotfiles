@@ -1,0 +1,30 @@
+#!/bin/sh
+
+source /home/joe/.config/global.conf
+
+P='>>'
+FN=$FONT2
+DIM=0.3
+
+NB=$BAR_BACKGROUND
+NF=$BAR_FOREGROUND
+SB=$MAIN_COLOR
+SF=$BAR_BACKGROUND
+
+X=535
+Y=250
+W=300
+H=20
+L=5
+
+dmenu_run \
+    -i -r -l $L \
+    -p "$P" \
+    -x $X -y $Y \
+    -w $W -h $H \
+    -fn $FN \
+    -dim $DIM \
+    -nb $NB \
+    -nf $NF \
+    -sb $SB \
+    -sf $SF
