@@ -8,6 +8,9 @@ super + alt + Escape
 super + w
 	bspc window -c
 
+super + shift + w
+    bspc window -k
+
 super + t
 	bspc desktop -l next
 

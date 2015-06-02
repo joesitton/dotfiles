@@ -15,7 +15,7 @@ conky -c ~/.config/conky/panel_conky > $PANEL_FIFO &
 ~/.config/bspwm/panel/bar < $PANEL_FIFO \
      | bar -p \
            -g $BAR_GEOMETRY \
-           -f $FONT1,$FONT2,$FONT3 \
+           -f $FONT1,$FONT2 \
            -B "#FF${BAR_BACKGROUND#\#}" \
            -F "#FF${BAR_FOREGROUND#\#}" \
            | while read line; do eval "$line"; done &

@@ -25,22 +25,22 @@ while read -r line ; do
                         case $item in
                             O*)
                                 # focused occupied desktop
-                                desk="%{F#FF${MAIN_COLOR#\#}}■%{F-}"
+                                desk="%{F#FF${MAIN_COLOR#\#}}%{F-}"
                                 ;;
                             F*)
                                 # focused free desktop
-                                desk="%{F#FF${MAIN_COLOR#\#}}■%{F-}"
+                                desk="%{F#FF${MAIN_COLOR#\#}}%{F-}"
                                 ;;
                             o*)
                                 # occupied desktop
-                                desk="%{F#FF${BAR_FOREGROUND#\#}}■%{F-}"
+                                desk="%{F#FF${BAR_FOREGROUND#\#}}%{F-}"
                                 ;;
                             f*)
                                 # free desktop
-                                desk="%{F#FF${BAR_FOREGROUND#\#}}□%{F-}"
+                                desk="%{F#FF${BAR_FOREGROUND#\#}}%{F-}"
                                 ;;
                         esac
-                        wm_infos="${wm_infos}%{A:bspc desktop -f ${name}:}   ${desk} %{A}"
+                        wm_infos="${wm_infos}%{A:bspc desktop -f ${name}:}  ${desk} %{A}"
                         ;;
                 esac
                 shift
