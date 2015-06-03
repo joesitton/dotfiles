@@ -3,10 +3,8 @@ dotfiles
 
 Current setup:
 
-![dirty](http://i.imgur.com/99N9n9L.png)
+![clean](http://i.imgur.com/3m7v3AQ.jpg)
 
-![dmenu](http://i.imgur.com/uSdzmae.png)
+![dirty](http://i.imgur.com/FFt37vy.png)
 
-![colors](http://i.imgur.com/5gfekt4.png)
-
-![clean](http://i.imgur.com/ozyz4ou.png)
+![dmenu](http://i.imgur.com/iRW8fUy.png)
