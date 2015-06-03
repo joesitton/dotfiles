@@ -1,0 +1,21 @@
+#include "/home/joe/.config/base16-xresources/base16-eighties.dark.256.xresources"
+
+Xcursor.theme:              Neutral
+
+URxvt*cursorUnderline:      1
+URxvt*letterspace:          -5
+URxvt*cursorBlink:          true
+URxvt*scrollBar:            false
+URxvt*depth:                32
+URxvt*internalBorder:       0
+URxvt*dynamicColors:        on
+URxvt*geometry:             90x27
+
+URxvt.font:                 xft:Meslo LG S for Powerline:pixelsize=11
+Xft*dpi:                    96
+Xft*antialias:              true
+Xft*hinting:                full
+
+URxvt.perl-ext-common:      default,matcher
+URxvt.url-launcher:         /usr/bin/google-chrome-stable
+URxvt.matcher.button:       1
