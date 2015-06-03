@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 source /home/joe/.config/global.conf
 
@@ -11,7 +11,7 @@ while read -r line ; do
             sys_infos="${line#?}"
             ;;
         T*)
-            title=$(echo ${line#?} | sed 's^\(.\{80\}\).*^\1...^')
+            title=$(xtitle)
             ;;
         W*)
             wm_infos=""
@@ -48,6 +48,6 @@ while read -r line ; do
             IFS=$NORMIFS
             ;;
     esac
-    #printf "%s\n" " %{F#FF0074d9}%{F-}$wm_infos %{c}${title} %{r}$sys_infos%{B-}"
-    printf "%s\n" " %{F#FF0074d9}%{F-}  $title %{c}$wm_infos  %{r}$sys_infos%{B-}"
+    #printf "%s\n" " %{F#FF${MAIN_COLOR#\#}%{F-}$wm_infos %{c}${title} %{r}$sys_infos%{B-}"
+    printf "%s\n" " %{F#FF${MAIN_COLOR#\#}}%{F-}  $title %{c} $wm_infos  %{r} $sys_infos"
 done

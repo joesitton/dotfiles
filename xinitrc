@@ -1,7 +1,13 @@
 #!/bin/sh
 
+# Base16 colors
+source /home/joe/.config/global.conf
+
+sed -i "s/$COLORSCHEME_OLD/$COLORSCHEME/g" ~/.Xresources ~/.vimrc ~/.zshrc ~/.config/global.conf &
+sed -i "s/$CONKY_COLOR/${MAIN_COLOR#\#}/g" ~/.config/conky/panel_conky &
+
 # Background
-feh --bg-scale --no-fehbg /home/joe/Pictures/.wallhaven
+feh --bg-scale --no-fehbg /home/joe/Pictures/mounttri.png
 
 # Xresources
 xrdb -load ~/.Xresources

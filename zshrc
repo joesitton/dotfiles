@@ -5,15 +5,6 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="gallifrey"
 
 # Base16 colors
-COLORSCHEME="base16-eighties"
-COLORSCHEME_OLD="$(cat ~/.Xresources | grep base16 | cut -d "/" -f 6 | sed "s/\.dark\.256\.xresources\"//g")"
-CONKY_COLOR="$(cat ~/.config/conky/panel_conky | grep Color | cut -d "=" -f 2)"
-
-source ~/.config/global.conf
-
-sed -i "s/$COLORSCHEME_OLD/$COLORSCHEME/g" ~/.Xresources ~/.vimrc ~/.zshrc
-sed -i "s/$CONKY_COLOR/${MAIN_COLOR#\#}/g" ~/.config/conky/panel_conky
-
 BASE16_SHELL="$HOME/.config/base16-shell/base16-eighties.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 

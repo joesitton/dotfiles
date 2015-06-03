@@ -20,4 +20,3 @@ conky -c ~/.config/conky/panel_conky > $PANEL_FIFO &
            -F "#FF${BAR_FOREGROUND#\#}" \
            | while read line; do eval "$line"; done &
 wait
-

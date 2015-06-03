@@ -13,7 +13,7 @@ bspc config borderless_monocle      true
 bspc config gapless_monocle         true
 bspc config focus_follows_pointer   true
 bspc config focused_border_color    $MAIN_COLOR
-bspc config unfocused_border_color  $UNFOCUSED
+bspc config normal_border_color     $UNFOCUSED
 
 bspc monitor -d 1 2 3 4 5 6
 
@@ -24,5 +24,6 @@ bspc rule -a thunar floating=on
 bspc rule -a feh floating=on
 bspc rule -a xv floating=on
 bspc rule -a vlc floating=on
+bspc rule -a gbdfed floating=on
 
 ~/.config/bspwm/panel/panel &
