@@ -3,11 +3,11 @@
 Xcursor.theme:              Neutral
 
 URxvt*cursorUnderline:      1
-URxvt*letterspace:          -5
+URxvt*letterspace:          -1
 URxvt*cursorBlink:          true
 URxvt*scrollBar:            false
 URxvt*depth:                32
-URxvt*internalBorder:       0
+URxvt*internalBorder:       2
 URxvt*dynamicColors:        on
 URxvt*geometry:             90x27
 

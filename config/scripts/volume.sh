@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source /home/joe/.config/scripts/popup.conf
+source /home/joe/.config/global.conf
 
 PIPE="/tmp/.volume_pipe"
 
@@ -20,21 +20,21 @@ case $1 in
 esac
 
 AMIXER=$(amixer -M set Master $VOLUME | tail -n 1)
-MUTE=$(cut -d '[' -f 4 <<< $AMIXER)
+MUTE=$(volume | cut -d " " -f 1)
 
-if [ $MUTE = "off]" ]; then
+if [ $MUTE = "off" ]; then
     VOLUME=0
     ICON=$ICON2
 else
-    VOLUME=$(cut -d '[' -f 2 <<< $AMIXER | sed "s/%.*//g")
+    VOLUME=$(volume | cut -d " " -f 2)
 fi
 
 if [ ! -e $PIPE ]; then
     mkfifo $PIPE
-    (dzen2 -tw 250 -h 30 -x 1000 -fn $FONT2 ${OPTIONS} < $PIPE
+    (dzen2 -tw 250 -h 30 -x 1000 -fn $FONT2 $OPTIONS < $PIPE
     rm -f $PIPE) &
 fi
 
 BAR=$(echo $VOLUME | gdbar -fg $BAR_COLOR -bg $BAR_FOREGROUND -w 150 -h 2)
 
-(echo "$ICON  ^fg($BAR_FOREGROUND)$BAR  ^fg($BAR_FOREGROUND)$VOLUME%"; sleep 3 ) > $PIPE
+(echo "$ICON  ^fg($BAR_FOREGROUND)$BAR  ^fg($BAR_FOREGROUND)$VOLUME%"; sleep 2 ) > $PIPE

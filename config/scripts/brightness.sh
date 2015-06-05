@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source /home/joe/.config/scripts/popup.conf
+source /home/joe/.config/global.conf
 
 PIPE="/tmp/.brightness_pipe"
 
@@ -28,7 +28,7 @@ PERCENT=$((CURRENT * 100 / MAXIMUM))
 
 if [ ! -e $PIPE ]; then
     mkfifo $PIPE
-    (dzen2 -tw 250 -h 30 -x 1000 -fn $FONT2 ${OPTIONS} < $PIPE
+    (dzen2 -tw 250 -h 30 -x 1000 -fn $FONT2 $OPTIONS < $PIPE
     rm -f $PIPE) &
 fi
 
