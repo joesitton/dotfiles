@@ -1,10 +1,10 @@
 #!/bin/sh
 
-source /home/joe/.config/global.conf
+source ~/.config/scripts/popup.conf
 
 PIPE="/tmp/.brightness_pipe"
 
-ICON="^fg($BAR_FOREGROUND)^i(/home/joe/.icons/brightness.xbm)"
+ICON="^fg(#$POP_FOREGROUND)^i(/home/joe/.icons/brightness.xbm)"
 
 CURRENT=$(< /home/joe/.config/scripts/brightness)
 MAXIMUM=$(< /home/joe/.config/scripts/max_brightness)
@@ -28,10 +28,10 @@ PERCENT=$((CURRENT * 100 / MAXIMUM))
 
 if [ ! -e $PIPE ]; then
     mkfifo $PIPE
-    (dzen2 -tw 250 -h 30 -x 1000 -fn $FONT2 $OPTIONS < $PIPE
+    (dzen2 -tw 250 -h 30 -x 1000 -fn $FONT2 -x $POP_X -y $POP_Y < $PIPE
     rm -f $PIPE) &
 fi
 
-BAR=$(echo $PERCENT | gdbar -fg $BAR_COLOR -bg $BAR_FOREGROUND -w 150 -h 2)
+BAR=$(echo $PERCENT | gdbar -fg "#$POP_BAR_COLOR" -bg "#$POP_FOREGROUND" -w 150 -h 2)
 
-(echo "$ICON  $BAR  ^fg($BAR_FOREGROUND)$PERCENT%"; sleep 3 ) > $PIPE
+(echo "$ICON  $BAR  ^fg(#$POP_FOREGROUND)$PERCENT%"; sleep 3 ) > $PIPE

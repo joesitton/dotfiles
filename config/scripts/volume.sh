@@ -1,11 +1,11 @@
 #!/bin/sh
 
-source /home/joe/.config/global.conf
+source ~/.config/scripts/popup.conf
 
 PIPE="/tmp/.volume_pipe"
 
-ICON="^fg($BAR_FOREGROUND)^i(/home/joe/.icons/volume100.xbm)"
-ICON2="^fg($BAR_FOREGROUND)^i(/home/joe/.icons/volume0.xbm)"
+ICON="^fg(#$POP_FOREGROUND)^i(/home/joe/.icons/volume100.xbm)"
+ICON2="^fg(#$POP_FOREGROUND)^i(/home/joe/.icons/volume0.xbm)"
 
 case $1 in
     "-i"|"--increase")
@@ -20,21 +20,21 @@ case $1 in
 esac
 
 AMIXER=$(amixer -M set Master $VOLUME | tail -n 1)
-MUTE=$(volume | cut -d " " -f 1)
+MUTE=$(amixer get Master | grep Mono: | cut -d " " -f 8 | tr -d "[]")
 
 if [ $MUTE = "off" ]; then
     VOLUME=0
     ICON=$ICON2
 else
-    VOLUME=$(volume | cut -d " " -f 2)
+    VOLUME=$(amixer get Master | grep Mono: | cut -d " " -f 6 | tr -d "[]%")
 fi
 
 if [ ! -e $PIPE ]; then
     mkfifo $PIPE
-    (dzen2 -tw 250 -h 30 -x 1000 -fn $FONT2 $OPTIONS < $PIPE
+    (dzen2 -tw 250 -h 30 -x 1000 -fn $FONT2 -x $POP_X -y $POP_Y < $PIPE
     rm -f $PIPE) &
 fi
 
-BAR=$(echo $VOLUME | gdbar -fg $BAR_COLOR -bg $BAR_FOREGROUND -w 150 -h 2)
+BAR=$(echo $VOLUME | gdbar -fg "#$POP_BAR_COLOR" -bg "#$POP_FOREGROUND" -w 150 -h 2)
 
-(echo "$ICON  ^fg($BAR_FOREGROUND)$BAR  ^fg($BAR_FOREGROUND)$VOLUME%"; sleep 2 ) > $PIPE
+(echo "$ICON  ^fg(#$POP_FOREGROUND)$BAR  ^fg(#$POP_FOREGROUND)$VOLUME%"; sleep 2 ) > $PIPE

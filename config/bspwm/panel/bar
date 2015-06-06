@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source /home/joe/.config/global.conf
+source ~/.config/global.conf
 
 NORMIFS=$IFS
 FIELDIFS=':'
@@ -11,7 +11,7 @@ while read -r line ; do
             sys_infos="${line#?}"
             ;;
         T*)
-            title=$(xtitle)
+            title=$(xtitle -f "%.80s")
             ;;
         W*)
             wm_infos=""
@@ -25,19 +25,19 @@ while read -r line ; do
                         case $item in
                             O*)
                                 # focused occupied desktop
-                                desk="%{F#FF${MAIN_COLOR#\#}}%{F-}"
+                                desk="%{F#FF$MAIN_COLOR}%{F-}"
                                 ;;
                             F*)
                                 # focused free desktop
-                                desk="%{F#FF${MAIN_COLOR#\#}}%{F-}"
+                                desk="%{F#FF$MAIN_COLOR}%{F-}"
                                 ;;
                             o*)
                                 # occupied desktop
-                                desk="%{F#FF${BAR_FOREGROUND#\#}}%{F-}"
+                                desk="%{F#FF$BAR_FOREGROUND}%{F-}"
                                 ;;
                             f*)
                                 # free desktop
-                                desk="%{F#FF${BAR_FOREGROUND#\#}}%{F-}"
+                                desk="%{F#FF$BAR_FOREGROUND}%{F-}"
                                 ;;
                         esac
                         wm_infos="$wm_infos %{A:bspc desktop -f $name:} $desk %{A}"
@@ -48,6 +48,5 @@ while read -r line ; do
             IFS=$NORMIFS
             ;;
     esac
-    #printf "%s\n" " %{F#FF${MAIN_COLOR#\#}%{F-}$wm_infos %{c}${title} %{r}$sys_infos%{B-}"
-    printf "%s\n" " %{F#FF${MAIN_COLOR#\#}}%{F-}  $title %{c} $wm_infos  %{r} $sys_infos"
+    printf "%s\n" " %{F#FF$MAIN_COLOR}%{F-}  $title %{c} $wm_infos  %{r} $sys_infos"
 done

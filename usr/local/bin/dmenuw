@@ -1,6 +1,14 @@
 #!/bin/sh
 
-source /home/joe/.config/global.conf
+source ~/.config/global.conf
+
+PROMPT=">>"
+DIM=0.35
+X=540
+Y=250
+W=300
+H=20
+L=10
 
 dmenu_run \
     -i -r -l $L \
@@ -9,7 +17,7 @@ dmenu_run \
     -w $W -h $H \
     -fn $FONT2 \
     -dim $DIM \
-    -nb $BAR_BACKGROUND \
-    -nf $BAR_FOREGROUND \
-    -sb $MAIN_COLOR \
-    -sf $BAR_FOREGROUND \
+    -nb "#$BAR_BACKGROUND" \
+    -nf "#$BAR_FOREGROUND" \
+    -sb "#$MAIN_COLOR" \
+    -sf "#$BAR_BACKGROUND" \
