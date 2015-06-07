@@ -1,17 +1,17 @@
 #!/bin/sh
 
-# Set theme
-
+# Update theme
 THEME="tomorrow"
-THEME_OLD="tomorrow"
 
-sed -i "s/$THEME_OLD/$THEME/g" ~/.zshrc ~/.Xresources ~/.xinitrc &
-
-# Background
-feh --bg-scale --no-fehbg /home/joe/Pictures/mounttri.png
+CURRENT_THEME="tomorrow"
+sed -i "s/$CURRENT_THEME/$THEME/g" ~/.{Xresources,zshrc,xinitrc}
 
 # Xresources
 xrdb -load ~/.Xresources
+update_theme.sh &
+
+# Background
+feh --bg-scale --no-fehbg /home/joe/Pictures/mounttri.png
 
 # Trackpad/mouse speed
 xset m 5/3
@@ -25,6 +25,9 @@ xset fp rehash
 
 # Cursor
 xsetroot -cursor_name left_ptr
+
+# Kill bspwm sockets
+rm /tmp/$(ls /tmp | grep bspwm)
 
 # Other
 compton -b --config ~/.config/compton/compton.conf &
