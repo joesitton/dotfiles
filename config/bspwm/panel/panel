@@ -10,9 +10,10 @@ mkfifo $PANEL_FIFO
 bspc control --subscribe > $PANEL_FIFO &
 
 xtitle -sf 'T%s' > $PANEL_FIFO &
-conky -c ~/.config/conky/panel_conky > $PANEL_FIFO &
+#conky -c ~/.config/conky/panel_conky > $PANEL_FIFO &
+~/.config/bspwm/panel/panel_stats > $PANEL_FIFO &
 
-~/.config/bspwm/panel/bar < $PANEL_FIFO \
+~/.config/bspwm/panel/panel_bar < $PANEL_FIFO \
      | bar -p \
            -g $BAR_GEOMETRY \
            -f $FONT1,$FONT2 \
