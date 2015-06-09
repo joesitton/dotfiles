@@ -3,8 +3,16 @@
 source ~/.config/global.conf
 
 ESSID() {
-    ICON="%{F#FF$MAIN_COLOR}%{F-}"
     ESSID=$(iwconfig wlp1s0 | grep ESSID | cut -d ":" -f 2 | tr -d "\"")
+
+    if [[ $(ps -e | grep shadow) ]]; then
+        ICON="%{F#FF$GREEN}%{F-}"
+    elif [ $ESSID = "off/any" ]; then
+        ICON="%{F#FF$MAIN_COLOR}%{F-}"
+        ESSID="None"
+    else
+        ICON="%{F#FF$MAIN_COLOR}%{F-}"
+    fi
 
     echo $ICON $ESSID
 }
@@ -14,9 +22,13 @@ Volume() {
     VOLUME=$(volume status | cut -d " " -f 2)%%
 
     if [[ $STATUS == "on" ]]; then
-        ICON="%{F#FF$MAIN_COLOR}%{F-}"
+        if [[ $VOLUME > 40 ]]; then
+            ICON="%{F#FF$MAIN_COLOR}%{F-}"
+        else
+            ICON="%{F#FF$MAIN_COLOR}%{F-}"
+        fi
     else
-        ICON="%{F#FF$RED}%{F-}"
+        ICON="%{F#FF$RED}%{F-}"
     fi
 
     echo $ICON $VOLUME
@@ -27,14 +39,14 @@ Battery() {
     PERCENT=$(acpi | cut -d " " -f 4 | tr -d "%,")%%
 
     if [[ $STATUS == "Charging" || $STATUS == "Full" ]]; then
-        ICON="%{F#FF$GREEN}%{F-}"
+        ICON="%{F#FF$GREEN}%{F-}"
     else
         if [[ $PERCENT > 69 ]]; then
-            ICON="%{F#FF$MAIN_COLOR}%{F-}"
-        elif [[ $PERCENT < 70  && $PERCENT > 40 ]]; then
-            ICON="%{F#FF$MAIN_COLOR}%{F-}"
+            ICON="%{F#FF$MAIN_COLOR}%{F-}"
+        elif [[ $PERCENT < 70  && $PERCENT > 30 ]]; then
+            ICON="%{F#FF$MAIN_COLOR}%{F-}"
         else
-            ICON="%{F#FF$RED}%{F-}"
+            ICON="%{F#FF$RED}%{F-}"
         fi
     fi
 
@@ -42,33 +54,35 @@ Battery() {
 }
 
 Time() {
-    ICON="%{F#FF$MAIN_COLOR}%{F-}"
-    DATE=$(date +"%A %b %d %-I:%M %p")
+    ICON="%{F#FF$BLACK}%{F-}"
+    DATE="%{F#FF$BLACK}$(date +"%a %-I:%M %p")%{F-}"
 
-    echo $ICON $DATE
+    echo "%{B#FF$MAIN_COLOR} $ICON $DATE %{B-}"
 }
 
 Pacman() {
     ICON="%{F#FF$YELLOW}%{F-}"
-    UPDATES=$(pacman -Qu | wc -l)
+    UPDATES=$(pacman -Qqu | wc -l)
 
-    if [[ $UPDATES > 0 ]]; then
+    if [[ $UPDATES == 1 ]]; then
+        echo $ICON $UPDATES update
+    elif [[ $UPDATES > 1 ]]; then
         echo $ICON $UPDATES updates
     fi
 }
 
-Weather() {
-    if [[ $LOCATION == "" ]]; then
-        return
+Temp() {
+    TEMP=$(acpi -t -f | cut -d " " -f 4)
+    ICON="%{F#FF$RED}%{F-}"
+
+    if [[ $TEMP > 130 ]]; then
+        echo "  $ICON $TEMP"
+    else
+        exit
     fi
-
-    ICON="%{F#FF$MAIN_COLOR}%{F-}"
-    WEATHER=$(weather "$LOCATION" --iconify)
-
-    echo $ICON $WEATHER\
 }
 
 while :; do
-    echo "S $(Pacman)  $(Weather)  $(ESSID)  $(Volume)  $(Battery)  $(Time) %{B}"
+    echo "S  $(Pacman)$(Temp)  $(ESSID)  $(Volume)  $(Battery)  $(Time)%{A}"
     sleep 1
 done

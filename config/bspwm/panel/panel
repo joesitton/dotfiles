@@ -10,13 +10,13 @@ mkfifo $PANEL_FIFO
 bspc control --subscribe > $PANEL_FIFO &
 
 xtitle -sf 'T%s' > $PANEL_FIFO &
-#conky -c ~/.config/conky/panel_conky > $PANEL_FIFO &
 ~/.config/bspwm/panel/panel_stats > $PANEL_FIFO &
 
 ~/.config/bspwm/panel/panel_bar < $PANEL_FIFO \
-     | bar -p \
+     | lemonbar -p \
            -g $BAR_GEOMETRY \
-           -f $FONT1,$FONT2 \
+           -f $FONT1 \
+           -f $FONT2 \
            -B "#FF$BAR_BACKGROUND" \
            -F "#FF$BAR_FOREGROUND" \
            | while read line; do eval "$line"; done &
