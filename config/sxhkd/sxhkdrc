@@ -1,109 +1,44 @@
 # bspwm hotkeys
 
 super + alt + Escape
-	pkill -x panel; bspc quit
+    pkill -x yabar; bspc quit
 
 super + w
-	bspc window -c
+    bspc node -c
 
-super + shift + w
-    bspc window -k
-
-super + t
-	bspc desktop -l next
-
-super + d
-    bspc window -t pseudo_tiled
-
-super + b
-	bspc desktop -B
-
-super + {s,f}
-	bspc window -t {floating,fullscreen}
-
-super + {grave,Tab}
-	bspc {window,desktop} -f last
-
-super + apostrophe
-	bspc window -s last
-
-super + {o,i}
-	bspc control --record-history off; \
-	bspc window {older,newer} -f; \
-	bspc control --record-history on
-
-super + y
-	bspc window -w last.manual
+super + {s,t,f}
+    bspc node -t {floating,tiled,fullscreen}
 
 super + m
-	bspc window -s biggest
-
-super + {_,shift + }{h,j,k,l}
-	bspc window -{f,s} {left,down,up,right}
+    bspc node -s biggest
 
 super + {_,shift + }c
-	bspc window -f {next,prev}
-
-super + {comma,period}
-	bspc desktop -C {backward,forward}
+    bspc node -f {next,prev}
 
 super + bracket{left,right}
-	bspc desktop -f {prev,next}
+    bspc desktop -f {prev,next}
 
-super + ctrl + {h,j,k,l}
-	bspc window -p {left,down,up,right}
+super + {h,j,k,l}
+    bspc node -f {west,south,north,east}
 
-super + ctrl + {_,shift + }space
-	bspc {window -p cancel,desktop -c}
-
-super + alt + {h,j,k,l}
-	bspc window -e {left -10,down +10,up -10,right +10}
-
-super + alt + shift + {h,j,k,l}
-	bspc window -e {right -10,up +10,down -10,left +10}
-
-super + ctrl + {1-9}
-	bspc window -r 0.{1-9}
-
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,window -d} ^{1-9,10}
+super + shift + {1-5};
+    bspc node -d {1-5};
 
 ~button1
-	bspc pointer -g focus
-
-super + button{1-3}
-	bspc pointer -g {move,resize_side,resize_corner}
-
-super + !button{1-3}
-	bspc pointer -t %i %i
-
-super + @button{1-3}
-	bspc pointer -u
+    bspc node pointed -f
 
 # make sxhkd reload its configuration files
 
-super + Escape
-	pkill -USR1 -x sxhkd
+super + alt + r
+    pkill -USR1 -x sxhkd
 
 # other
 
 super + Return
-	urxvt
+    urxvt
 
 super + space
-    dmenuw
+    rofi -font "Roboto 11" -show run
 
-F10
-    volume.sh -i 1
-
-F9
-    volume.sh -d 1
-
-F8
-    volume.sh -t
-
-F7
-    brightness.sh up
-
-F6
-    brightness.sh down
+alt + Tab
+    rofi -font "Roboto 11" -show window

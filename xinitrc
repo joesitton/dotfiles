@@ -1,46 +1,16 @@
 #!/bin/sh
 
-# Update theme
-THEME="tomorrow"
+feh --bg-scale --no-fehbg ~/Pictures/bgkmvdJ.jpg &
 
-CURRENT_THEME="tomorrow"
-sed -i "s/$CURRENT_THEME/$THEME/g" ~/.{Xresources,zshrc,xinitrc}
+xrandr --rate 144 &
+xcalib -d :0 /usr/share/color/icm/AOC\ G2460PF.icm &
+xrdb -load ~/.Xresources &
+xsetroot -cursor_name left_ptr &
+xset m 0 0 &
+xset r rate 300 40 &
+xmodmap ~/.Xmodmap &
 
-# Xresources
-xrdb -load ~/.Xresources
-update_theme.sh &
+compton --config ~/.config/compton/compton.conf &
 
-# Background
-feh --bg-scale --no-fehbg /home/joe/Pictures/mounttri.png
-
-# Trackpad/mouse speed
-xset m 5/3
-
-# Keyboard repeat rate
-xset r rate 300 40
-
-# Fonts
-xset +fp /usr/share/fonts/local
-xset fp rehash
-
-# Cursor
-xsetroot -cursor_name left_ptr
-
-# Kill bspwm sockets
-rm /tmp/$(ls /tmp | grep bspwm)
-
-# Other
-compton -b --config ~/.config/compton/compton.conf &
-redshift -l 30:-81 -t 6400:3400 &
-
-# Volume
-amixer set Master on &
-amixer set Headphone on &
-amixer set Speaker on &
-
-amixer set Headphone 100 &
-amixer set Speaker 100 &
-
-# Start DE/WM
 sxhkd &
 exec bspwm

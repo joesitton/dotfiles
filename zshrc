@@ -1,39 +1,14 @@
-# Path to omz
-export ZSH=$HOME/.oh-my-zsh
+# Oh my Zsh
+export ZSH=/home/joe/.oh-my-zsh
+ZSH_THEME="glister"
 
-# Prompt theme
-ZSH_THEME="gallifrey"
-
-# Base16 colors
-BASE16_SHELL="$HOME/.config/base16-shell/base16-eighties.dark.sh"
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16/shell/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
-# 256 color support
-export TERM=xterm-256color
+plugins=(extract)
 
-# Plugins
-plugins=()
-
-# Compinit
-autoload -U compinit && compinit
-
-# Set PATH
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/core_perl/:/home/joe/.config/scripts/"
-
-# Source files
-source $ZSH/oh-my-zsh.sh
-source /usr/share/autojump/autojump.zsh
-source ~/.aliases
-source ~/.functions
-
-# Set grep color to yellow
-export GREP_COLOR='1;33'
-
-# UTF-8
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-# Some options
+# Options
 setopt CORRECT
 setopt HIST_REDUCE_BLANKS
 setopt AUTO_CD
@@ -43,16 +18,28 @@ setopt NO_BEEP
 setopt NO_CASE_GLOB
 setopt EXTENDED_GLOB
 
-# Editor
-export EDITOR=vim
+source $ZSH/oh-my-zsh.sh
 
-# Less / colored man pages
-export LESS="-F X -R -P ?f%f .?n?m(file %i of %m) ..?ltlines %lt-%lb?L/%L. :
-            byte %bB?s/%s. .?e(END) ?x- Next\: %x.:?pB%pB\%..%t"
+# Colors for Man Pages
+export LESS_TERMCAP_mb=$'\e[01;31m'       # begin blinking
+export LESS_TERMCAP_md=$'\e[01;38;5;74m'  # begin bold
+export LESS_TERMCAP_me=$'\e[0m'           # end mode
+export LESS_TERMCAP_se=$'\e[0m'           # end standout-mode
+export LESS_TERMCAP_so=$'\e[38;5;246m'    # begin standout-mode - info box
+export LESS_TERMCAP_ue=$'\e[0m'           # end underline
+export LESS_TERMCAP_us=$'\e[04;38;5;146m' # begin underline
 
-export LESS_TERMCAP_ti=$'\e[01;37m'         # white
-export LESS_TERMCAP_mb=$'\e[38;5;117m'      # light blue
-export LESS_TERMCAP_md=$'\e[38;5;117m'      # light blue
-export LESS_TERMCAP_me=$'\e[0m'             # color reset
-export LESS_TERMCAP_us=$'\e[01;33m'         # yellow
-export LESS_TERMCAP_ue=$'\e[0m'             # color reset
+# Aliases
+alias s='sudo'
+alias pls='s $(fc -ln -1)'
+
+alias x='extract'
+
+alias pac='s pacman'
+alias yao='yaourt'
+
+alias ls='exa'
+alias la='ls -a'
+alias ll='ls -lh'
+
+source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
