@@ -1,44 +1,57 @@
-# bspwm hotkeys
+# terminal
+super + Return
+    termite
 
+# program launcher
+super + space
+    rofi -show run
+
+# reload sxhkd
+super + Escape
+    pkill -USR1 -x sxhkd
+
+# quit bspwm
 super + alt + Escape
-    pkill -x yabar; bspc quit
+    bspc quit
 
-super + w
-    bspc node -c
+# close and kill
+super + {_, shift + }w
+    bspc node -{c,k}
 
-super + {s,t,f}
-    bspc node -t {floating,tiled,fullscreen}
-
+# tiled and monocle
 super + m
-    bspc node -s biggest
+    bspc desktop -l next
 
-super + {_,shift + }c
-    bspc node -f {next,prev}
+# swap current and biggest
+super + g
+    bspc node -s biggest.local
 
+# window state
+super + {s,t,d,f}
+    bspc node -t {floating,tiled,pseudo_tiled,fullscreen}
+
+# change desktop
 super + bracket{left,right}
     bspc desktop -f {prev,next}
 
+# change window focus
 super + {h,j,k,l}
     bspc node -f {west,south,north,east}
 
-super + shift + {1-5};
-    bspc node -d {1-5};
+# node flags
+super + alt + {1,2,3}
+    bspc node -g {locked, sticky, private}
 
-~button1
-    bspc node pointed -f
+# focus next node in current desktop
+super + {_,shift +}c
+    bspc node -f {next,prev}.local
 
-# make sxhkd reload its configuration files
+# window resizing
+super + button{1-3}
+    bspc pointer -g {move,resize_side,resize_corner}
 
-super + alt + r
-    pkill -USR1 -x sxhkd
+super + @button{1-3}
+    bspc pointer -u
 
-# other
-
-super + Return
-    urxvt
-
-super + space
-    rofi -font "Roboto 11" -show run
-
-alt + Tab
-    rofi -font "Roboto 11" -show window
+super + !button{1-3}
+    bspc pointer -t %i %i

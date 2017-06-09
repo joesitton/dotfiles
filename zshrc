@@ -1,12 +1,11 @@
 # Oh my Zsh
 export ZSH=/home/joe/.oh-my-zsh
-ZSH_THEME="glister"
 
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16/shell/base16-default.dark.sh"
-[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+# Theme
+ZSH_THEME="agnoster"
 
-plugins=(extract)
+# Plugins
+plugins=(extract zsh-syntax-highlighting)
 
 # Options
 setopt CORRECT
@@ -38,8 +37,5 @@ alias x='extract'
 alias pac='s pacman'
 alias yao='yaourt'
 
-alias ls='exa'
 alias la='ls -a'
 alias ll='ls -lh'
-
-source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh

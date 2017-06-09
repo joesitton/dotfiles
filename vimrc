@@ -25,7 +25,7 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
 " Airline
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'base16'
 
@@ -33,7 +33,7 @@ let g:airline_theme = 'base16'
 syntax enable
 set bg=dark
 let base16colorspace=256
-colo base16-default
+colo base16-default-dark
 
 " Options
 set history=700
@@ -74,6 +74,7 @@ set tm=500
 set wrap
 set lazyredraw
 set magic
+set ttimeoutlen=10
 
 " Sudo save a file
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!

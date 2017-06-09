@@ -1,0 +1,144 @@
+[colors]
+background = #282828
+foreground = #DDDDDD
+
+[bar/top]
+width = 100%
+height = 30
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 2
+
+border-bottom-size = 2
+border-bottom-color = ${colors.background}
+
+padding = 2
+module-margin = 2
+
+font-0 = Roboto-Regular:size=12;4
+font-1 = MaterialDesignIcons:size=14;4
+
+modules-left = bspwm
+modules-center =
+modules-right = memory cpu network xbacklight volume battery date
+
+wm-restack = bspwm
+
+[module/logo]
+type = custom/script
+
+label = %output%
+
+[module/bspwm]
+type = internal/bspwm
+
+enable-scroll = false
+
+format = <label-state>  <label-mode>
+
+label-monocle =
+label-tiled =
+label-fullscreen = 
+label-floating =
+label-locked = 
+label-sticky = 
+label-private = 
+
+ws-icon-0 = 1;1
+ws-icon-1 = 2;2
+ws-icon-2 = 3;3
+ws-icon-3 = 4;4
+ws-icon-4 = 5;5
+
+label-focused = %icon%
+label-focused-foreground = #dddddd
+label-focused-background = #3f3f3f
+label-focused-underline = #ac4642
+label-focused-padding = 2
+
+label-occupied = %icon%
+label-occupied-underline = #555555
+label-occupied-padding = 2
+
+label-empty = %icon%
+label-empty-foreground = #555555
+label-empty-padding = 2
+
+[module/title]
+type = internal/xwindow
+
+label-maxlen = 80
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <label>
+
+label =  %percentage%%
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume> <label-volume>
+
+label-muted =  muted
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+[module/cpu]
+type = internal/cpu
+
+interval = 3
+
+label =  %percentage%%
+label-underline = #7cafc2
+
+[module/memory]
+type = internal/memory
+
+interval = 3
+
+label =  %gb_used%
+label-underline = #f7ca88
+
+[module/network]
+type = internal/network
+
+interface = wlp2s0
+
+label-connected =  %essid%
+label-disconnected =  none
+
+[module/battery]
+type = internal/battery
+
+full-at = 98
+
+battery = BAT1
+adapter = ACAD
+
+time-format = %H:%M
+
+format-charging = <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+
+label-charging = %{F#a1b56c}%{F-} %percentage%% (%time%)
+label-discharging = %percentage%% (%time%)
+
+ramp-capacity-0 = %{F#ac4642}%{F-}
+ramp-capacity-1 = %{F#ac4642}%{F-}
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+[module/date]
+type = internal/date
+
+date = %e %b
+time = %l:%M %P
+
+label = %date%  %time%
