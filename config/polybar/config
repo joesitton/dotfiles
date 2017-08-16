@@ -1,6 +1,18 @@
 [colors]
-background = #282828
-foreground = #DDDDDD
+background = #383838
+foreground = #E8E8E8
+red = #AB4642
+green = #A1B56C
+yellow = #F7CA88
+blue = #7CAFC2
+purple = #BA8BAF
+orange = #DC9565
+black1 = #181818
+black2 = #282828
+black3 = #383838
+black4 = #484848
+black5 = #585858
+gray = #B8B8B8
 
 [bar/top]
 width = 100%
@@ -14,37 +26,23 @@ line-size = 2
 border-bottom-size = 2
 border-bottom-color = ${colors.background}
 
-padding = 2
-module-margin = 2
+padding = 3
+module-margin = 3
 
-font-0 = Roboto-Regular:size=12;4
-font-1 = MaterialDesignIcons:size=14;4
+font-0 = Roboto Condensed:size=14;4
+font-1 = RobotoMono Nerd Font:size=14;4
 
-modules-left = bspwm
-modules-center =
-modules-right = memory cpu network xbacklight volume battery date
+modules-left = bspwm title
+modules-center = date
+modules-right = memory cpu network xbacklight volume battery
 
 wm-restack = bspwm
-
-[module/logo]
-type = custom/script
-
-label = %output%
 
 [module/bspwm]
 type = internal/bspwm
 
-enable-scroll = false
-
-format = <label-state>  <label-mode>
-
-label-monocle =
-label-tiled =
-label-fullscreen = 
-label-floating =
-label-locked = 
-label-sticky = 
-label-private = 
+enable-click = true
+enable-scroll = true
 
 ws-icon-0 = 1;1
 ws-icon-1 = 2;2
@@ -53,65 +51,70 @@ ws-icon-3 = 4;4
 ws-icon-4 = 5;5
 
 label-focused = %icon%
-label-focused-foreground = #dddddd
-label-focused-background = #3f3f3f
-label-focused-underline = #ac4642
+label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.black4}
+label-focused-underline = ${colors.red}
 label-focused-padding = 2
 
 label-occupied = %icon%
-label-occupied-underline = #555555
+label-occupied-underline = ${colors.gray}
 label-occupied-padding = 2
 
 label-empty = %icon%
-label-empty-foreground = #555555
+label-empty-foreground = ${colors.black5}
 label-empty-padding = 2
 
 [module/title]
 type = internal/xwindow
 
-label-maxlen = 80
-
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label>
-
-label =  %percentage%%
-
-[module/volume]
-type = internal/volume
-
-format-volume = <ramp-volume> <label-volume>
-
-label-muted =  muted
-
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+label-maxlen = 65
 
 [module/cpu]
 type = internal/cpu
 
 interval = 3
 
-label =  %percentage%%
-label-underline = #7cafc2
+label =  %percentage%%
+label-foreground = ${colors.green}
 
 [module/memory]
 type = internal/memory
 
 interval = 3
 
-label =  %gb_used%
-label-underline = #f7ca88
+label =  %gb_used%
+label-foreground = ${colors.purple}
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <label>
+format-foreground = ${colors.yellow}
+
+label =  %percentage%%
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume> <label-volume>
+format-volume-foreground = ${colors.orange}
+
+label-muted =  muted
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 [module/network]
 type = internal/network
 
 interface = wlp2s0
 
-label-connected =  %essid%
-label-disconnected =  none
+label-connected =  %essid%
+label-disconnected =  none
+
+label-connected-foreground = ${colors.blue}
+label-disconnected-foreground = ${colors.red}
 
 [module/battery]
 type = internal/battery
@@ -126,19 +129,20 @@ time-format = %H:%M
 format-charging = <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 
-label-charging = %{F#a1b56c}%{F-} %percentage%% (%time%)
+label-charging = %{F#F7CA88}%{F-} %percentage%% (%time%)
 label-discharging = %percentage%% (%time%)
+label-full = %percentage%%
 
-ramp-capacity-0 = %{F#ac4642}%{F-}
-ramp-capacity-1 = %{F#ac4642}%{F-}
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = %{F#AB4642}%{F-}
+ramp-capacity-1 = %{F#AB4642}%{F-}
+ramp-capacity-2 = %{F#F7CA88}%{F-}
+ramp-capacity-3 = %{F#A1B56C}%{F-}
+ramp-capacity-4 = %{F#A1B56C}%{F-}
 
 [module/date]
 type = internal/date
 
-date = %e %b
-time = %l:%M %P
+date = %B %e
+time = %l:%M %p
 
-label = %date%  %time%
+label = %date%, %time%

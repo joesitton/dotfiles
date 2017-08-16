@@ -4,9 +4,9 @@ sxhkd &
 
 bspc monitor -d 1 2 3 4 5
 
-bspc config top_padding             30
+bspc config top_padding             32
 bspc config border_width            3
-bspc config window_gap              10
+bspc config window_gap              5
 bspc config split_ratio             0.52
 bspc config borderless_monocle      true
 bspc config gapless_monocle         true
@@ -16,13 +16,11 @@ bspc config click_to_focus          true
 bspc config focused_border_color    "#ac4642"
 bspc config normal_border_color     "#353535"
 
-bspc rule -a URxvt state=floating
 bspc rule -a Thunar state=floating
 bspc rule -a Termite state=floating
-bspc rule -a Transmission-gtk state=floating
+bspc rule -a Deluge state=floating
+bspc rule -a Gimp state=floating
 
 $HOME/.config/polybar/launch.sh
-xmodmap $HOME/.xmodmap &
-feh --bg-scale $HOME/Pictures/trees.jpg &
 redshift -l 28:-81 &
 compton &

@@ -1,18 +1,21 @@
 # Oh my Zsh
 export ZSH=/home/joe/.oh-my-zsh
 
+# Path
+export PATH=$PATH:/home/joe/.gem/ruby/2.4.0/bin
+
 # Theme
-ZSH_THEME="agnoster"
+ZSH_THEME="gallifrey"
 
 # Plugins
-plugins=(extract zsh-syntax-highlighting)
+plugins=(zsh-syntax-highlighting)
 
 # Options
-setopt CORRECT
-setopt HIST_REDUCE_BLANKS
-setopt AUTO_CD
-setopt HIST_IGNORE_ALL_DUPS
 setopt ZLE
+setopt CORRECT
+setopt AUTO_CD
+setopt HIST_REDUCE_BLANKS
+setopt HIST_IGNORE_DUPS
 setopt NO_BEEP
 setopt NO_CASE_GLOB
 setopt EXTENDED_GLOB
@@ -32,10 +35,13 @@ export LESS_TERMCAP_us=$'\e[04;38;5;146m' # begin underline
 alias s='sudo'
 alias pls='s $(fc -ln -1)'
 
-alias x='extract'
-
 alias pac='s pacman'
 alias yao='yaourt'
 
 alias la='ls -a'
 alias ll='ls -lh'
+
+alias vim='nvim'
+alias top='htop'
+
+cd() { builtin cd "$@" && ls; }

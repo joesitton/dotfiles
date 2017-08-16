@@ -38,20 +38,10 @@ super + bracket{left,right}
 super + {h,j,k,l}
     bspc node -f {west,south,north,east}
 
-# node flags
-super + alt + {1,2,3}
-    bspc node -g {locked, sticky, private}
-
 # focus next node in current desktop
 super + {_,shift +}c
     bspc node -f {next,prev}.local
 
-# window resizing
-super + button{1-3}
-    bspc pointer -g {move,resize_side,resize_corner}
-
-super + @button{1-3}
-    bspc pointer -u
-
-super + !button{1-3}
-    bspc pointer -t %i %i
+# move a window to workspace n
+super + shift + {1-5}
+    bspc node -d {1-5}
