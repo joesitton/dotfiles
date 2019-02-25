@@ -1,10 +1,16 @@
 # terminal
 super + Return
-    termite
+    kitty
+
+#super + shift + p
+    #rofi-pass
 
 # program launcher
 super + space
-    rofi -show run
+    rofi -show drun
+
+#super + shift + l
+    #lock -l blur
 
 # reload sxhkd
 super + Escape
@@ -17,6 +23,17 @@ super + alt + Escape
 # close and kill
 super + {_, shift + }w
     bspc node -{c,k}
+
+# preselect
+super + alt + {h,j,k,l}
+    bspc node -p {west,south,north,east}
+
+# clear preselections
+super + alt + space
+    bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+super + alt + {n,m}
+    bspc node -g {locked, sticky}
 
 # tiled and monocle
 super + m
@@ -39,9 +56,38 @@ super + {h,j,k,l}
     bspc node -f {west,south,north,east}
 
 # focus next node in current desktop
-super + {_,shift +}c
+super + {_,alt+}c
     bspc node -f {next,prev}.local
 
 # move a window to workspace n
-super + shift + {1-5}
+super + alt + {1-5}
     bspc node -d {1-5}
+
+# expand a window by moving one of its side outward
+#super + alt + {h,j,k,l}
+	#bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+#super + alt + shift + {h,j,k,l}
+	#bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+super + b
+    bspc node -n prev.local
+
+super + {minus, equal, 0}
+    bspc node -l {below, normal, above}
+
+super + i
+    bspc node -f last.below.local && bspc node -l normal
+
+F1
+    xbacklight -dec 5 -time 0
+
+F2
+    xbacklight -inc 5 -time 0
+
+F10
+    amixer set Master 2-
+
+F11
+    amixer set Master 2+

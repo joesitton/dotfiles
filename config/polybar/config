@@ -1,6 +1,6 @@
 [colors]
-background = #383838
-foreground = #E8E8E8
+background = #282828
+foreground = #e8e8e8
 red = #AB4642
 green = #A1B56C
 yellow = #F7CA88
@@ -16,25 +16,25 @@ gray = #B8B8B8
 
 [bar/top]
 width = 100%
-height = 30
+height = 32
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 2
 
-border-bottom-size = 2
-border-bottom-color = ${colors.background}
+#border-bottom-size = 3
+border-color = #484848
 
 padding = 3
 module-margin = 3
 
-font-0 = Roboto Condensed:size=14;4
-font-1 = RobotoMono Nerd Font:size=14;4
+font-0 = Fira Sans Condensed:size=16;4
+font-1 = RobotoMono Nerd Font:size=13;3
 
 modules-left = bspwm title
 modules-center = date
-modules-right = memory cpu network xbacklight volume battery
+modules-right = updates memory cpu network xbacklight volume battery
 
 wm-restack = bspwm
 
@@ -50,71 +50,95 @@ ws-icon-2 = 3;3
 ws-icon-3 = 4;4
 ws-icon-4 = 5;5
 
+format = <label-state>
+
 label-focused = %icon%
-label-focused-foreground = ${colors.foreground}
-label-focused-background = ${colors.black4}
-label-focused-underline = ${colors.red}
-label-focused-padding = 2
+label-focused-foreground = ${colors.background}
+label-focused-background = ${colors.yellow}
+label-focused-padding = 3
 
 label-occupied = %icon%
+label-occupied-background = ${colors.background}
+label-occupied-foreground = ${colors.foreground}
 label-occupied-underline = ${colors.gray}
-label-occupied-padding = 2
+label-occupied-padding = 3
+
+label-urgent = %icon%
+label-urgent-background = ${colors.red}
+label-urgent-foreground = ${colors.foreground}
+label-urget-padding = 3
 
 label-empty = %icon%
 label-empty-foreground = ${colors.black5}
-label-empty-padding = 2
+label-empty-padding = 3
+
+#label-locked = "  "
+label-locked-foreground = ${colors.red}
+#label-monocle = "  "
+label-monocle-foreground = ${colors.purple}
+#label-sticky = "  "
+label-sticky-foreground = ${colors.yellow}
+
+[module/windows]
+type = custom/script
+exec = sh ~/Scripts/numwindows
+interval = 0
 
 [module/title]
 type = internal/xwindow
-
-label-maxlen = 65
+label-maxlen = 50
 
 [module/cpu]
 type = internal/cpu
 
 interval = 3
 
-label =  %percentage%%
-label-foreground = ${colors.green}
+label = %{F#A1B56C}%{F-} %percentage%%
+#label-foreground = ${colors.green}
 
 [module/memory]
 type = internal/memory
 
 interval = 3
 
-label =  %gb_used%
-label-foreground = ${colors.purple}
+label = %{F#BA8BAF}%{F-} %gb_free%
+#label-foreground = ${colors.purple}
 
 [module/xbacklight]
 type = internal/xbacklight
 
 format = <label>
-format-foreground = ${colors.yellow}
+#format-foreground = ${colors.yellow}
 
-label =  %percentage%%
+label = %{F#F7CA88}%{F-} %percentage%%
+#label =  %percentage%%
 
 [module/volume]
 type = internal/volume
+#speaker-mixer = Speaker
 
 format-volume = <ramp-volume> <label-volume>
-format-volume-foreground = ${colors.orange}
+#format-volume-foreground = ${colors.orange}
 
-label-muted =  muted
+label-muted = %{F#AB4642}%{F-} muted
+#label-muted-foreground = ${colors.red}
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+ramp-volume-0 = %{F#DC9565}%{F-}
+ramp-volume-1 = %{F#DC9565}%{F-}
+ramp-volume-2 = %{F#DC9565}%{F-}
 
 [module/network]
 type = internal/network
 
 interface = wlp2s0
 
-label-connected =  %essid%
-label-disconnected =  none
+label-connected = %{F#A7CAFC} %{F-}%essid%
+label-disconnected = %{F#AB4642} %{F-}none
 
-label-connected-foreground = ${colors.blue}
-label-disconnected-foreground = ${colors.red}
+#label-connected =  %essid%
+#label-disconnected =  none
+#label-connected-foreground = ${colors.blue}
+#label-disconnected-foreground = ${colors.red}
 
 [module/battery]
 type = internal/battery
@@ -131,7 +155,7 @@ format-discharging = <ramp-capacity> <label-discharging>
 
 label-charging = %{F#F7CA88}%{F-} %percentage%% (%time%)
 label-discharging = %percentage%% (%time%)
-label-full = %percentage%%
+label-full = %{F#F7CA88}%{F-} %percentage%%
 
 ramp-capacity-0 = %{F#AB4642}%{F-}
 ramp-capacity-1 = %{F#AB4642}%{F-}
@@ -146,3 +170,25 @@ date = %B %e
 time = %l:%M %p
 
 label = %date%, %time%
+
+[module/crypto]
+type = custom/script
+exec = ~/.config/polybar/crypto.py
+interval = 300
+label-foreground = ${colors.yellow}
+
+[module/updates]
+type = custom/script
+exec = ~/.config/polybar/updates.sh
+interval = 300
+label-foreground = ${colors.green}
+
+[bar/updates]
+width = 400
+height = 400
+
+modules-center = updateslist
+
+[module/updateslist]
+type = custom/script
+exec = checkupdates

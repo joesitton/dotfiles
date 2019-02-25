@@ -1,14 +1,5 @@
-! Font
-rofi.font: Roboto Condensed 14
-
-! Colors
-rofi.color-enabled: true
-rofi.color-window: #383838, #585858, #585858
-rofi.color-normal: #383838, #e8e8e8, #383838, #7cafc2, #181818
-rofi.separator-style: solid
-
-! Other
-rofi.width: 700
-rofi.padding: 5
-rofi.hide-scrollbar: true
-rofi.bw: 3
+rofi.display-drun: 
+rofi.modi: drun
+rofi.theme: sidestyle.rasi
+rofi.drun-icon-theme: Paper
+rofi.show-icons: true

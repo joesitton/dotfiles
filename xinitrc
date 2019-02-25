@@ -1,6 +1,5 @@
 xsetroot -cursor_name left_ptr
+xset r rate 350 25 &
 xmodmap $HOME/.xmodmap &
-feh --bg-scale $HOME/Pictures/firewatch1.jpg &
 
 exec bspwm
-
