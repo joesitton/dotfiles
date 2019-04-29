@@ -1,0 +1,68 @@
+* {
+    background-color: #282828;
+    border-color: #282828;
+    color: #f8f8f8;
+    font: "Fira Sans 16";
+}
+#window {
+    border: 0;
+    padding: 0;
+}
+#mainbox {
+    border: 0 0 10px 0;
+    padding: 0;
+}
+#textbox {
+    padding: 10px;
+}
+#listview {
+    padding: 0;
+}
+#element {
+    border: 0 0 0 10px;
+    padding: 5px 5px 5px 10px;
+}
+#element.selected.normal {
+    background-color: #7cafc255;
+    border: 0 0 0 10px;
+    border-color: #7cafc2;
+    color: #f8f8f8;
+}
+#element.selected.active {
+    background-color: #ab464288;
+    border: 0 0 0 10px;
+    border-color: #ab4642;
+    color: #f8f8f8;
+}
+#inputbar {
+    padding: 10px 0 10px 0;
+}
+#entry {
+    spacing: 0;
+    font: "Fira Sans 24";
+    background-color: #f8f8f8;
+    color: #282828;
+}
+#prompt {
+    spacing: 0;
+    padding: 9px 0 0 10px;
+    font: "Fira Sans 14";
+    text-align: center;
+    background-color: #f8f8f8;
+    color: #282828;
+}
+#inputbar {
+    children: [ prompt,textbox-prompt,entry ];
+    background-color: #f8f8f8;
+    color: #282828;
+    border: 2px 2px 8px 2px;
+    border-color: #282828;
+}
+#textbox-prompt {
+    expand: false;
+    padding: 0 0 0 8px;
+    background-color: #f8f8f8;
+    color: #282828;
+}
+
+/* vim:ft=css

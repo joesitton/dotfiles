@@ -1,0 +1,2698 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.041  000.041: --- NVIM STARTING ---
+000.775  000.734: locale set
+002.361  001.586: inits 1
+002.398  000.037: window checked
+002.988  000.590: parsing arguments
+003.167  000.179: expanding arguments
+003.358  000.191: inits 2
+005.504  002.145: init highlight
+006.031  000.033  000.033: sourcing $VIM/sysinit.vim
+011.004  004.803  004.803: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+021.954  000.017  000.017: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+021.999  000.019  000.019: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+022.042  000.022  000.022: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+022.099  000.041  000.041: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+022.162  007.966  007.867: sourcing /usr/share/nvim/runtime/filetype.vim
+022.289  000.040  000.040: sourcing /usr/share/nvim/runtime/ftplugin.vim
+022.407  000.036  000.036: sourcing /usr/share/nvim/runtime/indent.vim
+022.881  000.251  000.251: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+022.993  000.444  000.193: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+023.026  000.561  000.117: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+024.040  000.194  000.194: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+024.592  000.182  000.182: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+031.680  008.555  008.180: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+031.837  025.756  003.795: sourcing /home/joe/.config/nvim/init.vim
+031.843  000.551: sourcing vimrc file(s)
+032.430  000.415  000.415: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+033.345  000.839  000.839: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+033.591  000.126  000.126: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+033.774  000.360  000.234: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+034.500  000.088  000.088: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+034.699  000.841  000.753: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+035.221  000.226  000.226: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+035.662  000.146  000.146: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+036.548  001.768  001.396: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+041.655  005.038  005.038: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+042.220  000.258  000.258: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+042.253  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+042.373  000.104  000.104: sourcing /usr/share/nvim/runtime/plugin/man.vim
+042.903  000.513  000.513: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+043.123  000.198  000.198: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+043.692  000.548  000.548: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+044.146  000.177  000.177: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+044.461  000.160  000.160: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+044.549  000.662  000.325: sourcing /home/joe/.local/share/nvim/rplugin.vim
+044.556  000.821  000.160: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+044.721  000.137  000.137: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+044.787  000.034  000.034: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+045.002  000.182  000.182: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+045.115  000.088  000.088: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+045.167  000.026  000.026: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+045.390  000.201  000.201: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+046.009  000.538  000.538: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+046.015  001.251: loading plugins
+046.094  000.080: loading packages
+046.146  000.052: loading after plugins
+046.153  000.007: inits 3
+046.480  000.327: reading ShaDa
+047.045  000.565: clearing screen
+047.593  000.170  000.170: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+047.678  000.463: opening buffers
+047.887  000.100  000.100: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+048.048  000.270: BufEnter autocommands
+048.051  000.003: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.018  000.018: --- NVIM STARTING ---
+000.413  000.395: locale set
+001.113  000.701: inits 1
+001.147  000.034: window checked
+001.362  000.215: parsing arguments
+001.417  000.055: expanding arguments
+001.483  000.065: inits 2
+002.114  000.631: init highlight
+002.270  000.015  000.015: sourcing $VIM/sysinit.vim
+003.873  001.526  001.526: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+013.634  000.017  000.017: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+013.676  000.018  000.018: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+013.712  000.019  000.019: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+013.765  000.038  000.038: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+013.828  006.362  006.270: sourcing /usr/share/nvim/runtime/filetype.vim
+013.947  000.038  000.038: sourcing /usr/share/nvim/runtime/ftplugin.vim
+014.056  000.034  000.034: sourcing /usr/share/nvim/runtime/indent.vim
+014.502  000.231  000.231: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+014.604  000.416  000.185: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+014.635  000.525  000.109: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+015.493  000.171  000.171: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+015.994  000.165  000.165: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+024.009  009.272  008.935: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+024.172  021.881  004.125: sourcing /home/joe/.config/nvim/init.vim
+024.177  000.167: sourcing vimrc file(s)
+024.794  000.432  000.432: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+025.756  000.885  000.885: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+026.004  000.124  000.124: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+026.202  000.374  000.249: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+026.928  000.089  000.089: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+027.133  000.845  000.757: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+027.668  000.229  000.229: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+028.100  000.150  000.150: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+029.011  001.794  001.415: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+034.097  005.015  005.015: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+034.617  000.237  000.237: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+034.649  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+034.770  000.105  000.105: sourcing /usr/share/nvim/runtime/plugin/man.vim
+035.333  000.546  000.546: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+035.563  000.200  000.200: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+036.129  000.544  000.544: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+036.591  000.178  000.178: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+036.901  000.156  000.156: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+036.990  000.658  000.323: sourcing /home/joe/.local/share/nvim/rplugin.vim
+036.997  000.820  000.162: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+037.175  000.149  000.149: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+037.240  000.034  000.034: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+037.457  000.183  000.183: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+037.568  000.085  000.085: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+037.620  000.027  000.027: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+037.835  000.193  000.193: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+038.470  000.551  000.551: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+038.477  001.270: loading plugins
+038.558  000.081: loading packages
+038.611  000.053: loading after plugins
+038.618  000.007: inits 3
+038.949  000.332: reading ShaDa
+039.527  000.577: clearing screen
+040.110  000.168  000.168: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+040.186  000.490: opening buffers
+040.395  000.100  000.100: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+040.563  000.277: BufEnter autocommands
+040.566  000.003: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.011  000.011: --- NVIM STARTING ---
+000.203  000.192: locale set
+000.486  000.284: inits 1
+000.495  000.009: window checked
+000.616  000.120: parsing arguments
+000.658  000.042: expanding arguments
+000.734  000.076: inits 2
+001.263  000.529: init highlight
+001.421  000.021  000.021: sourcing $VIM/sysinit.vim
+003.086  001.591  001.591: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+014.259  000.049  000.049: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+014.305  000.022  000.022: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+014.341  000.019  000.019: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+014.391  000.035  000.035: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+014.461  009.290  009.166: sourcing /usr/share/nvim/runtime/filetype.vim
+014.589  000.040  000.040: sourcing /usr/share/nvim/runtime/ftplugin.vim
+014.719  000.047  000.047: sourcing /usr/share/nvim/runtime/indent.vim
+015.194  000.240  000.240: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+015.307  000.439  000.199: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+015.339  000.561  000.122: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+016.180  000.173  000.173: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+016.698  000.169  000.169: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+023.971  008.539  008.196: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+024.132  022.684  002.616: sourcing /home/joe/.config/nvim/init.vim
+024.138  000.170: sourcing vimrc file(s)
+024.735  000.430  000.430: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+025.708  000.896  000.896: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+025.964  000.129  000.129: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+026.225  000.444  000.315: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+026.956  000.089  000.089: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+027.175  000.862  000.773: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+027.808  000.237  000.237: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+028.252  000.152  000.152: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+029.195  001.938  001.549: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+034.308  005.042  005.042: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+034.847  000.247  000.247: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+034.880  000.014  000.014: sourcing /usr/share/nvim/runtime/plugin/health.vim
+034.998  000.103  000.103: sourcing /usr/share/nvim/runtime/plugin/man.vim
+035.523  000.508  000.508: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+035.741  000.195  000.195: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+036.298  000.536  000.536: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+036.763  000.182  000.182: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+037.081  000.161  000.161: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+037.173  000.679  000.336: sourcing /home/joe/.local/share/nvim/rplugin.vim
+037.180  000.838  000.158: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+037.374  000.166  000.166: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+037.442  000.034  000.034: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+037.674  000.190  000.190: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+037.793  000.088  000.088: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+037.846  000.025  000.025: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+038.066  000.196  000.196: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+038.686  000.538  000.538: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+038.692  001.267: loading plugins
+038.772  000.079: loading packages
+039.282  000.384  000.384: sourcing /home/joe/.vim/plugged/vim-neatstatus/after/plugin/neatstatus.vim
+039.289  000.134: loading after plugins
+039.320  000.031: inits 3
+039.654  000.334: reading ShaDa
+040.248  000.594: clearing screen
+040.804  000.206  000.206: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+040.888  000.434: opening buffers
+041.100  000.101  000.101: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+041.268  000.279: BufEnter autocommands
+041.272  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.010  000.010: --- NVIM STARTING ---
+000.217  000.207: locale set
+000.529  000.312: inits 1
+000.538  000.009: window checked
+000.670  000.132: parsing arguments
+000.714  000.044: expanding arguments
+000.764  000.051: inits 2
+001.559  000.795: init highlight
+001.768  000.018  000.018: sourcing $VIM/sysinit.vim
+005.331  003.453  003.453: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+016.678  000.021  000.021: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+016.725  000.021  000.021: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+016.767  000.021  000.021: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+016.820  000.037  000.037: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+016.889  006.898  006.797: sourcing /usr/share/nvim/runtime/filetype.vim
+017.028  000.042  000.042: sourcing /usr/share/nvim/runtime/ftplugin.vim
+017.166  000.045  000.045: sourcing /usr/share/nvim/runtime/indent.vim
+017.682  000.267  000.267: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+017.805  000.480  000.213: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+017.839  000.608  000.127: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+018.805  000.194  000.194: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+019.386  000.189  000.189: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+028.345  010.404  010.021: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+028.528  026.704  005.255: sourcing /home/joe/.config/nvim/init.vim
+028.534  000.253: sourcing vimrc file(s)
+029.148  000.434  000.434: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+030.084  000.859  000.859: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+030.324  000.120  000.120: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+030.554  000.402  000.282: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+031.264  000.088  000.088: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+031.472  000.837  000.748: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+032.019  000.249  000.249: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+032.447  000.148  000.148: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+033.356  001.804  001.406: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+038.359  004.932  004.932: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+038.911  000.243  000.243: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+038.943  000.013  000.013: sourcing /usr/share/nvim/runtime/plugin/health.vim
+039.066  000.109  000.109: sourcing /usr/share/nvim/runtime/plugin/man.vim
+039.586  000.504  000.504: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+039.800  000.192  000.192: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+040.429  000.609  000.609: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+040.965  000.180  000.180: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+041.285  000.162  000.162: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+041.376  000.678  000.335: sourcing /home/joe/.local/share/nvim/rplugin.vim
+041.382  000.887  000.209: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+041.584  000.174  000.174: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+041.647  000.032  000.032: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+041.901  000.220  000.220: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+042.027  000.096  000.096: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+042.080  000.024  000.024: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+042.295  000.192  000.192: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+042.907  000.530  000.530: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+042.913  001.286: loading plugins
+042.993  000.080: loading packages
+043.488  000.368  000.368: sourcing /home/joe/.vim/plugged/vim-neatstatus/after/plugin/neatstatus.vim
+043.494  000.133: loading after plugins
+043.524  000.030: inits 3
+043.881  000.357: reading ShaDa
+044.418  000.536: clearing screen
+044.977  000.175  000.175: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+045.051  000.459: opening buffers
+045.286  000.100  000.100: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+045.454  000.303: BufEnter autocommands
+045.457  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.050  000.050: --- NVIM STARTING ---
+000.763  000.714: locale set
+001.912  001.148: inits 1
+001.980  000.069: window checked
+002.581  000.601: parsing arguments
+002.864  000.283: expanding arguments
+003.055  000.191: inits 2
+003.808  000.753: init highlight
+003.965  000.015  000.015: sourcing $VIM/sysinit.vim
+005.495  001.469  001.469: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+013.296  000.018  000.018: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+013.334  000.017  000.017: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+013.371  000.021  000.021: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+013.418  000.035  000.035: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+013.481  005.925  005.834: sourcing /usr/share/nvim/runtime/filetype.vim
+013.598  000.037  000.037: sourcing /usr/share/nvim/runtime/ftplugin.vim
+013.706  000.030  000.030: sourcing /usr/share/nvim/runtime/indent.vim
+014.160  000.226  000.226: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+014.264  000.410  000.184: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+014.294  000.530  000.120: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+015.358  000.240  000.240: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+017.092  000.560  000.560: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+024.182  009.787  008.987: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+024.332  020.345  002.566: sourcing /home/joe/.config/nvim/init.vim
+024.337  000.169: sourcing vimrc file(s)
+024.940  000.424  000.424: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+025.215  000.190  000.190: sourcing /home/joe/.vim/plugged/vim-flagship/plugin/flagship.vim
+026.082  000.803  000.803: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+026.330  000.120  000.120: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+026.497  000.345  000.225: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+027.221  000.091  000.091: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+027.426  000.849  000.759: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+027.958  000.231  000.231: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+028.396  000.152  000.152: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+029.315  001.809  001.427: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+034.338  004.952  004.952: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+034.867  000.247  000.247: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+034.899  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+035.025  000.112  000.112: sourcing /usr/share/nvim/runtime/plugin/man.vim
+035.546  000.505  000.505: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+035.775  000.206  000.206: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+036.338  000.538  000.538: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+036.807  000.177  000.177: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+037.122  000.163  000.163: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+037.209  000.668  000.327: sourcing /home/joe/.local/share/nvim/rplugin.vim
+037.216  000.830  000.162: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+037.383  000.140  000.140: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+037.450  000.035  000.035: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+037.664  000.182  000.182: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+037.775  000.085  000.085: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+037.822  000.021  000.021: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+038.027  000.186  000.186: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+038.637  000.528  000.528: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+038.643  001.306: loading plugins
+038.724  000.081: loading packages
+038.782  000.058: loading after plugins
+038.818  000.035: inits 3
+039.181  000.363: reading ShaDa
+039.749  000.568: clearing screen
+040.283  000.168  000.168: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+040.359  000.442: opening buffers
+040.584  000.106  000.106: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+040.743  000.279: BufEnter autocommands
+040.747  000.003: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.017  000.017: --- NVIM STARTING ---
+000.727  000.711: locale set
+001.911  001.184: inits 1
+001.977  000.066: window checked
+002.367  000.389: parsing arguments
+002.617  000.250: expanding arguments
+002.805  000.188: inits 2
+003.975  001.170: init highlight
+004.804  000.116  000.116: sourcing $VIM/sysinit.vim
+006.584  001.521  001.521: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+014.827  000.019  000.019: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+014.871  000.020  000.020: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+014.907  000.022  000.022: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+014.951  000.030  000.030: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+015.014  006.300  006.208: sourcing /usr/share/nvim/runtime/filetype.vim
+015.139  000.038  000.038: sourcing /usr/share/nvim/runtime/ftplugin.vim
+015.255  000.033  000.033: sourcing /usr/share/nvim/runtime/indent.vim
+015.756  000.275  000.275: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+015.915  000.516  000.242: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+015.953  000.647  000.130: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+017.780  000.510  000.510: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+018.661  000.182  000.182: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+025.631  009.568  008.876: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+025.783  020.834  002.728: sourcing /home/joe/.config/nvim/init.vim
+025.788  000.862: sourcing vimrc file(s)
+026.374  000.429  000.429: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+029.978  003.528  003.528: sourcing /home/joe/.vim/plugged/vim-fugitive/plugin/fugitive.vim
+030.826  000.748  000.748: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+031.085  000.122  000.122: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+031.306  000.398  000.276: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+032.028  000.091  000.091: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+032.247  000.858  000.768: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+032.755  000.147  000.147: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+033.154  000.103  000.103: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+034.042  001.696  001.446: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+039.047  004.933  004.933: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+039.598  000.459  000.459: sourcing /home/joe/.vim/plugged/vim-buftabline/plugin/buftabline.vim
+040.084  000.214  000.214: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+040.113  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+040.225  000.099  000.099: sourcing /usr/share/nvim/runtime/plugin/man.vim
+040.749  000.508  000.508: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+040.946  000.176  000.176: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+041.516  000.543  000.543: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+041.967  000.178  000.178: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+042.288  000.162  000.162: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+042.379  000.675  000.335: sourcing /home/joe/.local/share/nvim/rplugin.vim
+042.385  000.825  000.149: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+042.563  000.136  000.136: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+042.622  000.028  000.028: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+042.815  000.170  000.170: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+042.921  000.079  000.079: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+042.966  000.022  000.022: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+043.173  000.187  000.187: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+043.802  000.534  000.534: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+043.833  001.465: loading plugins
+043.917  000.084: loading packages
+043.972  000.055: loading after plugins
+043.980  000.008: inits 3
+044.338  000.358: reading ShaDa
+044.935  000.597: clearing screen
+045.665  000.171  000.171: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+045.741  000.635: opening buffers
+045.956  000.099  000.099: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+046.115  000.276: BufEnter autocommands
+046.118  000.003: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.009  000.009: --- NVIM STARTING ---
+000.212  000.203: locale set
+000.506  000.293: inits 1
+000.514  000.009: window checked
+000.635  000.121: parsing arguments
+000.683  000.048: expanding arguments
+000.731  000.048: inits 2
+001.249  000.518: init highlight
+001.436  000.052  000.052: sourcing $VIM/sysinit.vim
+003.035  001.533  001.533: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+014.271  000.018  000.018: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+014.314  000.019  000.019: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+014.350  000.022  000.022: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+014.397  000.033  000.033: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+014.463  009.390  009.298: sourcing /usr/share/nvim/runtime/filetype.vim
+014.586  000.039  000.039: sourcing /usr/share/nvim/runtime/ftplugin.vim
+014.701  000.033  000.033: sourcing /usr/share/nvim/runtime/indent.vim
+015.157  000.230  000.230: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+015.262  000.418  000.188: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+015.291  000.538  000.120: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+016.180  000.169  000.169: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+016.701  000.175  000.175: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+023.699  008.269  007.925: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+023.842  022.384  002.583: sourcing /home/joe/.config/nvim/init.vim
+023.848  000.162: sourcing vimrc file(s)
+024.440  000.432  000.432: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+028.162  003.647  003.647: sourcing /home/joe/.vim/plugged/vim-fugitive/plugin/fugitive.vim
+029.052  000.806  000.806: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+029.301  000.120  000.120: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+029.486  000.359  000.239: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+030.210  000.089  000.089: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+030.430  000.858  000.769: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+030.872  000.144  000.144: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+031.266  000.102  000.102: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+032.192  001.680  001.434: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+037.200  004.937  004.937: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+037.681  000.182  000.182: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+037.983  000.229  000.229: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+038.091  000.035  000.035: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+038.196  000.039  000.039: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+038.378  001.077  000.592: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+038.861  000.217  000.217: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+038.898  000.013  000.013: sourcing /usr/share/nvim/runtime/plugin/health.vim
+039.003  000.089  000.089: sourcing /usr/share/nvim/runtime/plugin/man.vim
+039.514  000.494  000.494: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+039.705  000.169  000.169: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+040.257  000.523  000.523: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+040.715  000.179  000.179: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+041.038  000.164  000.164: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+041.129  000.682  000.338: sourcing /home/joe/.local/share/nvim/rplugin.vim
+041.135  000.836  000.154: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+041.298  000.135  000.135: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+041.356  000.028  000.028: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+041.585  000.179  000.179: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+041.690  000.081  000.081: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+041.747  000.023  000.023: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+041.958  000.188  000.188: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+042.600  000.536  000.536: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+042.606  001.449: loading plugins
+042.686  000.080: loading packages
+042.739  000.053: loading after plugins
+042.746  000.007: inits 3
+043.183  000.438: reading ShaDa
+043.729  000.546: clearing screen
+044.283  000.171  000.171: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+044.355  000.455: opening buffers
+044.571  000.107  000.107: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+045.388  000.925: BufEnter autocommands
+045.392  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.005  000.005: --- NVIM STARTING ---
+000.217  000.212: locale set
+000.530  000.313: inits 1
+000.539  000.009: window checked
+000.679  000.141: parsing arguments
+000.727  000.048: expanding arguments
+000.777  000.050: inits 2
+001.361  000.584: init highlight
+001.517  000.015  000.015: sourcing $VIM/sysinit.vim
+003.520  001.931  001.931: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+014.332  000.026  000.026: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+014.398  000.031  000.031: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+014.456  000.034  000.034: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+014.521  000.042  000.042: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+014.601  008.092  007.959: sourcing /usr/share/nvim/runtime/filetype.vim
+014.746  000.045  000.045: sourcing /usr/share/nvim/runtime/ftplugin.vim
+014.912  000.063  000.063: sourcing /usr/share/nvim/runtime/indent.vim
+016.166  000.560  000.560: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+016.580  001.222  000.662: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+016.633  001.566  000.344: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+018.615  000.373  000.373: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+019.686  000.404  000.404: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+027.367  010.470  009.692: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+027.563  026.022  003.856: sourcing /home/joe/.config/nvim/init.vim
+027.569  000.170: sourcing vimrc file(s)
+028.168  000.431  000.431: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+031.918  003.671  003.671: sourcing /home/joe/.vim/plugged/vim-fugitive/plugin/fugitive.vim
+032.763  000.758  000.758: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+033.036  000.120  000.120: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+033.210  000.374  000.253: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+033.923  000.089  000.089: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+034.132  000.851  000.762: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+034.576  000.146  000.146: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+034.983  000.099  000.099: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+035.861  001.648  001.402: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+040.955  005.025  005.025: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+041.416  000.182  000.182: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+041.708  000.225  000.225: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+041.826  000.047  000.047: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+041.931  000.040  000.040: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+042.106  001.058  000.564: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+042.604  000.228  000.228: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+042.634  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+042.736  000.089  000.089: sourcing /usr/share/nvim/runtime/plugin/man.vim
+043.273  000.519  000.519: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+043.475  000.177  000.177: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+044.025  000.530  000.530: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+044.482  000.172  000.172: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+044.801  000.161  000.161: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+044.890  000.665  000.331: sourcing /home/joe/.local/share/nvim/rplugin.vim
+044.896  000.826  000.161: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+045.059  000.135  000.135: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+045.117  000.027  000.027: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+045.345  000.176  000.176: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+045.453  000.082  000.082: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+045.509  000.022  000.022: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+045.719  000.189  000.189: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+046.373  000.569  000.569: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+046.380  001.415: loading plugins
+046.455  000.075: loading packages
+046.507  000.053: loading after plugins
+046.515  000.008: inits 3
+046.950  000.435: reading ShaDa
+047.498  000.549: clearing screen
+048.079  000.168  000.168: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+048.154  000.488: opening buffers
+048.405  000.103  000.103: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+049.190  000.934: BufEnter autocommands
+049.194  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.013  000.013: --- NVIM STARTING ---
+000.310  000.297: locale set
+000.713  000.403: inits 1
+000.728  000.015: window checked
+000.989  000.260: parsing arguments
+001.055  000.067: expanding arguments
+001.121  000.066: inits 2
+001.761  000.640: init highlight
+001.938  000.018  000.018: sourcing $VIM/sysinit.vim
+004.512  002.489  002.489: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+018.910  000.038  000.038: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+019.000  000.043  000.043: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+019.063  000.036  000.036: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+019.133  000.048  000.048: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+019.221  011.750  011.586: sourcing /usr/share/nvim/runtime/filetype.vim
+019.413  000.073  000.073: sourcing /usr/share/nvim/runtime/ftplugin.vim
+019.664  000.075  000.075: sourcing /usr/share/nvim/runtime/indent.vim
+020.623  000.492  000.492: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+020.797  000.843  000.351: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+020.837  001.061  000.218: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+022.092  000.291  000.291: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+022.953  000.344  000.344: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+034.183  013.161  012.526: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+034.446  032.483  003.872: sourcing /home/joe/.config/nvim/init.vim
+034.455  000.194: sourcing vimrc file(s)
+035.289  000.596  000.596: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+039.742  004.333  004.333: sourcing /home/joe/.vim/plugged/vim-fugitive/plugin/fugitive.vim
+040.588  000.753  000.753: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+040.837  000.120  000.120: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+041.001  000.340  000.220: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+041.712  000.090  000.090: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+041.918  000.849  000.758: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+042.374  000.149  000.149: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+042.769  000.099  000.099: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+043.656  001.657  001.409: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+048.657  004.931  004.931: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+049.148  000.185  000.185: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+049.441  000.226  000.226: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+049.563  000.048  000.048: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+049.669  000.040  000.040: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+049.889  001.136  000.637: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+050.384  000.221  000.221: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+050.415  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+050.519  000.090  000.090: sourcing /usr/share/nvim/runtime/plugin/man.vim
+051.045  000.509  000.509: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+051.244  000.171  000.171: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+051.787  000.523  000.523: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+052.268  000.203  000.203: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+052.593  000.164  000.164: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+052.684  000.706  000.339: sourcing /home/joe/.local/share/nvim/rplugin.vim
+052.691  000.860  000.154: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+052.857  000.138  000.138: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+052.915  000.028  000.028: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+053.146  000.178  000.178: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+053.255  000.083  000.083: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+053.314  000.024  000.024: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+053.523  000.187  000.187: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+054.151  000.545  000.545: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+054.158  001.540: loading plugins
+054.231  000.073: loading packages
+054.283  000.052: loading after plugins
+054.290  000.007: inits 3
+054.720  000.430: reading ShaDa
+055.290  000.569: clearing screen
+055.880  000.170  000.170: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+055.956  000.496: opening buffers
+056.173  000.103  000.103: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+056.952  000.893: BufEnter autocommands
+056.956  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.037  000.037: --- NVIM STARTING ---
+000.869  000.832: locale set
+002.193  001.323: inits 1
+002.253  000.061: window checked
+002.811  000.558: parsing arguments
+003.033  000.222: expanding arguments
+003.256  000.223: inits 2
+006.323  003.068: init highlight
+007.227  000.085  000.085: sourcing $VIM/sysinit.vim
+013.730  006.071  006.071: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+028.265  000.025  000.025: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+028.338  000.041  000.041: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+028.392  000.032  000.032: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+028.462  000.051  000.051: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+028.545  009.672  009.523: sourcing /usr/share/nvim/runtime/filetype.vim
+028.729  000.058  000.058: sourcing /usr/share/nvim/runtime/ftplugin.vim
+028.858  000.037  000.037: sourcing /usr/share/nvim/runtime/indent.vim
+029.359  000.256  000.256: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+029.479  000.469  000.213: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+029.513  000.597  000.128: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+030.512  000.190  000.190: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+031.104  000.190  000.190: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+038.564  008.899  008.519: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+038.853  031.472  006.137: sourcing /home/joe/.config/nvim/init.vim
+038.862  000.981: sourcing vimrc file(s)
+039.483  000.444  000.444: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+043.122  003.559  003.559: sourcing /home/joe/.vim/plugged/vim-fugitive/plugin/fugitive.vim
+043.951  000.753  000.753: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+044.200  000.120  000.120: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+044.384  000.358  000.238: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+045.131  000.090  000.090: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+045.348  000.880  000.791: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+045.795  000.145  000.145: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+046.190  000.102  000.102: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+047.067  001.637  001.390: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+052.159  005.021  005.021: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+052.622  000.180  000.180: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+052.910  000.223  000.223: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+053.034  000.047  000.047: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+053.137  000.039  000.039: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+053.323  001.076  000.588: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+053.811  000.219  000.219: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+053.842  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+053.945  000.089  000.089: sourcing /usr/share/nvim/runtime/plugin/man.vim
+054.460  000.498  000.498: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+054.672  000.178  000.178: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+055.242  000.550  000.550: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+055.744  000.182  000.182: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+056.081  000.165  000.165: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+056.173  000.700  000.352: sourcing /home/joe/.local/share/nvim/rplugin.vim
+056.180  000.888  000.188: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+056.370  000.163  000.163: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+056.429  000.029  000.029: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+206.847  001.564  001.564: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+207.457  000.418  000.418: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+207.696  000.109  000.109: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+208.876  001.071  001.071: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+212.002  002.676  002.676: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+212.034  150.982: loading plugins
+212.404  000.370: loading packages
+212.656  000.252: loading after plugins
+212.690  000.035: inits 3
+214.899  002.209: reading ShaDa
+217.242  002.343: clearing screen
+219.428  000.675  000.675: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+219.724  001.807: opening buffers
+220.566  000.403  000.403: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+224.091  003.964: BufEnter autocommands
+224.109  000.018: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.052  000.052: --- NVIM STARTING ---
+001.026  000.974: locale set
+002.275  001.249: inits 1
+002.306  000.031: window checked
+002.819  000.513: parsing arguments
+003.054  000.235: expanding arguments
+003.404  000.351: inits 2
+005.515  002.111: init highlight
+005.853  000.033  000.033: sourcing $VIM/sysinit.vim
+009.577  003.571  003.571: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+021.827  000.018  000.018: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+021.874  000.021  000.021: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+021.914  000.024  000.024: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+021.963  000.034  000.034: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+022.028  007.420  007.323: sourcing /usr/share/nvim/runtime/filetype.vim
+022.160  000.041  000.041: sourcing /usr/share/nvim/runtime/ftplugin.vim
+022.284  000.036  000.036: sourcing /usr/share/nvim/runtime/indent.vim
+022.802  000.279  000.279: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+022.918  000.485  000.206: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+022.950  000.609  000.124: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+023.907  000.187  000.187: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+024.517  000.188  000.188: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+033.477  010.383  010.008: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+033.688  027.785  005.726: sourcing /home/joe/.config/nvim/init.vim
+033.693  000.361: sourcing vimrc file(s)
+034.306  000.436  000.436: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+037.946  003.563  003.563: sourcing /home/joe/.vim/plugged/vim-fugitive/plugin/fugitive.vim
+038.785  000.765  000.765: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+039.029  000.118  000.118: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+039.194  000.336  000.218: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+039.906  000.087  000.087: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+040.113  000.845  000.758: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+040.594  000.147  000.147: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+040.992  000.099  000.099: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+041.942  001.747  001.500: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+047.040  005.021  005.021: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+047.516  000.181  000.181: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+047.808  000.223  000.223: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+047.927  000.047  000.047: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+048.090  000.079  000.079: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+048.376  001.240  000.711: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+048.898  000.245  000.245: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+048.928  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+049.031  000.090  000.090: sourcing /usr/share/nvim/runtime/plugin/man.vim
+049.557  000.509  000.509: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+049.765  000.175  000.175: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+050.318  000.533  000.533: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+050.760  000.177  000.177: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+051.088  000.163  000.163: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+051.179  000.680  000.341: sourcing /home/joe/.local/share/nvim/rplugin.vim
+051.185  000.833  000.153: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+051.350  000.137  000.137: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+051.428  000.031  000.031: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+051.662  000.183  000.183: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+051.773  000.083  000.083: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+051.819  000.022  000.022: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+052.030  000.190  000.190: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+052.657  000.538  000.538: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+052.664  001.438: loading plugins
+052.737  000.074: loading packages
+052.790  000.052: loading after plugins
+052.797  000.007: inits 3
+053.269  000.472: reading ShaDa
+053.844  000.575: clearing screen
+054.412  000.169  000.169: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+054.487  000.473: opening buffers
+054.728  000.130  000.130: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+055.514  000.897: BufEnter autocommands
+055.518  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.020  000.020: --- NVIM STARTING ---
+000.727  000.707: locale set
+001.788  001.061: inits 1
+001.816  000.028: window checked
+002.295  000.479: parsing arguments
+002.470  000.174: expanding arguments
+002.646  000.177: inits 2
+004.817  002.171: init highlight
+005.340  000.072  000.072: sourcing $VIM/sysinit.vim
+013.612  007.903  007.903: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+029.176  000.024  000.024: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+029.235  000.027  000.027: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+029.284  000.030  000.030: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+029.345  000.043  000.043: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+029.429  010.628  010.505: sourcing /usr/share/nvim/runtime/filetype.vim
+029.637  000.054  000.054: sourcing /usr/share/nvim/runtime/ftplugin.vim
+029.791  000.044  000.044: sourcing /usr/share/nvim/runtime/indent.vim
+030.464  000.375  000.375: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+030.621  000.642  000.267: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+030.679  000.819  000.177: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+032.098  000.283  000.283: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+032.950  000.334  000.334: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+041.835  010.947  010.330: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+042.054  036.599  006.203: sourcing /home/joe/.config/nvim/init.vim
+042.060  000.572: sourcing vimrc file(s)
+042.709  000.470  000.470: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+046.382  003.597  003.597: sourcing /home/joe/.vim/plugged/vim-fugitive/plugin/fugitive.vim
+047.214  000.754  000.754: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+047.457  000.119  000.119: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+047.619  000.334  000.215: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+048.334  000.089  000.089: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+048.538  000.845  000.757: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+048.989  000.146  000.146: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+049.381  000.101  000.101: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+050.288  001.669  001.422: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+055.443  005.075  005.075: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+055.925  000.180  000.180: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+056.239  000.249  000.249: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+056.361  000.048  000.048: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+056.465  000.039  000.039: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+056.709  001.167  000.651: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+057.253  000.247  000.247: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+057.285  000.012  000.012: sourcing /usr/share/nvim/runtime/plugin/health.vim
+057.389  000.091  000.091: sourcing /usr/share/nvim/runtime/plugin/man.vim
+057.909  000.502  000.502: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+058.117  000.174  000.174: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+058.671  000.535  000.535: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+059.112  000.178  000.178: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+059.442  000.166  000.166: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+059.532  000.682  000.338: sourcing /home/joe/.local/share/nvim/rplugin.vim
+059.551  000.846  000.164: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+059.732  000.143  000.143: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+059.790  000.028  000.028: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+060.016  000.180  000.180: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+060.126  000.083  000.083: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+060.173  000.022  000.022: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+060.385  000.191  000.191: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+061.008  000.539  000.539: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+061.014  001.447: loading plugins
+061.094  000.080: loading packages
+061.148  000.054: loading after plugins
+061.155  000.007: inits 3
+061.624  000.469: reading ShaDa
+062.179  000.555: clearing screen
+062.741  000.171  000.171: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+062.822  000.472: opening buffers
+063.065  000.101  000.101: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+063.838  000.915: BufEnter autocommands
+063.842  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.037  000.037: --- NVIM STARTING ---
+000.764  000.727: locale set
+001.713  000.949: inits 1
+001.738  000.025: window checked
+002.030  000.293: parsing arguments
+002.163  000.133: expanding arguments
+002.325  000.162: inits 2
+004.222  001.896: init highlight
+004.749  000.051  000.051: sourcing $VIM/sysinit.vim
+007.819  002.734  002.734: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+018.242  000.017  000.017: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+018.288  000.021  000.021: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+018.328  000.025  000.025: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+018.378  000.035  000.035: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+018.440  007.217  007.119: sourcing /usr/share/nvim/runtime/filetype.vim
+018.571  000.040  000.040: sourcing /usr/share/nvim/runtime/ftplugin.vim
+018.694  000.035  000.035: sourcing /usr/share/nvim/runtime/indent.vim
+019.179  000.250  000.250: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+019.295  000.455  000.206: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+019.327  000.578  000.123: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+020.357  000.264  000.264: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+020.909  000.172  000.172: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+028.955  009.485  009.050: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+029.178  024.350  004.260: sourcing /home/joe/.config/nvim/init.vim
+029.184  000.561: sourcing vimrc file(s)
+029.791  000.435  000.435: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+033.426  003.558  003.558: sourcing /home/joe/.vim/plugged/vim-fugitive/plugin/fugitive.vim
+034.280  000.775  000.775: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+034.525  000.118  000.118: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+034.689  000.336  000.218: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+035.398  000.090  000.090: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+035.603  000.846  000.756: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+036.052  000.146  000.146: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+036.442  000.099  000.099: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+037.377  001.694  001.448: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+044.140  006.692  006.692: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+044.659  000.182  000.182: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+044.949  000.223  000.223: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+045.074  000.055  000.055: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+045.208  000.044  000.044: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+045.505  001.227  000.724: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+046.040  000.261  000.261: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+046.071  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+046.173  000.089  000.089: sourcing /usr/share/nvim/runtime/plugin/man.vim
+046.701  000.510  000.510: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+046.932  000.209  000.209: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+047.492  000.537  000.537: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+047.944  000.177  000.177: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+048.263  000.163  000.163: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+048.357  000.678  000.338: sourcing /home/joe/.local/share/nvim/rplugin.vim
+048.364  000.829  000.151: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+048.524  000.134  000.134: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+048.579  000.027  000.027: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+048.803  000.172  000.172: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+048.909  000.080  000.080: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+048.963  000.022  000.022: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+049.169  000.183  000.183: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+049.784  000.532  000.532: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+049.790  001.449: loading plugins
+049.863  000.073: loading packages
+049.916  000.053: loading after plugins
+049.923  000.007: inits 3
+050.402  000.479: reading ShaDa
+050.951  000.549: clearing screen
+051.507  000.168  000.168: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+051.581  000.462: opening buffers
+051.804  000.107  000.107: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+052.598  000.910: BufEnter autocommands
+052.602  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.042  000.042: --- NVIM STARTING ---
+000.732  000.691: locale set
+001.902  001.170: inits 1
+001.934  000.033: window checked
+002.434  000.500: parsing arguments
+002.650  000.216: expanding arguments
+002.885  000.234: inits 2
+007.074  004.189: init highlight
+007.792  000.075  000.075: sourcing $VIM/sysinit.vim
+013.227  004.730  004.730: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+025.905  000.019  000.019: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+025.953  000.022  000.022: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+025.993  000.024  000.024: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+026.042  000.035  000.035: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+026.110  008.671  008.570: sourcing /usr/share/nvim/runtime/filetype.vim
+026.244  000.042  000.042: sourcing /usr/share/nvim/runtime/ftplugin.vim
+026.369  000.036  000.036: sourcing /usr/share/nvim/runtime/indent.vim
+026.858  000.251  000.251: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+026.975  000.459  000.208: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+027.007  000.583  000.125: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+027.974  000.189  000.189: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+028.553  000.190  000.190: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+036.203  009.049  008.670: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+036.507  028.558  005.447: sourcing /home/joe/.config/nvim/init.vim
+036.516  000.809: sourcing vimrc file(s)
+037.362  000.600  000.600: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+041.812  004.313  004.313: sourcing /home/joe/.vim/plugged/vim-fugitive/plugin/fugitive.vim
+042.690  000.779  000.779: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+042.940  000.121  000.121: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+043.106  000.343  000.221: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+043.836  000.089  000.089: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+044.043  000.869  000.780: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+044.494  000.147  000.147: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+044.894  000.100  000.100: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+045.836  001.709  001.463: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+051.068  005.160  005.160: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+051.533  000.179  000.179: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+051.842  000.243  000.243: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+051.965  000.049  000.049: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+052.070  000.039  000.039: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+052.249  001.091  000.580: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+052.897  000.293  000.293: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+052.939  000.013  000.013: sourcing /usr/share/nvim/runtime/plugin/health.vim
+053.192  000.238  000.238: sourcing /usr/share/nvim/runtime/plugin/man.vim
+054.027  000.808  000.808: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+054.726  000.543  000.543: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+056.644  001.774  001.774: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+057.140  000.184  000.184: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+057.485  000.171  000.171: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+057.590  000.724  000.369: sourcing /home/joe/.local/share/nvim/rplugin.vim
+057.600  000.901  000.177: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+057.908  000.270  000.270: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+057.970  000.030  000.030: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+058.231  000.210  000.210: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+058.361  000.101  000.101: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+058.410  000.023  000.023: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+058.628  000.197  000.197: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+059.276  000.558  000.558: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+059.283  001.943: loading plugins
+059.356  000.073: loading packages
+059.410  000.054: loading after plugins
+059.418  000.008: inits 3
+059.891  000.473: reading ShaDa
+060.437  000.546: clearing screen
+061.015  000.170  000.170: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+061.092  000.485: opening buffers
+061.305  000.102  000.102: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+062.135  000.941: BufEnter autocommands
+062.139  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.025  000.025: --- NVIM STARTING ---
+001.264  001.239: locale set
+002.624  001.360: inits 1
+002.660  000.036: window checked
+003.232  000.571: parsing arguments
+003.462  000.231: expanding arguments
+003.927  000.465: inits 2
+007.303  003.375: init highlight
+007.902  000.056  000.056: sourcing $VIM/sysinit.vim
+015.052  006.860  006.860: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+029.770  000.019  000.019: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+029.818  000.021  000.021: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+029.857  000.024  000.024: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+029.906  000.035  000.035: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+029.973  009.960  009.860: sourcing /usr/share/nvim/runtime/filetype.vim
+030.107  000.042  000.042: sourcing /usr/share/nvim/runtime/ftplugin.vim
+030.231  000.036  000.036: sourcing /usr/share/nvim/runtime/indent.vim
+030.756  000.267  000.267: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+030.874  000.475  000.208: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+030.906  000.619  000.143: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+031.871  000.186  000.186: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+032.436  000.182  000.182: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+041.438  010.382  010.014: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+041.652  033.665  005.766: sourcing /home/joe/.config/nvim/init.vim
+041.658  000.633: sourcing vimrc file(s)
+042.276  000.440  000.440: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+046.051  003.699  003.699: sourcing /home/joe/.vim/plugged/vim-fugitive/plugin/fugitive.vim
+046.890  000.754  000.754: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+047.153  000.121  000.121: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+047.325  000.364  000.243: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+048.033  000.090  000.090: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+048.241  000.849  000.759: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+048.686  000.147  000.147: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+049.086  000.101  000.101: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+049.977  001.655  001.407: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+055.075  005.029  005.029: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+055.553  000.182  000.182: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+055.845  000.225  000.225: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+055.963  000.048  000.048: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+056.066  000.040  000.040: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+056.306  001.128  000.633: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+056.807  000.233  000.233: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+056.838  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+056.940  000.089  000.089: sourcing /usr/share/nvim/runtime/plugin/man.vim
+057.477  000.520  000.520: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+057.675  000.175  000.175: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+058.255  000.559  000.559: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+058.710  000.177  000.177: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+059.035  000.160  000.160: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+059.124  000.680  000.342: sourcing /home/joe/.local/share/nvim/rplugin.vim
+059.131  000.833  000.153: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+059.293  000.135  000.135: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+059.351  000.028  000.028: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+059.578  000.175  000.175: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+059.689  000.081  000.081: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+059.744  000.023  000.023: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+059.957  000.190  000.190: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+060.586  000.544  000.544: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+060.592  001.421: loading plugins
+060.664  000.072: loading packages
+060.717  000.052: loading after plugins
+060.724  000.007: inits 3
+061.180  000.456: reading ShaDa
+061.749  000.569: clearing screen
+062.339  000.185  000.185: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+062.413  000.478: opening buffers
+062.626  000.103  000.103: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+063.401  000.885: BufEnter autocommands
+063.405  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.019  000.019: --- NVIM STARTING ---
+000.712  000.693: locale set
+001.784  001.072: inits 1
+001.814  000.030: window checked
+002.275  000.461: parsing arguments
+002.455  000.180: expanding arguments
+002.628  000.172: inits 2
+004.783  002.155: init highlight
+005.303  000.054  000.054: sourcing $VIM/sysinit.vim
+011.718  006.141  006.141: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+032.146  000.027  000.027: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+032.204  000.027  000.027: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+032.262  000.033  000.033: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+032.334  000.051  000.051: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+032.428  012.697  012.558: sourcing /usr/share/nvim/runtime/filetype.vim
+032.618  000.061  000.061: sourcing /usr/share/nvim/runtime/ftplugin.vim
+032.819  000.075  000.075: sourcing /usr/share/nvim/runtime/indent.vim
+033.503  000.322  000.322: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+033.635  000.585  000.263: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+033.673  000.753  000.168: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+034.766  000.211  000.211: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+035.418  000.210  000.210: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+043.324  009.482  009.061: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+043.512  038.128  008.920: sourcing /home/joe/.config/nvim/init.vim
+043.517  000.552: sourcing vimrc file(s)
+044.099  000.416  000.416: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+045.013  000.840  000.840: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+045.254  000.121  000.121: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+045.440  000.357  000.237: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+046.225  000.105  000.105: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+046.457  000.932  000.827: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+047.003  000.243  000.243: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+047.427  000.152  000.152: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+048.327  001.783  001.389: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+053.376  004.980  004.980: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+053.819  000.189  000.189: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+054.122  000.238  000.238: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+054.236  000.045  000.045: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+054.356  000.058  000.058: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+054.530  001.073  000.543: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+055.004  000.211  000.211: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+055.034  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+055.146  000.096  000.096: sourcing /usr/share/nvim/runtime/plugin/man.vim
+055.679  000.517  000.517: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+055.879  000.177  000.177: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+056.448  000.548  000.548: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+056.899  000.178  000.178: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+057.217  000.161  000.161: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+057.306  000.670  000.331: sourcing /home/joe/.local/share/nvim/rplugin.vim
+057.313  000.830  000.160: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+057.474  000.132  000.132: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+057.533  000.029  000.029: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+057.731  000.174  000.174: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+057.868  000.083  000.083: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+057.916  000.023  000.023: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+058.164  000.221  000.221: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+058.849  000.562  000.562: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+058.856  001.345: loading plugins
+058.933  000.077: loading packages
+058.985  000.053: loading after plugins
+058.993  000.007: inits 3
+059.478  000.486: reading ShaDa
+060.120  000.642: clearing screen
+060.668  000.174  000.174: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+060.744  000.451: opening buffers
+060.956  000.103  000.103: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+061.737  000.890: BufEnter autocommands
+061.740  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.021  000.021: --- NVIM STARTING ---
+000.659  000.638: locale set
+001.385  000.726: inits 1
+001.406  000.020: window checked
+001.819  000.413: parsing arguments
+001.974  000.155: expanding arguments
+002.171  000.197: inits 2
+004.346  002.175: init highlight
+005.302  000.122  000.122: sourcing $VIM/sysinit.vim
+010.086  003.686  003.686: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+024.918  000.036  000.036: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+024.972  000.027  000.027: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+025.049  000.036  000.036: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+025.125  000.053  000.053: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+025.212  011.377  011.225: sourcing /usr/share/nvim/runtime/filetype.vim
+025.395  000.062  000.062: sourcing /usr/share/nvim/runtime/ftplugin.vim
+025.580  000.047  000.047: sourcing /usr/share/nvim/runtime/indent.vim
+026.230  000.320  000.320: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+026.407  000.625  000.305: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+026.443  000.763  000.138: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+027.545  000.176  000.176: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+028.074  000.168  000.168: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+035.195  008.554  008.210: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+035.393  029.596  005.108: sourcing /home/joe/.config/nvim/init.vim
+035.398  001.334: sourcing vimrc file(s)
+035.991  000.421  000.421: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+036.929  000.861  000.861: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+037.169  000.120  000.120: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+037.373  000.375  000.256: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+038.144  000.109  000.109: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+038.433  000.976  000.867: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+038.977  000.235  000.235: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+039.444  000.157  000.157: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+040.391  001.866  001.473: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+045.430  004.967  004.967: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+045.889  000.185  000.185: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+046.178  000.224  000.224: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+046.303  000.047  000.047: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+046.415  000.051  000.051: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+046.606  001.077  000.569: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+047.073  000.204  000.204: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+047.104  000.012  000.012: sourcing /usr/share/nvim/runtime/plugin/health.vim
+047.221  000.102  000.102: sourcing /usr/share/nvim/runtime/plugin/man.vim
+047.736  000.498  000.498: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+047.938  000.178  000.178: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+048.497  000.538  000.538: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+048.941  000.178  000.178: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+049.268  000.164  000.164: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+049.358  000.681  000.340: sourcing /home/joe/.local/share/nvim/rplugin.vim
+049.364  000.831  000.151: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+049.526  000.134  000.134: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+049.583  000.028  000.028: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+049.777  000.170  000.170: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+134.091  000.492  000.492: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+134.367  000.119  000.119: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+135.799  001.323  001.323: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+139.319  003.079  003.079: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+139.358  085.709: loading plugins
+139.743  000.385: loading packages
+139.999  000.256: loading after plugins
+140.036  000.037: inits 3
+142.409  002.373: reading ShaDa
+145.111  002.702: clearing screen
+147.396  000.804  000.804: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+147.734  001.819: opening buffers
+148.616  000.451  000.451: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+151.934  003.748: BufEnter autocommands
+151.951  000.018: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.007  000.007: --- NVIM STARTING ---
+000.319  000.312: locale set
+000.824  000.505: inits 1
+000.837  000.014: window checked
+001.258  000.421: parsing arguments
+001.493  000.235: expanding arguments
+001.650  000.157: inits 2
+002.788  001.137: init highlight
+003.074  000.019  000.019: sourcing $VIM/sysinit.vim
+005.198  002.011  002.011: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+015.893  000.018  000.018: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+015.931  000.017  000.017: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+015.967  000.021  000.021: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+016.013  000.033  000.033: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+016.074  007.819  007.729: sourcing /usr/share/nvim/runtime/filetype.vim
+016.200  000.045  000.045: sourcing /usr/share/nvim/runtime/ftplugin.vim
+016.310  000.031  000.031: sourcing /usr/share/nvim/runtime/indent.vim
+016.758  000.226  000.226: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+016.861  000.409  000.183: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+016.891  000.521  000.112: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+017.797  000.171  000.171: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+018.305  000.166  000.166: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+025.955  008.924  008.587: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+026.363  023.262  003.911: sourcing /home/joe/.config/nvim/init.vim
+026.377  000.309: sourcing vimrc file(s)
+027.376  000.617  000.617: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+029.647  001.804  001.804: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+029.940  000.126  000.126: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+030.217  000.468  000.342: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+030.977  000.103  000.103: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+031.197  000.889  000.786: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+031.754  000.254  000.254: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+032.195  000.160  000.160: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+033.100  001.817  001.404: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+038.109  004.937  004.937: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+038.555  000.184  000.184: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+038.845  000.224  000.224: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+038.967  000.047  000.047: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+039.078  000.050  000.050: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+039.263  001.070  000.564: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+039.739  000.211  000.211: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+039.769  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+039.881  000.097  000.097: sourcing /usr/share/nvim/runtime/plugin/man.vim
+040.392  000.495  000.495: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+040.590  000.173  000.173: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+041.209  000.597  000.597: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+041.714  000.180  000.180: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+042.041  000.161  000.161: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+042.135  000.692  000.351: sourcing /home/joe/.local/share/nvim/rplugin.vim
+042.141  000.881  000.189: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+042.364  000.194  000.194: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+042.424  000.030  000.030: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+042.644  000.196  000.196: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+042.781  000.080  000.080: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+042.827  000.021  000.021: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+043.028  000.182  000.182: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+043.654  000.538  000.538: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+043.660  001.976: loading plugins
+043.733  000.073: loading packages
+043.787  000.054: loading after plugins
+043.795  000.007: inits 3
+044.287  000.492: reading ShaDa
+044.845  000.558: clearing screen
+045.388  000.179  000.179: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+045.466  000.442: opening buffers
+045.674  000.098  000.098: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+046.444  000.881: BufEnter autocommands
+046.448  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.015  000.015: --- NVIM STARTING ---
+000.365  000.350: locale set
+001.117  000.752: inits 1
+001.139  000.022: window checked
+001.481  000.342: parsing arguments
+001.584  000.103: expanding arguments
+001.676  000.093: inits 2
+003.070  001.394: init highlight
+003.636  000.047  000.047: sourcing $VIM/sysinit.vim
+008.117  004.308  004.308: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+017.204  000.018  000.018: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+017.242  000.018  000.018: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+017.280  000.022  000.022: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+017.327  000.033  000.033: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+017.385  006.531  006.440: sourcing /usr/share/nvim/runtime/filetype.vim
+017.501  000.038  000.038: sourcing /usr/share/nvim/runtime/ftplugin.vim
+017.608  000.031  000.031: sourcing /usr/share/nvim/runtime/indent.vim
+018.051  000.229  000.229: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+018.156  000.410  000.181: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+018.186  000.518  000.108: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+019.092  000.170  000.170: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+019.600  000.164  000.164: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+026.656  008.334  008.000: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+026.853  023.147  003.388: sourcing /home/joe/.config/nvim/init.vim
+026.858  000.594: sourcing vimrc file(s)
+027.466  000.426  000.426: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+028.398  000.855  000.855: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+028.646  000.122  000.122: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+028.843  000.371  000.249: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+029.554  000.094  000.094: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+029.756  000.840  000.746: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+030.229  000.228  000.228: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+030.551  000.264  000.264: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+030.668  000.057  000.057: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+030.779  000.054  000.054: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+030.929  001.077  000.473: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+031.404  000.204  000.204: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+031.436  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+031.537  000.085  000.085: sourcing /usr/share/nvim/runtime/plugin/man.vim
+032.072  000.519  000.519: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+032.269  000.171  000.171: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+032.792  000.499  000.499: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+033.221  000.172  000.172: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+033.539  000.158  000.158: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+033.630  000.659  000.329: sourcing /home/joe/.local/share/nvim/rplugin.vim
+033.637  000.809  000.150: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+033.799  000.134  000.134: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+033.856  000.029  000.029: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+034.055  000.175  000.175: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+034.161  000.079  000.079: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+034.210  000.022  000.022: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+034.417  000.186  000.186: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+035.036  000.534  000.534: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+035.042  001.161: loading plugins
+035.116  000.074: loading packages
+035.168  000.052: loading after plugins
+035.204  000.035: inits 3
+035.681  000.478: reading ShaDa
+036.292  000.611: clearing screen
+036.868  000.188  000.188: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+036.944  000.463: opening buffers
+037.607  000.663: BufEnter autocommands
+037.611  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.008  000.008: --- NVIM STARTING ---
+000.191  000.183: locale set
+000.481  000.290: inits 1
+000.490  000.008: window checked
+000.607  000.118: parsing arguments
+000.650  000.043: expanding arguments
+000.693  000.043: inits 2
+001.215  000.522: init highlight
+001.341  000.013  000.013: sourcing $VIM/sysinit.vim
+002.849  001.443  001.443: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+010.553  000.021  000.021: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+010.601  000.019  000.019: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+010.638  000.021  000.021: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+010.692  000.037  000.037: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+010.752  005.867  005.768: sourcing /usr/share/nvim/runtime/filetype.vim
+010.864  000.038  000.038: sourcing /usr/share/nvim/runtime/ftplugin.vim
+010.963  000.033  000.033: sourcing /usr/share/nvim/runtime/indent.vim
+011.414  000.223  000.223: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+011.514  000.402  000.179: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+011.544  000.512  000.110: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+012.405  000.163  000.163: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+012.894  000.162  000.162: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+020.152  008.471  008.146: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+020.381  019.019  002.656: sourcing /home/joe/.config/nvim/init.vim
+020.386  000.139: sourcing vimrc file(s)
+020.990  000.430  000.430: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+021.978  000.904  000.904: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+022.226  000.120  000.120: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+022.444  000.390  000.270: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+023.150  000.093  000.093: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+023.349  000.837  000.744: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+024.752  000.896  000.896: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+025.720  000.249  000.249: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+027.272  003.812  002.666: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+027.754  000.205  000.205: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+028.041  000.222  000.222: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+028.150  000.045  000.045: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+028.254  000.052  000.052: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+028.472  001.078  000.554: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+028.971  000.216  000.216: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+029.000  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+029.114  000.098  000.098: sourcing /usr/share/nvim/runtime/plugin/man.vim
+029.622  000.491  000.491: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+029.835  000.191  000.191: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+030.379  000.521  000.521: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+030.815  000.174  000.174: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+031.140  000.177  000.177: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+031.232  000.668  000.317: sourcing /home/joe/.local/share/nvim/rplugin.vim
+031.238  000.828  000.160: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+031.408  000.141  000.141: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+031.482  000.036  000.036: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+031.687  000.178  000.178: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+031.798  000.085  000.085: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+031.849  000.025  000.025: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+032.097  000.199  000.199: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+032.713  000.528  000.528: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+032.719  001.335: loading plugins
+032.801  000.081: loading packages
+032.842  000.042: loading after plugins
+032.850  000.007: inits 3
+033.316  000.466: reading ShaDa
+033.319  000.003: waiting for return
+1679.088  1645.769: clearing screen
+1680.936  000.671  000.671: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+1681.225  001.466: opening buffers
+1681.905  000.307  000.307: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+1683.669  002.138: BufEnter autocommands
+1683.674  000.005: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.011  000.011: --- NVIM STARTING ---
+000.538  000.527: locale set
+001.790  001.251: inits 1
+001.822  000.032: window checked
+002.202  000.381: parsing arguments
+002.337  000.135: expanding arguments
+002.480  000.142: inits 2
+004.209  001.729: init highlight
+005.017  000.067  000.067: sourcing $VIM/sysinit.vim
+010.228  004.890  004.890: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+029.155  000.023  000.023: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+029.214  000.027  000.027: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+029.268  000.031  000.031: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+029.348  000.055  000.055: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+029.450  010.542  010.406: sourcing /usr/share/nvim/runtime/filetype.vim
+029.652  000.068  000.068: sourcing /usr/share/nvim/runtime/ftplugin.vim
+029.772  000.040  000.040: sourcing /usr/share/nvim/runtime/indent.vim
+030.314  000.308  000.308: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+030.435  000.520  000.212: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+030.470  000.643  000.123: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+031.507  000.200  000.200: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+032.097  000.197  000.197: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+039.627  008.993  008.596: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+039.832  034.714  009.538: sourcing /home/joe/.config/nvim/init.vim
+039.838  000.849: sourcing vimrc file(s)
+040.421  000.433  000.433: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+041.337  000.840  000.840: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+041.582  000.121  000.121: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+041.776  000.366  000.246: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+042.500  000.093  000.093: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+042.705  000.842  000.749: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+043.237  000.236  000.236: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+043.667  000.153  000.153: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+044.555  001.778  001.389: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+044.951  000.181  000.181: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+045.243  000.235  000.235: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+045.348  000.045  000.045: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+045.451  000.051  000.051: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+045.600  000.975  000.463: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+046.088  000.215  000.215: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+046.119  000.013  000.013: sourcing /usr/share/nvim/runtime/plugin/health.vim
+046.242  000.109  000.109: sourcing /usr/share/nvim/runtime/plugin/man.vim
+046.756  000.497  000.497: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+046.968  000.188  000.188: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+047.516  000.525  000.525: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+047.952  000.178  000.178: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+048.265  000.168  000.168: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+048.353  000.652  000.306: sourcing /home/joe/.local/share/nvim/rplugin.vim
+048.360  000.808  000.156: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+048.537  000.142  000.142: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+048.602  000.036  000.036: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+048.809  000.181  000.181: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+048.922  000.084  000.084: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+048.975  000.027  000.027: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+049.232  000.206  000.206: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+049.889  000.576  000.576: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+049.895  001.217: loading plugins
+049.984  000.089: loading packages
+050.026  000.043: loading after plugins
+050.034  000.007: inits 3
+050.493  000.459: reading ShaDa
+051.078  000.585: clearing screen
+051.624  000.193  000.193: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+051.710  000.439: opening buffers
+051.926  000.102  000.102: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+052.692  000.881: BufEnter autocommands
+052.696  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.012  000.012: --- NVIM STARTING ---
+000.560  000.549: locale set
+001.661  001.100: inits 1
+001.689  000.028: window checked
+002.089  000.400: parsing arguments
+002.221  000.132: expanding arguments
+002.395  000.174: inits 2
+004.092  001.697: init highlight
+004.880  000.100  000.100: sourcing $VIM/sysinit.vim
+012.029  006.793  006.793: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+030.852  000.023  000.023: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+030.910  000.026  000.026: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+030.964  000.031  000.031: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+031.043  000.055  000.055: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+031.129  011.393  011.259: sourcing /usr/share/nvim/runtime/filetype.vim
+031.337  000.066  000.066: sourcing /usr/share/nvim/runtime/ftplugin.vim
+031.486  000.050  000.050: sourcing /usr/share/nvim/runtime/indent.vim
+032.120  000.346  000.346: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+032.247  000.581  000.235: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+032.282  000.726  000.145: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+033.325  000.202  000.202: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+033.913  000.198  000.198: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+041.541  009.096  008.696: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+041.737  036.728  008.605: sourcing /home/joe/.config/nvim/init.vim
+041.742  000.822: sourcing vimrc file(s)
+042.313  000.423  000.423: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+043.221  000.831  000.831: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+043.462  000.119  000.119: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+043.641  000.349  000.229: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+044.357  000.093  000.093: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+044.572  000.851  000.758: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+045.093  000.238  000.238: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+045.543  000.157  000.157: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+046.417  001.769  001.375: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+046.811  000.181  000.181: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+047.100  000.233  000.233: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+047.206  000.045  000.045: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+047.310  000.051  000.051: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+047.458  000.974  000.464: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+047.961  000.229  000.229: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+047.995  000.013  000.013: sourcing /usr/share/nvim/runtime/plugin/health.vim
+048.103  000.094  000.094: sourcing /usr/share/nvim/runtime/plugin/man.vim
+048.594  000.475  000.475: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+048.801  000.185  000.185: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+049.362  000.513  000.513: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+049.794  000.179  000.179: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+050.104  000.164  000.164: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+050.192  000.650  000.307: sourcing /home/joe/.local/share/nvim/rplugin.vim
+050.199  000.803  000.153: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+050.377  000.143  000.143: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+050.439  000.035  000.035: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+050.651  000.187  000.187: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+050.764  000.085  000.085: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+050.817  000.027  000.027: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+051.066  000.199  000.199: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+051.711  000.564  000.564: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+051.717  001.227: loading plugins
+051.804  000.087: loading packages
+051.847  000.043: loading after plugins
+051.854  000.007: inits 3
+052.319  000.465: reading ShaDa
+052.991  000.672: clearing screen
+053.546  000.192  000.192: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+053.623  000.440: opening buffers
+053.826  000.100  000.100: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+054.619  000.896: BufEnter autocommands
+054.623  000.004: editing files in windows
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.045  000.045: --- NVIM STARTING ---
+000.828  000.782: locale set
+002.535  001.707: inits 1
+002.576  000.042: window checked
+003.251  000.674: parsing arguments
+003.480  000.229: expanding arguments
+003.706  000.226: inits 2
+007.920  004.214: init highlight
+008.848  000.059  000.059: sourcing $VIM/sysinit.vim
+013.603  004.488  004.488: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+025.445  000.021  000.021: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+025.488  000.020  000.020: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+025.532  000.026  000.026: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+025.580  000.034  000.034: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+025.649  007.551  007.450: sourcing /usr/share/nvim/runtime/filetype.vim
+025.771  000.041  000.041: sourcing /usr/share/nvim/runtime/ftplugin.vim
+025.896  000.038  000.038: sourcing /usr/share/nvim/runtime/indent.vim
+026.354  000.239  000.239: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+026.465  000.432  000.194: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+026.498  000.550  000.117: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+027.447  000.181  000.181: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+027.990  000.177  000.177: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+035.144  008.495  008.137: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+035.336  026.364  005.200: sourcing /home/joe/.config/nvim/init.vim
+035.342  000.999: sourcing vimrc file(s)
+035.950  000.441  000.441: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+036.870  000.842  000.842: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+037.117  000.121  000.121: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+037.379  000.435  000.314: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+038.169  000.094  000.094: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+038.423  000.938  000.845: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+038.951  000.242  000.242: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+039.375  000.150  000.150: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+040.259  001.762  001.369: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+045.313  004.985  004.985: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+045.754  000.188  000.188: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+046.041  000.226  000.226: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+046.163  000.047  000.047: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+046.274  000.053  000.053: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+046.494  001.097  000.583: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+046.976  000.218  000.218: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+047.007  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+047.119  000.097  000.097: sourcing /usr/share/nvim/runtime/plugin/man.vim
+047.640  000.503  000.503: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+047.845  000.181  000.181: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+048.427  000.560  000.560: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+048.871  000.175  000.175: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+049.183  000.160  000.160: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+049.274  000.668  000.333: sourcing /home/joe/.local/share/nvim/rplugin.vim
+049.280  000.821  000.154: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+049.441  000.132  000.132: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+049.498  000.029  000.029: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+049.698  000.174  000.174: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+078.789  000.121  000.121: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+078.858  000.030  000.030: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+079.222  000.338  000.338: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+079.999  000.646  000.646: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+080.008  030.305: loading plugins
+080.086  000.078: loading packages
+080.130  000.044: loading after plugins
+080.137  000.007: inits 3
+080.324  000.187: reading ShaDa
+080.869  000.545: clearing screen
+081.473  000.214  000.214: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+081.550  000.467: opening buffers
+081.757  000.101  000.101: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+082.521  000.869: BufEnter autocommands
+082.524  000.003: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.006  000.006: --- NVIM STARTING ---
+000.415  000.409: locale set
+001.594  001.179: inits 1
+001.672  000.078: window checked
+002.099  000.427: parsing arguments
+002.453  000.354: expanding arguments
+002.670  000.217: inits 2
+003.968  001.298: init highlight
+004.751  000.083  000.083: sourcing $VIM/sysinit.vim
+007.013  001.878  001.878: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+015.413  000.018  000.018: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+015.453  000.018  000.018: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+015.490  000.021  000.021: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+015.533  000.030  000.030: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+015.616  005.947  005.859: sourcing /usr/share/nvim/runtime/filetype.vim
+015.728  000.037  000.037: sourcing /usr/share/nvim/runtime/ftplugin.vim
+015.841  000.034  000.034: sourcing /usr/share/nvim/runtime/indent.vim
+016.266  000.223  000.223: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+016.364  000.397  000.174: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+016.395  000.505  000.108: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+017.401  000.193  000.193: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+018.850  000.744  000.744: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+026.456  009.918  008.981: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+026.661  021.702  003.384: sourcing /home/joe/.config/nvim/init.vim
+026.666  000.912: sourcing vimrc file(s)
+027.281  000.427  000.427: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+028.230  000.873  000.873: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+028.479  000.120  000.120: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+028.693  000.388  000.267: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+029.411  000.091  000.091: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+029.622  000.848  000.757: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+030.141  000.236  000.236: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+030.576  000.153  000.153: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+031.473  001.779  001.390: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+036.557  005.012  005.012: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+037.004  000.184  000.184: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+037.292  000.227  000.227: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+037.410  000.046  000.046: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+037.519  000.053  000.053: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+037.749  001.107  000.597: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+038.254  000.235  000.235: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+038.286  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+038.399  000.098  000.098: sourcing /usr/share/nvim/runtime/plugin/man.vim
+038.926  000.510  000.510: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+039.141  000.192  000.192: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+039.706  000.541  000.541: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+040.150  000.176  000.176: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+040.466  000.160  000.160: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+040.556  000.671  000.335: sourcing /home/joe/.local/share/nvim/rplugin.vim
+040.563  000.825  000.154: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+040.724  000.132  000.132: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+040.780  000.029  000.029: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+040.979  000.174  000.174: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+158.060  000.312  000.312: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+158.328  000.095  000.095: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+159.236  000.826  000.826: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+161.222  001.662  001.662: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+161.243  118.502: loading plugins
+161.498  000.255: loading packages
+161.633  000.135: loading after plugins
+161.656  000.023: inits 3
+162.401  000.745: reading ShaDa
+164.037  001.636: clearing screen
+165.575  000.510  000.510: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+165.800  001.253: opening buffers
+166.415  000.306  000.306: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+168.825  002.719: BufEnter autocommands
+168.836  000.011: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.026  000.026: --- NVIM STARTING ---
+000.821  000.795: locale set
+001.776  000.955: inits 1
+001.795  000.019: window checked
+002.061  000.267: parsing arguments
+002.153  000.091: expanding arguments
+002.250  000.097: inits 2
+003.416  001.166: init highlight
+003.696  000.030  000.030: sourcing $VIM/sysinit.vim
+006.940  003.119  003.119: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+018.709  000.020  000.020: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+018.752  000.019  000.019: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+018.788  000.020  000.020: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+018.836  000.032  000.032: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+018.901  008.214  008.123: sourcing /usr/share/nvim/runtime/filetype.vim
+019.031  000.039  000.039: sourcing /usr/share/nvim/runtime/ftplugin.vim
+019.144  000.033  000.033: sourcing /usr/share/nvim/runtime/indent.vim
+019.605  000.239  000.239: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+019.708  000.426  000.187: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+019.740  000.544  000.118: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+020.722  000.178  000.178: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+021.250  000.175  000.175: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+028.433  008.488  008.135: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+028.634  024.894  004.459: sourcing /home/joe/.config/nvim/init.vim
+028.640  000.300: sourcing vimrc file(s)
+029.236  000.429  000.429: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+030.210  000.897  000.897: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+030.472  000.121  000.121: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+030.670  000.373  000.252: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+031.379  000.094  000.094: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+031.579  000.836  000.742: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+032.104  000.243  000.243: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+032.521  000.150  000.150: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+033.430  001.777  001.384: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+038.845  005.344  005.344: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+039.348  000.189  000.189: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+039.633  000.227  000.227: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+039.744  000.045  000.045: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+039.884  000.058  000.058: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+040.163  001.196  000.677: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+040.441  000.016  000.016: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/autoloclist.vim
+040.467  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/balloons.vim
+040.490  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/checker.vim
+040.515  000.011  000.011: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/cursor.vim
+040.544  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/highlighting.vim
+040.569  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/loclist.vim
+040.595  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/modemap.vim
+040.620  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/notifiers.vim
+040.646  000.011  000.011: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/registry.vim
+040.672  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/signs.vim
+041.268  000.423  000.423: sourcing /home/joe/.vim/plugged/syntastic/autoload/syntastic/util.vim
+046.599  000.063  000.063: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/autoloclist.vim
+046.673  000.053  000.053: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/balloons.vim
+046.846  000.158  000.158: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/checker.vim
+046.940  000.078  000.078: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/cursor.vim
+047.026  000.070  000.070: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/highlighting.vim
+047.281  000.239  000.239: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/loclist.vim
+047.367  000.070  000.070: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/modemap.vim
+047.438  000.057  000.057: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/notifiers.vim
+047.755  000.301  000.301: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/registry.vim
+047.864  000.090  000.090: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/signs.vim
+048.760  008.075  006.473: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic.vim
+049.020  000.066  000.066: sourcing /home/joe/.vim/plugged/deoplete.nvim/autoload/deoplete.vim
+049.123  000.272  000.206: sourcing /home/joe/.vim/plugged/deoplete.nvim/plugin/deoplete.vim
+049.587  000.204  000.204: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+049.628  000.023  000.023: sourcing /usr/share/nvim/runtime/plugin/health.vim
+049.733  000.091  000.091: sourcing /usr/share/nvim/runtime/plugin/man.vim
+050.280  000.530  000.530: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+050.480  000.174  000.174: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+051.051  000.551  000.551: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+051.511  000.183  000.183: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+051.834  000.166  000.166: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+051.923  000.695  000.347: sourcing /home/joe/.local/share/nvim/rplugin.vim
+051.930  000.845  000.150: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+052.093  000.133  000.133: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+052.152  000.028  000.028: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+052.357  000.175  000.175: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+052.464  000.082  000.082: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+052.514  000.022  000.022: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+052.721  000.188  000.188: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+053.379  000.560  000.560: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+053.387  001.834: loading plugins
+053.462  000.075: loading packages
+053.505  000.043: loading after plugins
+053.516  000.011: inits 3
+053.843  000.326: reading ShaDa
+054.403  000.561: clearing screen
+054.954  000.176  000.176: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+055.467  000.187  000.187: sourcing /home/joe/.vim/plugged/syntastic/autoload/syntastic/log.vim
+055.503  000.736: opening buffers
+055.707  000.100  000.100: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+056.771  001.168: BufEnter autocommands
+056.775  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.009  000.009: --- NVIM STARTING ---
+000.234  000.226: locale set
+000.556  000.322: inits 1
+000.566  000.010: window checked
+000.708  000.142: parsing arguments
+000.761  000.053: expanding arguments
+000.817  000.056: inits 2
+001.504  000.687: init highlight
+001.759  000.041  000.041: sourcing $VIM/sysinit.vim
+004.155  002.263  002.263: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+015.547  000.020  000.020: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+015.587  000.018  000.018: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+015.622  000.019  000.019: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+015.668  000.031  000.031: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+015.730  007.425  007.338: sourcing /usr/share/nvim/runtime/filetype.vim
+015.849  000.038  000.038: sourcing /usr/share/nvim/runtime/ftplugin.vim
+015.958  000.032  000.032: sourcing /usr/share/nvim/runtime/indent.vim
+016.403  000.231  000.231: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+016.501  000.410  000.179: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+016.532  000.523  000.113: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+017.416  000.170  000.170: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+017.943  000.171  000.171: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+024.997  008.320  007.979: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+025.192  023.393  004.790: sourcing /home/joe/.config/nvim/init.vim
+025.197  000.259: sourcing vimrc file(s)
+025.780  000.431  000.431: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+026.729  000.871  000.871: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+026.986  000.122  000.122: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+027.173  000.360  000.238: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+027.897  000.093  000.093: sourcing /home/joe/.vim/plugged/ale/autoload/ale/events.vim
+028.100  000.858  000.765: sourcing /home/joe/.vim/plugged/ale/plugin/ale.vim
+028.628  000.244  000.244: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+029.051  000.153  000.153: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+029.935  001.760  001.364: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+034.987  004.979  004.979: sourcing /home/joe/.vim/plugged/vim-easymotion/plugin/EasyMotion.vim
+035.447  000.188  000.188: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+035.734  000.227  000.227: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+035.830  000.034  000.034: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+035.933  000.042  000.042: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+036.110  001.026  000.535: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+036.375  000.015  000.015: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/autoloclist.vim
+036.401  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/balloons.vim
+036.422  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/checker.vim
+036.445  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/cursor.vim
+036.470  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/highlighting.vim
+036.494  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/loclist.vim
+036.518  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/modemap.vim
+036.541  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/notifiers.vim
+036.565  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/registry.vim
+036.589  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/signs.vim
+037.189  000.432  000.432: sourcing /home/joe/.vim/plugged/syntastic/autoload/syntastic/util.vim
+042.500  000.059  000.059: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/autoloclist.vim
+042.574  000.054  000.054: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/balloons.vim
+042.750  000.161  000.161: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/checker.vim
+042.847  000.081  000.081: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/cursor.vim
+042.934  000.071  000.071: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/highlighting.vim
+043.182  000.233  000.233: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/loclist.vim
+043.268  000.070  000.070: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/modemap.vim
+043.349  000.059  000.059: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/notifiers.vim
+043.677  000.312  000.312: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/registry.vim
+043.783  000.086  000.086: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/signs.vim
+044.721  008.117  006.502: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic.vim
+044.973  000.070  000.070: sourcing /home/joe/.vim/plugged/deoplete.nvim/autoload/deoplete.vim
+045.097  000.290  000.220: sourcing /home/joe/.vim/plugged/deoplete.nvim/plugin/deoplete.vim
+045.568  000.205  000.205: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+045.610  000.024  000.024: sourcing /usr/share/nvim/runtime/plugin/health.vim
+045.715  000.088  000.088: sourcing /usr/share/nvim/runtime/plugin/man.vim
+046.259  000.526  000.526: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+046.466  000.179  000.179: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+047.041  000.556  000.556: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+047.487  000.178  000.178: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+047.851  000.166  000.166: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+047.942  000.724  000.380: sourcing /home/joe/.local/share/nvim/rplugin.vim
+047.949  000.876  000.152: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+048.114  000.137  000.137: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+048.173  000.028  000.028: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+048.377  000.174  000.174: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+048.488  000.082  000.082: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+048.532  000.020  000.020: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+048.740  000.184  000.184: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+049.384  000.561  000.561: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+049.391  001.761: loading plugins
+049.480  000.088: loading packages
+049.526  000.047: loading after plugins
+049.538  000.012: inits 3
+049.892  000.354: reading ShaDa
+050.433  000.541: clearing screen
+051.071  000.239  000.239: sourcing /home/joe/.vim/plugged/ale/autoload/ale.vim
+051.587  000.182  000.182: sourcing /home/joe/.vim/plugged/syntastic/autoload/syntastic/log.vim
+051.622  000.768: opening buffers
+051.833  000.102  000.102: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+052.842  001.119: BufEnter autocommands
+052.846  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.008  000.008: --- NVIM STARTING ---
+000.237  000.229: locale set
+000.562  000.325: inits 1
+000.572  000.010: window checked
+000.714  000.142: parsing arguments
+000.839  000.126: expanding arguments
+000.896  000.057: inits 2
+001.490  000.593: init highlight
+001.659  000.017  000.017: sourcing $VIM/sysinit.vim
+004.136  002.387  002.387: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+013.444  000.111  000.111: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+013.628  000.051  000.051: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+013.708  000.042  000.042: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+013.824  000.070  000.070: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+013.944  007.624  007.351: sourcing /usr/share/nvim/runtime/filetype.vim
+014.625  000.323  000.323: sourcing /usr/share/nvim/runtime/ftplugin.vim
+014.946  000.073  000.073: sourcing /usr/share/nvim/runtime/indent.vim
+015.705  000.426  000.426: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+015.942  000.771  000.345: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+016.007  000.957  000.185: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+017.291  000.196  000.196: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+017.838  000.170  000.170: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+024.848  008.596  008.230: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+025.048  023.365  003.405: sourcing /home/joe/.config/nvim/init.vim
+025.053  000.182: sourcing vimrc file(s)
+025.648  000.425  000.425: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+026.628  000.893  000.893: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+026.870  000.120  000.120: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+027.067  000.366  000.246: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+027.575  000.216  000.216: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+028.028  000.183  000.183: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+028.942  001.784  001.385: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+029.368  000.212  000.212: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+029.633  000.215  000.215: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+029.734  000.044  000.044: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+029.842  000.042  000.042: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+030.024  001.010  000.498: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+030.502  000.209  000.209: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+030.532  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+030.646  000.088  000.088: sourcing /usr/share/nvim/runtime/plugin/man.vim
+031.166  000.504  000.504: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+031.361  000.171  000.171: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+031.885  000.503  000.503: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+032.320  000.176  000.176: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+032.627  000.162  000.162: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+032.715  000.650  000.312: sourcing /home/joe/.local/share/nvim/rplugin.vim
+032.722  000.803  000.153: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+032.880  000.130  000.130: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+032.950  000.032  000.032: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+033.138  000.164  000.164: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+033.244  000.079  000.079: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+033.291  000.021  000.021: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+033.491  000.177  000.177: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+034.147  000.568  000.568: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+034.181  001.189: loading plugins
+034.266  000.084: loading packages
+034.311  000.045: loading after plugins
+034.318  000.007: inits 3
+034.716  000.398: reading ShaDa
+035.274  000.558: clearing screen
+035.629  000.354: opening buffers
+035.851  000.112  000.112: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+036.637  000.897: BufEnter autocommands
+036.641  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.010  000.010: --- NVIM STARTING ---
+000.232  000.222: locale set
+000.560  000.328: inits 1
+000.570  000.010: window checked
+000.712  000.142: parsing arguments
+000.814  000.102: expanding arguments
+000.871  000.058: inits 2
+001.466  000.595: init highlight
+001.617  000.015  000.015: sourcing $VIM/sysinit.vim
+003.945  002.262  002.262: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+013.958  000.073  000.073: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+014.046  000.039  000.039: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+014.234  000.079  000.079: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+014.332  000.060  000.060: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+014.528  008.436  008.185: sourcing /usr/share/nvim/runtime/filetype.vim
+014.742  000.082  000.082: sourcing /usr/share/nvim/runtime/ftplugin.vim
+014.948  000.094  000.094: sourcing /usr/share/nvim/runtime/indent.vim
+015.718  000.369  000.369: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+015.948  000.748  000.380: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+015.980  000.935  000.187: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+017.011  000.174  000.174: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+017.541  000.190  000.190: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+024.589  008.430  008.066: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+024.788  023.150  002.910: sourcing /home/joe/.config/nvim/init.vim
+024.794  000.162: sourcing vimrc file(s)
+025.395  000.424  000.424: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+026.370  000.892  000.892: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+026.624  000.122  000.122: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+026.834  000.384  000.263: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+027.327  000.205  000.205: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+027.787  000.162  000.162: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+028.695  001.780  001.414: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+029.142  000.217  000.217: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+029.407  000.214  000.214: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+029.497  000.034  000.034: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+029.587  000.039  000.039: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+029.753  000.974  000.471: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+030.023  000.016  000.016: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/autoloclist.vim
+030.048  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/balloons.vim
+030.076  000.011  000.011: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/checker.vim
+030.100  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/cursor.vim
+030.125  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/highlighting.vim
+030.146  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/loclist.vim
+030.171  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/modemap.vim
+030.197  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/notifiers.vim
+030.221  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/registry.vim
+030.283  000.011  000.011: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/signs.vim
+030.907  000.455  000.455: sourcing /home/joe/.vim/plugged/syntastic/autoload/syntastic/util.vim
+036.181  000.069  000.069: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/autoloclist.vim
+036.264  000.062  000.062: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/balloons.vim
+089.192  000.709  000.709: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/checker.vim
+089.602  000.326  000.326: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/cursor.vim
+089.967  000.304  000.304: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/highlighting.vim
+091.005  000.977  000.977: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/loclist.vim
+091.444  000.357  000.357: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/modemap.vim
+091.844  000.333  000.333: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/notifiers.vim
+093.099  001.179  001.179: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/registry.vim
+093.481  000.304  000.304: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/signs.vim
+096.507  066.208  061.132: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic.vim
+097.332  000.230  000.230: sourcing /home/joe/.vim/plugged/deoplete.nvim/autoload/deoplete.vim
+097.759  000.947  000.717: sourcing /home/joe/.vim/plugged/deoplete.nvim/plugin/deoplete.vim
+099.468  000.751  000.751: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+099.578  000.040  000.040: sourcing /usr/share/nvim/runtime/plugin/health.vim
+099.960  000.325  000.325: sourcing /usr/share/nvim/runtime/plugin/man.vim
+101.705  001.684  001.684: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+102.378  000.590  000.590: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+104.314  001.842  001.842: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+105.803  000.559  000.559: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+106.736  000.477  000.477: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+107.004  002.040  001.004: sourcing /home/joe/.local/share/nvim/rplugin.vim
+107.023  002.575  000.536: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+107.674  000.536  000.536: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+107.871  000.093  000.093: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+108.499  000.553  000.553: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+108.828  000.246  000.246: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+108.964  000.063  000.063: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+109.597  000.565  000.565: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+111.505  001.648  001.648: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+111.529  003.510: loading plugins
+111.790  000.261: loading packages
+111.920  000.129: loading after plugins
+111.953  000.033: inits 3
+113.209  001.256: reading ShaDa
+114.895  001.686: clearing screen
+117.094  000.570  000.570: sourcing /home/joe/.vim/plugged/syntastic/autoload/syntastic/log.vim
+117.206  001.740: opening buffers
+117.648  000.225  000.225: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+119.631  002.201: BufEnter autocommands
+119.639  000.008: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.044  000.044: --- NVIM STARTING ---
+000.517  000.473: locale set
+000.973  000.456: inits 1
+000.999  000.026: window checked
+001.199  000.201: parsing arguments
+001.360  000.161: expanding arguments
+001.555  000.194: inits 2
+002.229  000.674: init highlight
+002.543  000.031  000.031: sourcing $VIM/sysinit.vim
+004.385  001.725  001.725: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+012.486  000.027  000.027: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+012.527  000.020  000.020: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+012.561  000.018  000.018: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+012.609  000.033  000.033: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+012.673  006.128  006.031: sourcing /usr/share/nvim/runtime/filetype.vim
+012.785  000.037  000.037: sourcing /usr/share/nvim/runtime/ftplugin.vim
+012.895  000.039  000.039: sourcing /usr/share/nvim/runtime/indent.vim
+013.333  000.233  000.233: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+013.432  000.407  000.174: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+013.462  000.515  000.108: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+014.364  000.169  000.169: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+014.871  000.165  000.165: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+022.809  009.206  008.872: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+023.019  020.439  002.789: sourcing /home/joe/.config/nvim/init.vim
+023.024  000.325: sourcing vimrc file(s)
+023.650  000.426  000.426: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+024.622  000.893  000.893: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+024.869  000.122  000.122: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+025.076  000.380  000.259: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+025.562  000.201  000.201: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+025.990  000.161  000.161: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+026.888  001.733  001.371: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+027.329  000.234  000.234: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+027.599  000.216  000.216: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+027.689  000.034  000.034: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+027.786  000.040  000.040: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+027.947  000.988  000.464: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+028.218  000.016  000.016: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/autoloclist.vim
+028.243  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/balloons.vim
+028.270  000.011  000.011: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/checker.vim
+028.295  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/cursor.vim
+028.320  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/highlighting.vim
+028.343  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/loclist.vim
+028.368  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/modemap.vim
+028.394  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/notifiers.vim
+028.418  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/registry.vim
+028.452  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/signs.vim
+029.041  000.433  000.433: sourcing /home/joe/.vim/plugged/syntastic/autoload/syntastic/util.vim
+034.446  000.070  000.070: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/autoloclist.vim
+034.528  000.061  000.061: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/balloons.vim
+041.976  000.227  000.227: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/checker.vim
+042.102  000.098  000.098: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/cursor.vim
+042.217  000.096  000.096: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/highlighting.vim
+042.495  000.257  000.257: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/loclist.vim
+042.621  000.104  000.104: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/modemap.vim
+042.714  000.074  000.074: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/notifiers.vim
+043.047  000.315  000.315: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/registry.vim
+043.156  000.087  000.087: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/signs.vim
+044.099  015.631  013.808: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic.vim
+044.341  000.067  000.067: sourcing /home/joe/.vim/plugged/deoplete.nvim/autoload/deoplete.vim
+044.425  000.234  000.167: sourcing /home/joe/.vim/plugged/deoplete.nvim/plugin/deoplete.vim
+044.928  000.209  000.209: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+044.960  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+045.064  000.088  000.088: sourcing /usr/share/nvim/runtime/plugin/man.vim
+045.558  000.476  000.476: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+045.754  000.173  000.173: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+046.288  000.507  000.507: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+046.725  000.175  000.175: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+047.036  000.159  000.159: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+047.125  000.656  000.322: sourcing /home/joe/.local/share/nvim/rplugin.vim
+047.132  000.807  000.150: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+047.313  000.144  000.144: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+047.372  000.029  000.029: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+047.571  000.174  000.174: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+047.680  000.081  000.081: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+047.725  000.021  000.021: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+047.930  000.182  000.182: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+048.613  000.577  000.577: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+048.622  001.728: loading plugins
+048.711  000.088: loading packages
+048.763  000.052: loading after plugins
+048.774  000.011: inits 3
+049.211  000.436: reading ShaDa
+049.776  000.566: clearing screen
+050.538  000.191  000.191: sourcing /home/joe/.vim/plugged/syntastic/autoload/syntastic/log.vim
+050.609  000.642: opening buffers
+050.786  000.102  000.102: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+051.817  001.105: BufEnter autocommands
+051.823  000.006: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.009  000.009: --- NVIM STARTING ---
+000.256  000.247: locale set
+000.567  000.311: inits 1
+000.576  000.009: window checked
+000.751  000.175: parsing arguments
+000.810  000.059: expanding arguments
+000.876  000.066: inits 2
+001.388  000.511: init highlight
+001.524  000.014  000.014: sourcing $VIM/sysinit.vim
+003.048  001.464  001.464: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+014.049  000.031  000.031: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+014.090  000.020  000.020: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+014.127  000.019  000.019: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+014.177  000.035  000.035: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+014.238  009.110  009.006: sourcing /usr/share/nvim/runtime/filetype.vim
+014.353  000.037  000.037: sourcing /usr/share/nvim/runtime/ftplugin.vim
+014.462  000.032  000.032: sourcing /usr/share/nvim/runtime/indent.vim
+014.887  000.224  000.224: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+014.991  000.403  000.179: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+015.020  000.510  000.107: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+015.893  000.167  000.167: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+016.392  000.166  000.166: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+023.612  008.452  008.119: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+024.556  023.011  003.405: sourcing /home/joe/.config/nvim/init.vim
+024.621  000.209: sourcing vimrc file(s)
+026.027  000.814  000.814: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+027.433  001.168  001.168: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+027.724  000.132  000.132: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+027.958  000.425  000.293: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+028.454  000.201  000.201: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+028.887  000.162  000.162: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+029.788  001.742  001.379: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+030.211  000.217  000.217: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+030.474  000.211  000.211: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+030.562  000.033  000.033: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+030.673  000.058  000.058: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+030.827  000.969  000.450: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+031.105  000.015  000.015: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/autoloclist.vim
+031.130  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/balloons.vim
+031.157  000.011  000.011: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/checker.vim
+031.181  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/cursor.vim
+031.206  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/highlighting.vim
+031.227  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/loclist.vim
+031.252  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/modemap.vim
+031.277  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/notifiers.vim
+031.301  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/registry.vim
+031.340  000.011  000.011: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/signs.vim
+031.920  000.423  000.423: sourcing /home/joe/.vim/plugged/syntastic/autoload/syntastic/util.vim
+037.159  000.068  000.068: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/autoloclist.vim
+037.239  000.060  000.060: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/balloons.vim
+037.460  000.178  000.178: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/checker.vim
+037.566  000.087  000.087: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/cursor.vim
+037.665  000.083  000.083: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/highlighting.vim
+037.923  000.242  000.242: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/loclist.vim
+038.034  000.093  000.093: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/modemap.vim
+038.117  000.068  000.068: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/notifiers.vim
+038.439  000.307  000.307: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/registry.vim
+038.541  000.084  000.084: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/signs.vim
+039.437  008.081  006.387: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic.vim
+039.673  000.067  000.067: sourcing /home/joe/.vim/plugged/deoplete.nvim/autoload/deoplete.vim
+039.786  000.262  000.195: sourcing /home/joe/.vim/plugged/deoplete.nvim/plugin/deoplete.vim
+040.347  000.288  000.288: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+040.392  000.014  000.014: sourcing /usr/share/nvim/runtime/plugin/health.vim
+040.552  000.139  000.139: sourcing /usr/share/nvim/runtime/plugin/man.vim
+041.239  000.659  000.659: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+041.714  000.374  000.374: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+043.092  001.298  001.298: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+043.589  000.188  000.188: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+043.904  000.161  000.161: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+044.024  000.716  000.367: sourcing /home/joe/.local/share/nvim/rplugin.vim
+044.031  000.882  000.166: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+044.275  000.201  000.201: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+044.333  000.029  000.029: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+044.534  000.177  000.177: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+044.645  000.082  000.082: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+044.689  000.020  000.020: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+044.893  000.181  000.181: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+045.514  000.533  000.533: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+045.521  002.456: loading plugins
+045.606  000.085: loading packages
+045.648  000.043: loading after plugins
+045.660  000.011: inits 3
+046.089  000.430: reading ShaDa
+046.618  000.528: clearing screen
+047.461  000.232  000.232: sourcing /home/joe/.vim/plugged/syntastic/autoload/syntastic/log.vim
+047.499  000.649: opening buffers
+047.679  000.106  000.106: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+048.665  001.060: BufEnter autocommands
+048.669  000.004: editing files in windows
+049.519  000.135  000.135: sourcing /home/joe/.vim/plugged/deoplete.nvim/autoload/deoplete/init.vim
+049.858  000.125  000.125: sourcing /home/joe/.vim/plugged/deoplete.nvim/autoload/deoplete/custom.vim
+050.316  000.148  000.148: sourcing /home/joe/.vim/plugged/deoplete.nvim/autoload/deoplete/util.vim
+050.619  000.081  000.081: sourcing /usr/share/nvim/runtime/autoload/provider/pythonx.vim
+082.256  031.480  031.480: sourcing /usr/share/nvim/runtime/autoload/provider/python3.vim
+082.486  000.066  000.066: sourcing /usr/share/nvim/runtime/autoload/provider.vim
+161.852  000.155  000.155: sourcing /home/joe/.vim/plugged/deoplete.nvim/autoload/deoplete/mapping.vim
+162.167  000.189  000.189: sourcing /home/joe/.vim/plugged/deoplete.nvim/autoload/deoplete/handler.vim
+162.623  081.575: VimEnter autocommands
+162.629  000.006: before starting main loop
+163.279  000.650: first screen update
+163.285  000.005: --- NVIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.013  000.013: --- NVIM STARTING ---
+000.254  000.240: locale set
+000.669  000.416: inits 1
+000.680  000.010: window checked
+000.825  000.146: parsing arguments
+000.892  000.067: expanding arguments
+000.950  000.058: inits 2
+001.551  000.601: init highlight
+001.720  000.017  000.017: sourcing $VIM/sysinit.vim
+007.173  005.325  005.325: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+015.420  000.019  000.019: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+015.467  000.025  000.025: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+015.502  000.018  000.018: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+015.548  000.032  000.032: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+015.610  006.252  006.158: sourcing /usr/share/nvim/runtime/filetype.vim
+015.722  000.037  000.037: sourcing /usr/share/nvim/runtime/ftplugin.vim
+015.833  000.040  000.040: sourcing /usr/share/nvim/runtime/indent.vim
+016.279  000.233  000.233: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+016.380  000.410  000.178: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+016.411  000.521  000.111: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+017.327  000.207  000.207: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+017.853  000.172  000.172: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+026.367  009.815  009.436: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+026.578  024.797  002.807: sourcing /home/joe/.config/nvim/init.vim
+026.584  000.219: sourcing vimrc file(s)
+027.231  000.452  000.452: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+028.185  000.866  000.866: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+028.431  000.121  000.121: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+028.673  000.416  000.294: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+029.158  000.202  000.202: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+029.598  000.162  000.162: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+030.502  001.749  001.386: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+030.939  000.215  000.215: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+031.209  000.217  000.217: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+031.298  000.034  000.034: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+031.389  000.038  000.038: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+031.539  000.955  000.451: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+031.810  000.015  000.015: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/autoloclist.vim
+031.835  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/balloons.vim
+031.862  000.011  000.011: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/checker.vim
+031.886  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/cursor.vim
+031.916  000.014  000.014: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/highlighting.vim
+031.938  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/loclist.vim
+031.962  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/modemap.vim
+031.987  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/notifiers.vim
+032.012  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/registry.vim
+032.046  000.011  000.011: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/signs.vim
+032.626  000.425  000.425: sourcing /home/joe/.vim/plugged/syntastic/autoload/syntastic/util.vim
+038.003  000.068  000.068: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/autoloclist.vim
+038.093  000.069  000.069: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/balloons.vim
+038.307  000.171  000.171: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/checker.vim
+038.413  000.089  000.089: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/cursor.vim
+038.513  000.084  000.084: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/highlighting.vim
+038.773  000.244  000.244: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/loclist.vim
+038.888  000.094  000.094: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/modemap.vim
+038.974  000.070  000.070: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/notifiers.vim
+039.309  000.320  000.320: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/registry.vim
+039.416  000.089  000.089: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/signs.vim
+040.298  008.237  006.515: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic.vim
+040.540  000.067  000.067: sourcing /home/joe/.vim/plugged/deoplete.nvim/autoload/deoplete.vim
+040.688  000.297  000.230: sourcing /home/joe/.vim/plugged/deoplete.nvim/plugin/deoplete.vim
+041.186  000.210  000.210: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+041.218  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+041.323  000.090  000.090: sourcing /usr/share/nvim/runtime/plugin/man.vim
+041.821  000.480  000.480: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+042.013  000.171  000.171: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+042.544  000.504  000.504: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+042.991  000.179  000.179: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+043.305  000.157  000.157: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+043.393  000.665  000.330: sourcing /home/joe/.local/share/nvim/rplugin.vim
+043.400  000.819  000.154: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+043.582  000.146  000.146: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+043.640  000.028  000.028: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+043.838  000.174  000.174: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+043.984  000.118  000.118: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+044.034  000.022  000.022: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+044.242  000.186  000.186: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+044.858  000.532  000.532: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+044.866  001.712: loading plugins
+044.948  000.081: loading packages
+044.991  000.043: loading after plugins
+045.002  000.011: inits 3
+045.450  000.448: reading ShaDa
+045.967  000.517: clearing screen
+046.774  000.191  000.191: sourcing /home/joe/.vim/plugged/syntastic/autoload/syntastic/log.vim
+046.812  000.655: opening buffers
+046.991  000.099  000.099: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+048.062  001.151: BufEnter autocommands
+048.066  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.009  000.009: --- NVIM STARTING ---
+000.242  000.233: locale set
+000.718  000.476: inits 1
+000.747  000.029: window checked
+001.053  000.306: parsing arguments
+001.280  000.227: expanding arguments
+001.390  000.110: inits 2
+002.369  000.979: init highlight
+002.674  000.017  000.017: sourcing $VIM/sysinit.vim
+004.209  001.464  001.464: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+013.975  000.019  000.019: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+014.016  000.021  000.021: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+014.051  000.019  000.019: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+014.099  000.033  000.033: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+014.160  007.861  007.769: sourcing /usr/share/nvim/runtime/filetype.vim
+014.276  000.038  000.038: sourcing /usr/share/nvim/runtime/ftplugin.vim
+014.388  000.040  000.040: sourcing /usr/share/nvim/runtime/indent.vim
+014.820  000.225  000.225: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+014.933  000.415  000.190: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+014.965  000.526  000.111: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+015.846  000.167  000.167: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+016.347  000.166  000.166: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+023.291  008.179  007.846: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+023.484  020.788  002.680: sourcing /home/joe/.config/nvim/init.vim
+023.489  000.315: sourcing vimrc file(s)
+024.083  000.423  000.423: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+025.032  000.872  000.872: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+025.303  000.125  000.125: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+025.500  000.377  000.252: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+025.987  000.201  000.201: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+026.417  000.162  000.162: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+027.320  001.738  001.376: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+027.739  000.215  000.215: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+028.007  000.214  000.214: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+028.096  000.034  000.034: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+028.188  000.039  000.039: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+028.358  000.967  000.464: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+028.628  000.016  000.016: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/autoloclist.vim
+028.653  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/balloons.vim
+028.680  000.011  000.011: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/checker.vim
+028.705  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/cursor.vim
+028.729  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/highlighting.vim
+028.751  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/loclist.vim
+028.776  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/modemap.vim
+028.801  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/notifiers.vim
+028.826  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/registry.vim
+028.859  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/signs.vim
+029.443  000.426  000.426: sourcing /home/joe/.vim/plugged/syntastic/autoload/syntastic/util.vim
+034.721  000.070  000.070: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/autoloclist.vim
+034.805  000.063  000.063: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/balloons.vim
+035.090  000.241  000.241: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/checker.vim
+035.212  000.097  000.097: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/cursor.vim
+035.316  000.087  000.087: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/highlighting.vim
+035.581  000.248  000.248: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/loclist.vim
+035.696  000.094  000.094: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/modemap.vim
+035.782  000.070  000.070: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/notifiers.vim
+036.112  000.315  000.315: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/registry.vim
+036.219  000.088  000.088: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/signs.vim
+037.131  008.257  006.459: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic.vim
+037.372  000.068  000.068: sourcing /home/joe/.vim/plugged/deoplete.nvim/autoload/deoplete.vim
+037.491  000.270  000.202: sourcing /home/joe/.vim/plugged/deoplete.nvim/plugin/deoplete.vim
+037.983  000.208  000.208: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+038.015  000.012  000.012: sourcing /usr/share/nvim/runtime/plugin/health.vim
+038.119  000.088  000.088: sourcing /usr/share/nvim/runtime/plugin/man.vim
+038.654  000.517  000.517: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+038.853  000.174  000.174: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+039.388  000.509  000.509: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+039.827  000.177  000.177: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+040.139  000.160  000.160: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+040.229  000.661  000.324: sourcing /home/joe/.local/share/nvim/rplugin.vim
+040.235  000.811  000.150: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+040.410  000.138  000.138: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+040.468  000.028  000.028: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+040.663  000.172  000.172: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+040.772  000.081  000.081: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+040.818  000.021  000.021: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+041.021  000.181  000.181: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+041.714  000.608  000.608: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+041.723  001.679: loading plugins
+041.811  000.088: loading packages
+041.854  000.043: loading after plugins
+041.866  000.011: inits 3
+042.305  000.440: reading ShaDa
+042.812  000.507: clearing screen
+043.615  000.190  000.190: sourcing /home/joe/.vim/plugged/syntastic/autoload/syntastic/log.vim
+043.652  000.650: opening buffers
+043.825  000.100  000.100: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+044.830  001.078: BufEnter autocommands
+044.833  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.051  000.051: --- NVIM STARTING ---
+001.007  000.956: locale set
+002.511  001.505: inits 1
+002.573  000.062: window checked
+003.419  000.846: parsing arguments
+003.763  000.344: expanding arguments
+003.997  000.234: inits 2
+006.480  002.483: init highlight
+007.480  000.072  000.072: sourcing $VIM/sysinit.vim
+013.174  005.339  005.339: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+027.278  000.022  000.022: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+027.327  000.025  000.025: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+027.369  000.023  000.023: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+027.429  000.041  000.041: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+027.500  009.026  008.916: sourcing /usr/share/nvim/runtime/filetype.vim
+027.639  000.046  000.046: sourcing /usr/share/nvim/runtime/ftplugin.vim
+027.780  000.051  000.051: sourcing /usr/share/nvim/runtime/indent.vim
+028.326  000.283  000.283: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+028.451  000.503  000.220: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+028.489  000.646  000.143: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+029.583  000.213  000.213: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+030.138  000.174  000.174: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+037.348  008.686  008.299: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+037.543  029.937  006.141: sourcing /home/joe/.config/nvim/init.vim
+037.548  001.060: sourcing vimrc file(s)
+038.138  000.424  000.424: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+039.040  000.825  000.825: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+039.287  000.123  000.123: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+039.469  000.356  000.233: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+039.953  000.201  000.201: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+040.395  000.166  000.166: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+041.317  001.769  001.402: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+041.736  000.215  000.215: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+042.001  000.213  000.213: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+042.092  000.034  000.034: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+042.184  000.039  000.039: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+042.338  000.951  000.449: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+042.607  000.015  000.015: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/autoloclist.vim
+042.633  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/balloons.vim
+042.659  000.011  000.011: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/checker.vim
+042.683  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/cursor.vim
+042.707  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/highlighting.vim
+042.728  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/loclist.vim
+042.752  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/modemap.vim
+042.777  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/notifiers.vim
+042.801  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/registry.vim
+042.834  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/signs.vim
+043.435  000.436  000.436: sourcing /home/joe/.vim/plugged/syntastic/autoload/syntastic/util.vim
+048.968  000.069  000.069: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/autoloclist.vim
+049.050  000.061  000.061: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/balloons.vim
+049.262  000.170  000.170: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/checker.vim
+049.368  000.089  000.089: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/cursor.vim
+049.468  000.084  000.084: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/highlighting.vim
+049.737  000.249  000.249: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/loclist.vim
+049.851  000.096  000.096: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/modemap.vim
+049.936  000.069  000.069: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/notifiers.vim
+050.291  000.341  000.341: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/registry.vim
+050.401  000.088  000.088: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/signs.vim
+051.323  008.474  006.723: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic.vim
+051.561  000.068  000.068: sourcing /home/joe/.vim/plugged/deoplete.nvim/autoload/deoplete.vim
+051.691  000.280  000.211: sourcing /home/joe/.vim/plugged/deoplete.nvim/plugin/deoplete.vim
+052.184  000.209  000.209: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+052.215  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+052.319  000.088  000.088: sourcing /usr/share/nvim/runtime/plugin/man.vim
+052.818  000.482  000.482: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+053.010  000.171  000.171: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+053.592  000.556  000.556: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+054.039  000.177  000.177: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+054.352  000.158  000.158: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+054.441  000.666  000.331: sourcing /home/joe/.local/share/nvim/rplugin.vim
+054.448  000.817  000.151: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+054.622  000.138  000.138: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+054.680  000.028  000.028: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+054.876  000.172  000.172: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+054.983  000.080  000.080: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+055.028  000.020  000.020: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+055.230  000.181  000.181: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+055.875  000.552  000.552: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+055.883  001.649: loading plugins
+055.969  000.086: loading packages
+056.014  000.044: loading after plugins
+056.025  000.011: inits 3
+056.468  000.443: reading ShaDa
+057.024  000.556: clearing screen
+057.769  000.192  000.192: sourcing /home/joe/.vim/plugged/syntastic/autoload/syntastic/log.vim
+057.806  000.590: opening buffers
+057.983  000.099  000.099: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+058.971  001.066: BufEnter autocommands
+058.975  000.004: editing files in windows
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.012  000.012: --- NVIM STARTING ---
+000.392  000.379: locale set
+000.829  000.437: inits 1
+000.839  000.010: window checked
+000.972  000.132: parsing arguments
+001.030  000.059: expanding arguments
+001.080  000.049: inits 2
+001.628  000.548: init highlight
+001.799  000.015  000.015: sourcing $VIM/sysinit.vim
+003.401  001.536  001.536: sourcing /home/joe/.local/share/nvim/site/autoload/plug.vim
+014.567  000.021  000.021: sourcing /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+014.607  000.020  000.020: sourcing /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+014.642  000.019  000.019: sourcing /usr/share/vim/vimfiles/ftdetect/dockerfile.vim
+014.689  000.033  000.033: sourcing /usr/share/vim/vimfiles/ftdetect/nginx.vim
+014.753  009.228  009.134: sourcing /usr/share/nvim/runtime/filetype.vim
+014.866  000.038  000.038: sourcing /usr/share/nvim/runtime/ftplugin.vim
+014.984  000.041  000.041: sourcing /usr/share/nvim/runtime/indent.vim
+015.415  000.226  000.226: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+015.514  000.401  000.175: sourcing /usr/share/nvim/runtime/syntax/synload.vim
+015.544  000.509  000.109: sourcing /usr/share/nvim/runtime/syntax/syntax.vim
+016.417  000.168  000.168: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+016.918  000.168  000.168: sourcing /usr/share/nvim/runtime/syntax/syncolor.vim
+023.885  008.202  007.866: sourcing /home/joe/.vim/plugged/base16-vim/colors/base16-default-dark.vim
+024.120  022.301  002.747: sourcing /home/joe/.config/nvim/init.vim
+024.127  000.184: sourcing vimrc file(s)
+024.750  000.440  000.440: sourcing /home/joe/.vim/plugged/vim-surround/plugin/surround.vim
+025.707  000.876  000.876: sourcing /home/joe/.vim/plugged/tagbar/plugin/tagbar.vim
+025.954  000.121  000.121: sourcing /home/joe/.vim/plugged/suda.vim/autoload/suda.vim
+026.141  000.360  000.239: sourcing /home/joe/.vim/plugged/suda.vim/plugin/suda.vim
+026.632  000.206  000.206: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/utility.vim
+027.057  000.160  000.160: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter/highlight.vim
+027.985  001.764  001.398: sourcing /home/joe/.vim/plugged/vim-gitgutter/plugin/gitgutter.vim
+028.402  000.213  000.213: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline.vim
+028.665  000.212  000.212: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/buffers.vim
+028.754  000.033  000.033: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/separator.vim
+028.843  000.038  000.038: sourcing /home/joe/.vim/plugged/vem-tabline/autoload/vem_tabline/tabpages.vim
+028.996  000.939  000.442: sourcing /home/joe/.vim/plugged/vem-tabline/plugin/vem_tabline.vim
+029.262  000.015  000.015: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/autoloclist.vim
+029.287  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/balloons.vim
+029.313  000.011  000.011: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/checker.vim
+029.338  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/cursor.vim
+029.362  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/highlighting.vim
+029.383  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/loclist.vim
+029.407  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/modemap.vim
+029.433  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/notifiers.vim
+029.457  000.009  000.009: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/registry.vim
+029.490  000.010  000.010: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/signs.vim
+030.074  000.428  000.428: sourcing /home/joe/.vim/plugged/syntastic/autoload/syntastic/util.vim
+035.375  000.069  000.069: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/autoloclist.vim
+035.457  000.062  000.062: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/balloons.vim
+035.668  000.170  000.170: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/checker.vim
+035.773  000.088  000.088: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/cursor.vim
+035.877  000.087  000.087: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/highlighting.vim
+036.138  000.245  000.245: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/loclist.vim
+036.252  000.095  000.095: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/modemap.vim
+036.338  000.069  000.069: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/notifiers.vim
+036.665  000.312  000.312: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/registry.vim
+036.769  000.085  000.085: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic/signs.vim
+037.652  008.146  006.436: sourcing /home/joe/.vim/plugged/syntastic/plugin/syntastic.vim
+037.905  000.073  000.073: sourcing /home/joe/.vim/plugged/deoplete.nvim/autoload/deoplete.vim
+038.025  000.287  000.214: sourcing /home/joe/.vim/plugged/deoplete.nvim/plugin/deoplete.vim
+038.523  000.223  000.223: sourcing /usr/share/nvim/runtime/plugin/gzip.vim
+038.554  000.011  000.011: sourcing /usr/share/nvim/runtime/plugin/health.vim
+038.657  000.088  000.088: sourcing /usr/share/nvim/runtime/plugin/man.vim
+039.148  000.474  000.474: sourcing /usr/share/nvim/runtime/plugin/matchit.vim
+039.341  000.171  000.171: sourcing /usr/share/nvim/runtime/plugin/matchparen.vim
+039.865  000.498  000.498: sourcing /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+040.301  000.176  000.176: sourcing /usr/share/nvim/runtime/autoload/remote/host.vim
+040.610  000.157  000.157: sourcing /usr/share/nvim/runtime/autoload/remote/define.vim
+040.704  000.659  000.327: sourcing /home/joe/.local/share/nvim/rplugin.vim
+040.714  000.813  000.153: sourcing /usr/share/nvim/runtime/plugin/rplugin.vim
+040.908  000.149  000.149: sourcing /usr/share/nvim/runtime/plugin/shada.vim
+040.968  000.029  000.029: sourcing /usr/share/nvim/runtime/plugin/spellfile.vim
+041.194  000.203  000.203: sourcing /usr/share/nvim/runtime/plugin/tarPlugin.vim
+041.308  000.083  000.083: sourcing /usr/share/nvim/runtime/plugin/tohtml.vim
+041.354  000.020  000.020: sourcing /usr/share/nvim/runtime/plugin/tutor.vim
+041.562  000.184  000.184: sourcing /usr/share/nvim/runtime/plugin/zipPlugin.vim
+042.179  000.531  000.531: sourcing /usr/share/vim/vimfiles/plugin/fzf.vim
+042.186  001.667: loading plugins
+042.283  000.097: loading packages
+042.326  000.043: loading after plugins
+042.337  000.011: inits 3
+042.770  000.432: reading ShaDa
+043.316  000.547: clearing screen
+044.078  000.192  000.192: sourcing /home/joe/.vim/plugged/syntastic/autoload/syntastic/log.vim
+044.115  000.607: opening buffers
+044.287  000.100  000.100: sourcing /home/joe/.vim/plugged/vim-gitgutter/autoload/gitgutter.vim
+045.330  001.115: BufEnter autocommands
+045.334  000.004: editing files in windows
