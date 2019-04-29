@@ -3,7 +3,7 @@
 updates=$(checkupdates | wc -l)
 
 if [ "$updates" -gt 0 ]; then
-    echo " $updates"
+    echo "%{F#e8e8e8}$updates%{F-}"
 else
     echo ""
 fi

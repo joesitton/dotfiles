@@ -1,54 +1,32 @@
-/* ================================================= */
-/*  Rofi config by lans9831                          */
-/*  Suggested icon pack: Papirus                     */
-/* ================================================= */
-
 * {
-	/* Make text color white and background fully transparent */
-	text-color:        White;
+	text-color:        #f8f8f8;
 	background-color:  rgba(0,0,0,0);
 
-	/* This variables change other elements color
-	 * Change here and it will change over all the
-	 * theme (for an unified experience) */
-	fc-color: #e8e8e8;
-	bg-color: #282828;
-	fc-color-trans: #39393AC5;
-	bg-color-trans: #262626F0;
+	fc-color: #7cafc2;
+	bg-color: #383838;
+	fc-color-trans: #383838F0;
+	bg-color-trans: #282828F0;
 
 	font: "Fira Sans 12";
 }
 
-/* ================================================= */
-/* Main container                                    */
-/* ================================================= */
 #window {
-	fullscreen:    true;
 	location:      west;
 	anchor:        west;
-	border:        32px 0px 0px 0px;
+    width: 20%;
+    height: 100%;
 	transparency:  "real";
 
 	orientation:  horizontal;
 	children:     [mainbox];
 }
 
-/* First container */
 #mainbox {
 	expand:            false;
 	background-color:  @bg-color-trans;
 	spacing:           0.1em;
 }
 
-/* Dummy container */
-#dummy {
-	expand: true;
-}
-/* ================================================= */
-
-/* ================================================= */
-/* Sidebar and its elements                          */
-/* ================================================= */
 #sidebar {
 	border:  0px 0px 0px 0px;
 }
@@ -61,11 +39,7 @@
 	font:              "Fira Sans 12";
 	background-color:  @fc-color-trans;
 }
-/* ================================================= */
 
-/* ================================================= */
-/*  Input bar                                        */
-/* ================================================= */
 #inputbar {
 	background-color:  @bg-color;
 	padding:           15px;
@@ -74,21 +48,17 @@
 
 #prompt {
 	font: "Fira Sans 12";
-    padding: 6px 6px 0 0;
+    padding: 8px 6px 0 0;
 }
 
 #entry {
-	font: "Fira Sans Bold 18";
+	font: "Fira Sans 18";
 	width: 16em;
+    border: 0 0 2px solid 0;
 }
-/* ================================================= */
 
-
-/* ================================================= */
-/* List view																				 */
-/* ================================================= */
 #listview {
-	/*spacing: 0.5em;*/
+	spacing: 0;
 }
 
 #element {

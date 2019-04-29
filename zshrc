@@ -1,56 +1,55 @@
 # Completion
 autoload -Uz compinit && compinit
 
-#zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _oldlist _complete
-#zstyle ':completion:*' format $'\n%F{magenta}%B%d:%b%f'
-#zstyle ':completion:*' group-name ''
-#zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
-#zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-#zstyle ':completion:*' list-colors ''
-#zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-#zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
 zstyle ':completion:*' menu select=long
-#zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 
-#zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cmd'
 
-kitty + complete setup zsh | source /dev/stdin
-
 export ZSH=$HOME/.oh-my-zsh
-
-export GOPATH=$HOME/.go
-export RUBYPATH=$HOME/.gem/ruby/2.6.0
-export NPMPATH=$HOME/.npm
-export PATH=$PATH:$GOPATH/bin:$RUBYPATH/bin:$NPMPATH/bin:$HOME/Scripts
+export PATH=$PATH:$HOME/Scripts
 
 export EDITOR=nvim
 export PAGER=less
-export TERM=xterm-termite
+export TERM=xterm-256color
+export BROWSER=firefox
 
-SAVEHIST=10000
-HISTSIZE=10000
+SAVEHIST=1000
+HISTSIZE=1000
 
 ZSH_THEME="spaceship"
 SPACESHIP_BATTERY_SHOW=false
+SPACESHIP_JOBS_SYMBOL=
+SPACESHIP_JOBS_COLOR=yellow
+SPACESHIP_JOBS_AMOUNT_PREFIX=" "
+SPACESHIP_VI_MODE_INSERT=[i]
+SPACESHIP_VI_MODE_NORMAL=[n]
+SPACESHIP_VI_MODE_COLOR=#484848
+SPACESHIP_EXIT_CODE_SHOW=true
+SPACESHIP_EXIT_CODE_SYMBOL="✘ "
 
-plugins=(
-        autojump
-        colored-man-pages
-        fast-syntax-highlighting
-        zsh-autosuggestions
-        extract
-        title
-        )
+SPACESHIP_PROMPT_ORDER=(user dir host git package node ruby golang exec_time line_sep jobs char)
+SPACESHIP_RPROMPT_ORDER=(exit_code vi_mode)
+
+export KEYTIMEOUT=1
 
 PROMPT_TITLE="$PWD"
 
-zle -N autosuggest-accept
-bindkey '^ ' autosuggest-accept
+plugins=(
+        fast-syntax-highlighting
+        #colored-man-pages
+        #zsh-syntax-highlighting
+        zsh-autosuggestions
+        extract
+        title
+        #vi-mode
+        z
+        )
 
+zle -N autosuggest-accept
+bindkey '^[ ' autosuggest-accept
 source $ZSH/oh-my-zsh.sh
 
 setopt CORRECT
@@ -74,16 +73,16 @@ alias pac='s pacman'
 alias pacin='pac -S'
 alias pacs='pac -Ss'
 alias pacup='pac -Syyu'
-alias aur='pacaur'
-alias aurin='aur -S --noedit'
+alias aur='yaourt'
+alias aurin='aur -S'
 alias aurs='aur -Ss'
-alias ls='exa'
+alias ls='exa --group-directories-first'
 alias la='exa -a'
-alias ll='exa -lh'
-alias v='nvim'
-alias vim='nvim'
-alias vd='nvim -d'
-alias vimdiff='nvim -d'
+alias ll='exa -lh --git'
+alias v='nvim -X'
+alias vim='v'
+alias vd='v -d'
+alias vimdiff='v -d'
 alias top='htop'
 alias ip='ip -c'
 alias py='python'
@@ -92,11 +91,15 @@ alias cat='bat'
 alias icat='kitty +kitten icat'
 alias d='kitty +kitten diff'
 alias lock='betterlockscreen'
+alias g++='g++ -O2 -std=c++11'
+alias ncm='ncmpcpp'
+alias n='nnn'
+alias j='z'
 
 alias -g G="| grep -i"
+alias -g L="| less"
 
 cd() { builtin cd "$@" && ls; }
 mkd() { mkdir -p "$@" && cd "$_" }
-\=() { bc -l <<< "$@" }
 
 zstyle ':completion:*' menu select

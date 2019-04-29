@@ -2,15 +2,21 @@
 super + Return
     kitty
 
-#super + shift + p
-    #rofi-pass
+alt + super + s
+    screenshot
+
+alt + {1,2,3,4,5}
+    bspc desktop -f {1,2,3,4,5}
+
+alt + Tab
+    rofi -show window
+
+super + alt + equal
+    roficalc
 
 # program launcher
 super + space
     rofi -show drun
-
-#super + shift + l
-    #lock -l blur
 
 # reload sxhkd
 super + Escape
@@ -32,8 +38,8 @@ super + alt + {h,j,k,l}
 super + alt + space
     bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-super + alt + {n,m}
-    bspc node -g {locked, sticky}
+#super + alt + {n,m}
+#bspc node -g {locked, sticky}
 
 # tiled and monocle
 super + m
@@ -63,14 +69,6 @@ super + {_,alt+}c
 super + alt + {1-5}
     bspc node -d {1-5}
 
-# expand a window by moving one of its side outward
-#super + alt + {h,j,k,l}
-	#bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-
-# contract a window by moving one of its side inward
-#super + alt + shift + {h,j,k,l}
-	#bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-
 super + b
     bspc node -n prev.local
 
@@ -80,14 +78,26 @@ super + {minus, equal, 0}
 super + i
     bspc node -f last.below.local && bspc node -l normal
 
-F1
-    xbacklight -dec 5 -time 0
+alt + F1
+    brightness down
 
-F2
-    xbacklight -inc 5 -time 0
+alt + F2
+    brightness up
 
 F10
-    amixer set Master 2-
+    volume down
 
 F11
-    amixer set Master 2+
+    volume up
+
+Home
+    mpc -p 6601 -q toggle
+
+Prior
+    mpc -p 6601 -q stop
+
+Next
+    mpc -p 6601 -q prev
+
+End
+    mpc -p 6601 -q next
