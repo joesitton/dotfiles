@@ -1,29 +1,29 @@
 * {
-    background-color: #282828;
+    background-color: #28282800;
     border-color: #282828;
     color: #f8f8f8;
-    font: "Fira Sans 16";
+    font: "FuraSans Nerd Font 16";
 }
 #window {
-    border: 0;
-    padding: 0;
-}
-#mainbox {
-    border: 0 0 10px 0;
-    padding: 0;
+    background-color: #282828F0;
 }
 #textbox {
+    background-color: #282828F0;
     padding: 10px;
 }
 #listview {
     padding: 0;
+    border: 2px;
+    background-color: #28282800;
 }
 #element {
     border: 0 0 0 10px;
+    border-color: #28282800;
     padding: 5px 5px 5px 10px;
+    background-color: #28282800;
 }
 #element.selected.normal {
-    background-color: #7cafc255;
+    background-color: #7cafc222;
     border: 0 0 0 10px;
     border-color: #7cafc2;
     color: #f8f8f8;
@@ -39,14 +39,13 @@
 }
 #entry {
     spacing: 0;
-    font: "Fira Sans 24";
+    font: "FuraSans Nerd Font 24";
     background-color: #f8f8f8;
     color: #282828;
 }
 #prompt {
     spacing: 0;
-    padding: 9px 0 0 10px;
-    font: "Fira Sans 14";
+    padding: 8px 0 0 14px;
     text-align: center;
     background-color: #f8f8f8;
     color: #282828;
@@ -55,12 +54,12 @@
     children: [ prompt,textbox-prompt,entry ];
     background-color: #f8f8f8;
     color: #282828;
-    border: 2px 2px 8px 2px;
+    border: 2px;
     border-color: #282828;
 }
 #textbox-prompt {
     expand: false;
-    padding: 0 0 0 8px;
+    padding: 0 0 0 9px;
     background-color: #f8f8f8;
     color: #282828;
 }

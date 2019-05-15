@@ -6,10 +6,10 @@ feh --bg-fill $HOME/Pictures/yosemite.jpg
 
 dunst &
 mpd &
-redshift -l 28:-80 -t 5500:2500 &
-compton &
+redshift -t 5500:3000 &
+compton -b
 copyq &
-musnify-mpd &
+musnify-mpd -p 6601 &
 
 exec bspwm
 

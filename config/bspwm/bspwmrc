@@ -28,5 +28,6 @@ bspc rule -a Woeusbgui state=floating
 bspc rule -a Wicd-client.py state=floating rectangle=300x300+1382+37
 bspc rule -a kitty state=floating
 bspc rule -a Firefox desktop="^2"
+bspc rule -a Transmission-gtk state=floating
 
 $HOME/.config/polybar/launch.sh

@@ -8,8 +8,14 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cmd'
 
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+export GOPATH=$HOME/.go
 export ZSH=$HOME/.oh-my-zsh
-export PATH=$PATH:$HOME/Scripts
+export PATH=$PATH:$HOME/Scripts:$GOPATH
 
 export EDITOR=nvim
 export PAGER=less
@@ -21,7 +27,7 @@ HISTSIZE=1000
 
 ZSH_THEME="spaceship"
 SPACESHIP_BATTERY_SHOW=false
-SPACESHIP_JOBS_SYMBOL=
+SPACESHIP_JOBS_SYMBOL=
 SPACESHIP_JOBS_COLOR=yellow
 SPACESHIP_JOBS_AMOUNT_PREFIX=" "
 SPACESHIP_VI_MODE_INSERT=[i]
@@ -39,11 +45,12 @@ PROMPT_TITLE="$PWD"
 
 plugins=(
         fast-syntax-highlighting
-        #colored-man-pages
+        colored-man-pages
         #zsh-syntax-highlighting
         zsh-autosuggestions
         extract
         title
+        git
         #vi-mode
         z
         )
@@ -73,8 +80,8 @@ alias pac='s pacman'
 alias pacin='pac -S'
 alias pacs='pac -Ss'
 alias pacup='pac -Syyu'
-alias aur='yaourt'
-alias aurin='aur -S'
+alias aur='yay'
+alias aurin='aur -S --answerclean None --answerdiff None --answeredit None'
 alias aurs='aur -Ss'
 alias ls='exa --group-directories-first'
 alias la='exa -a'
@@ -86,20 +93,28 @@ alias vimdiff='v -d'
 alias top='htop'
 alias ip='ip -c'
 alias py='python'
-alias ssh='sshrc'
+alias ssh='ssh'
 alias cat='bat'
-alias icat='kitty +kitten icat'
-alias d='kitty +kitten diff'
-alias lock='betterlockscreen'
 alias g++='g++ -O2 -std=c++11'
 alias ncm='ncmpcpp'
-alias n='nnn'
 alias j='z'
 
-alias -g G="| grep -i"
 alias -g L="| less"
+alias -g G="| grep -i"
+alias -g W="| wc -l"
 
 cd() { builtin cd "$@" && ls; }
 mkd() { mkdir -p "$@" && cd "$_" }
+f() {
+    fff
+    clear
+}
+
+export FFF_W3M_XOFFSET=10
+export FFF_W3M_YOFFSET=10
+export FFF_MARK_FORMAT="-> %f"
+export FFF_COL2=4
+export FFF_COL3=3
+export FFF_COL4=9
 
 zstyle ':completion:*' menu select

@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
-from subprocess import check_output, call
+from subprocess import call
 
-updates = check_output(["checkupdates"]).decode().split("\n")[:-1]
-updates = [u.split(" ")[0] + "\n" for u in updates][:10]
+updates = open("/home/joe/Scripts/cache/updates_available", "r").read().split("\n")[:15]
 
-call(["dunstify", "Available updates:", "".join(updates)])
+if updates:
+    call(["dunstify", "Available updates:", "".join(u + "\n" for u in updates)])

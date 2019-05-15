@@ -35,9 +35,9 @@ font-0 = Fira Sans Condensed:size=14;4
 font-1 = RobotoMono Nerd Font:size=12;3
 
 modules-left = bspwm title
-modules-center =
-modules-right = updates mpd network pulseaudio battery date2
+modules-right = updates mpd weather network pulseaudio battery date
 
+override-redirect = true
 wm-restack = bspwm
 
 [module/bspwm]
@@ -67,7 +67,7 @@ label-occupied-padding = 3
 label-urgent = %icon%
 label-urgent-background = ${colors.red}
 label-urgent-foreground = ${colors.foreground}
-label-urget-padding = 3
+label-urgent-padding = 3
 
 label-empty = %icon%
 label-empty-foreground = ${colors.black5}
@@ -155,26 +155,32 @@ ramp-capacity-4 = %{F#A1B56C}%{F-}
 [module/date]
 type = internal/date
 
-date = %a
+date = %a,  %b %e
 time = %l:%M %p
 
-label = %date% %time%
+label = %date%  %time%
 format = <label>
 format-underline = ${colors.blue}
 
-[module/date2]
+[module/datetime]
 type = custom/script
 exec = date "+%a,  %b %e   %l:%M %p"
-label-underline = ${colors.blue}
+#label-underline = ${colors.blue}
 click-left = cal.py
 
 [module/updates]
 type = custom/script
-exec = ~/.config/polybar/updates.sh
-interval = 900
+exec = ./updates.sh
 format-prefix = "  "
 format-foreground = ${colors.green}
 
 click-left = updates_notif.py
+
+[module/weather]
+type = custom/script
+exec = ./weather.sh
+label-underline = ${colors.blue}
+
+click-left = weather_notif.py
 
 # vim: syntax=cfg

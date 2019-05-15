@@ -1,9 +1,9 @@
 #!/bin/sh
 
-updates=$(checkupdates | wc -l)
+file=/home/joe/Scripts/cache/updates_available
 
-if [ "$updates" -gt 0 ]; then
-    echo "%{F#e8e8e8}$updates%{F-}"
+if [[ -f $file ]]; then
+    echo "%{F#e8e8e8}$(cat $file | wc -l)%{F-}"
 else
     echo ""
 fi

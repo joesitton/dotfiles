@@ -1,3 +1,0 @@
-#!/bin/sh
-
-dmenu_run -l 10 -fn "Fira Sans-14" -nb "#282828" -nf "#f8f8f8" -sb "#7cafc2" -sf "#282828" -z -dim 0.4 -dc "#111" -w 960 -x 480 -y 220

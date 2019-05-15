@@ -6,7 +6,7 @@ import re
 
 today = datetime.now().day
 cal = check_output("cal").decode()
-cal = re.sub(str(today), "**", cal)
+cal = re.sub(' ' + str(today) + ' ', "** ", cal)
 
 call(["dunstify",\
         "-u", "low",\
