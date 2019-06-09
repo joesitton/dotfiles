@@ -170,7 +170,7 @@ click-left = cal.py
 
 [module/updates]
 type = custom/script
-exec = ./updates.sh
+exec = /home/joe/Scripts/updates.sh
 format-prefix = "  "
 format-foreground = ${colors.green}
 
@@ -178,7 +178,7 @@ click-left = updates_notif.py
 
 [module/weather]
 type = custom/script
-exec = ./weather.sh
+exec = /home/joe/Scripts/weather.sh
 label-underline = ${colors.blue}
 
 click-left = weather_notif.py
