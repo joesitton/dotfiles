@@ -1,0 +1,29 @@
+alias pls='sudo $(fc -ln -1)'
+
+alias ls='ls --color=tty --group-directories-first'
+alias la='ls -lAFh'
+alias lt='ls -ltFh'
+alias ll='ls -lh'
+alias lS='ls -1FSsh'
+
+if [ -x "$(command -v nvim)" ]; then
+    alias vim='nvim'
+fi
+
+alias j='z'
+alias x='extract'
+alias ip='ip -c'
+alias ssh='sshrc -q'
+alias scp='scp -q'
+
+alias dps="docker ps --format '{{.ID}} : {{.Names}} : {{.Status}} : {{.Image}}'"
+alias dlog="docker logs -f"
+
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| grep -i'
+alias -g L="| less"
+alias -g LL="2>&1 | less"
+alias -g CA="2>&1 | cat -A"
+alias -g NE="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"
