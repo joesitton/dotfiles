@@ -1,5 +1,3 @@
-cd() { builtin cd "$_" && ls ; }
-
 mkd() { mkdir -p "$@" && cd "$_" ; }
 
 drm() { docker stop $1 && docker container rm $1 ; }
@@ -15,4 +13,17 @@ dip() {
 
 dbu() { docker build -t $1 . ; }
 
-dex() { docker exec -it $1 bash ; }
+dex() { docker exec -u root -it $1 $2; }
+
+randpw() {
+    if [ "$#" -eq 0 ]; then
+        len=8
+    else
+        len=$1
+    fi
+
+    < /dev/urandom tr -dc A-Za-z0-9 | head -c $len
+    echo
+}
+
+# vim: ft=sh :

@@ -1,10 +1,15 @@
 alias pls='sudo $(fc -ln -1)'
 
-alias ls='ls --color=tty --group-directories-first'
-alias la='ls -lAFh'
-alias lt='ls -ltFh'
-alias ll='ls -lh'
-alias lS='ls -1FSsh'
+if [ -x "$(command -v exa)" ]; then
+    alias ls='exa --color=auto --group-directories-first'
+    alias la='ls -lah'
+    alias ll='ls -llah'
+    alias lg='ls -lah --git --git-ignore'
+else
+    alias ls='ls --color=auto --group-directories-first'
+    alias la='ls -lAFh'
+    alias ll='ls -llAh'
+fi
 
 if [ -x "$(command -v nvim)" ]; then
     alias vim='nvim'
@@ -13,12 +18,13 @@ fi
 alias j='z'
 alias x='extract'
 alias ip='ip -c'
-alias ssh='sshrc -q'
-alias scp='scp -q'
+alias scp='scp'
+alias python='python3'
 
 alias dps="docker ps --format '{{.ID}} : {{.Names}} : {{.Status}} : {{.Image}}'"
 alias dlog="docker logs -f"
 
+alias -g A='&&'
 alias -g H='| head'
 alias -g T='| tail'
 alias -g G='| grep -i'
