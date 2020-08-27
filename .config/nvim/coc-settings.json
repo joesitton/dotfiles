@@ -1,74 +1,16 @@
 {
-  "diagnostic.displayByAle": true,
-  "languageserver": {
-    "bash": {
-      "command": "bash-language-server",
-      "args": ["start"],
-      "filetypes": ["sh"],
-      "ignoredRootPaths": ["~"]
-    },
-    "dockerfile": {
-      "command": "docker-langserver",
-      "filetypes": ["dockerfile"],
-      "args": ["--stdio"]
-    },
-    "python": {
-      "command": "python",
-      "args": ["-mpyls", "-vv", "--log-file", "/tmp/lsp_python.log"],
-      "trace.server": "verbose",
-      "filetypes": ["python"],
-      "settings": {
-        "pyls": {
-          "enable": true,
-          "trace": {
-            "server": "verbose"
-          },
-          "commandPath": "",
-          "configurationSources": ["pycodestyle"],
-          "plugins": {
-            "jedi_completion": {
-              "enabled": true
-            },
-            "jedi_hover": {
-              "enabled": true
-            },
-            "jedi_references": {
-              "enabled": true
-            },
-            "jedi_signature_help": {
-              "enabled": true
-            },
-            "jedi_symbols": {
-              "enabled": true,
-              "all_scopes": true
-            },
-            "mccabe": {
-              "enabled": true,
-              "threshold": 15
-            },
-            "preload": {
-              "enabled": true
-            },
-            "pycodestyle": {
-              "enabled": true
-            },
-            "pydocstyle": {
-              "enabled": false,
-              "match": "(?!test_).*\\.py",
-              "matchDir": "[^\\.].*"
-            },
-            "pyflakes": {
-              "enabled": true
-            },
-            "rope_completion": {
-              "enabled": true
-            },
-            "yapf": {
-              "enabled": true
-            }
-          }
-        }
-      }
-    }
-  }
+  "diagnostic.errorSign": "››",
+  "diagnostic.warningSign": "››",
+  "diagnostic.infoSign": "››",
+  "diagnostic.hintSign": "››",
+  "flutter.provider.enableSnippet": true,
+  "python.formatting.blackPath": "black",
+  "python.formatting.provider": "black",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "python",
+    "dart",
+    "go"
+  ],
+  "flutter.lsp.initialization.outline": true,
+  "flutter.openDevLogSplitCommand": "botright 10split"
 }

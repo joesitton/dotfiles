@@ -1,37 +1,82 @@
-export GOPATH=$HOME/go/bin
-export RUSTPATH=$HOME/.cargo/bin
-export PATH=$PATH:$GOPATH:$RUSTPATH
-
-export TERM=xterm-256color
-export ZSH="/home/$USER/.oh-my-zsh"
-
-export KEYTIMEOUT=1
-
-plugins=(
-    fast-syntax-highlighting
-    docker
-    extract
-    z
-)
-
-fpath+=($ZSH/plugins/docker)
-source $ZSH/oh-my-zsh.sh
-
-autoload -U compinit && compinit
-
-if [ -x "$(command -v nvim)" ]; then
-    export EDITOR="nvim"
-else
-    export EDITOR="vim"
+# Zinit
+if [ ! -f /etc/zsh/zinit/zinit.zsh ]; then
+  git clone https://github.com/zdharma/zinit.git /etc/zsh/zinit
 fi
 
-SAVEHIST=5000
-HISTSIZE=5000
-HISTFILE=~/.zsh_history
+source /etc/zsh/zinit/zinit.zsh
 
-setopt nobeep
-setopt auto_cd
-setopt pushd_ignore_dups
+# Plugins
+zinit lucid wait"1" light-mode for \
+      @zsh-users/zsh-autosuggestions \
+      @zsh-users/zsh-history-substring-search \
+      @zsh-users/zsh-completions \
+      @ael-code/zsh-colored-man-pages \
+      @le0me55i/zsh-extract \
+      @zdharma/fast-syntax-highlighting \
+      @rupa/z
+
+# Ehancd
+zinit ice lucid wait"1" pick"init.sh"
+zinit light b4b4r07/enhancd
+
+# Programs
+zinit lucid wait"1" light-mode from"gh-r" as"program" for \
+      mv"exa* -> exa" @ogham/exa \
+      mv"docker* -> docker-compose" @docker/compose \
+      mv"ripgrep* -> rg" @BurntSushi/ripgrep \
+      @junegunn/fzf-bin
+
+# Base16 shell
+zinit ice lucid
+zinit light chriskempson/base16-shell
+
+# LS_COLORS
+zinit ice lucid atclone"dircolors -b LS_COLORS > c.zsh" atpull"%atclone" pick"c.zsh" nocompile"!"
+zinit light trapd00r/LS_COLORS
+
+# Prompt
+zinit ice lucid from"gh-r" as"program" atload'eval $(starship init zsh)'
+zinit load starship/starship
+
+# Zstyles
+zstyle ":completion:*" menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+# Emacs mode
+bindkey -e
+
+# Autcomplete 
+autoload -Uz compinit && compinit
+zmodload zsh/complist
+
+# Keybindings
+bindkey '^ ' autosuggest-execute
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+bindkey -M menuselect '^[[Z' reverse-menu-complete
+
+# Edit commands in vim
+autoload -U edit-command-line
+zle -N edit-command-line
+
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+
+# History
+SAVEHIST=10000
+HISTSIZE=10000
+HISTFILE=$HOME/.zsh_history
+
+# Options
+setopt auto_menu
+setopt complete_in_word
+setopt always_to_end
 setopt extended_glob
 setopt append_history
 setopt extended_history
@@ -41,30 +86,34 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 setopt hist_reduce_blanks
 setopt hist_verify
-setopt always_to_end
-setopt auto_menu
-setopt auto_name_dirs
-setopt complete_in_word
-setopt correct
-setopt prompt_subst
-setopt multios
-setopt auto_menu
+setopt interactive_comments
+unsetopt flowcontrol
 unsetopt menu_complete
-unsetopt correct_all
 
-if [ -f $HOME/.zsh_aliases ]; then
-    . $HOME/.zsh_aliases
+# Aliases
+alias _='sudo'
+function ..() { __enhancd::cd ..; }
+function -() { __enhancd::cd -; }
+alias pls='sudo $(fc -ln -1)'
+
+if [ -f "$HOME/.zinit/plugins/ogham---exa/exa" ]; then
+  alias ls='exa --color=auto --group-directories-first -F --sort extension'
+  alias ll='ls -lh'
+  alias la='ll -a'
+  alias lS='ll --sort size -r --color-scale'
+  alias lt='ls -T -L 2'
+else
+  alias ls='ls --color=auto --group-directories-first -F -X'
+  alias ll='ls -lh'
+  alias la='ls -lAh'
 fi
 
-if [ -f $HOME/.zsh_functions ]; then
-    . $HOME/.zsh_functions
-fi
+alias dps='docker ps --format '\''table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}'\'
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias grep='grep --color=auto'
+alias rg='rg -i'
 
-chpwd() {
-    emulate -L zsh
-    ls
-}
+alias ap='ansible-playbook'
 
-eval "$(starship init zsh)"
+# Auto-ls
+chpwd() { ls; }
