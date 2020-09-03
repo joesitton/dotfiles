@@ -4,30 +4,27 @@ sxhkd &
 
 bspc monitor -d 1 2 3 4 5
 
-bspc config top_padding             35
+bspc config top_padding             30
 bspc config border_width            3
-bspc config window_gap              3
+bspc config window_gap              10
+
 bspc config split_ratio             0.52
+
 bspc config borderless_monocle      true
 bspc config gapless_monocle         true
 bspc config focus_follows_pointer   true
 bspc config click_to_focus          true
-bspc config single_monocle          true
-bspc config focused_border_color    "#ab4642"
-bspc config normal_border_color     "#383838"
+bspc config single_monocle          false
+bspc config pointer_modifier        "shift"
 
-bspc rule -a Thunar state=floating
-bspc rule -a Deluge state=floating
-bspc rule -a Gimp state=tiled desktop="^4" follow=on
-bspc rule -a Gpa state=floating
-bspc rule -a Pinentry state=floating
-bspc rule -a Soffice state=tiled
-bspc rule -a Matplotlib state=floating
-bspc rule -a realvnc-vncviewer state=floating desktop="^5" follow=on
-bspc rule -a Woeusbgui state=floating
-bspc rule -a Wicd-client.py state=floating rectangle=300x300+1382+37
-bspc rule -a kitty state=floating
-bspc rule -a Firefox desktop="^2"
-bspc rule -a Transmission-gtk state=floating
+bspc config normal_border_color     "#181818"
+bspc config focused_border_color    "#7cafc2"
+bspc config presel_feedback_color   "#a16946"
+
+bspc rule -a firefox desktop=^2 follow=true
+
+feh --bg-scale $HOME/Pictures/wallpaper.jpg
+picom -b --config $HOME/.config/picom.conf
+vmware-user
 
 $HOME/.config/polybar/launch.sh

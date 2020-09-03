@@ -9,7 +9,6 @@ source /etc/zsh/zinit/zinit.zsh
 zinit lucid wait"1" light-mode for \
       @zsh-users/zsh-autosuggestions \
       @zsh-users/zsh-history-substring-search \
-      @zsh-users/zsh-completions \
       @ael-code/zsh-colored-man-pages \
       @le0me55i/zsh-extract \
       @zdharma/fast-syntax-highlighting \
@@ -23,7 +22,7 @@ zinit light b4b4r07/enhancd
 zinit lucid wait"1" light-mode from"gh-r" as"program" for \
       mv"exa* -> exa" @ogham/exa \
       mv"docker* -> docker-compose" @docker/compose \
-      mv"ripgrep* -> rg" @BurntSushi/ripgrep \
+      mv"ripgrep* -> rg" sh"chmod +x rg" @BurntSushi/ripgrep \
       @junegunn/fzf-bin
 
 # Base16 shell
@@ -38,6 +37,8 @@ zinit light trapd00r/LS_COLORS
 zinit ice lucid from"gh-r" as"program" atload'eval $(starship init zsh)'
 zinit load starship/starship
 
+zinit light jreese/zsh-titles
+
 # Zstyles
 zstyle ":completion:*" menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
@@ -47,7 +48,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 bindkey -e
 
 # Autcomplete 
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -u
 zmodload zsh/complist
 
 # Keybindings
@@ -91,9 +92,10 @@ unsetopt flowcontrol
 unsetopt menu_complete
 
 # Aliases
+function ..() { cd ..; }
+function -() { cd -; }
+
 alias _='sudo'
-function ..() { __enhancd::cd ..; }
-function -() { __enhancd::cd -; }
 alias pls='sudo $(fc -ln -1)'
 
 if [ -f "$HOME/.zinit/plugins/ogham---exa/exa" ]; then
@@ -108,12 +110,16 @@ else
   alias la='ls -lAh'
 fi
 
+[ "$(command -v nvim)" ] && alias vim='nvim'
+
 alias dps='docker ps --format '\''table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}'\'
 
 alias grep='grep --color=auto'
-alias rg='rg -i'
 
 alias ap='ansible-playbook'
 
 # Auto-ls
 chpwd() { ls; }
+
+# Load xresources
+[ -f $HOME/.Xresources ] && xrdb -load $HOME/.Xresources

@@ -1,0 +1,62 @@
+font:
+  size: 16
+
+  normal:
+    family: Iosevka Nerd Font Mono
+    style: Regular
+
+  bold:
+    family: Iosevka Nerd Font Mono
+    style: Bold
+
+  italic:
+    family: Iosevka Nerd Font Mono
+    style: Italic
+
+window:
+  title: Alacritty
+
+  class:
+    instance: Alacritty
+    general: Alacritty
+
+  padding:
+    x: 10
+    y: 10
+
+scrolling:
+  history: 32768
+
+# Colors (Base16 Default Dark)
+colors:
+  # Default colors
+  primary:
+    background: '#181818'
+    foreground: '#d8d8d8'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    # text: '#d8d8d8'
+    cursor: '#d8d8d8'
+
+  # Normal colors
+  normal:
+    black:   '#181818'
+    red:     '#ab4642'
+    green:   '#a1b56c'
+    yellow:  '#f7ca88'
+    blue:    '#7cafc2'
+    magenta: '#ba8baf'
+    cyan:    '#86c1b9'
+    white:   '#d8d8d8'
+
+  # Bright colors
+  bright:
+    black:   '#585858'
+    red:     '#ab4642'
+    green:   '#a1b56c'
+    yellow:  '#f7ca88'
+    blue:    '#7cafc2'
+    magenta: '#ba8baf'
+    cyan:    '#86c1b9'
+    white:   '#f8f8f8'

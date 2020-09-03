@@ -1,5 +1,5 @@
 [colors]
-background = #282828
+background = #FA282828
 foreground = #e8e8e8
 red = #AB4642
 green = #A1B56C
@@ -16,35 +16,31 @@ black8 = #f8f8f8
 gray = #d8d8d8
 
 [bar/top]
-width = 100%
-height = 32
+height = 28
+padding = 2
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 1
+border-bottom-size = 2
+border-color = ${colors.black4}
 
-border-bottom-size = 3
-border-bottom-color = ${colors.background}
+module-margin = 1
 
-padding = 0
-padding-right = 2
-module-margin = 2
-
-font-0 = Fira Sans Condensed:size=14;4
-font-1 = RobotoMono Nerd Font:size=12;3
-
-modules-left = bspwm title
-modules-right = updates mpd weather network pulseaudio battery date
+font-0 = "Fira Sans Compressed:size=14;4"
+font-1 = "Iosevka Nerd Font Mono:size=22;5:antialias=false"
 
 override-redirect = true
 wm-restack = bspwm
+
+modules-left = bspwm spacer title
+modules-center = date
+modules-right = cpu ram
 
 [module/bspwm]
 type = internal/bspwm
 
 enable-click = true
-enable-scroll = true
 
 ws-icon-0 = 1;1
 ws-icon-1 = 2;2
@@ -52,135 +48,45 @@ ws-icon-2 = 3;3
 ws-icon-3 = 4;4
 ws-icon-4 = 5;5
 
-format = <label-state> <label-mode>
+label-focused = "●"
+label-focused-foreground = ${colors.blue}
+label-focused-padding = 2
 
-label-focused = %icon%
-label-focused-foreground = ${colors.background}
-label-focused-background = ${colors.blue}
-label-focused-padding = 3
-
-label-occupied = %icon%
-label-occupied-background = ${colors.black4}
+label-occupied = "●"
 label-occupied-foreground = ${colors.foreground}
-label-occupied-padding = 3
+label-occupied-padding = 2
 
-label-urgent = %icon%
-label-urgent-background = ${colors.red}
-label-urgent-foreground = ${colors.foreground}
-label-urgent-padding = 3
+label-urgent = "●"
+label-urgent-foreground = ${colors.red}
+label-urgent-padding = 2
 
-label-empty = %icon%
-label-empty-foreground = ${colors.black5}
-label-empty-padding = 3
-
-[module/mpd]
-type = internal/mpd
-
-host = 127.0.0.1
-port = 6601
-
-#format-online =    <label-song>   %{F#DC9565}<icon-prev>  <toggle>  <icon-next>%{F-}
-format-online =    <label-song>
-format-online-underline = ${colors.green}
-#format-stopped = ﱙ   Stopped  %{F#DC9565}<toggle>%{F-}
-format-stopped =
-
-label-song = %artist%  —  %title%
-label-song-maxlen = 50
-
-icon-play =   
-icon-pause =   
-icon-prev = 
-icon-next = 
+label-empty = "●"
+label-empty-foreground = ${colors.black4}
+label-empty-padding = 2
 
 [module/title]
 type = internal/xwindow
-label-maxlen = 65
-label-padding-left = 3
-
-[module/pulseaudio]
-type = internal/pulseaudio
-
-format-volume = %{F#f8f8f8}<ramp-volume>%{F-}  <label-volume>
-format-volume-underline = ${colors.orange}
-#format-volume-foreground = ${colors.orange}
-
-label-muted = 婢  muted
-label-muted-underline = ${colors.red}
-
-format-muted-padding = 1
-
-ramp-volume-0 = 
-ramp-volume-1 = 
-
-[module/network]
-type = internal/network
-
-interface = wlp2s0
-
-format-connected = %{F#f8f8f8} %{F-}  <label-connected>
-format-connected-underline = ${colors.purple}
-format-disconnected = %{F#f8f8f8} %{F-}  none
-format-disconnected-underline = ${colors.red}
-
-label-connected = %essid%
-label-disconnected = none
-
-[module/battery]
-type = internal/battery
-
-full-at = 99
-
-battery = BAT1
-adapter = ACAD
-
-time-format = %H:%M
-
-format-charging = <label-charging>
-format-charging-underline = ${colors.green}
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${colors.orange}
-
-label-charging = %{F#F7CA88}%{F-} %percentage%% (%time%)
-label-discharging = %percentage%% (%time%)
-label-full = %{F#F7CA88}%{F-} %percentage%%
-label-full-underline = ${colors.yellow}
-
-ramp-capacity-0 = %{F#AB4642}%{F-}
-ramp-capacity-1 = %{F#AB4642}%{F-}
-ramp-capacity-2 = %{F#F7CA88}%{F-}
-ramp-capacity-3 = %{F#A1B56C}%{F-}
-ramp-capacity-4 = %{F#A1B56C}%{F-}
+label-maxlen = 100
 
 [module/date]
 type = internal/date
+time = %I:%M %P
+label = %time%
 
-date = %a,  %b %e
-time = %l:%M %p
+[module/cpu]
+type = internal/cpu
 
-label = %date%  %time%
-format = <label>
-format-underline = ${colors.blue}
+format =   <label>
+format-padding = 2
 
-[module/datetime]
-type = custom/script
-exec = date "+%a,  %b %e   %l:%M %p"
-#label-underline = ${colors.blue}
-click-left = cal.py
+[module/ram]
+type = internal/memory
 
-[module/updates]
-type = custom/script
-exec = /home/joe/Scripts/updates.sh
-format-prefix = "  "
-format-foreground = ${colors.green}
+format =   <label>
+format-padding = 2
 
-click-left = updates_notif.py
+[module/spacer]
+type = custom/text
+content = " "
 
-[module/weather]
-type = custom/script
-exec = /home/joe/Scripts/weather.sh
-label-underline = ${colors.blue}
-
-click-left = weather_notif.py
-
-# vim: syntax=cfg
+# vim: ft=cfg

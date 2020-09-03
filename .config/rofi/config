@@ -1,5 +1,5 @@
 rofi.display-drun: 
-rofi.modi: drun,window,calc
+rofi.modi: drun,window
 rofi.show-icons: true
 rofi.threads: 0
 rofi.theme: pretty
@@ -8,6 +8,6 @@ rofi.scroll-method: 1
 rofi.fake-background: true
 rofi.pid: /home/joe/.config/rofi/pid
 rofi.terminal: kitty
-rofi.window-format:  {w}     {t}
+rofi.window-format: {t}
 rofi.fake-transparency: true
 rofi.fake-background:

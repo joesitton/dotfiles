@@ -13,11 +13,13 @@ set notermguicolors
 set t_Co=256
 colorscheme base16-default-dark
 
+hi Comment cterm=italic gui=italic
+
 " Scrolloff
 set scrolloff=5 sidescrolloff=10
 
 " Persistent undo
-set undofile undodir=$HOME/.config/undodir
+set undofile undodir=$HOME/.config/nvim/undodir
 
 " Tabs
 set smartindent
@@ -60,10 +62,13 @@ set pumheight=10
 set iskeyword+=-
 set wildignorecase
 
-" Don't automatically continue comments
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
 " Disabled settings
 set nowrap
 set noshowmode
 set nobackup nowritebackup
+
+" Don't automatically continue comments
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Set YARA filetype
+autocmd BufNewFile,BufRead *.yar,*.yara setlocal filetype=yara

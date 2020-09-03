@@ -4,6 +4,7 @@
   "diagnostic.infoSign": "››",
   "diagnostic.hintSign": "››",
   "flutter.provider.enableSnippet": true,
+  "python.sortImports.path": "isort",
   "python.formatting.blackPath": "black",
   "python.formatting.provider": "black",
   "coc.preferences.formatOnSaveFiletypes": [
@@ -12,5 +13,6 @@
     "go"
   ],
   "flutter.lsp.initialization.outline": true,
-  "flutter.openDevLogSplitCommand": "botright 10split"
+  "flutter.openDevLogSplitCommand": "botright 10split",
+  "go.goplsPath": "~/.go/bin/gopls"
 }

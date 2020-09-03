@@ -1,3 +1,21 @@
+" let g:coc_global_extensions = [
+"       \ 'coc-docker',
+"       \ 'coc-flutter-tools',
+"       \ 'coc-go',
+"       \ 'coc-highlight',
+"       \ 'coc-json',
+"       \ 'coc-marketplace',
+"       \ 'coc-neosnippet',
+"       \ 'coc-prettier',
+"       \ 'coc-python',
+"       \ 'coc-rls',
+"       \ 'coc-sh',
+"       \ 'coc-snippets',
+"       \ 'coc-vimlsp',
+"       \ 'coc-yaml ',
+"       \ 'coc-yank'
+"       \ ]
+
 " Use <c-space> to trigger completion.
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()

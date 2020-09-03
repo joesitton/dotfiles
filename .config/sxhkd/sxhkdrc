@@ -1,21 +1,17 @@
 # terminal
-super + Return
-    kitty
+ctrl + shift + Return
+    alacritty
 
-alt + super + s
-    screenshot
-
+# move to workspace n
 alt + {1,2,3,4,5}
     bspc desktop -f {1,2,3,4,5}
 
+# window switcher
 alt + Tab
     rofi -show window
 
-super + alt + equal
-    roficalc
-
-# program launcher
-super + space
+# app launcher
+alt + space
     rofi -show drun
 
 # reload sxhkd
@@ -27,77 +23,46 @@ super + alt + Escape
     bspc quit
 
 # close and kill
-super + {_, shift + }w
+ctrl + shift + {w,x}
     bspc node -{c,k}
 
 # preselect
-super + alt + {h,j,k,l}
+ctrl + alt + {h,j,k,l}
     bspc node -p {west,south,north,east}
 
 # clear preselections
-super + alt + space
+ctrl + alt + space
     bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-#super + alt + {n,m}
-#bspc node -g {locked, sticky}
+# ctrl + alt + {n,m}
+#     bspc node -g {locked, sticky}
 
 # tiled and monocle
-super + m
+ctrl + shift + m
     bspc desktop -l next
 
 # swap current and biggest
-super + g
+ctrl + shift + g
     bspc node -s biggest.local
 
 # window state
-super + {s,t,d,f}
+ctrl + shift + {s,t,d,f}
     bspc node -t {floating,tiled,pseudo_tiled,fullscreen}
 
 # change desktop
-super + bracket{left,right}
+ctrl + shift + bracket{left,right}
     bspc desktop -f {prev,next}
 
 # change window focus
-super + {h,j,k,l}
+ctrl + shift + {h,j,k,l}
     bspc node -f {west,south,north,east}
-
-# focus next node in current desktop
-super + {_,alt+}c
-    bspc node -f {next,prev}.local
 
 # move a window to workspace n
 super + alt + {1-5}
     bspc node -d {1-5}
 
-super + b
-    bspc node -n prev.local
+# ctrl + shift + {minus, equal, 0}
+#     bspc node -l {below, normal, above}
 
-super + {minus, equal, 0}
-    bspc node -l {below, normal, above}
-
-super + i
-    bspc node -f last.below.local && bspc node -l normal
-
-alt + F1
-    brightness down
-
-alt + F2
-    brightness up
-
-F10
-    volume down
-
-F11
-    volume up
-
-Home
-    mpc -p 6601 -q toggle
-
-Prior
-    mpc -p 6601 -q stop
-
-Next
-    mpc -p 6601 -q prev
-
-End
-    mpc -p 6601 -q next
+# ctrl + shift + i
+#     bspc node -f last.below.local && bspc node -l normal

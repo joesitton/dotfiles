@@ -22,6 +22,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'psliwka/vim-smoothie'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 's3rvac/vim-syntax-yara'
 " Plug 'Yggdroot/indentLine'
 
 " Functionality

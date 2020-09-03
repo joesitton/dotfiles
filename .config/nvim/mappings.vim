@@ -28,8 +28,7 @@ nnoremap <silent> [w <C-W><C-H>
 nnoremap <silent> ]w <C-W><C-L>
 nnoremap <silent> [b :bp<CR>
 nnoremap <silent> ]b :bn<CR>
-nnoremap <silent> <leader>bd :Bdelete<CR>
-nnoremap <silent> <leader>bw :Bwipeout<CR>
+nnoremap <silent> <leader>bd :Bwipeout<CR>
 nnoremap <silent> <leader>cd :cd %:p:h<CR>
 nnoremap <silent> <F1> :Rg<CR>
 nnoremap <silent> <F2> :Files<CR>

@@ -2,7 +2,7 @@
     background-color: #28282800;
     border-color: #282828;
     color: #f8f8f8;
-    font: "FuraSans Nerd Font 16";
+    font: "Iosevka 18";
 }
 #window {
     background-color: #282828F0;
@@ -21,6 +21,7 @@
     border-color: #28282800;
     padding: 5px 5px 5px 10px;
     background-color: #28282800;
+    font: "Iosevka 14";
 }
 #element.selected.normal {
     background-color: #7cafc222;
@@ -39,14 +40,15 @@
 }
 #entry {
     spacing: 0;
-    font: "FuraSans Nerd Font 24";
+    /* text-align: center; */
     background-color: #f8f8f8;
     color: #282828;
 }
 #prompt {
     spacing: 0;
-    padding: 8px 0 0 14px;
-    text-align: center;
+    /* padding: 4px 0 0 14px; */
+    padding: 0 0 0 10px;
+    /* text-align: center; */
     background-color: #f8f8f8;
     color: #282828;
 }
