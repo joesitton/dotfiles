@@ -1,0 +1,15 @@
+configuration {
+	display-drun: "";
+	display-window: "";
+	modi: "window,drun";
+	show-icons: true;
+    icon-theme: "Numix-Circle";
+	terminal: "alacritty";
+	fake-transparency: true;
+	threads: 0;
+	scroll-method: 1;
+	fake-background: "true";
+	window-format: "{t}";
+	theme: "pretty";
+	pid: "/home/joe/.config/rofi/pid";
+}

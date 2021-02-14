@@ -1,0 +1,61 @@
+* {
+  background-color: #282828;
+  border-color: #282828;
+  color: #f8f8f8;
+  font: "Fira Sans 16";
+}
+#listview {
+  padding: 0;
+  border: 0 2px 2px 2px;
+  background-color: #28282800;
+}
+#element {
+  border: 0 0 0 10px;
+  border-color: #28282800;
+  padding: 5px 5px 5px 10px;
+  background-color: #28282800;
+  font: "Fira Sans 14";
+}
+#element-icon {
+  size: 32px;
+  padding: 0 10px 0 0;
+}
+#element.selected.normal {
+  background-color: #7cafc222;
+  border: 0 0 0 4px;
+  border-color: #7cafc2;
+  color: #f8f8f8;
+}
+#element.selected.active {
+  background-color: #ab464288;
+  border: 0 0 0 10px;
+  border-color: #ab4642;
+  color: #f8f8f8;
+}
+#inputbar {
+  padding: 10px 0 10px 0;
+}
+#entry {
+  spacing: 0;
+  background-color: #f8f8f8;
+  color: #282828;
+}
+#prompt {
+  spacing: 0;
+  padding: 0 0 0 10px;
+  background-color: #f8f8f8;
+  color: #282828;
+}
+#inputbar {
+  children: [ prompt, textbox-prompt, entry ];
+  background-color: #f8f8f8;
+  color: #282828;
+  border: 2px 2px 0 2px;
+  border-color: #282828;
+}
+#textbox-prompt {
+  expand: false;
+  padding: 0 0 0 9px;
+  background-color: #f8f8f8;
+  color: #282828;
+}
