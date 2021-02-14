@@ -1,20 +1,24 @@
-" let g:coc_global_extensions = [
-"       \ 'coc-docker',
-"       \ 'coc-flutter-tools',
-"       \ 'coc-go',
-"       \ 'coc-highlight',
-"       \ 'coc-json',
-"       \ 'coc-marketplace',
-"       \ 'coc-neosnippet',
-"       \ 'coc-prettier',
-"       \ 'coc-python',
-"       \ 'coc-rls',
-"       \ 'coc-sh',
-"       \ 'coc-snippets',
-"       \ 'coc-vimlsp',
-"       \ 'coc-yaml ',
-"       \ 'coc-yank'
-"       \ ]
+let g:coc_global_extensions = [
+    \ "coc-yank",
+    \ "coc-tailwindcss",
+    \ "coc-snippets",
+    \ "coc-scssmodules",
+    \ "coc-prettier",
+    \ "coc-neosnippet",
+    \ "coc-marketplace",
+    \ "coc-html",
+    \ "coc-highlight",
+    \ "coc-emoji",
+    \ "coc-emmet",
+    \ "coc-yaml",
+    \ "coc-vimlsp",
+    \ "coc-sh",
+    \ "coc-python",
+    \ "coc-json",
+    \ "coc-go",
+    \ "coc-flow",
+    \ "coc-docker",
+    \ ]
 
 " Use <c-space> to trigger completion.
 if has('nvim')
