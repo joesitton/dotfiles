@@ -1,33 +1,22 @@
 # Zinit
-if [ ! -f /etc/zsh/zinit/zinit.zsh ]; then
-  git clone https://github.com/zdharma/zinit.git /etc/zsh/zinit
+if [ ! -f /etc/zinit/zinit.zsh ]; then
+  git clone https://github.com/zdharma/zinit.git /etc/zinit
 fi
 
-source /etc/zsh/zinit/zinit.zsh
+source /etc/zinit/zinit.zsh
 
 # Plugins
 zinit lucid wait"1" light-mode for \
       @zsh-users/zsh-autosuggestions \
       @zsh-users/zsh-history-substring-search \
+      @zdharma/fast-syntax-highlighting \
       @ael-code/zsh-colored-man-pages \
       @le0me55i/zsh-extract \
-      @zdharma/fast-syntax-highlighting \
-      @rupa/z
+      @jreese/zsh-titles
 
-# Ehancd
-zinit ice lucid wait"1" pick"init.sh"
-zinit light b4b4r07/enhancd
-
-# Programs
-zinit lucid wait"1" light-mode from"gh-r" as"program" for \
-      mv"exa* -> exa" @ogham/exa \
-      mv"docker* -> docker-compose" @docker/compose \
-      mv"ripgrep* -> rg" sh"chmod +x rg" @BurntSushi/ripgrep \
-      @junegunn/fzf-bin
-
-# Base16 shell
-zinit ice lucid
-zinit light chriskempson/base16-shell
+# Auto jump
+zinit ice lucid atload"touch $HOME/.z"
+zinit light rupa/z
 
 # LS_COLORS
 zinit ice lucid atclone"dircolors -b LS_COLORS > c.zsh" atpull"%atclone" pick"c.zsh" nocompile"!"
@@ -37,17 +26,19 @@ zinit light trapd00r/LS_COLORS
 zinit ice lucid from"gh-r" as"program" atload'eval $(starship init zsh)'
 zinit load starship/starship
 
-zinit light jreese/zsh-titles
+# Shell
+zinit ice lucid
+zinit light chriskempson/base16-shell
 
 # Zstyles
 zstyle ":completion:*" menu select
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # Emacs mode
 bindkey -e
 
-# Autcomplete 
+# Autcomplete
 autoload -Uz compinit && compinit -u
 zmodload zsh/complist
 
@@ -98,12 +89,12 @@ function -() { cd -; }
 alias _='sudo'
 alias pls='sudo $(fc -ln -1)'
 
-if [ -f "$HOME/.zinit/plugins/ogham---exa/exa" ]; then
+if [ "$(command -v exa)" ]; then
   alias ls='exa --color=auto --group-directories-first -F --sort extension'
-  alias ll='ls -lh'
+  alias ll='ls -lhg'
   alias la='ll -a'
   alias lS='ll --sort size -r --color-scale'
-  alias lt='ls -T -L 2'
+  alias lt='ls -T -L 3 -I "node_modules|venv|__pycache__"'
 else
   alias ls='ls --color=auto --group-directories-first -F -X'
   alias ll='ls -lh'
@@ -112,14 +103,28 @@ fi
 
 [ "$(command -v nvim)" ] && alias vim='nvim'
 
-alias dps='docker ps --format '\''table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}'\'
-
-alias grep='grep --color=auto'
+alias grep='grep --color=auto -i'
+alias rg='rg -i'
+alias ssh='ssh -xC'
+alias yarn='yarn --emoji true'
 
 alias ap='ansible-playbook'
+alias ac='ansible-console'
+
+alias count="rev | cut -d '.' -f1 | rev | sort | uniq -c | sort -bgr"
+
+alias dps='docker ps --format '\''table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}'\'
+alias drm='docker images | grep none | awk '\''{print $3}'\'' | xargs docker rmi -f'
+
+alias gs='git status'
+alias ga='git add .'
+alias gc='git commit -m'
+alias gp='git push'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gl='git log --oneline'
 
 # Auto-ls
 chpwd() { ls; }
 
-# Load xresources
-[ -f $HOME/.Xresources ] && xrdb -load $HOME/.Xresources
+# vim: ft=zsh

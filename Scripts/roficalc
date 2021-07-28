@@ -1,3 +1,0 @@
-#!/bin/sh
-
-rofi -show calc -no-show-match -no-sort -calc-command "copyq copy '{result}'"

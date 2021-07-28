@@ -1,61 +1,70 @@
+////////////
+//        //
+//  rofi  //
+//        //
+////////////
+
+configuration {
+	modi: "drun,window,ssh,file-browser";
+	columns: 4;
+	font: "Roboto Regular 12";
+	terminal: "alacritty";
+	icon-theme: "Numix-Circle";
+	drun-display-format: "{name}";
+	window-format: "{w}\t{t}";
+	fullscreen: true;
+	display-window: "";
+	display-ssh: "";
+	display-drun: "";
+	display-file-browser: "";
+}
+
 * {
-  background-color: #282828;
-  border-color: #282828;
-  color: #f8f8f8;
-  font: "Fira Sans 16";
+	background-color: transparent;
+	color: white;
 }
-#listview {
-  padding: 0;
-  border: 0 2px 2px 2px;
-  background-color: #28282800;
+
+window {
+	background-color: rgba(18, 18, 18, 0.9);
 }
-#element {
-  border: 0 0 0 10px;
-  border-color: #28282800;
-  padding: 5px 5px 5px 10px;
-  background-color: #28282800;
-  font: "Fira Sans 14";
+
+mainbox {
+	margin: 10em 15em;
 }
-#element-icon {
-  size: 32px;
-  padding: 0 10px 0 0;
+
+inputbar {
+	background-color: rgba(255, 255, 255, 0.1);
+	padding: 0.6em 0 0.6em 0.85em;
+	margin: 0 0 1em 0;
+	border-radius: 99em;
+	border: 1px;
+	border-color: rgba(255, 255, 255, 0.25);
 }
-#element.selected.normal {
-  background-color: #7cafc222;
-  border: 0 0 0 4px;
-  border-color: #7cafc2;
-  color: #f8f8f8;
+
+prompt {
+	margin: 0 0.5em 0 0.1em;
+	font: "Font Awesome 5 Free 11";
+	color: rgba(255, 255, 255, 0.5);
+	vertical-align: 0.5;
 }
-#element.selected.active {
-  background-color: #ab464288;
-  border: 0 0 0 10px;
-  border-color: #ab4642;
-  color: #f8f8f8;
+
+element {
+	padding: -0.25em 0.5em;
+	border-radius: 0.25em;
 }
-#inputbar {
-  padding: 10px 0 10px 0;
+
+element.selected {
+	background-color: rgba(255, 255, 255, 0.05);
 }
-#entry {
-  spacing: 0;
-  background-color: #f8f8f8;
-  color: #282828;
+
+element-icon {
+	size: 2.5em;
 }
-#prompt {
-  spacing: 0;
-  padding: 0 0 0 10px;
-  background-color: #f8f8f8;
-  color: #282828;
+
+element-text {
+	padding: 1.5em 0.5em;
 }
-#inputbar {
-  children: [ prompt, textbox-prompt, entry ];
-  background-color: #f8f8f8;
-  color: #282828;
-  border: 2px 2px 0 2px;
-  border-color: #282828;
-}
-#textbox-prompt {
-  expand: false;
-  padding: 0 0 0 9px;
-  background-color: #f8f8f8;
-  color: #282828;
+
+message {
+	margin: 0 0 1em 0;
 }

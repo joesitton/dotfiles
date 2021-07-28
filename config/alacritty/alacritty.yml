@@ -1,57 +1,91 @@
 font:
-  size: 15
+  size: 16
 
   normal:
-    family: Iosevka Term SS08
+    family: Iosevka Custom
     style: Regular
 
   bold:
-    family: Iosevka Term SS08
-    style: Bold
+    family: Iosevka Custom
+    style: SemiBold
 
   italic:
-    family: Iosevka Term SS08
+    family: Iosevka Custom
     style: Italic
 
 window:
   title: Alacritty
   decorations: none
 
-  class:
-    instance: Alacritty
-    general: Alacritty
-
   padding:
-    x: 10
-    y: 10
+    x: 8
+    y: 8
 
 scrolling:
-  history: 32768
+  history: 65536
+  multiplier: 2
 
-schemes:
-  iceberg: &dark
-    primary:
-      background: "#161821"
-      foreground: "#d2d4de"
+colors:
+  # Default colors
+  primary:
+    background: "0x1e2127"
+    foreground: "0xabb2bf"
 
-    normal:
-      black: "#161821"
-      red: "#e27878"
-      green: "#b4be82"
-      yellow: "#e2a478"
-      blue: "#84a0c6"
-      magenta: "#a093c7"
-      cyan: "#89b8c2"
-      white: "#c6c8d1"
+    # Bright and dim foreground colors
+    #
+    # The dimmed foreground color is calculated automatically if it is not present.
+    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
+    # is `false`, the normal foreground color will be used.
+    #dim_foreground: '0x9a9a9a'
+    bright_foreground: "0xe6efff"
 
-    # Bright colors
-    bright:
-      black: "#6b7089"
-      red: "#e98989"
-      green: "#c0ca8e"
-      yellow: "#e9b189"
-      blue: "#91acd1"
-      magenta: "#ada0d3"
-      cyan: "#95c4ce"
-      white: "#d2d4de"
-# colors: *dark
+  # Cursor colors
+  #
+  # Colors which should be used to draw the terminal cursor. If these are unset,
+  # the cursor color will be the inverse of the cell color.
+  #cursor:
+  #  text: '0x000000'
+  #  cursor: '0xffffff'
+
+  # Normal colors
+  normal:
+    black: "0x1e2127"
+    red: "0xe06c75"
+    green: "0x98c379"
+    yellow: "0xd19a66"
+    blue: "0x61afef"
+    magenta: "0xc678dd"
+    cyan: "0x56b6c2"
+    white: "0x828791"
+
+  # Bright colors
+  bright:
+    black: "0x5c6370"
+    red: "0xe06c75"
+    green: "0x98c379"
+    yellow: "0xd19a66"
+    blue: "0x61afef"
+    magenta: "0xc678dd"
+    cyan: "0x56b6c2"
+    white: "0xe6efff"
+
+  # Dim colors
+  #
+  # If the dim colors are not set, they will be calculated automatically based
+  # on the `normal` colors.
+  dim:
+    black: "0x1e2127"
+    red: "0xe06c75"
+    green: "0x98c379"
+    yellow: "0xd19a66"
+    blue: "0x61afef"
+    magenta: "0xc678dd"
+    cyan: "0x56b6c2"
+    white: "0x828791"
+
+  # Indexed Colors
+  #
+  # The indexed colors include all colors from 16 to 256.
+  # When these are not set, they're filled with sensible defaults.
+  #indexed_colors:
+  #  - { index: 16, color: '0x000000' }

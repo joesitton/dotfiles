@@ -1,5 +1,5 @@
 [colors]
-background = #FA282828
+background = #282828
 foreground = #e8e8e8
 red = #AB4642
 green = #A1B56C
@@ -16,104 +16,119 @@ black8 = #f8f8f8
 gray = #d8d8d8
 
 [bar/top]
-height = 30
-padding-left = 4
-
 background = ${colors.background}
 foreground = ${colors.foreground}
-
-# border-bottom-size = 2
-# border-color = ${colors.black4}
-
+height = 32
+padding = 4
+underline-size = 4
 module-margin = 2
-
-font-0 = "Fira Sans Compressed:size=14;4"
-font-1 = "Iosevka Nerd Font Mono:size=25;6:antialias=false"
-
-override-redirect = true
+tray-position = right
 wm-restack = bspwm
 
-modules-left = bspwm
-modules-center = title
-modules-right = updates cpu ram date
+# separator = │
+# separator-foreground = ${colors.black5}
+
+font-0 = "Fira Sans Compressed:size=14;3"
+font-1 = "Iosevka Nerd Font:size=14;3"
+
+modules-left = logo bspwm title
+modules-center = date
+modules-right = network-down network-up filesystem cpu ram
+
+[module/logo]
+type = custom/text
+content = 
+content-foreground = ${colors.blue}
 
 [module/bspwm]
 type = internal/bspwm
-
 enable-click = true
 
-ws-icon-0 = 1;1
-ws-icon-1 = 2;2
-ws-icon-2 = 3;3
-ws-icon-3 = 4;4
-ws-icon-4 = 5;5
-
-label-focused = "●"
 label-focused-foreground = ${colors.blue}
+label-focused-underline = ${colors.blue}
 label-focused-padding = 2
 
-label-occupied = "●"
 label-occupied-foreground = ${colors.foreground}
 label-occupied-padding = 2
 
-label-urgent = "●"
 label-urgent-foreground = ${colors.red}
 label-urgent-padding = 2
 
-label-empty = "●"
-label-empty-foreground = ${colors.black4}
+label-empty-foreground = ${colors.black5}
 label-empty-padding = 2
 
 [module/title]
 type = internal/xwindow
 label-maxlen = 250
 
-[module/filesystem]
-type = internal/fs
-
-mount-0 = /
-
-format-mounted = 﫭  <label-mounted>
-label-mounted = %mountpoint% %percentage_used%% used
+format-prefix = │
+format-prefix-foreground = ${colors.black5}
+format-prefix-padding-right = 4
 
 [module/date]
 type = internal/date
-date = %b %d
+date = %B %d
 time = %I:%M %P
-label = %date%, %time%
-label-background = ${colors.blue}
-label-foreground = ${colors.black1}
-label-padding = 2
 
-[module/updates]
-type = custom/script
-exec = pacman -Qu | wc -l
-exec-if = [ $(pacman -Qu | wc -l) -gt 0 ]
-format =   <label> updates
-format-foreground = ${colors.green}
-interval = 3600
+label = %date% at %time%
+label-foreground = ${colors.foreground}
 
-[module/keyboard]
-type = internal/xkeyboard
-
-format =   <label-layout>
-format-spacing = 0
-
-[module/network]
+[module/network-down]
 type = internal/network
 interface = ens33
+interval = 1
 
-label-connected = 直  %local_ip%
+format-connected-prefix = 
+format-connected-prefix-foreground = ${colors.red}
+format-connected-prefix-padding = 2
+label-connected = %downspeed%
 
-label-disconnected = 睊  disconnected
-label-disconnected-foreground = ${colors.red}
+[module/network-up]
+type = internal/network
+interface = ens33
+interval = 1
+
+format-connected-prefix = 
+format-connected-prefix-foreground = ${colors.green}
+format-connected-prefix-padding = 2
+label-connected = %upspeed%
+
+[module/filesystem]
+type = internal/fs
+interval = 60
+
+mount-0 = /
+
+format-mounted-prefix = 
+format-mounted-prefix-padding = 2
+format-mounted-prefix-foreground = ${colors.blue}
+format-mounted = <label-mounted>
+label-mounted = %percentage_used%%
 
 [module/cpu]
 type = internal/cpu
-format =   <label>
+
+format-prefix = 龍
+format-prefix-foreground = ${colors.yellow}
+format-prefix-padding = 2
 
 [module/ram]
 type = internal/memory
-format =   <label>
+
+format-prefix = 
+format-prefix-foreground = ${colors.blue}
+format-prefix-padding = 2
+
+label = %gb_used%
+
+[module/crypto]
+type = custom/script
+exec = printf "%'.2f\n" "$(curl -s rate.sx/1btc)"
+interval = 60
+
+format = $ <label>
+format-prefix = ﴑ
+format-prefix-foreground = ${colors.orange}
+format-prefix-padding = 2
 
 # vim: ft=cfg

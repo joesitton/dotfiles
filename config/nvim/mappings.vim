@@ -16,30 +16,53 @@ nnoremap j gj
 nnoremap k gk
 nnoremap Y y$
 nnoremap Q @q
+
+" Quick window selection
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-nnoremap <leader>w :w<CR>
-nnoremap <leader>z :wq<CR>
-nnoremap <leader>q :q!<CR>
-nnoremap <silent> <C-_> :Commentary<CR>
-nnoremap <silent> [w <C-W><C-H>
-nnoremap <silent> ]w <C-W><C-L>
-nnoremap <silent> [b :bp<CR>
-nnoremap <silent> ]b :bn<CR>
-nnoremap <silent> <leader>bd :Bwipeout<CR>
-nnoremap <silent> <leader>cd :cd %:p:h<CR>
-nnoremap <silent> <F1> :Rg<CR>
-nnoremap <silent> <F2> :Files<CR>
-nnoremap <silent> <F3> :NERDTreeToggle<CR>
-nnoremap <silent> <F4> :TagbarToggle<CR>
 
-xnoremap <silent> <C-_> :Commentary<CR>
+" Quick saving/quitting
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q!<CR>
+nnoremap <leader>z :wqa!<CR>
+
+" Move lines up or down in visual mode
 xnoremap <silent> [e :m '<-2<CR>gv=gv
 xnoremap <silent> ]e :m '>+1<CR>gv=gv
 
+" Keep selection when indenting blocks
 vnoremap <silent> < <gv
 vnoremap <silent> > >gv
 
-nmap <leader>a  <Plug>(coc-codeaction-selected)<CR>
+" Completion
+inoremap <silent> <expr><CR> compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))
+
+" Buffers
+nnoremap <silent> [b :BufferPrevious<CR>
+nnoremap <silent> ]b :BufferNext<CR>
+nnoremap <silent> <leader>bd :BufferWipeout<CR>
+nnoremap <silent> <C-Left> :BufferMovePrevious<CR>
+nnoremap <silent> <C-Right> :BufferMoveNext<CR>
+
+" Tree
+nnoremap <F1> :NvimTreeToggle<CR>
+
+" Telescope
+nnoremap <F2> :Telescope find_files<CR>
+
+" Trouble
+nnoremap <F4> :TroubleToggle lsp_document_diagnostics<CR>
+nnoremap <F5> :TroubleToggle lsp_workspace_diagnostics<CR>
+
+" LSP
+nnoremap <silent> <leader>ca :Lspsaga code_action<CR>
+vnoremap <silent> <leader>ca :<C-U>Lspsaga range_code_action<CR>
+
+nnoremap <silent> ? :Lspsaga hover_doc<CR>
+nnoremap <silent> gf :Lspsaga lsp_finder<CR>
+nnoremap <silent> gr :Lspsaga rename<CR>
+nnoremap <silent> gd :Lspsaga preview_definition<CR>
+nnoremap <silent> [g :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent> ]g :Lspsaga diagnostic_jump_prev<CR>
