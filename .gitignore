@@ -1,3 +1,4 @@
-config/nvim/undodir
-config/rofi/pid
-config/nvim/.netrwhist
+.config/nvim/venv
+.config/nvim/.plugins
+.config/nvim/.undodir
+.config/nvim/autoload

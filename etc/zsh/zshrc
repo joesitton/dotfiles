@@ -1,0 +1,90 @@
+# Zinit
+declare -A ZINIT
+export ZINIT["HOME_DIR"]=/etc/zinit
+
+if [ ! -f /etc/zinit/zinit.zsh ]; then
+  git clone https://github.com/zdharma/zinit.git /etc/zinit
+fi
+
+source /etc/zinit/zinit.zsh
+
+# Plugins
+zinit lucid wait"1" light-mode for \
+      @zsh-users/zsh-autosuggestions \
+      @zsh-users/zsh-history-substring-search \
+      @zdharma/fast-syntax-highlighting \
+      @ael-code/zsh-colored-man-pages \
+      @le0me55i/zsh-extract \
+      # @jreese/zsh-titles
+
+# Auto jump
+zinit ice lucid atload"touch $HOME/.z"
+zinit light rupa/z
+
+# LS_COLORS
+zinit ice lucid atclone"dircolors -b LS_COLORS > c.zsh" atpull"%atclone" pick"c.zsh" nocompile"!"
+zinit light trapd00r/LS_COLORS
+
+# Prompt
+zinit ice lucid from"gh-r" as"program" atload'eval $(starship init zsh)'
+zinit load starship/starship
+
+# Shell
+zinit ice lucid atload'sh scripts/base16-default-dark.sh'
+zinit light chriskempson/base16-shell
+
+# Zstyles
+zstyle ":completion:*" menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+# Emacs mode
+bindkey -e
+
+# Autcomplete
+autoload -Uz compinit && compinit -u
+zmodload zsh/complist
+
+# Keybindings
+bindkey '^ ' autosuggest-execute
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+bindkey -M menuselect '^[[Z' reverse-menu-complete
+
+# Edit commands in vim
+autoload -U edit-command-line
+zle -N edit-command-line
+
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+
+# History
+SAVEHIST=10000
+HISTSIZE=10000
+HISTFILE=$HOME/.zsh_history
+
+# Options
+setopt auto_menu
+setopt complete_in_word
+setopt always_to_end
+setopt extended_glob
+setopt append_history
+setopt extended_history
+setopt inc_append_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+setopt hist_reduce_blanks
+setopt hist_verify
+setopt interactive_comments
+unsetopt flowcontrol
+unsetopt menu_complete
+
+source /etc/zsh/zaliases
+
+# vim: ft=zsh

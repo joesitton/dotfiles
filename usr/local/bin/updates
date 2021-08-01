@@ -1,0 +1,13 @@
+#!/bin/bash
+
+[[ $(pacman -Qu | wc -l) -eq 0 ]] && exit
+
+updates=""
+
+while read -r line; do
+    printf -v formatted "<b>%s</b> <i>%s</i> -> <b>%s</b>\n" $(echo $line | awk '{print $1, $2, $4}')
+    updates+="$formatted"
+
+done <<< "$(pacman -Qu --color=never)"
+
+dunstify " Updates available" "$updates"

@@ -1,0 +1,14 @@
+# Terminal
+export TERM=xterm-256color
+
+# Editor
+[ "$(command -v nvim)" ] && export EDITOR=nvim || export EDITOR=vim
+
+# FZF
+export FZF_DEFAULT_COMMAND="rg --files --hidden -g '!{node_modules,.git}'"
+export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --inline-info --preview 'cat {}'"
+
+export PAGER=less
+
+# Ctrl-W backspace word
+export WORDCHARS=""

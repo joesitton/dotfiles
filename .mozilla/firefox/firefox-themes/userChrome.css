@@ -1,0 +1,13 @@
+menupopup,
+#context-navigation,
+#appMenu-popup #appMenu-mainView,
+.panel-arrowcontent,
+panelview {
+  padding: 2px;
+  margin: 2px 0 0 2px;
+}
+
+.CodeMirror {
+  font-family: "Iosevka Custom" !important;
+  font-size: 14px !important;
+}
