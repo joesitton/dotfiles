@@ -29,10 +29,23 @@ bottom = true
 
 font-0 = "Fira Sans Condensed:size=14;3"
 font-1 = "Iosevka Custom:size=14;3"
+font-2 = "Iosevka Custom:size=18;6"
 
-modules-left = logo bspwm title
+modules-left = logo bspwm bspwmmodes
 modules-center =
 modules-right = updates weather network brightness audio battery date
+
+[module/windows]
+type = custom/script
+exec = cat $HOME/.cache/bspwm_windows_1.txt
+tail = true
+
+; cycle between windows
+click-left = bspc node -f next.local
+click-right = bspc node -f prev.local
+
+format = <label>
+format-padding = 4
 
 [module/updates]
 type = custom/script
@@ -42,11 +55,11 @@ interval = 5
 
 format =   <label>
 
-click-left = updates
+click-left = /usr/local/bin/updates
 
 [module/logo]
 type = custom/text
-content = 
+content = %{T3}%{T-}
 content-foreground = ${colors.blue}
 
 [module/bspwm]
@@ -74,17 +87,17 @@ type = internal/bspwm
 format = <label-mode>
 
 label-locked = 
-label-locked-foreground = ${colors.yellow}
+# label-locked-foreground = ${colors.yellow}
 label-locked-alignment = center
 label-locked-padding = 1
 
-label-sticky = 
-label-sticky-foreground = ${colors.green}
+label-sticky = 
+# label-sticky-foreground = ${colors.green}
 label-sticky-alignment = center
 label-sticky-padding = 1
 
 label-marked = 
-label-marked-foreground = ${colors.red}
+# label-marked-foreground = ${colors.red}
 label-marked-alignment = center
 label-marked-padding = 1
 
@@ -107,23 +120,30 @@ tail = true
 [module/battery]
 type = internal/battery
 full-at = 90
+low-at = -1
 
 time-format = %-H hr
 
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = ${colors.red}
 
-ramp-capacity-1 = 
-ramp-capacity-1-foreground = ${colors.orange}
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = ${colors.red}
 
-ramp-capacity-2 = 
-ramp-capacity-2-foreground = ${colors.yellow}
+ramp-capacity-2 = 
+ramp-capacity-2-foreground = ${colors.orange}
 
-ramp-capacity-3 = 
-ramp-capacity-3-foreground = ${colors.green}
+ramp-capacity-3 = 
+ramp-capacity-3-foreground = ${colors.yellow}
 
-ramp-capacity-4 = 
+ramp-capacity-4 = 
 ramp-capacity-4-foreground = ${colors.green}
+
+ramp-capacity-5 = 
+ramp-capacity-5-foreground = ${colors.green}
+
+ramp-capacity-6 = 
+ramp-capacity-6-foreground = ${colors.green}
 
 format-full = <label-full>
 label-full = 

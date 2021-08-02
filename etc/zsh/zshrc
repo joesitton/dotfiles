@@ -14,8 +14,7 @@ zinit lucid wait"1" light-mode for \
       @zsh-users/zsh-history-substring-search \
       @zdharma/fast-syntax-highlighting \
       @ael-code/zsh-colored-man-pages \
-      @le0me55i/zsh-extract \
-      # @jreese/zsh-titles
+      @le0me55i/zsh-extract
 
 # Auto jump
 zinit ice lucid atload"touch $HOME/.z"
@@ -37,6 +36,13 @@ zinit light chriskempson/base16-shell
 zstyle ":completion:*" menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:descriptions' format "$fg[yellow]%B--- %d%b"
+zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*:warnings' format "$fg[red]No matches for:$reset_color %d"
+zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
+zstyle ':completion:*' group-name ''
 
 # Emacs mode
 bindkey -e

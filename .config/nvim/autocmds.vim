@@ -12,7 +12,7 @@ autocmd FocusGained,BufEnter * :checktime
 autocmd BufRead * if &modifiable | %s/\s\+$//e | endif
 
 " Auto-jump to last cursor position
-autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 " Auto-format on save
 autocmd BufWritePost * silent FormatWrite

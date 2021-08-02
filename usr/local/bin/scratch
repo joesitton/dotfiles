@@ -1,7 +1,7 @@
 #!/bin/bash
 
 create_scratch() {
-    echo "Creating scratch window"
+    dunstify -t 2000 "Creating scratch window"
 
     alacritty --title Scratch >/dev/null &
     pid=$!
@@ -16,17 +16,12 @@ create_scratch() {
     bspc node $wid -f
 }
 
-if [[ ! -f /tmp/scratch.pid ]]; then
+if [ ! -f /tmp/scratch.pid ] || ! ps -p $(cat /tmp/scratch.pid) > /dev/null; then
     create_scratch
     exit
 fi
 
-if ! ps -p $(cat /tmp/scratch.pid) > /dev/null; then
-    create_scratch
-    exit
-fi
-
-while ! xdo id -N Alacritty -a Scratch; do sleep 1; done
+while ! xdo id -N Alacritty -a Scratch > /dev/null; do sleep 1; done
 
 wid=$(xdo id -N Alacritty -a Scratch)
 

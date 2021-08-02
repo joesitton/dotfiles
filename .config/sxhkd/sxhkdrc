@@ -5,20 +5,20 @@
 alt + {1-9}
     bspc desktop -f {1-9}
 
-alt + Tab
-    bspc node -f prev.local
+# alt + Tab
+#     bspc node -f prev.local
 
 # terminal emulator
 super + Return
     alacritty
 
 # program launcher
-{super,alt} + space
+super + space
 	rofi -show drun
 
 # make sxhkd reload its configuration files
 super + Escape
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd; dunstify sxhkd "Reloaded config"
 
 #
 # bspwm hotkeys
@@ -37,13 +37,25 @@ super + {w,q}
 super + m
 	bspc desktop -l next
 
-# send the newest marked node to the newest preselected node
-super + y
-	bspc node newest.marked.local -n newest.!automatic.local
-
 # swap the current node and the biggest window
 super + g
 	bspc node -s biggest.window.local
+
+# cycle the tree
+super + shift + {d,a}
+    bspc node @/ -C {forward,backward}
+
+# equalize and balance
+super + shift + {e,b}
+    bspc node @/ -{E,B}
+
+# mirror flip
+super + shift + backslash
+    bspc node @/ -F vertical
+
+# rotate the tree right or left
+super + r ; {r, l}
+    bspc node @/ -R {90, 270}
 
 #
 # state/flags
@@ -54,12 +66,20 @@ super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
-# super + ctrl + {m,x,s}
-# 	bspc node -g {marked,locked,sticky}
+super + shift + f ; {m,l,s}
+	bspc node -g {marked,locked,sticky}
+
+# super + shift + f ; m
+    # bspc query -N -n .marked | xargs -I@ bspc node @ -g marked && \
+    # bspc node -g marked && \
+    # dunstify -r 999 -u critical "bspwm" "Marked '$(wname $(pfw))'"
 
 #
 # focus/swap
 #
+
+super + shift + {1-5}
+    bspc node -d '^{1-5}' --follow
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
@@ -75,11 +95,32 @@ super + bracket{left,right}
 
 # focus the last node/desktop
 super + Tab
-	bspc desktop -f last
+	bspc desktop -f last.occupied
 
-# focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+# insert receptacle
+super + shift + i ; {h,j,k,l}
+    bspc node -p {west,south,north,east} -i
+
+# clear desktop receptacles
+super + shift + i ; c
+    bspc query -N -n .leaf.local.!window | xargs -L1 -I@ bspc node @ -k
+
+# send
+super + shift + s ; {1-5}
+	bspc node -d '^{1-5}'
+
+# move the node to the given desktop
+super + shift + m ; {1-5}
+	bspc node -d '^{1-5}' --follow
+
+# move node to preselected area
+super + shift + m ; s
+    bspc node $(bspc query -N -n last.marked) -n last.!automatic --follow -t tiled || \
+    bspc node -n last.!automatic --follow -t tiled
+
+super + shift + m ; r
+    bspc node $(bspc query -N -n last.marked) -n $(bspc query -N -n .leaf.local.\!window) --follow -t tiled || \
+    bspc node -n $(bspc query -N -n .leaf.local.\!window)
 
 #
 # preselect
@@ -93,13 +134,14 @@ super + alt + {h,j,k,l}
 super + alt + {1-9}
 	bspc node -o 0.{1-9}
 
-# cancel the preselection for the focused node
+# cancel the preselection
 super + alt + space
-	bspc node -p cancel
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+	# bspc node -p cancel
 
 # cancel the preselection for the focused desktop
-super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+# super + ctrl + shift + space
+# 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
 # move/resize
@@ -114,13 +156,13 @@ super + {Left,Down,Up,Right}
 #
 
 XF86AudioMute
-    amixer sset Master toggle
+    volume toggle
 
 XF86Audio{Lower,Raise}Volume
-    amixer sset Master 5%{-,+}
+    volume {down, up}
 
 XF86MonBrightness{Down,Up}
-    xbacklight -steps 1 -{dec,inc} 5
+    brightness {down, up}
 
 #
 # scripts
@@ -129,5 +171,5 @@ XF86MonBrightness{Down,Up}
 super + shift + v
     rofi -modi "clipboard:greenclip print" -show "clipboard" -run-command '{cmd}'
 
-F9
+super + p
     scratch

@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if [[ -z $1 ]]; then
+    echo "usage: volume [up|down]"
+    exit
+fi
+
+case "$1" in
+    "toggle")
+        amixer sset Master toggle
+        ;;
+    "up")
+        amixer sset Master 5%+
+        ;;
+    "down")
+        amixer sset Master 5%-
+        ;;
+esac
+
+boxes=10
+level=$(amixer get Master | tail -n1 | awk -F'[][]' '{print $2}' | tr -d '%')
+state=$(amixer get Master | tail -n1 | awk -F'[][]' '{print $4}')
+bar=$(seq -s "—" 0 $((level / 5)) | sed 's/[0-9]//g')
+
+if [[ $state == "on" ]]; then
+    dunstify -r 1000 " $level% $bar"
+else
+    dunstify -r 1000 " $level% (muted)"
+fi

@@ -41,7 +41,7 @@ require("lualine").setup(
     },
     sections = {
       lualine_a = {"mode"},
-      lualine_b = {"branch"},
+      lualine_b = {"branch", "filename"},
       lualine_c = {"diff"},
       lualine_x = {
         {
@@ -54,7 +54,7 @@ require("lualine").setup(
           symbols = {error = "•", warn = "•", info = "•", hint = "•"}
         }
       },
-      lualine_y = {"filetype"},
+      lualine_y = {"encoding", "filetype"},
       lualine_z = {"progress"}
     },
     extensions = {"nvim-tree", "quickfix"}

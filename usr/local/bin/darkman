@@ -1,0 +1,33 @@
+#!/bin/bash
+
+hour=$(date '+%H')
+echo "hour: $hour"
+
+themes="/usr/share/themes"
+day_theme="WhiteSur-light-solid-blue"
+day_icons="WhiteSur-light"
+night_theme="WhiteSur-dark-solid-blue"
+night_icons="WhiteSur-dark"
+
+current_theme=$(grep gtk-theme-name ~/.gtkrc-2.0 | awk -F= '{print $2}' | tr -d '"')
+current_icons=$(grep gtk-icon-theme-name ~/.gtkrc-2.0 | awk -F= '{print $2}' | tr -d '"')
+
+[[ $hour -gt 7 && hour -lt 19 ]] && [[ $current_theme == $day_theme ]] && exit
+
+echo "current theme: $current_theme"
+
+if [[ $hour -le 7 || $hour -ge 19 ]]; then
+    new_theme=$night_theme
+    new_icons=$night_icons
+else
+    new_theme=$day_theme
+    new_icons=$day_icons
+fi
+
+echo "new theme: $new_theme"
+
+sed -i "s/$current_theme/$new_theme/g" ~/.gtkrc-2.0
+sed -i "s/$current_icons/$new_icons/g" ~/.gtkrc-2.0
+
+sed -i "s/$current_theme/$new_theme/g" ~/.config/gtk-3.0/settings.ini
+sed -i "s/$current_icons/$new_icons/g" ~/.config/gtk-3.0/settings.ini
