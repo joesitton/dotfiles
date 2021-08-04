@@ -15,7 +15,7 @@ if [ "$(command -v exa)" ]; then
   alias ll='ls -lhg@'
   alias la='ll -a'
   alias lS='ll --sort size -r'
-  alias lt='ls -T -L 3 -I "node_modules|__pycache__|.git|.venv|.env|venv|env"'
+  alias lt='la -T -L 3 -I "node_modules|__pycache__|.git|.venv|.env|venv|env"'
 else
   alias ls='ls --color=auto --group-directories-first -F -X'
   alias ll='ls -lh'
@@ -48,6 +48,9 @@ alias gdc='git diff --cached'
 alias gl='git log --oneline'
 
 alias mkvenv='python -m venv venv && source venv/bin/activate'
+
+alias n='nnn -deH'
+alias p='pueue'
 
 ..() { cd ..; }
 -() { cd -; }

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+choice=$(echo -e "suspend\nhibernate\nshutdown\nreboot" | rofi -dmenu)
+
+case "$choice" in
+    suspend)
+        sudo systemctl suspend
+        ;;
+    hibernate)
+        sudo systemctl hibernate
+        ;;
+    shutdown)
+        sudo systemctl shutdown
+        ;;
+    reboot)
+        sudo systemctl reboot
+        ;;
+    *)
+        ;;
+esac

@@ -16,13 +16,19 @@ zinit lucid wait"1" light-mode for \
       @ael-code/zsh-colored-man-pages \
       @le0me55i/zsh-extract
 
-# Auto jump
-zinit ice lucid atload"touch $HOME/.z"
-zinit light rupa/z
-
 # LS_COLORS
 zinit ice lucid atclone"dircolors -b LS_COLORS > c.zsh" atpull"%atclone" pick"c.zsh" nocompile"!"
 zinit light trapd00r/LS_COLORS
+
+# Vi mode
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
+ZVM_CURSOR_STYLE_ENABLED=false
+KEYTIMEOUT=1
+
+# Zoxide
+zinit ice lucid from"gh-r" as"program" atload'eval "$(zoxide init zsh)"' atpull"%atclone" mv"zoxide* -> zoxide" pick"zoxide/zoxide"
+zinit load ajeetdsouza/zoxide
 
 # Prompt
 zinit ice lucid from"gh-r" as"program" atload'eval $(starship init zsh)'
@@ -37,16 +43,6 @@ zstyle ":completion:*" menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-zstyle ':completion:*' verbose yes
-zstyle ':completion:*:descriptions' format "$fg[yellow]%B--- %d%b"
-zstyle ':completion:*:messages' format '%d'
-zstyle ':completion:*:warnings' format "$fg[red]No matches for:$reset_color %d"
-zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
-zstyle ':completion:*' group-name ''
-
-# Emacs mode
-bindkey -e
-
 # Autcomplete
 autoload -Uz compinit && compinit -u
 zmodload zsh/complist
@@ -54,20 +50,16 @@ zmodload zsh/complist
 # Keybindings
 bindkey '^ ' autosuggest-execute
 
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
+bindkey -a "k" history-substring-search-up
+bindkey -a "j" history-substring-search-down
 
+bindkey "^?" backward-delete-char
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 
 bindkey -M menuselect '^[[Z' reverse-menu-complete
-
-# Edit commands in vim
-autoload -U edit-command-line
-zle -N edit-command-line
-
-bindkey '^xe' edit-command-line
-bindkey '^x^e' edit-command-line
 
 # History
 SAVEHIST=10000
@@ -75,19 +67,34 @@ HISTSIZE=10000
 HISTFILE=$HOME/.zsh_history
 
 # Options
+setopt auto_cd
+
+setopt auto_pushd
+setopt pushd_ignore_dups
+
 setopt auto_menu
+
 setopt complete_in_word
+
 setopt always_to_end
+
+setopt bad_pattern
 setopt extended_glob
+
 setopt append_history
 setopt extended_history
 setopt inc_append_history
 setopt hist_expire_dups_first
-setopt hist_ignore_dups
 setopt hist_find_no_dups
+setopt hist_ignore_dups
 setopt hist_reduce_blanks
+setopt hist_ignore_space
 setopt hist_verify
+
 setopt interactive_comments
+
+setopt auto_continue
+
 unsetopt flowcontrol
 unsetopt menu_complete
 

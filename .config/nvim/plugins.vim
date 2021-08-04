@@ -76,6 +76,11 @@ Plug 'mhartington/formatter.nvim'
 " Colorizer
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
+" Minimap
+Plug 'wfxr/minimap.vim',  {'do': ':!cargo install --locked code-minimap'}
+
+Plug 'easymotion/vim-easymotion'
+
 call plug#end()
 
 " Auto-install missing plugins

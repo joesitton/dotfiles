@@ -1,4 +1,4 @@
-let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache', '.venv', '.env' ]
+let g:nvim_tree_ignore = [ '.git', 'node_modules', '__pycache__', '.cache', '.venv', '.env', 'env', 'venv' ]
 let g:nvim_tree_gitignore = 1
 let g:nvim_tree_auto_open = 0
 let g:nvim_tree_auto_ignore_ft = [ 'startify', 'dashboard' ]

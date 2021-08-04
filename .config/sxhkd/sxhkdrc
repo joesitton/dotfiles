@@ -30,8 +30,8 @@ super + ctrl + alt + {q,r}
 
 # close and kill
 super + {w,q}
-    bspc node $(xdo id -N Alacritty -a Scratch ).!hidden -g hidden || \
-    bspc node -{c,k}
+    bspc node -{c,k} || \
+    bspc node $(xdo id -N Alacritty -a Scratch ).!hidden -g hidden
 
 # alternate between the tiled and monocle layout
 super + m
@@ -82,11 +82,11 @@ super + shift + {1-5}
     bspc node -d '^{1-5}' --follow
 
 # focus the node in the given direction
-super + {_,shift + }{h,j,k,l}
+super + {_, shift} + {h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the next/previous window in the current desktop
-super + {_,shift + }c
+super + {_, shift} + c
 	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor

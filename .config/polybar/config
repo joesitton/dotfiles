@@ -1,5 +1,5 @@
 [colors]
-background = #dd181818
+background = #f0181818
 foreground = #e8e8e8
 red = #AB4642
 green = #A1B56C
@@ -14,7 +14,7 @@ black4 = #484848
 black5 = #585858
 black6 = #686868
 
-[bar/top]
+[bar/bar]
 background = ${colors.background}
 foreground = ${colors.foreground}
 height = 60
@@ -22,16 +22,16 @@ padding = 4
 underline-size = 4
 module-margin = 2
 tray-position = none
-override-redirect = false
 wm-restack = bspwm
+override-redirect = false
 fixed-center = true
 bottom = true
 
 font-0 = "Fira Sans Condensed:size=14;3"
-font-1 = "Iosevka Custom:size=14;3"
+font-1 = "Iosevka Custom:size=16;3"
 font-2 = "Iosevka Custom:size=18;6"
 
-modules-left = logo bspwm bspwmmodes
+modules-left = logo bspwm
 modules-center =
 modules-right = updates weather network brightness audio battery date
 
@@ -59,7 +59,7 @@ click-left = /usr/local/bin/updates
 
 [module/logo]
 type = custom/text
-content = %{T3}%{T-}
+content = %{A1:/usr/local/bin/powermenu:}%{T3}%{T-}%{A}
 content-foreground = ${colors.blue}
 
 [module/bspwm]
@@ -86,18 +86,18 @@ type = internal/bspwm
 
 format = <label-mode>
 
-label-locked = 
-# label-locked-foreground = ${colors.yellow}
-label-locked-alignment = center
-label-locked-padding = 1
+# label-locked = 
+# # label-locked-foreground = ${colors.yellow}
+# label-locked-alignment = center
+# label-locked-padding = 1
 
-label-sticky = 
-# label-sticky-foreground = ${colors.green}
-label-sticky-alignment = center
-label-sticky-padding = 1
+# label-sticky = 
+# # label-sticky-foreground = ${colors.green}
+# label-sticky-alignment = center
+# label-sticky-padding = 1
 
 label-marked = 
-# label-marked-foreground = ${colors.red}
+label-marked-foreground = ${colors.red}
 label-marked-alignment = center
 label-marked-padding = 1
 
@@ -112,10 +112,13 @@ label-alignment = center
 
 [module/date]
 type = custom/script
-interval = 60
+interval = 1
 
 exec = date '+%b %d,  %-I:%M %P'
 tail = true
+
+format = <label>
+format-prefix = " "
 
 [module/battery]
 type = internal/battery
@@ -147,10 +150,11 @@ ramp-capacity-6-foreground = ${colors.green}
 
 format-full = <label-full>
 label-full = 
-label-full-padding = 1
+label-full-prefix = " "
+label-full-prefix-padding = 1
 
 format-discharging = <ramp-capacity>  <label-discharging>
-format-discharging-prefix = "  "
+format-discharging-prefix = " "
 label-discharging = %percentage%%
 
 format-charging = <animation-charging>  <label-charging>
@@ -171,10 +175,9 @@ type = internal/network
 interface = wlp0s20f3
 interval = 3
 
-format-connected = <label-connected>
-format-connected-prefix = 
-format-connected-prefix-padding = 2
-label-connected = %essid%
+format-connected =   <label-connected>
+format-connected-prefix = " "
+label-connected = %local_ip%
 
 format-disconnected =   Offline
 format-disconnected-foreground = ${colors.black5}
@@ -187,23 +190,25 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 
 format-volume = <ramp-volume>  <label-volume>
+format-volume-prefix = " "
 label-volume = %percentage%%
 
 format-muted =   <label-volume>
 format-muted-foreground = ${colors.black6}
+format-muted-prefix = " "
 
 [module/cpu]
 type = internal/cpu
 
 format-prefix = 
-format-prefix-foreground = ${colors.yellow}
+# format-prefix-foreground = ${colors.yellow}
 format-prefix-padding = 2
 
 [module/ram]
 type = internal/memory
 
 format-prefix = 
-format-prefix-foreground = ${colors.purple}
+# format-prefix-foreground = ${colors.purple}
 format-prefix-padding = 2
 
 label = %gb_used%
@@ -212,7 +217,6 @@ label = %gb_used%
 type = custom/text
 content = │
 content-prefix = " "
-content-prefix-padding = 1
 content-foreground = ${colors.black5}
 
 [module/filesystem]
@@ -223,7 +227,7 @@ mount-0 = /
 
 format-mounted-prefix = 
 format-mounted-prefix-padding = 2
-format-mounted-prefix-foreground = ${colors.blue}
+# format-mounted-prefix-foreground = ${colors.blue}
 format-mounted = <label-mounted>
 label-mounted = %percentage_used%%
 
@@ -238,13 +242,12 @@ format-prefix-foreground = ${colors.orange}
 format-prefix-padding = 2
 
 [module/brightness]
-type = internal/xbacklight
-enable-scroll = false
+type = custom/script
+exec = echo "scale=2; $(brightnessctl g) / $(brightnessctl m) * 100" | bc | cut -d. -f1
+tail = true
 
-format = <label>
-format-padding = 1
-
-label = 盛 %percentage%%
+format = 盛  <label>%
+format-prefix = " "
 
 [module/weather]
 type = custom/script
@@ -252,5 +255,6 @@ exec = wedder -c $HOME/.config/polybar/wedder.toml
 tail = true
 
 format = <label>
+format-prefix = " "
 
 # vim: ft=cfg

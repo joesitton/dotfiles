@@ -1,21 +1,23 @@
 #!/usr/bin/env bash
 
-# Terminate already running bar instances
 killall -q polybar
-
-# Wait until the processes have been shut down
-echo "waiting for polybar to die"
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-
-# Launch top bar
-echo "starting polybar"
-polybar top --reload & > /var/log/polybar.log
-
-# Wait for process to spawn
+polybar bar &
 while ! xdo id -N Polybar >/dev/null; do sleep 1; done
+xdo raise $(xdo id -N Polybar)
 
-wid=$(xdo id -N Polybar)
-echo "wid: $wid"
+killall -q tint2
+while pgrep -u $UID -x tint2 >/dev/null; do sleep 1; done
+tint2 &
+while ! xdo id -a tint2 >/dev/null; do sleep 1; done
+xdo raise $(xdo id -a tint2)
 
-echo "raising polybar"
-xdo raise $wid
+while read -r line; do
+    if [[ "$line" =~ (fullscreen on) ]]; then
+        xdo lower $(xdo id -N Polybar)
+        xdo lower $(xdo id -a tint2)
+    elif [[ "$line" =~ (fullscreen off|desktop_focus|node_focus) ]]; then
+        xdo raise $(xdo id -N Polybar)
+        xdo raise $(xdo id -a tint2)
+    fi
+done < $(bspc subscribe -f node desktop_focus) &
