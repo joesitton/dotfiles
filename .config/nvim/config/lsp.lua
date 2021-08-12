@@ -64,16 +64,7 @@ local function setup_servers()
   require("lspinstall").setup()
   local servers = require "lspinstall".installed_servers()
   for _, server in pairs(servers) do
-    require("lspconfig")[server].setup(
-      {
-        handlers = {
-          ["textDocument/publishDiagnostics"] = vim.lsp.with(
-            vim.lsp.diagnostic.on_publish_diagnostics,
-            {virtual_text = false}
-          )
-        }
-      }
-    )
+    require("lspconfig")[server].setup({})
   end
 end
 

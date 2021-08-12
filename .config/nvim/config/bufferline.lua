@@ -1,0 +1,19 @@
+-- require("bufferline").setup(
+--   {
+--     options = {
+--       close_command = "Bdelete!",
+--       max_name_length = 30,
+--       diagnostics = "nvim_lsp",
+--       offsets = {
+--         {
+--           filetype = "NvimTree",
+--           text = function()
+--             return vim.fn.getcwd()
+--           end,
+--           highlight = "Directory",
+--           text_align = "left"
+--         }
+--       }
+--     }
+--   }
+-- )

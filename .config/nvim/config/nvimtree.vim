@@ -10,14 +10,14 @@ let g:nvim_tree_highlight_opened_files = 0
 let g:nvim_tree_root_folder_modifier = ':~'
 let g:nvim_tree_auto_resize = 1
 let g:nvim_tree_disable_netrw = 1
-let g:nvim_tree_hijack_netrw = 0
+let g:nvim_tree_hijack_netrw = 1
 let g:nvim_tree_add_trailing = 1
 let g:nvim_tree_group_empty = 1
 let g:nvim_tree_lsp_diagnostics = 1
 let g:nvim_tree_disable_window_picker = 1
 let g:nvim_tree_hijack_cursor = 1
 let g:nvim_tree_icon_padding = ' '
-let g:nvim_tree_update_cwd = 0
+let g:nvim_tree_update_cwd = 1
 let g:nvim_tree_special_files = { 'README.md': 1, 'Makefile': 1, 'MAKEFILE': 1 } " List of filenames that gets highlighted with NvimTreeSpecialFile
 
 let g:nvim_tree_icons = {

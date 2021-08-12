@@ -19,21 +19,39 @@ call plug#begin("$HOME/.config/nvim/.plugins")
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 
-" Colorschemes
+" Appearance
 Plug 'chriskempson/base16-vim'
-
-" Additional syntax
-Plug 'sheerun/vim-polyglot'
 Plug 'Glench/Vim-Jinja2-Syntax'
-
-" Icons
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'romgrk/barbar.nvim'
+Plug 'hoob3rt/lualine.nvim'
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'folke/lsp-colors.nvim'
+Plug 'tversteeg/registers.nvim'
+Plug 'sheerun/vim-polyglot'
+
+" Navigation
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'tom-anders/telescope-vim-bookmarks.nvim'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'haya14busa/incsearch.vim'
+Plug 'ggandor/lightspeed.nvim'
+
+" Utility
+Plug 'hrsh7th/nvim-compe'
+Plug 'b3nj5m1n/kommentary'
+Plug 'tpope/vim-surround'
+Plug 'mhartington/formatter.nvim'
+Plug 'famiu/bufdelete.nvim'
+Plug 'jghauser/mkdir.nvim'
+Plug 'junegunn/vim-easy-align'
+Plug 'MattesGroeger/vim-bookmarks'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-" Telescope
-Plug 'nvim-telescope/telescope.nvim'
+Plug 'p00f/nvim-ts-rainbow'
+Plug 'windwp/nvim-autopairs'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
@@ -43,43 +61,11 @@ Plug 'glepnir/lspsaga.nvim'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'onsails/lspkind-nvim'
 
-" Tab bar
-Plug 'romgrk/barbar.nvim'
-
-" Statusline
-Plug 'hoob3rt/lualine.nvim'
-
-" Tree
-Plug 'kyazdani42/nvim-tree.lua'
-
-" Completion
-Plug 'hrsh7th/nvim-compe'
-
-" Autopairs
-Plug 'windwp/nvim-autopairs'
-
-" Comments
-Plug 'b3nj5m1n/kommentary'
-
-" Surround
-Plug 'tpope/vim-surround'
-
-" Git
-Plug 'lewis6991/gitsigns.nvim'
-
-" Rainbow brackets
-Plug 'p00f/nvim-ts-rainbow'
-
-" Formatter
-Plug 'mhartington/formatter.nvim'
-
-" Colorizer
-Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
-
-" Minimap
-Plug 'wfxr/minimap.vim',  {'do': ':!cargo install --locked code-minimap'}
-
-Plug 'easymotion/vim-easymotion'
+" DAP
+Plug 'Pocco81/DAPInstall.nvim'
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'theHamsta/nvim-dap-virtual-text'
 
 call plug#end()
 

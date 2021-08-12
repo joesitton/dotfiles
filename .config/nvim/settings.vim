@@ -31,6 +31,9 @@ hi LspDiagnosticsSignError guifg=#ab4642 guibg=#282828
 hi LspDiagnosticsSignInformation guifg=#7cafc2 guibg=#282828
 hi LspDiagnosticsSignHint guifg=#f8f8f8 guibg=#282828
 
+hi BookmarkSign guibg=#282828
+hi BookmarkAnnotationSign guibg=#282828
+
 " Persistent undo
 set undofile undodir=$HOME/.config/nvim/.undodir
 
@@ -65,14 +68,15 @@ set showtabline=2
 set splitright splitbelow
 
 " Misc
+set title
 set hidden
 set mouse=a
-set title
 set autoread
 set linebreak
 set lazyredraw
 set cmdheight=2
 set complete-=t
+set iskeyword+=_
 set shortmess=Ic
 set pumheight=20
 set wildignorecase
