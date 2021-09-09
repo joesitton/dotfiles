@@ -34,37 +34,38 @@ require("lspsaga").init_lsp_saga(
       quit = "<ESC>",
       exec = "<CR>" -- quit can be a table
     },
-    -- "single" "double" "round" "plus"
     border_style = "round"
   }
 )
 
 require("lsp_signature").setup(
   {
-    bind = false,
-    floating_window = true, -- show hint in a floating window, set to false for virtual text only mode
-    fix_pos = true, -- set to true, the floating window will not auto-close until finish all parameters
-    hint_enable = true, -- virtual hint enable
-    hint_prefix = "🐼 ", -- Panda for parameter
-    hint_scheme = "String",
-    use_lspsaga = true, -- set to true if you want to use lspsaga popup
-    hi_parameter = "Search", -- how your parameter will be highlight
-    max_height = 20,
-    max_width = 200,
-    -- handler_opts = {
-    --   border = "double" -- double, single, shadow, none
-    -- },
-    extra_trigger_chars = {"("} -- Array of extra characters that will trigger signature completion, e.g., {"(", ","}
+    bind = true,
+    fix_pos = true,
+    floating_window = true,
+    floating_window_above_cur_line = true,
+    hint_enable = false,
+    hint_prefix = "",
+    hi_parameter = "SignatureCurrent",
+    padding = "",
+    handler_opts = {
+      border = "single"
+    },
+    extra_trigger_chars = {"("}
   }
 )
 
 require("lspkind").init({})
 
+local lsp = require("lspconfig")
+local coq = require("coq")
+
 local function setup_servers()
   require("lspinstall").setup()
   local servers = require "lspinstall".installed_servers()
   for _, server in pairs(servers) do
-    require("lspconfig")[server].setup({})
+    lsp[server].setup({})
+    lsp[server].setup(coq.lsp_ensure_capabilities())
   end
 end
 

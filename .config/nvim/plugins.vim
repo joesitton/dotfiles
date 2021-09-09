@@ -20,16 +20,16 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 
 " Appearance
-Plug 'chriskempson/base16-vim'
+Plug 'RRethy/nvim-base16'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 Plug 'hoob3rt/lualine.nvim'
+Plug 'SmiteshP/nvim-gps'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
-Plug 'folke/lsp-colors.nvim'
-Plug 'tversteeg/registers.nvim'
 Plug 'sheerun/vim-polyglot'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " Navigation
 Plug 'nvim-telescope/telescope.nvim'
@@ -39,7 +39,6 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'ggandor/lightspeed.nvim'
 
 " Utility
-Plug 'hrsh7th/nvim-compe'
 Plug 'b3nj5m1n/kommentary'
 Plug 'tpope/vim-surround'
 Plug 'mhartington/formatter.nvim'
@@ -47,6 +46,12 @@ Plug 'famiu/bufdelete.nvim'
 Plug 'jghauser/mkdir.nvim'
 Plug 'junegunn/vim-easy-align'
 Plug 'MattesGroeger/vim-bookmarks'
+Plug 'mbbill/undotree'
+Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
+
+" Completion
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -60,12 +65,17 @@ Plug 'folke/trouble.nvim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'onsails/lspkind-nvim'
+Plug 'simrat39/symbols-outline.nvim'
+Plug 'xiyaowong/nvim-cursorword'
 
 " DAP
-Plug 'Pocco81/DAPInstall.nvim'
-Plug 'mfussenegger/nvim-dap'
-Plug 'rcarriga/nvim-dap-ui'
-Plug 'theHamsta/nvim-dap-virtual-text'
+" Plug 'Pocco81/DAPInstall.nvim'
+" Plug 'mfussenegger/nvim-dap'
+" Plug 'rcarriga/nvim-dap-ui'
+" Plug 'theHamsta/nvim-dap-virtual-text'
+
+" Arduino
+" Plug 'stevearc/vim-arduino'
 
 call plug#end()
 

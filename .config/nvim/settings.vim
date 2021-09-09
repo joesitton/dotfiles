@@ -17,23 +17,6 @@ let g:completion_menu_length = 120
 
 colorscheme base16-default-dark
 
-hi Comment gui=italic
-hi Normal guibg=none
-hi Pmenu guibg=#383838
-
-hi PmenuSel guifg=#181818 guibg=#7cafc2
-hi PmenuSbar guibg=#383838
-
-hi TargetWord guibg=none guifg=#f7ca88 gui=italic
-
-hi LspDiagnosticsSignWarning guifg=#f7ca88 guibg=#282828
-hi LspDiagnosticsSignError guifg=#ab4642 guibg=#282828
-hi LspDiagnosticsSignInformation guifg=#7cafc2 guibg=#282828
-hi LspDiagnosticsSignHint guifg=#f8f8f8 guibg=#282828
-
-hi BookmarkSign guibg=#282828
-hi BookmarkAnnotationSign guibg=#282828
-
 " Persistent undo
 set undofile undodir=$HOME/.config/nvim/.undodir
 

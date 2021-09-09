@@ -9,6 +9,8 @@ local colors = {
   orange = "#dc9656"
 }
 
+local gps = require("nvim-gps")
+
 require("lualine").setup(
   {
     options = {
@@ -18,7 +20,7 @@ require("lualine").setup(
         normal = {
           a = {bg = colors.blue, fg = colors.black, gui = "bold"},
           b = {bg = colors.gray, fg = colors.white},
-          c = {bg = colors.black, fg = colors.gray}
+          c = {bg = colors.black, fg = colors.white}
         },
         insert = {
           a = {bg = colors.green, fg = colors.black, gui = "bold"}
@@ -41,8 +43,8 @@ require("lualine").setup(
     },
     sections = {
       lualine_a = {"mode"},
-      lualine_b = {"branch", {"filename", path=1}},
-      lualine_c = {"diff"},
+      lualine_b = {{"filename", path = 1}, "branch", "diff"},
+      lualine_c = {gps.get_location, condition = gps.is_available},
       lualine_x = {
         {
           "diagnostics",

@@ -22,45 +22,56 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Move lines up or down in visual mode
+xnoremap [e :m '<-2<CR>gv=gv
+xnoremap ]e :m '>+1<CR>gv=gv
+
+" Keep selection when indenting blocks
+vnoremap < <gv
+vnoremap > >gv
+
+" Searching
+map /  <Plug>(incsearch-forward)
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+
 " Quick saving/quitting
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q!<CR>
 nnoremap <leader>z :wqa!<CR>
 
-" Move lines up or down in visual mode
-xnoremap <silent> [e :m '<-2<CR>gv=gv
-xnoremap <silent> ]e :m '>+1<CR>gv=gv
-
-" Keep selection when indenting blocks
-vnoremap <silent> < <gv
-vnoremap <silent> > >gv
-
 " Buffers
-nnoremap <silent> [b :BufferPrevious<CR>
-nnoremap <silent> ]b :BufferNext<CR>
-nnoremap <silent> <leader>bd :BufferWipeout<CR>
-nnoremap <silent> <C-Left> :BufferMovePrevious<CR>
-nnoremap <silent> <C-Right> :BufferMoveNext<CR>
+nnoremap [b :BufferPrevious<CR>
+nnoremap ]b :BufferNext<CR>
+nnoremap <C-Left> :BufferMovePrevious<CR>
+nnoremap <C-Right> :BufferMoveNext<CR>
+nnoremap <leader>bd :BufferClose<CR>
+nnoremap <leader>bw :BufferWipeout<CR>
+nnoremap <leader>bp :BufferPick<CR>
 
 " Tree
-nnoremap <F1> :NvimTreeToggle<CR>
+nnoremap <leader>. :NvimTreeToggle<CR>
 
 " Telescope
-nnoremap <F2> :Telescope find_files<CR>
+nnoremap <leader>ff :Telescope find_files<CR>
+nnoremap <leader>ft :Telescope live_grep<CR>
+nnoremap <leader>fm :Telescope marks<CR>
+nnoremap <leader>fr :Telescope oldfiles<CR>
+nnoremap <leader>or :Telescope registers<CR>
 
 " Trouble
-nnoremap <F4> :TroubleToggle lsp_document_diagnostics<CR>
-nnoremap <F5> :TroubleToggle lsp_workspace_diagnostics<CR>
+" nnoremap <leader>ldd :TroubleToggle lsp_document_diagnostics<CR>
+" nnoremap <leader>ldw :TroubleToggle lsp_workspace_diagnostics<CR>
 
 " LSP
-nnoremap <silent> ? :Lspsaga hover_doc<CR>
-nnoremap <silent> gd :Lspsaga lsp_finder<CR>
-nnoremap <silent> gr :Lspsaga rename<CR>
-nnoremap <silent> gp :Lspsaga preview_definition<CR>
-nnoremap <silent> ]g :Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent> [g :Lspsaga diagnostic_jump_prev<CR>
-nnoremap <silent> <leader>ca :Lspsaga code_action<CR>
-vnoremap <silent> <leader>ca :<C-U>Lspsaga range_code_action<CR>
+nnoremap ? :Lspsaga hover_doc<CR>
+nnoremap gd :Lspsaga lsp_finder<CR>
+nnoremap gr :Lspsaga rename<CR>
+nnoremap gp :Lspsaga preview_definition<CR>
+nnoremap ]g :Lspsaga diagnostic_jump_next<CR>
+nnoremap [g :Lspsaga diagnostic_jump_prev<CR>
+nnoremap <leader>ca :Lspsaga code_action<CR>
+vnoremap <leader>ca :<C-U>Lspsaga range_code_action<CR>
 
 " DAP
 nnoremap <leader>dt :lua require("dapui").toggle()<CR>
@@ -69,15 +80,11 @@ nnoremap <leader>dc :lua require("dap").continue()<CR>
 nnoremap <leader>ds :lua require("dap").step_into()<CR>
 nnoremap <leader>dS :lua require("dap").step_over()<CR>
 
-" Searching
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-
 " EasyAlign
-xmap a <Plug>(EasyAlign)
+xmap <leader>ea <Plug>(EasyAlign)
 
-" Bookmarks
-nnoremap <silent> ma :Telescope vim_bookmarks all<CR>
+" SnipRun
+nnoremap <leader>sr :SnipRun<CR>
+nnoremap <leader>sc :SnipClose<CR>
+
+xmap <leader>sr :SnipRun<CR>
