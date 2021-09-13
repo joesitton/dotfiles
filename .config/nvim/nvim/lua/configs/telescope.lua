@@ -26,4 +26,7 @@ require("telescope").setup(
   }
 )
 
-require("telescope").load_extension("vim_bookmarks")
+local v = require("vimp")
+
+v.nnoremap("<leader>ff", ":Telescope find_files<CR>")
+v.nnoremap("<leader>ft", ":Telescope live_grep<CR>")
