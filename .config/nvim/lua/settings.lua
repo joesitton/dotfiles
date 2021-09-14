@@ -1,3 +1,5 @@
+vim.cmd 'colo base16-default-dark'
+
 -- Leader key
 vim.g.mapleader = " "
 
@@ -49,11 +51,12 @@ local options = {
   title = true,
   hidden = true,
   mouse = "a",
+  shortmess = "sIc",
+  whichwrap = "b,s,<>hl",
   autoread = true,
   linebreak = true,
   lazyredraw = true,
   cmdheight = 2,
-  shortmess = "Ic",
   pumheight = 20,
   wrap = false,
   showmode = false,
@@ -64,3 +67,5 @@ local options = {
 for k, v in pairs(options) do
   vim.o[k] = v
 end
+
+-- vim.o.whichwrap:append("<>hl")

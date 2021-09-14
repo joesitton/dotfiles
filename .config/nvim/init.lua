@@ -1,9 +1,15 @@
-require("plugins")
+local init_modules = {
+   "plugins",
+   "settings",
+   "highlights",
+   "mappings",
+   "autocmds",
+}
 
-require("settings")
+for _, module in ipairs(init_modules) do
+   local ok, err = pcall(require, module)
 
-require("mappings")
-
-require("autocmds")
-
-vim.cmd 'source ~/.config/nvim/colors.vim'
+   if not ok then
+      error("Error loading " .. module .. "\n\n" .. err)
+   end
+end

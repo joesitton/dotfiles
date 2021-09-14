@@ -1,19 +1,19 @@
-require("lsp_signature").setup(
-  {
-    bind = true,
-    fix_pos = true,
-    floating_window = true,
-    floating_window_above_cur_line = true,
-    hint_enable = false,
-    hint_prefix = "",
-    hi_parameter = "SignatureCurrent",
-    padding = "",
-    handler_opts = {
-      border = "single"
-    },
-    extra_trigger_chars = {"("}
-  }
-)
+-- require("lsp_signature").setup(
+--   {
+--     bind = true,
+--     fix_pos = true,
+--     floating_window = true,
+--     floating_window_above_cur_line = true,
+--     hint_enable = false,
+--     hint_prefix = "",
+--     hi_parameter = "SignatureCurrent",
+--     padding = "",
+--     handler_opts = {
+--       border = "single"
+--     },
+--     extra_trigger_chars = {"("}
+--   }
+-- )
 
 local lsp = require("lspconfig")
 local coq = require("coq")

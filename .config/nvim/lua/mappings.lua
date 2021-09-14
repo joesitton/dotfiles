@@ -18,6 +18,9 @@ v.nnoremap("<C-K>", "<C-W><C-K>")
 v.nnoremap("<C-L>", "<C-W><C-L>")
 v.nnoremap("<C-H>", "<C-W><C-H>")
 
+v.nnoremap("[w", "<C-W><C-H>")
+v.nnoremap("]w", "<C-W><C-L>")
+
 v.vnoremap("<", "<gv")
 v.vnoremap(">", ">gv")
 

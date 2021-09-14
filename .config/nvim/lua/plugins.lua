@@ -36,7 +36,8 @@ require("packer").startup(
   {
     function(use)
       use {
-        "wbthomason/packer.nvim"
+        "wbthomason/packer.nvim",
+        opt = true
       }
 
       use {
@@ -60,11 +61,11 @@ require("packer").startup(
       }
 
       use {
-        "tpope/vim-surround"
+        "tpope/vim-surround",
       }
 
       use {
-        "ggandor/lightspeed.nvim"
+        "ggandor/lightspeed.nvim",
       }
 
       use {
@@ -72,11 +73,13 @@ require("packer").startup(
       }
 
       use {
-        "jghauser/mkdir.nvim"
+        "famiu/bufdelete.nvim",
+        cmd = {"Bdelete", "Bwipeout"}
       }
 
       use {
-        "famiu/bufdelete.nvim"
+        "jghauser/mkdir.nvim",
+        config = [[require("mkdir")]]
       }
 
       use {
@@ -97,7 +100,8 @@ require("packer").startup(
 
       use {
         "karb94/neoscroll.nvim",
-        config = [[require("neoscroll").setup()]]
+        config = [[require("neoscroll").setup()]],
+        keys = {"<C-d>", "<C-u>"},
       }
 
       use {
@@ -108,26 +112,30 @@ require("packer").startup(
 
       use {
         "lukas-reineke/indent-blankline.nvim",
+        event = "BufRead",
         config = [[require("configs.indentline")]]
       }
 
       use {
-        "romgrk/barbar.nvim",
-        config = [[require("configs.barbar")]]
+        "akinsho/bufferline.nvim",
+        event = "VimEnter",
+        config = [[require("configs.bufferline")]]
       }
 
       use {
         "shadmansaleh/lualine.nvim",
-        requires = {
-          "SmiteshP/nvim-gps"
-        },
+        -- requires = {
+        --   "SmiteshP/nvim-gps"
+        -- },
+        event = "VimEnter",
         config = [[require("configs.lualine")]]
       }
 
       use {
         "RRethy/vim-hexokinase",
         run = "make hexokinase",
-        config = [[require("configs.hexokinase")]]
+        event = "BufRead",
+        setup = [[require("configs.hexokinase")]]
       }
 
       use {
@@ -143,11 +151,13 @@ require("packer").startup(
 
       use {
         "haya14busa/incsearch.vim",
+        event = "BufRead",
         config = [[require("configs.incsearch")]]
       }
 
       use {
         "mhartington/formatter.nvim",
+        event = "BufRead",
         config = [[require("configs.formatter")]]
       }
 
@@ -172,13 +182,14 @@ require("packer").startup(
         requires = {
           "kabouzeid/nvim-lspinstall",
           "ms-jpq/coq_nvim",
-          "ray-x/lsp_signature.nvim"
+          -- "ray-x/lsp_signature.nvim"
         },
         config = [[require("configs.lsp")]]
       }
 
       use {
         "windwp/nvim-autopairs",
+        event = "InsertEnter",
         config = [[require("configs.autopairs")]]
       }
 
