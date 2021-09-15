@@ -28,5 +28,7 @@ require("telescope").setup(
 
 local v = require("vimp")
 
-v.nnoremap("<leader>ff", ":Telescope find_files<CR>")
+v.nnoremap("<leader>ff", ":Telescope fd<CR>")
 v.nnoremap("<leader>ft", ":Telescope live_grep<CR>")
+v.nnoremap("<leader>or", ":Telescope oldfiles<CR>")
+v.nnoremap("<leader>ca", ":Telescope lsp_code_actions<CR>")

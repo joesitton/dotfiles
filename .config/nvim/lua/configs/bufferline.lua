@@ -4,6 +4,7 @@ local v = require("vimp")
 v.nnoremap("[b", ":BufferLineCyclePrev<CR>")
 v.nnoremap("]b", ":BufferLineCycleNext<CR>")
 v.nnoremap("<leader>bd", ":Bdelete<CR>")
+v.nnoremap("<leader>bD", ":Bdelete!<CR>")
 v.nnoremap("<leader>bp", ":BufferLinePick<CR>")
 v.nnoremap("<C-Left>", ":BufferLineMovePrev<CR>")
 v.nnoremap("<C-Right>", ":BufferLineMoveNext<CR>")
@@ -26,7 +27,7 @@ require("bufferline").setup(
       enforce_regular_tabs = false,
       view = "multiwindow",
       show_buffer_close_icons = true,
-      separator_style = "thin",
+      separator_style = {"", ""},
       always_show_bufferline = true,
       diagnostics = false,
       custom_filter = function(buf_number)
@@ -52,34 +53,10 @@ require("bufferline").setup(
       end
     },
     highlights = {
+      -- background
       background = {
-        guifg = colors.lightest_gray,
+        guifg = colors.gray7,
         guibg = colors.black,
-        -- guibg = colors.darker_gray,
-      },
-      -- buffers
-      buffer_selected = {
-        guifg = colors.fg,
-        guibg = colors.bg,
-        gui = "none"
-      },
-      buffer_visible = {
-        guifg = colors.lightest_gray,
-        guibg = colors.bg
-      },
-      -- close buttons
-      close_button = {
-        guifg = colors.fg,
-        guibg = colors.black,
-        -- guibg = colors.darker_gray
-      },
-      close_button_visible = {
-        guifg = colors.fg,
-        guibg = colors.darker
-      },
-      close_button_selected = {
-        guifg = colors.fg,
-        guibg = colors.bg
       },
       -- fill
       fill = {
@@ -90,6 +67,16 @@ require("bufferline").setup(
       indicator_selected = {
         guifg = colors.blue,
         guibg = colors.bg
+      },
+      -- buffers
+      buffer_selected = {
+        guifg = colors.fg,
+        guibg = colors.bg,
+        gui = "none"
+      },
+      buffer_visible = {
+        guifg = colors.gray7,
+        guibg = colors.gray3
       },
       -- modified
       modified = {
@@ -102,6 +89,32 @@ require("bufferline").setup(
       },
       modified_selected = {
         guifg = colors.red,
+        guibg = colors.bg
+      },
+      -- duplicate
+      duplicate = {
+        guifg = colors.gray7,
+        guibg = colors.black,
+      },
+      duplicate_visible = {
+        guifg = colors.gray7,
+        guibg = colors.gray3,
+      },
+      duplicate_selected = {
+        guifg = colors.fg,
+        guibg = colors.bg,
+      },
+      -- close buttons
+      close_button = {
+        guifg = colors.gray7,
+        guibg = colors.black,
+      },
+      close_button_visible = {
+        guifg = colors.gray7,
+        guibg = colors.gray3
+      },
+      close_button_selected = {
+        guifg = colors.fg,
         guibg = colors.bg
       },
       -- separators

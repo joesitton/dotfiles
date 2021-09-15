@@ -1,8 +1,5 @@
 vim.cmd 'colo base16-default-dark'
 
--- Leader key
-vim.g.mapleader = " "
-
 local options = {
   -- Max column for syntax
   synmaxcol = 500,
@@ -21,7 +18,7 @@ local options = {
   shiftwidth = 4,
   -- Number lines
   number = true,
-  numberwidth = 2,
+  numberwidth = 4,
   relativenumber = false,
   signcolumn = "auto",
   cursorline = true,
@@ -61,7 +58,8 @@ local options = {
   wrap = false,
   showmode = false,
   backup = false,
-  writebackup = false
+  writebackup = false,
+  sessionoptions="blank,buffers,curdir,folds,help,options,tabpages,winsize,resize,winpos,terminal"
 }
 
 for k, v in pairs(options) do

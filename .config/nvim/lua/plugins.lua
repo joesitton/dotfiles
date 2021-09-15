@@ -61,11 +61,12 @@ require("packer").startup(
       }
 
       use {
-        "tpope/vim-surround",
+        "tpope/vim-surround"
       }
 
       use {
         "ggandor/lightspeed.nvim",
+        event = "BufReadPost"
       }
 
       use {
@@ -79,7 +80,8 @@ require("packer").startup(
 
       use {
         "jghauser/mkdir.nvim",
-        config = [[require("mkdir")]]
+        config = [[require("mkdir")]],
+        event = "BufNew"
       }
 
       use {
@@ -90,7 +92,14 @@ require("packer").startup(
       use {
         "wfxr/minimap.vim",
         cmd = "MinimapToggle",
-        config = [[require("configs.minimap")]]
+        setup = [[require("configs.minimap")]]
+      }
+
+      use {
+        "folke/zen-mode.nvim",
+        cmd = "ZenMode",
+        setup = vim.api.nvim_set_keymap("n", "<F2>", ":ZenMode<CR>", {}),
+        config = [[require("configs.zenmode")]]
       }
 
       use {
@@ -101,18 +110,18 @@ require("packer").startup(
       use {
         "karb94/neoscroll.nvim",
         config = [[require("neoscroll").setup()]],
-        keys = {"<C-d>", "<C-u>"},
+        keys = {"<C-d>", "<C-u>"}
       }
 
       use {
         "lewis6991/gitsigns.nvim",
-        event = "BufRead",
+        event = "BufReadPost",
         config = [[require("configs.gitsigns")]]
       }
 
       use {
         "lukas-reineke/indent-blankline.nvim",
-        event = "BufRead",
+        event = "BufReadPost",
         config = [[require("configs.indentline")]]
       }
 
@@ -124,9 +133,9 @@ require("packer").startup(
 
       use {
         "shadmansaleh/lualine.nvim",
-        -- requires = {
-        --   "SmiteshP/nvim-gps"
-        -- },
+        requires = {
+          "SmiteshP/nvim-gps"
+        },
         event = "VimEnter",
         config = [[require("configs.lualine")]]
       }
@@ -134,36 +143,39 @@ require("packer").startup(
       use {
         "RRethy/vim-hexokinase",
         run = "make hexokinase",
-        event = "BufRead",
+        event = "BufReadPost",
         setup = [[require("configs.hexokinase")]]
       }
 
       use {
         "voldikss/vim-floaterm",
-        config = [[require("configs.floaterm")]]
+        cmd = "FloatermToggle",
+        setup = [[require("configs.floaterm")]]
       }
 
       use {
         "b3nj5m1n/kommentary",
-        event = "BufRead",
+        event = "BufReadPost",
         config = [[require("configs.kommentary")]]
       }
 
       use {
         "haya14busa/incsearch.vim",
-        event = "BufRead",
+        event = "BufReadPost",
         config = [[require("configs.incsearch")]]
       }
 
       use {
         "mhartington/formatter.nvim",
-        event = "BufRead",
+        cmd = {"Format", "FormatWrite"},
         config = [[require("configs.formatter")]]
       }
 
       use {
         "kyazdani42/nvim-tree.lua",
         requires = "kyazdani42/nvim-web-devicons",
+        cmd = "NvimTreeToggle",
+        setup = vim.api.nvim_set_keymap("n", "<leader>.", ":NvimTreeToggle<CR>", {}),
         config = [[require("configs.tree")]]
       }
 
@@ -174,23 +186,6 @@ require("packer").startup(
           "kyazdani42/nvim-web-devicons"
         },
         config = [[require("configs.telescope")]]
-      }
-
-      use {
-        "neovim/nvim-lspconfig",
-        event = "VimEnter",
-        requires = {
-          "kabouzeid/nvim-lspinstall",
-          "ms-jpq/coq_nvim",
-          -- "ray-x/lsp_signature.nvim"
-        },
-        config = [[require("configs.lsp")]]
-      }
-
-      use {
-        "windwp/nvim-autopairs",
-        event = "InsertEnter",
-        config = [[require("configs.autopairs")]]
       }
 
       use {
@@ -207,11 +202,40 @@ require("packer").startup(
       }
 
       use {
+        "neovim/nvim-lspconfig",
+        requires = {
+          "kabouzeid/nvim-lspinstall",
+          "ms-jpq/coq_nvim"
+          -- "ray-x/lsp_signature.nvim"
+        },
+        event = "BufReadPost",
+        config = [[require("configs.lsp")]]
+      }
+
+      use {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = [[require("configs.autopairs")]]
+      }
+
+      use {
         "nvim-treesitter/nvim-treesitter",
         requires = {
-          "andymass/vim-matchup",
-          "p00f/nvim-ts-rainbow",
-          "windwp/nvim-autopairs"
+          {
+            "p00f/nvim-ts-rainbow",
+            event = "BufReadPre"
+          },
+          {
+            "andymass/vim-matchup",
+            event = "BufReadPost"
+          },
+          {
+            "windwp/nvim-autopairs"
+          },
+          {
+            "romgrk/nvim-treesitter-context",
+            cmd = "TSContextToggle"
+          }
         },
         run = {":TSUpdate"},
         config = [[require("configs.treesitter")]]

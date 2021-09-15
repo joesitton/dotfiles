@@ -15,13 +15,14 @@ local function fg_bg(group, fg_color, bg_color)
 end
 
 cmd("hi Comment gui=italic")
+cmd("hi MatchParen gui=underline guibg=" .. colors.gray3)
 
 bg("Normal", "none")
 bg("NormalNC", "none")
-fg_bg("StatusLine", colors.fg, colors.bg)
-fg_bg("StatusLineNC", colors.bg, colors.bg)
 
 fg("EndOfBuffer", colors.bg)
+
+fg_bg("WildMenu", colors.black, colors.blue)
 
 bg("NormalFloat", colors.bg)
 bg("Floaterm", colors.bg)
@@ -32,23 +33,26 @@ fg_bg("TelescopeBorder", colors.blue, "none")
 fg_bg("FloatBorder", colors.blue, "none")
 fg_bg("FloatermBorder", colors.blue, "none")
 
-fg_bg("VertSplit", colors.bg, colors.bg)
-fg_bg("SignColumn", colors.gray, colors.black)
+fg_bg("VertSplit", colors.black, colors.black)
+fg_bg("SignColumn", colors.gray5, colors.black)
 
 bg("CursorLine", "none")
-fg_bg("LineNr", colors.gray, colors.black)
-cmd("hi MatchParen gui=underline guibg=" .. colors.darker_gray)
+fg_bg("LineNr", colors.gray5, colors.black)
 
-bg("Pmenu", colors.gray)
+bg("Pmenu", colors.gray5)
 fg_bg("PmenuSel", colors.black, colors.blue)
-bg("PmenuSbar", colors.black)
-
-fg_bg("WildMenu", colors.black, colors.blue)
+bg("PmenuSbar", colors.gray3)
+bg("PmenuThumb", colors.fg)
 
 bg("NvimTreeNormal", colors.bg)
-fg("NvimTreeIndentMarker", colors.darker_gray)
+fg_bg("NvimTreeVertSplit", colors.bg, colors.bg)
+fg_bg("NvimTreeStatusLine", colors.bg, colors.bg)
+fg_bg("NvimTreeStatusLineNC", colors.bg, colors.bg)
+fg("NvimTreeIndentMarker", colors.gray3)
 
-fg("IndentBlanklineChar", colors.darker_gray)
+bg("TreesitterContext", colors.gray3)
+
+fg("IndentBlanklineChar", colors.gray3)
 
 local gg = "GitGutter"
 
