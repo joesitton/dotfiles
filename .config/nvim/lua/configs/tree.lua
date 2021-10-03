@@ -6,7 +6,6 @@ g.nvim_tree_indent_markers = 1
 g.nvim_tree_git_hl = 1
 g.nvim_tree_add_trailing = 1
 g.nvim_tree_width = 25
-g.nvim_tree_update_cwd = 1
 
 g.nvim_tree_icons = {
   default = "",
@@ -37,3 +36,14 @@ g.nvim_tree_icons = {
   --   error= "•",
   -- }
 }
+
+require("nvim-tree").setup(
+  {
+    hijack_cursor = true,
+    update_cwd = true,
+    view = {
+      width = 25,
+      auto_resize = true
+    }
+  }
+)

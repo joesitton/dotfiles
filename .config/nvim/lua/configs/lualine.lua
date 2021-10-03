@@ -1,14 +1,33 @@
+local gps = require("nvim-gps")
+
+gps.setup(
+  {
+    separator = " › ",
+    icons = {
+      ["container-name"] = " "
+    }
+  }
+)
+
 require("lualine").setup(
   {
     options = {
       section_separators = "",
       component_separators = "│",
-      disabled_filetypes = {"NvimTree", "minimap"},
+      disabled_filetypes = {"NvimTree", "minimap"}
     },
     sections = {
       lualine_a = {"mode"},
       lualine_b = {{"filename", path = 1}, "branch", "diff"},
-      lualine_c = {},
+      lualine_c = {
+        function()
+          if gps.is_available() then
+            return gps.get_location()
+          else
+            return ""
+          end
+        end
+      },
       -- lualine_x = {
       --   {
       --     "diagnostics",

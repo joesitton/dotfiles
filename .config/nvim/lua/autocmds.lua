@@ -1,15 +1,55 @@
 local cmd = vim.cmd
 
-cmd [[ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif ]]
+cmd [[ 
+augroup cursor_pos
+  autocmd!
+  autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup END
+]]
 
-cmd("autocmd ColorScheme * source " .. vim.fn.stdpath("config") .. "/lua/highlights.lua")
+cmd [[ 
+augroup no_repeat_comment
+  autocmd!
+  autocmd BufReadPost * :setlocal formatoptions-=cro
+augroup END
+]]
 
-cmd "autocmd FocusGained,BufEnter * :checktime"
+cmd [[
+augroup tree_pane
+  autocmd!
+  autocmd BufEnter NvimTree setlocal sidescrolloff=0
+augroup END
+]]
 
-cmd "autocmd BufWritePost highlights.lua source <afile>"
+cmd [[
+augroup auto_checktime
+  autocmd!
+  autocmd FocusGained,BufEnter * :checktime
+augroup END
+]]
 
-cmd "autocmd BufEnter NvimTree setlocal sidescrolloff=0"
+cmd [[
+augroup auto_format
+  autocmd!
+  autocmd BufWritePre * silent! FormatWrite
+augroup END
+]]
 
--- cmd "autocmd BufWritePre * silent! FormatWrite"
+cmd [[
+augroup highlight_yank
+  autocmd!
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="Search", timeout=450}
+augroup END
+]]
 
-cmd "autocmd BufWritePost plugins.lua source <afile> | PackerCompile"
+cmd(
+  [[
+augroup config_update
+  autocmd!
+  autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  autocmd BufWritePost highlights.lua source <afile>
+  autocmd ColorScheme * source ]] ..
+    vim.fn.stdpath("config") .. [[/lua/highlights.lua
+augroup END
+]]
+)

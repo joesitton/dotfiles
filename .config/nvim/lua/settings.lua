@@ -1,4 +1,4 @@
-vim.cmd 'colo base16-default-dark'
+vim.cmd "colo base16-default-dark"
 
 local options = {
   -- Max column for syntax
@@ -31,7 +31,7 @@ local options = {
   hlsearch = false,
   incsearch = true,
   -- Timeouts
-  updatetime = 300,
+  updatetime = 100,
   timeout = true,
   timeoutlen = 1000,
   ttimeout = true,
@@ -44,6 +44,9 @@ local options = {
   -- Wild menu
   wildignorecase = true,
   wildmode = "list:longest,full",
+  -- Folds
+  foldmethod = "indent",
+  foldlevelstart = 999,
   -- Other
   title = true,
   hidden = true,
@@ -59,7 +62,7 @@ local options = {
   showmode = false,
   backup = false,
   writebackup = false,
-  sessionoptions="blank,buffers,curdir,folds,help,options,tabpages,winsize,resize,winpos,terminal"
+  sessionoptions = "blank,buffers,curdir,folds,help,options,tabpages,winsize,resize,winpos,terminal"
 }
 
 for k, v in pairs(options) do

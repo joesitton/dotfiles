@@ -1,44 +1,29 @@
+# Sudo
 alias _='sudo'
 alias pls='sudo $(fc -ln -1)'
 
+# Pacman
 alias pac='sudo pacman'
-alias pacup='pac -Syy'
-alias pacin='pac -S'
-alias aurin='yay -S'
-alias pacrm='pac -Rsc'
 alias pacs='yay -Ss'
-alias pacl='pac -Ql'
+alias paci='pac -Qil'
+alias pacin='pac -S'
+alias pacrm='pac -Rsc'
+alias pacup='pac -Syy'
+alias pacupg='pac -Syyu'
 alias pacprune='pac -Rsn $(pac -Qqtd)'
 
-if [ "$(command -v exa)" ]; then
-  alias ls='exa --color=auto --group-directories-first -F --sort extension --color-scale'
-  alias ll='ls -lhg@'
-  alias la='ll -a'
-  alias lS='ll --sort size -r'
-  alias lt='la -T -L 3 -I "node_modules|__pycache__|.git|.venv|.env|venv|env"'
-else
-  alias ls='ls --color=auto --group-directories-first -F -X'
-  alias ll='ls -lh'
-  alias la='ls -lAh'
-fi
+alias aurin='yay -S --noeditmenu --nodiffmenu'
 
-alias yay='yay --noeditmenu --nodiffmenu'
-
-[ "$(command -v nvim)" ] && alias vim='nvim'
-
-alias grep='grep --color=auto -i'
-alias rg='rg -i'
-alias ssh='ssh -xC'
-alias yarn='yarn --emoji true'
-
+# Ansible
 alias ap='ansible-playbook'
 alias ac='ansible-console'
 
-alias count="rev | cut -d '.' -f1 | rev | sort | uniq -c | sort -bgr"
-
+# Docker
 alias dps='docker ps --format '\''table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}'\'
-alias drm='docker images | grep none | awk '\''{print $3}'\'' | xargs docker rmi -f'
+alias drm='docker rm -f'
+alias dprune='docker images | grep none | awk '\''{print $3}'\'' | xargs docker rmi -f'
 
+# Git
 alias gs='git status'
 alias ga='git add .'
 alias gc='git commit -m'
@@ -47,25 +32,39 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 alias gl='git log --oneline'
 
+# Other
 alias mkvenv='python -m venv venv && source venv/bin/activate'
-
 alias n='nnn -deH'
 alias p='pueue'
 
-..() { cd ..; }
--() { cd -; }
+# ls
+if [ "$(command -v exa)" ]; then
+  alias ls='exa --color=auto --group-directories-first -F --sort extension --color-scale'
+  alias ll='ls -lhg@ --git'
+  alias la='ll -a --git'
+  alias lS='ll --sort size -r'
+  alias lt='la -T -L 3 -I "node_modules|__pycache__|.git|.venv|.env|venv|env"'
+else
+  alias ls='ls --color=auto --group-directories-first -F -X'
+  alias ll='ls -lh'
+  alias la='ls -lAh'
+fi
 
+# vim
+if [ "$(command -v nvim)" ]; then
+   alias vim='nvim'
+   alias v='vim'
+fi
+
+# sudo group write access
 gimme() {
     sudo chgrp -R sudo $@
     sudo chmod -R g+w $@
 }
 
+# auto ls
 chpwd() {
     ls;
-
-    if [[ -d venv ]]; then
-        source venv/bin/activate
-    fi
 }
 
 # vim: ft=zsh

@@ -1,5 +1,7 @@
 local v = require("vimp")
 
+v.nnoremap(";", ":")
+
 v.nnoremap("J", "}")
 v.nnoremap("K", "{")
 v.nnoremap("H", "^")

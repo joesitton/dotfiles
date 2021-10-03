@@ -52,8 +52,26 @@ require("packer").startup(
         "svermeulen/vimpeccable"
       }
 
+      -- use {
+      --   "abecodes/tabout.nvim",
+      --   config = [[require('tabout').setup()]]
+      -- }
+
+      -- use {
+      --   "edluffy/specs.nvim",
+      --   config = [[require("specs").setup({
+      --     fader = require('specs').exp_fader,
+      --   })]]
+      -- }
+
+      -- use {
+      --   "Pocco81/AutoSave.nvim",
+      --   config = [[require("configs.autosave")]]
+      -- }
+
       use {
-        "euclidianAce/BetterLua.vim"
+        "folke/which-key.nvim",
+        config = [[require("configs.whichkey")]]
       }
 
       use {
@@ -61,7 +79,27 @@ require("packer").startup(
       }
 
       use {
+        "euclidianAce/BetterLua.vim",
+        ft = "lua"
+      }
+
+      use {
+        "sindrets/winshift.nvim",
+        cmd = "WinShift",
+        setup = function()
+          vim.api.nvim_set_keymap("n", "<C-W>m", "<Cmd>WinShift<CR>", {})
+        end,
+        config = [[require("winshift").setup()]]
+      }
+
+      use {
         "tpope/vim-surround"
+      }
+
+      use {
+        "folke/trouble.nvim",
+        cmd = "TroubleToggle",
+        config = [[ require("trouble").setup() ]]
       }
 
       use {
@@ -70,7 +108,8 @@ require("packer").startup(
       }
 
       use {
-        "sheerun/vim-polyglot"
+        "sheerun/vim-polyglot",
+        event = "BufReadPost"
       }
 
       use {
@@ -80,8 +119,7 @@ require("packer").startup(
 
       use {
         "jghauser/mkdir.nvim",
-        config = [[require("mkdir")]],
-        event = "BufNew"
+        config = [[require("mkdir")]]
       }
 
       use {
@@ -89,10 +127,16 @@ require("packer").startup(
         cmd = "StartupTime"
       }
 
+      -- use {
+      --   "wfxr/minimap.vim",
+      --   cmd = "MinimapToggle",
+      --   setup = [[require("configs.minimap")]]
+      -- }
+
       use {
-        "wfxr/minimap.vim",
-        cmd = "MinimapToggle",
-        setup = [[require("configs.minimap")]]
+        "norcalli/nvim-colorizer.lua",
+        event = "BufReadPost",
+        config = [[require("colorizer").setup()]]
       }
 
       use {
@@ -119,6 +163,32 @@ require("packer").startup(
         config = [[require("configs.gitsigns")]]
       }
 
+      -- use {
+      --   "tanvirtin/vgit.nvim",
+      --   event = "ButfWinEnter",
+      --   requires = {
+      --     "nvim-lua/plenary.nvim"
+      --   },
+      --   config = [[ require("configs.vgit") ]]
+      -- }
+
+      use {
+        "https://gitlab.com/yorickpeterse/nvim-window",
+        setup = vim.api.nvim_set_keymap("n", "<leader>pw", ":lua require('nvim-window').pick()<CR>", {}),
+        config = [[require("nvim-window").setup({normal_hl = "WindowPicker", hint_hl = "Search", border = "none"})]]
+      }
+
+      -- use {
+      --   "dhruvasagar/vim-prosession",
+      --   requires = "tpope/vim-obsession",
+      --   config = [[vim.g.prosession_dir = vim.fn.stdpath("data") .. "/sessions/"]]
+      -- }
+
+      -- use {
+      --   "rmagatti/auto-session",
+      --   config = [[require("auto-session").setup()]]
+      -- }
+
       use {
         "lukas-reineke/indent-blankline.nvim",
         event = "BufReadPost",
@@ -138,13 +208,6 @@ require("packer").startup(
         },
         event = "VimEnter",
         config = [[require("configs.lualine")]]
-      }
-
-      use {
-        "RRethy/vim-hexokinase",
-        run = "make hexokinase",
-        event = "BufReadPost",
-        setup = [[require("configs.hexokinase")]]
       }
 
       use {
@@ -183,7 +246,8 @@ require("packer").startup(
         "nvim-telescope/telescope.nvim",
         requires = {
           "nvim-lua/plenary.nvim",
-          "kyazdani42/nvim-web-devicons"
+          "kyazdani42/nvim-web-devicons",
+          "AckslD/nvim-neoclip.lua"
         },
         config = [[require("configs.telescope")]]
       }
@@ -221,20 +285,21 @@ require("packer").startup(
       use {
         "nvim-treesitter/nvim-treesitter",
         requires = {
+          "windwp/nvim-autopairs",
           {
             "p00f/nvim-ts-rainbow",
             event = "BufReadPre"
           },
           {
             "andymass/vim-matchup",
-            event = "BufReadPost"
-          },
-          {
-            "windwp/nvim-autopairs"
-          },
-          {
-            "romgrk/nvim-treesitter-context",
-            cmd = "TSContextToggle"
+            event = "BufReadPost",
+            config = [[
+              vim.g.matchup_matchparen_offscreen = {
+                ["method"] = "popup",
+                ["highlight"] = "OffscreenPopup",
+                ["fullwidth"] = 1
+              }
+            ]]
           }
         },
         run = {":TSUpdate"},

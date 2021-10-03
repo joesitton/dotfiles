@@ -2,9 +2,10 @@
 
 bspc monitor -d 1 2 3 4 5
 
+bspc config bottom_padding          0
 bspc config top_padding             0
-bspc config border_width            4
-bspc config window_gap              8
+bspc config border_width            1
+bspc config window_gap              10
 
 bspc config split_ratio             0.55
 
@@ -20,11 +21,13 @@ bspc rule -a Alacritty rectangle=1300x740+310+200
 bspc rule -a Thunar state=floating
 bspc rule -a feh state=floating
 bspc rule -a Gpa state=floating rectangle=1010x750
-bspc rule -a lxappearance state=floating
 bspc rule -a Audacity state=floating
 bspc rule -a Dunst layer=above sticky=on private=on
+bspc rule -a Vmware desktop=^5 follow=on
+bspc rule -a "Lxappearance:*:Customize Look and Feel" state=floating
 bspc rule -a "Alacritty:*:Scratch" state=floating sticky=on locked=on private=on border=off hidden=on focus=on layer=above rectangle=1920x540+0+0
-bspc rule -a "firefox:*:Picture-in-Picture" state=floating sticky=on locked=on private=on border=off focus=on layer=above rectangle=633x396+1279+736
+bspc rule -a "firefox:*:Picture-in-Picture" state=floating sticky=on locked=on private=on border=off focus=on layer=above rectangle=633x396+1277+736
 bspc rule -a "firefox:*:Library" state=floating
+bspc rule -a "Protonvpn:*:*" state=floating
 
-$HOME/.config/polybar/launch.sh > /var/log/polybar.log 2>&1
+$HOME/.config/polybar/launch.sh
