@@ -31,14 +31,14 @@ augroup END
 cmd [[
 augroup auto_format
   autocmd!
-  autocmd BufWritePre * silent! FormatWrite
+  autocmd BufWritePost * silent! FormatWrite
 augroup END
 ]]
 
 cmd [[
 augroup highlight_yank
   autocmd!
-  autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="Search", timeout=450}
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="Search", timeout=500}
 augroup END
 ]]
 

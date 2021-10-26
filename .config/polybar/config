@@ -1,5 +1,7 @@
+include-file = $HOME/.config/polybar/modules
+
 [colors]
-background = #f0181818
+background = #fc111111
 foreground = #e8e8e8
 red = #AB4642
 green = #A1B56C
@@ -14,247 +16,64 @@ black4 = #484848
 black5 = #585858
 black6 = #686868
 
-[bar/bar]
+[bar/base]
 background = ${colors.background}
 foreground = ${colors.foreground}
-height = 60
-padding = 4
-underline-size = 4
+
+height = 56
+
+padding-left = 4
+padding-right = 2
+underline-size = 2
 module-margin = 2
-tray-position = none
 wm-restack = bspwm
+wm-name = Polybar
+
 override-redirect = false
 fixed-center = true
 bottom = true
 
-font-0 = "Fira Sans Condensed:size=14;3"
-font-1 = "Iosevka Custom:size=16;3"
-font-2 = "Iosevka Custom:size=18;6"
+font-0 = "Fira Sans Condensed:size=12;7"
+font-1 = "Iosevka Custom:size=12;7"
+font-2 = "Iosevka Custom:size=16;9"
+dpi-x = 120
+dpi-y = 120
 
-modules-left = logo bspwm
-modules-center =
-modules-right = updates weather network brightness audio battery date
+[bar/main]
+inherit = bar/base
 
-[module/windows]
-type = custom/script
-exec = cat $HOME/.cache/bspwm_windows_1.txt
-tail = true
+border-bottom-size = 4
+border-bottom-color = ${colors.background}
+width = 1820
 
-; cycle between windows
-click-left = bspc node -f next.local
-click-right = bspc node -f prev.local
+modules-left = logo bspwm 
+modules-center = title 
+modules-right = updates weather network volume battery
 
-format = <label>
-format-padding = 4
+[bar/time]
+inherit = bar/base
 
-[module/updates]
-type = custom/script
-exec-if = [ "$(pacman -Qu | wc -l)" -gt 0 ]
-exec = echo "$(pacman -Qu | wc -l)  "
-interval = 5
+font-0 = "Fira Sans Condensed:size=11;8"
+height = 30
+width = 100
+offset-x = 1820
+offset-y = 30
 
-format =   <label>
+padding-right = 4
 
-click-left = /usr/local/bin/updates
+modules-right = stackedtime
 
-[module/logo]
-type = custom/text
-content = %{A1:/usr/local/bin/powermenu:}%{T3}%{T-}%{A}
-content-foreground = ${colors.blue}
+[bar/date]
+inherit = bar/base
 
-[module/bspwm]
-type = internal/bspwm
-enable-click = true
+font-0 = "Fira Sans Condensed:size=11;-2"
+height = 30
+width = 100
+offset-x = 1820
+offset-y = 0
 
-format = <label-state>
+padding-right = 4
 
-label-focused-foreground = ${colors.blue}
-label-focused-underline = ${colors.blue}
-label-focused-padding = 2
-
-label-occupied-foreground = ${colors.foreground}
-label-occupied-padding = 2
-
-label-urgent-foreground = ${colors.red}
-label-urgent-padding = 2
-
-label-empty-foreground = ${colors.black5}
-label-empty-padding = 2
-
-[module/bspwmmodes]
-type = internal/bspwm
-
-format = <label-mode>
-
-# label-locked = 
-# # label-locked-foreground = ${colors.yellow}
-# label-locked-alignment = center
-# label-locked-padding = 1
-
-# label-sticky = 
-# # label-sticky-foreground = ${colors.green}
-# label-sticky-alignment = center
-# label-sticky-padding = 1
-
-label-marked = 
-label-marked-foreground = ${colors.red}
-label-marked-alignment = center
-label-marked-padding = 1
-
-[module/title]
-type = internal/xwindow
-
-format = <label>
-
-label = %title%
-label-maxlen = 80
-label-alignment = center
-
-[module/date]
-type = custom/script
-interval = 1
-
-exec = date '+%b %d,  %-I:%M %P'
-tail = true
-
-format = <label>
-format-prefix = " "
-
-[module/battery]
-type = internal/battery
-full-at = 90
-low-at = -1
-
-time-format = %-H hr
-
-ramp-capacity-0 = 
-ramp-capacity-0-foreground = ${colors.red}
-
-ramp-capacity-1 = 
-ramp-capacity-1-foreground = ${colors.red}
-
-ramp-capacity-2 = 
-ramp-capacity-2-foreground = ${colors.orange}
-
-ramp-capacity-3 = 
-ramp-capacity-3-foreground = ${colors.yellow}
-
-ramp-capacity-4 = 
-ramp-capacity-4-foreground = ${colors.green}
-
-ramp-capacity-5 = 
-ramp-capacity-5-foreground = ${colors.green}
-
-ramp-capacity-6 = 
-ramp-capacity-6-foreground = ${colors.green}
-
-format-full = <label-full>
-label-full = 
-label-full-prefix = " "
-label-full-prefix-padding = 1
-
-format-discharging = <ramp-capacity>  <label-discharging>
-format-discharging-prefix = " "
-label-discharging = %percentage%%
-
-format-charging = <animation-charging>  <label-charging>
-format-charging-prefix = " "
-label-charging = %percentage%%
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-foreground = ${colors.green}
-
-animation-charging-framerate = 1500
-
-[module/network]
-type = internal/network
-interface = wlp0s20f3
-interval = 3
-
-format-connected =   <label-connected>
-format-connected-prefix = " "
-label-connected = %local_ip%
-
-format-disconnected =   Offline
-format-disconnected-foreground = ${colors.black5}
-
-[module/audio]
-type = internal/alsa
-enable-scroll = false
-
-ramp-volume-0 = 
-ramp-volume-1 = 
-
-format-volume = <ramp-volume>  <label-volume>
-format-volume-prefix = " "
-label-volume = %percentage%%
-
-format-muted =   <label-volume>
-format-muted-foreground = ${colors.black6}
-format-muted-prefix = " "
-
-[module/cpu]
-type = internal/cpu
-
-format-prefix = 
-# format-prefix-foreground = ${colors.yellow}
-format-prefix-padding = 2
-
-[module/ram]
-type = internal/memory
-
-format-prefix = 
-# format-prefix-foreground = ${colors.purple}
-format-prefix-padding = 2
-
-label = %gb_used%
-
-[module/separator]
-type = custom/text
-content = │
-content-prefix = " "
-content-foreground = ${colors.black5}
-
-[module/filesystem]
-type = internal/fs
-interval = 60
-
-mount-0 = /
-
-format-mounted-prefix = 
-format-mounted-prefix-padding = 2
-# format-mounted-prefix-foreground = ${colors.blue}
-format-mounted = <label-mounted>
-label-mounted = %percentage_used%%
-
-[module/crypto]
-type = custom/script
-exec = printf "%'.2f\\n" "$(curl -s rate.sx/1btc)"
-interval = 60
-
-format = $ <label>
-format-prefix = ﴑ
-format-prefix-foreground = ${colors.orange}
-format-prefix-padding = 2
-
-[module/brightness]
-type = custom/script
-exec = echo "scale=2; $(brightnessctl g) / $(brightnessctl m) * 100" | bc | cut -d. -f1
-tail = true
-
-format = 盛  <label>%
-format-prefix = " "
-
-[module/weather]
-type = custom/script
-exec = wedder -c $HOME/.config/polybar/wedder.toml
-tail = true
-
-format = <label>
-format-prefix = " "
+modules-right = stackeddate
 
 # vim: ft=cfg

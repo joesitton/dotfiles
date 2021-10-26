@@ -18,7 +18,8 @@ super + space
 
 # make sxhkd reload its configuration files
 super + Escape
-	pkill -USR1 -x sxhkd; dunstify sxhkd "Reloaded config"
+	pkill -USR1 -x sxhkd; \
+    dunstify sxhkd "Reloaded config"
 
 #
 # bspwm hotkeys
@@ -78,9 +79,6 @@ super + shift + f ; {m,l,s}
 # focus/swap
 #
 
-super + shift + {1-5}
-    bspc node -d '^{1-5}' --follow
-
 # focus the node in the given direction
 super + {_, shift} + {h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
@@ -92,6 +90,8 @@ super + {_, shift} + c
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
 	bspc desktop -f {prev,next}
+    # dunstify -t 1000 -r 903 bspwm "Desktop $(bspc query -D -d focused --names)"
+
 
 # focus the last node/desktop
 super + Tab
@@ -109,15 +109,16 @@ super + shift + i ; c
 super + shift + s ; {1-5}
 	bspc node -d '^{1-5}'
 
-# move the node to the given desktop
-super + shift + m ; {1-5}
-	bspc node -d '^{1-5}' --follow
+# move
+super + shift + {1-5}
+    bspc node -d '^{1-5}' --follow
 
 # move node to preselected area
 super + shift + m ; s
     bspc node $(bspc query -N -n last.marked) -n last.!automatic --follow -t tiled || \
     bspc node -n last.!automatic --follow -t tiled
 
+# move node to receptacle
 super + shift + m ; r
     bspc node $(bspc query -N -n last.marked) -n $(bspc query -N -n .leaf.local.\!window) --follow -t tiled || \
     bspc node -n $(bspc query -N -n .leaf.local.\!window)
@@ -151,6 +152,7 @@ super + alt + space
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+
 #
 # function keys
 #
@@ -169,7 +171,7 @@ XF86MonBrightness{Down,Up}
 #
 
 super + shift + v
-    rofi -modi "clipboard:greenclip print" -show "clipboard" -run-command '{cmd}'
+    clipcat-menu
 
 super + p
     scratch

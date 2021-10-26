@@ -1,0 +1,196 @@
+[module/logo]
+type = custom/text
+content = %{T3}%{T-}
+content-foreground = ${colors.blue}
+
+[module/bspwm]
+type = internal/bspwm
+enable-click = true
+label-separator = " "
+
+ws-icon-0 = 1;1
+ws-icon-1 = 2;2
+ws-icon-2 = 3;3
+ws-icon-3 = 4;4
+ws-icon-4 = 5;5
+
+format = <label-state>
+
+label-focused = %icon%
+label-focused-foreground = ${colors.blue}
+label-focused-underline = ${colors.blue}
+label-focused-padding = 2
+
+label-occupied = %icon%
+label-occupied-foreground = ${colors.foreground}
+label-occupied-underline = ${colors.black3}
+label-occupied-padding = 2
+
+label-urgent = %icon%
+label-urgent-foreground = ${colors.red}
+label-urgent-padding = 2
+
+label-empty = %icon%
+label-empty-foreground = ${colors.black5}
+label-empty-padding = 2
+
+# label-monocle = M
+# label-tiled = T
+# label-floating = F
+# label-pseudotiled = P
+
+[module/title]
+type = internal/xwindow
+
+format = <label>
+
+label = %title%
+label-maxlen = 80
+
+[module/battery]
+type = internal/battery
+full-at = 98
+low-at = -1
+time-format = %-H:%M
+
+format-full = "<label-full> "
+
+label-full = 
+label-full-foreground = ${colors.green}
+label-full-prefix-padding = 1
+
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = ${colors.red}
+
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = ${colors.yellow}
+
+ramp-capacity-2 = 
+ramp-capacity-2-foreground = ${colors.green}
+
+ramp-capacity-3 = 
+ramp-capacity-3-foreground = ${colors.green}
+
+ramp-capacity-4 = 
+ramp-capacity-4-foreground = ${colors.green}
+
+label-discharging = %percentage%%
+
+format-discharging = <ramp-capacity>  <label-discharging>
+
+label-charging = %percentage%% (%time%)
+
+format-charging = <ramp-capacity>  <label-charging>
+
+[module/network]
+type = internal/network
+interface = wlp0s20f3
+interval = 3
+
+label-connected =  
+
+format-connected = <label-connected>
+
+label-disconnected = 
+
+format-disconnected = <label-disconnected>
+format-disconnected-foreground = ${colors.black5}
+
+[module/volume]
+type = internal/alsa
+enable-scroll = false
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+
+label-volume = %percentage%%
+
+format-volume = <ramp-volume>  <label-volume>
+
+label-muted = %percentage%%
+
+format-muted = <ramp-volume>  <label-muted>
+format-muted-foreground = ${colors.black6}
+
+[module/cpu]
+type = internal/cpu
+
+format-prefix = 
+format-prefix-padding = 2
+# format-prefix-foreground = ${colors.yellow}
+
+[module/ram]
+type = internal/memory
+
+label = %gb_used%
+
+format-prefix = 
+format-prefix-padding = 2
+# format-prefix-foreground = ${colors.purple}
+
+[module/filesystem]
+type = internal/fs
+interval = 60
+
+mount-0 = /
+
+format-mounted = <label-mounted>
+format-mounted-prefix = 
+format-mounted-prefix-padding = 2
+# format-mounted-prefix-foreground = ${colors.blue}
+
+label-mounted = %percentage_used%%
+
+[module/crypto]
+type = custom/script
+exec = printf "%'.2f" "$(curl -s rate.sx/1btc)"
+interval = 60
+
+format = $<label>
+
+format-prefix = 
+format-prefix-padding = 2
+# format-prefix-foreground = ${colors.orange}
+
+[module/weather]
+type = custom/script
+exec = wedder -c $HOME/.config/polybar/wedder.toml
+exec-if = ping -q -c 1 -W 1 1.1.1.1
+tail = true
+
+format = <label>
+
+[module/updates]
+type = custom/script
+exec-if = [ "$(pacman -Qu | wc -l)" -gt 0 ]
+exec = echo "$(pacman -Qu | wc -l)"
+interval = 300
+
+format = <label>
+format-prefix = 
+format-prefix-padding = 2
+
+click-left = /usr/local/bin/updates
+
+[module/separator]
+type = custom/text
+content = │
+content-foreground = ${colors.black4}
+
+[module/stackeddate]
+type = custom/script
+exec = date '+%-m/%-d/%Y'
+tail = true
+interval = 1
+
+format = <label>
+
+[module/stackedtime]
+type = custom/script
+exec = date '+%-I:%M %P'
+tail = true
+interval = 1
+
+format = <label>
+
+# vim: ft=cfg

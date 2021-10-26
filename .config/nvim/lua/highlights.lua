@@ -77,6 +77,8 @@ fg("DiffviewFilePanelPath", colors.bg)
 -- fg_bg("DiffRemove", "none", colors.red)
 -- fg_bg("DiffDelete", "none", colors.red)
 
+cmd("hi MarkSignHL guifg=" .. colors.red .. " guibg=" .. colors.black .. " gui=bold,italic")
+
 for _, sign in ipairs({"Hint", "Error", "Information", "Other", "Warning"}) do
   local fg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("TroubleSign" .. sign)), "fg#")
 
@@ -96,3 +98,8 @@ fg_bg(lds .. "Warning", colors.yellow, colors.black)
 fg_bg(lds .. "Error", colors.red, colors.black)
 fg_bg(lds .. "Information", colors.blue, colors.black)
 fg_bg(lds .. "Hint", colors.green, colors.black)
+
+vim.fn.sign_define("DiagnosticSignError", {text = "", texthl = "LspDiagnosticSignError"})
+vim.fn.sign_define("DiagnosticSignWarning", {text = "", texthl = "LspDiagnosticSignWarning"})
+vim.fn.sign_define("DiagnosticSignInformation", {text = "", texthl = "LspDiagnosticSignInformation"})
+vim.fn.sign_define("DiagnosticSignHint", {text = "", texthl = "LspDiagnosticSignHint"})

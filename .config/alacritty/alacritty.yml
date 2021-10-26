@@ -1,5 +1,5 @@
 font:
-  size: 16
+  size: 14
 
   normal:
     family: Iosevka Custom
@@ -13,7 +13,7 @@ font:
     family: Iosevka Custom
     style: Italic
 
-background_opacity: 0.96
+background_opacity: 0.98
 
 window:
   padding:
@@ -22,4 +22,9 @@ window:
 
 scrolling:
   history: 65536
-  multiplier: 2
+  multiplier: 4
+
+colors:
+  cursor:
+    text: '0x181818'
+    cursor: '0xefefef'

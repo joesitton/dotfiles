@@ -1,23 +1,32 @@
 #!/usr/bin/env bash
 
 killall -q polybar
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-polybar bar &
-while ! xdo id -N Polybar >/dev/null; do sleep 1; done
-xdo raise $(xdo id -N Polybar)
 
-killall -q tint2
-while pgrep -u $UID -x tint2 >/dev/null; do sleep 1; done
-tint2 &
-while ! xdo id -a tint2 >/dev/null; do sleep 1; done
-xdo raise $(xdo id -a tint2)
+polybar -q --reload main & disown
+polybar -q --reload date & disown
+polybar -q --reload time & disown
 
-while read -r line; do
-    if [[ "$line" =~ (fullscreen on) ]]; then
-        xdo lower $(xdo id -N Polybar)
-        xdo lower $(xdo id -a tint2)
-    elif [[ "$line" =~ (fullscreen off|desktop_focus|node_focus) ]]; then
-        xdo raise $(xdo id -N Polybar)
-        xdo raise $(xdo id -a tint2)
+rm -f /var/run/user/$UID/bspwm_fifo*
+
+raise_polybar() { xdo raise $(xdo id -N Polybar); }
+lower_polybar() { xdo lower $(xdo id -N Polybar); }
+
+while read -r event _ _ wid state status; do
+    if [[ "$event" == "node_state" ]]; then
+        if [[ "$state $status" == "fullscreen on" ]]; then
+            lower_polybar
+        elif [[ "$state $status" == "fullscreen off" ]]; then
+            raise_polybar
+        else
+            raise_polybar
+        fi
     fi
-done < $(bspc subscribe -f node desktop_focus) &
+
+    if [[ "$event" =~ (desktop|node)_focus ]]; then
+        if [[ "$(bspc query -T -n focused | jq -r .client.state)" == "fullscreen" ]]; then
+            lower_polybar
+        else
+            raise_polybar
+        fi
+    fi
+done < $(bspc subscribe -f node_state node_focus desktop_focus) & disown

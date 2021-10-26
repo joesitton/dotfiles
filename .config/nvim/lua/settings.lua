@@ -11,15 +11,16 @@ local options = {
   -- Tabs
   autoindent = true,
   smartindent = true,
+  breakindent = true,
   expandtab = true,
   smarttab = true,
   tabstop = 4,
   softtabstop = 4,
-  shiftwidth = 4,
+  shiftwidth = 2,
   -- Number lines
   number = true,
   numberwidth = 4,
-  relativenumber = false,
+  relativenumber = true,
   signcolumn = "auto",
   cursorline = true,
   -- Scrolloffs
@@ -52,7 +53,7 @@ local options = {
   hidden = true,
   mouse = "a",
   shortmess = "sIc",
-  whichwrap = "b,s,<>hl",
+  whichwrap = "b,s,<>[]hl",
   autoread = true,
   linebreak = true,
   lazyredraw = true,
@@ -68,5 +69,3 @@ local options = {
 for k, v in pairs(options) do
   vim.o[k] = v
 end
-
--- vim.o.whichwrap:append("<>hl")

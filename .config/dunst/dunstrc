@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "500x500-16+16"
+    geometry = "350x300-10+10"
 
     # Turn on the progess bar
     progress_bar = true
@@ -58,7 +58,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 10
+    transparency = 2
 
     # The height of the entire notification.  If the height is smaller
     # than the font height and padding combined, it will be raised
@@ -84,7 +84,7 @@
     frame_width = 1
 
     # Defines color of the frame around the notification window.
-    frame_color = "#181818"
+    frame_color = "#111111"
 
     # Define a color for the separator.
     # possible values are:
@@ -163,7 +163,7 @@
 
     # Split notifications into multiple lines if they don't fit into
     # geometry.
-    word_wrap = no
+    word_wrap = yes
 
     # When word_wrap is set to no, specify where to make an ellipsis in long lines.
     # Possible values are "start", "middle" and "end".
@@ -173,7 +173,7 @@
     ignore_newline = no
 
     # Stack together notifications with the same content
-    stack_duplicates = true
+    stack_duplicates = false
 
     # Hide the count of stacked notifications with the same content
     hide_duplicate_count = false
@@ -283,9 +283,9 @@
     # * close_all: Close all notifications.
     # These values can be strung together for each mouse event, and
     # will be executed in sequence.
-    mouse_left_click = close_current
-    mouse_middle_click = do_action, close_current
-    mouse_right_click = close_all
+    mouse_left_click = do_action
+    mouse_middle_click = close_all
+    mouse_right_click = close_current
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.
@@ -322,26 +322,26 @@
 
     # Context menu. Equivalent dunstctl command:
     # dunstctl context
-    # context = ctrl+shift+period
+    context = ctrl+shift+period
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#181818"
+    background = "#111111"
     foreground = "#efefef"
     timeout = 8
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#181818"
+    background = "#111111"
     foreground = "#efefef"
     timeout = 8
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
-    background = "#181818"
+    background = "#111111"
     foreground = "#efefef"
     frame_color = "#ab4642"
     timeout = 0

@@ -15,8 +15,10 @@ require("bufferline").setup(
       offsets = {{filetype = "NvimTree", text = "", padding = 1}},
       buffer_close_icon = "",
       modified_icon = "",
-      left_trunc_marker = "",
-      right_trunc_marker = "",
+      -- left_trunc_marker = "",
+      -- right_trunc_marker = "",
+      left_trunc_marker = "",
+      right_trunc_marker = "",
       indicator_icon = "▎",
       close_command = "Bdelete %d",
       show_close_icon = false,
@@ -85,7 +87,7 @@ require("bufferline").setup(
       },
       modified_visible = {
         guifg = colors.red,
-        guibg = colors.black
+        guibg = colors.gray3
       },
       modified_selected = {
         guifg = colors.red,
@@ -120,7 +122,7 @@ require("bufferline").setup(
       -- close buttons
       close_button = {
         guifg = colors.gray7,
-        guibg = colors.black
+        guibg = colors.black,
       },
       close_button_visible = {
         guifg = colors.gray7,
@@ -143,6 +145,7 @@ require("bufferline").setup(
         guifg = colors.black,
         guibg = colors.black
       },
+      -- tab
       tab = {
         guifg = colors.gray7,
         guibg = colors.black

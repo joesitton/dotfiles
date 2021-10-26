@@ -9,6 +9,8 @@ CARGOPATH="$HOME/.cargo/bin"
 
 export PATH="${PATH}:${CARGOPATH}"
 
+export STARSHIP_CONFIG=/etc/starship/config.toml
+
 # Editor
 [ "$(command -v nvim)" ] && export EDITOR=nvim || export EDITOR=vim
 

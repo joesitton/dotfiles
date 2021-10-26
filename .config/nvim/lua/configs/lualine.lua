@@ -1,3 +1,5 @@
+local colors = require("colors.base16")
+
 local gps = require("nvim-gps")
 
 gps.setup(
@@ -28,20 +30,19 @@ require("lualine").setup(
           end
         end
       },
-      -- lualine_x = {
-      --   {
-      --     "diagnostics",
-      --     sources = {"nvim_lsp"},
-      --     color_error = colors.red,
-      --     color_warn = colors.yellow,
-      --     color_info = colors.blue,
-      --     color_hint = colors.white,
-      --     symbols = {error = "•", warn = "•", info = "•", hint = "•"}
-      --   }
-      -- },
-      lualine_x = {},
-      lualine_y = {"encoding", "filetype"},
-      lualine_z = {"progress"}
+      lualine_x = {
+        {
+          "diagnostics",
+          sources = {"nvim_lsp"},
+          color_error = colors.red,
+          color_warn = colors.yellow,
+          color_info = colors.blue,
+          color_hint = colors.white
+          -- symbols = {error = "•", warn = "•", info = "•", hint = "•"}
+        }
+      },
+      lualine_y = {"filetype"},
+      lualine_z = {}
     },
     extensions = {"nvim-tree", "quickfix"}
   }

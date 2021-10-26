@@ -22,14 +22,16 @@ zinit load starship/starship
 
 # Plugins
 zinit lucid wait"1" light-mode for \
+      depth"1" @jeffreytse/zsh-vi-mode \
       @zsh-users/zsh-autosuggestions \
       @zsh-users/zsh-history-substring-search \
       @zdharma/fast-syntax-highlighting \
-      depth"1" @jeffreytse/zsh-vi-mode \
-      @ael-code/zsh-colored-man-pages \
-      @le0me55i/zsh-extract \
-      @mdumitru/fancy-ctrl-z \
       @mdarocha/zsh-windows-title
+
+zinit lucid wait"2" light-mode for \
+      @mdumitru/fancy-ctrl-z \
+      @le0me55i/zsh-extract \
+      @ael-code/zsh-colored-man-pages \
 
 # Zoxide
 zinit ice lucid from"gh-r" as"program" atload'eval "$(zoxide init zsh)"' atpull"%atclone" mv"zoxide* -> zoxide" pick"zoxide/zoxide"

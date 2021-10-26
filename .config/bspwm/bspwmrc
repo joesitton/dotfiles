@@ -23,11 +23,13 @@ bspc rule -a feh state=floating
 bspc rule -a Gpa state=floating rectangle=1010x750
 bspc rule -a Audacity state=floating
 bspc rule -a Dunst layer=above sticky=on private=on
-bspc rule -a Vmware desktop=^5 follow=on
+bspc rule -a Vmware desktop=^4 follow=on
+bspc rule -a firefox desktop=^2 follow=on
 bspc rule -a "Lxappearance:*:Customize Look and Feel" state=floating
 bspc rule -a "Alacritty:*:Scratch" state=floating sticky=on locked=on private=on border=off hidden=on focus=on layer=above rectangle=1920x540+0+0
 bspc rule -a "firefox:*:Picture-in-Picture" state=floating sticky=on locked=on private=on border=off focus=on layer=above rectangle=633x396+1277+736
 bspc rule -a "firefox:*:Library" state=floating
 bspc rule -a "Protonvpn:*:*" state=floating
+
 
 $HOME/.config/polybar/launch.sh
