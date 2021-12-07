@@ -15,12 +15,10 @@ require("bufferline").setup(
       offsets = {{filetype = "NvimTree", text = "", padding = 1}},
       buffer_close_icon = "",
       modified_icon = "",
-      -- left_trunc_marker = "",
-      -- right_trunc_marker = "",
-      left_trunc_marker = "",
-      right_trunc_marker = "",
+      left_trunc_marker = "",
+      right_trunc_marker = "",
       indicator_icon = "▎",
-      close_command = "Bdelete %d",
+      close_command = ":Bdelete %d",
       show_close_icon = false,
       max_name_length = 14,
       max_prefix_length = 13,
@@ -32,12 +30,13 @@ require("bufferline").setup(
       separator_style = {"", ""},
       always_show_bufferline = true,
       diagnostics = false,
-      custom_filter = function(buf_number)
+      sort_by = "relative_directory",
+      custom_filter = function(bufnum)
         -- Func to filter out our managed/persistent split terms
         local present_type, type =
           pcall(
           function()
-            return vim.api.nvim_buf_get_var(buf_number, "term_type")
+            return vim.api.nvim_buf_get_var(bufnum, "term_type")
           end
         )
 
@@ -95,15 +94,15 @@ require("bufferline").setup(
       },
       -- pick
       pick = {
-        guifg = colors.red,
+        guifg = colors.yellow,
         guibg = colors.black
       },
       pick_visible = {
-        guifg = colors.red,
-        guibg = colors.black
+        guifg = colors.yellow,
+        guibg = colors.gray3
       },
       pick_selected = {
-        guifg = colors.red,
+        guifg = colors.yellow,
         guibg = colors.bg
       },
       -- duplicate
@@ -122,7 +121,7 @@ require("bufferline").setup(
       -- close buttons
       close_button = {
         guifg = colors.gray7,
-        guibg = colors.black,
+        guibg = colors.black
       },
       close_button_visible = {
         guifg = colors.gray7,

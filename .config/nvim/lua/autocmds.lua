@@ -1,5 +1,12 @@
 local cmd = vim.cmd
 
+-- cmd [[
+-- augroup cursor_diag
+--   autocmd!
+--   autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
+-- augroup END
+-- ]]
+
 cmd [[ 
 augroup cursor_pos
   autocmd!

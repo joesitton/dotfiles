@@ -1,11 +1,11 @@
 vim.g.mapleader = " "
 
 local init_modules = {
-  "highlights",
   "plugins",
+  "settings",
   "mappings",
   "autocmds",
-  "settings"
+  "highlights"
 }
 
 for _, module in ipairs(init_modules) do

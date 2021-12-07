@@ -34,7 +34,7 @@ fg_bg("FoldColumn", primary, colors.black)
 cmd("hi CursorLine guibg=none cterm=none")
 fg_bg("LineNr", colors.gray5, colors.black)
 
-bg("Pmenu", colors.gray5)
+bg("Pmenu", colors.gray4)
 fg_bg("PmenuSel", colors.black, primary)
 bg("PmenuSbar", colors.gray3)
 bg("PmenuThumb", colors.fg)
@@ -72,11 +72,6 @@ fg_bg("BufferLineTabSelected", primary, colors.bg)
 fg("DiffviewFolderSign", colors.orange)
 fg("DiffviewFilePanelPath", colors.bg)
 
--- fg_bg("DiffAdd", "none", "#40482b")
--- fg_bg("DiffChange", "none", colors.blue)
--- fg_bg("DiffRemove", "none", colors.red)
--- fg_bg("DiffDelete", "none", colors.red)
-
 cmd("hi MarkSignHL guifg=" .. colors.red .. " guibg=" .. colors.black .. " gui=bold,italic")
 
 for _, sign in ipairs({"Hint", "Error", "Information", "Other", "Warning"}) do
@@ -85,21 +80,29 @@ for _, sign in ipairs({"Hint", "Error", "Information", "Other", "Warning"}) do
   fg_bg("TroubleSign" .. sign, fg, colors.bg)
 end
 
-local gg = "GitGutter"
+bg("GitGutterAdd", colors.black)
+bg("GitGutterChange", colors.black)
+bg("GitGutterChangeDelete", colors.black)
+bg("GitGutterDelete", colors.black)
 
-bg(gg .. "Add", colors.black)
-bg(gg .. "Change", colors.black)
-bg(gg .. "ChangeDelete", colors.black)
-bg(gg .. "Delete", colors.black)
+fg_bg("DiagnosticSignWarn", colors.yellow, colors.black)
+fg_bg("DiagnosticSignError", colors.red, colors.black)
+fg_bg("DiagnosticSignInfo", colors.blue, colors.black)
+fg_bg("DiagnosticSignHint", colors.green, colors.black)
 
-local lds = "LspDiagnosticsSign"
+vim.fn.sign_define("DiagnosticSignError", {text = "", numhl = "DiagnosticSignError"})
+vim.fn.sign_define("DiagnosticSignWarn", {text = "", numhl = "DiagnosticSignWarn"})
+vim.fn.sign_define("DiagnosticSignInfo", {text = "", numhl = "DiagnosticSignInfo"})
+vim.fn.sign_define("DiagnosticSignHint", {text = "", numhl = "DiagnosticSignHint"})
 
-fg_bg(lds .. "Warning", colors.yellow, colors.black)
-fg_bg(lds .. "Error", colors.red, colors.black)
-fg_bg(lds .. "Information", colors.blue, colors.black)
-fg_bg(lds .. "Hint", colors.green, colors.black)
-
-vim.fn.sign_define("DiagnosticSignError", {text = "", texthl = "LspDiagnosticSignError"})
-vim.fn.sign_define("DiagnosticSignWarning", {text = "", texthl = "LspDiagnosticSignWarning"})
-vim.fn.sign_define("DiagnosticSignInformation", {text = "", texthl = "LspDiagnosticSignInformation"})
-vim.fn.sign_define("DiagnosticSignHint", {text = "", texthl = "LspDiagnosticSignHint"})
+cmd("hi CmpItemAbbrDeprecated guifg=" .. colors.gray3 .. " guibg=NONE gui=strikethrough")
+fg("CmpItemAbbrMatch", primary)
+fg("CmpItemAbbrMatchFuzzy", primary)
+fg("CmpItemKindVariable", colors.cyan)
+fg("CmpItemKindInterface", colors.cyan)
+fg("CmpItemKindText", colors.cyan)
+fg("CmpItemKindFunction", colors.purple)
+fg("CmpItemKindMethod", colors.purple)
+fg("CmpItemKindKeyword", colors.gray5)
+fg("CmpItemKindProperty", colors.gray5)
+fg("CmpItemKindUnit", colors.gray5)

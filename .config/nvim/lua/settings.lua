@@ -20,7 +20,7 @@ local options = {
   -- Number lines
   number = true,
   numberwidth = 4,
-  relativenumber = true,
+  relativenumber = false,
   signcolumn = "auto",
   cursorline = true,
   -- Scrolloffs
@@ -52,7 +52,7 @@ local options = {
   title = true,
   hidden = true,
   mouse = "a",
-  shortmess = "sIc",
+  shortmess = "sIcAWFa",
   whichwrap = "b,s,<>[]hl",
   autoread = true,
   linebreak = true,
@@ -63,7 +63,8 @@ local options = {
   showmode = false,
   backup = false,
   writebackup = false,
-  sessionoptions = "blank,buffers,curdir,folds,help,options,tabpages,winsize,resize,winpos,terminal"
+  sessionoptions = "blank,buffers,curdir,folds,help,options,tabpages,winsize,resize,winpos,terminal",
+  completeopt = "menu,menuone,noselect"
 }
 
 for k, v in pairs(options) do

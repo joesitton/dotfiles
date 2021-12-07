@@ -1,10 +1,39 @@
 local cmp = require("cmp")
 
+vim.g.floating_window_border = {
+  {"╭", "FloatBorder"},
+  {"─", "FloatBorder"},
+  {"╮", "FloatBorder"},
+  {"│", "FloatBorder"},
+  {"╯", "FloatBorder"},
+  {"─", "FloatBorder"},
+  {"╰", "FloatBorder"},
+  {"│", "FloatBorder"}
+}
+
 cmp.setup(
   {
     formatting = {
-      fields = {"abbr", "kind", "menu"},
-      format = require("lspkind").cmp_format()
+      format = require("lspkind").cmp_format(
+        {
+          with_text = true,
+          menu = ({
+            buffer = "[Buffer]",
+            path = "[Path]",
+            nvim_lsp = "[LSP]",
+            luasnip = "[LuaSnip]",
+            nvim_lua = "[Lua]",
+            latex_symbols = "[LaTeX]",
+            rg = "[rg]",
+            calc = "[Calc]",
+            treesitter = "[TS]",
+            emoji = "[Emoji]"
+          })
+        }
+      )
+    },
+    documentation = {
+      border = vim.g.floating_window_border
     },
     snippet = {
       expand = function(args)
@@ -12,6 +41,7 @@ cmp.setup(
       end
     },
     mapping = {
+      ["<CR>"] = cmp.mapping.confirm({select = true}),
       ["<C-Space>"] = cmp.mapping.complete(),
       ["<Tab>"] = function(fallback)
         if cmp.visible() then
@@ -31,23 +61,53 @@ cmp.setup(
     sources = {
       {name = "nvim_lsp"},
       {name = "path"},
-      {name = "buffer"},
+      -- {name = "buffer"},
       {name = "calc"},
-      {name = "emoji"}
+      {name = "emoji"},
+      {name = "rg"},
+      {name = "treesitter"},
+      {name = "latex_symbols"}
+      -- {name = "nvim_lsp_signature_help"}
+    },
+    sorting = {
+      comparators = {
+        cmp.config.compare.offset,
+        cmp.config.compare.exact,
+        cmp.config.compare.score,
+        require("cmp-under-comparator").under,
+        cmp.config.compare.kind,
+        cmp.config.compare.sort_text,
+        cmp.config.compare.length,
+        cmp.config.compare.order
+      }
     }
   }
 )
 
-require("nvim-autopairs.completion.cmp").setup(
+cmp.setup.cmdline(
+  ":",
   {
-    map_cr = true, --  map <CR> on insert mode
-    map_complete = true, -- it will auto insert `(` (map_char) after select function or method item
-    auto_select = true, -- automatically select the first item
-    insert = true, -- use insert confirm behavior instead of replace
-    map_char = {
-      -- modifies the function or method delimiter by filetypes
-      all = "(",
-      tex = "{"
-    }
+    sources = cmp.config.sources(
+      {
+        {name = "path"}
+      },
+      {
+        {name = "cmdline"}
+      }
+    )
   }
 )
+
+-- cmp.setup.cmdline(
+--   "/",
+--   {
+--     sources = cmp.config.sources(
+--       {
+--         {name = "rg"}
+--       },
+--       {
+--         {name = "nvim_lsp_document_symbol"}
+--       }
+--     )
+--   }
+-- )

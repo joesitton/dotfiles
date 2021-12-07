@@ -9,21 +9,21 @@ local disabled_built_ins = {
   "2html_plugin",
   "getscript",
   "getscriptPlugin",
-  "gzip",
+  -- "gzip",
   "logipat",
   "netrw",
   "netrwPlugin",
   "netrwSettings",
   "netrwFileHandlers",
   "matchit",
-  "tar",
-  "tarPlugin",
+  -- "tar",
+  -- "tarPlugin",
   "rrhelper",
   "spellfile_plugin",
   "vimball",
-  "vimballPlugin",
-  "zip",
-  "zipPlugin"
+  "vimballPlugin"
+  -- "zip",
+  -- "zipPlugin"
 }
 
 for _, plugin in pairs(disabled_built_ins) do
@@ -36,8 +36,7 @@ require("packer").startup(
   {
     function(use)
       use {
-        "wbthomason/packer.nvim",
-        opt = true
+        "wbthomason/packer.nvim"
       }
 
       use {
@@ -58,6 +57,10 @@ require("packer").startup(
 
       use {
         "tpope/vim-surround"
+      }
+
+      use {
+        "famiu/bufdelete.nvim"
       }
 
       -- use {
@@ -89,11 +92,6 @@ require("packer").startup(
         "ggandor/lightspeed.nvim",
         event = "BufReadPost",
         config = [[require("configs.lightspeed")]]
-      }
-
-      use {
-        "famiu/bufdelete.nvim",
-        cmd = {"Bdelete", "Bwipeout"}
       }
 
       use {
@@ -155,9 +153,6 @@ require("packer").startup(
 
       use {
         "nvim-lualine/lualine.nvim",
-        requires = {
-          "SmiteshP/nvim-gps"
-        },
         event = "VimEnter",
         config = [[require("configs.lualine")]]
       }
@@ -214,35 +209,32 @@ require("packer").startup(
         config = [[require("configs.telescope")]]
       }
 
-      -- use {
-      --   "ms-jpq/coq_nvim",
-      --   branch = "coq",
-      --   run = ":COQdeps",
-      --   requires = {
-      --     {
-      --       "ms-jpq/coq.artifacts",
-      --       branch = "artifacts"
-      --     }
-      --   },
-      --   setup = [[require("configs.coq")]]
-      -- }
-
       use {
         "windwp/nvim-autopairs",
-        config = [[require("nvim-autopairs").setup({map_cr = false})]]
+        config = [[require("nvim-autopairs").setup()]]
       }
 
       use {
         "hrsh7th/nvim-cmp",
         requires = {
           "hrsh7th/cmp-nvim-lsp",
-          "hrsh7th/cmp-buffer",
+          -- "hrsh7th/cmp-buffer",
           "hrsh7th/cmp-calc",
           "hrsh7th/cmp-emoji",
           "hrsh7th/cmp-path",
+          "hrsh7th/cmp-cmdline",
           "hrsh7th/cmp-vsnip",
           "hrsh7th/vim-vsnip",
-          "onsails/lspkind-nvim"
+          -- "hrsh7th/cmp-nvim-lsp-signature-help",
+          "hrsh7th/cmp-nvim-lsp-document-symbol",
+          "lukas-reineke/cmp-rg",
+          "lukas-reineke/cmp-under-comparator",
+          "ray-x/cmp-treesitter",
+          "onsails/lspkind-nvim",
+          {
+            "kdheepak/cmp-latex-symbols",
+            ft = "tex"
+          }
         },
         config = [[require("configs.cmp")]]
       }
@@ -250,7 +242,7 @@ require("packer").startup(
       use {
         "neovim/nvim-lspconfig",
         requires = {
-          "kabouzeid/nvim-lspinstall",
+          "williamboman/nvim-lsp-installer",
           "ms-jpq/coq_nvim"
           -- "ray-x/lsp_signature.nvim"
         },

@@ -1,47 +1,40 @@
-local colors = require("colors.base16")
-
-local gps = require("nvim-gps")
-
-gps.setup(
-  {
-    separator = " › ",
-    icons = {
-      ["container-name"] = " "
-    }
-  }
-)
-
 require("lualine").setup(
   {
     options = {
-      section_separators = "",
-      component_separators = "│",
+      theme = "auto",
+      icons_enabled = true,
+      always_divide_middle = true,
+      component_separators = {left = "", right = ""},
+      section_separators = {left = "", right = ""},
       disabled_filetypes = {"NvimTree", "minimap"}
     },
     sections = {
       lualine_a = {"mode"},
-      lualine_b = {{"filename", path = 1}, "branch", "diff"},
-      lualine_c = {
-        function()
-          if gps.is_available() then
-            return gps.get_location()
-          else
-            return ""
-          end
-        end
-      },
-      lualine_x = {
+      lualine_b = {{"filename", path = 0, shorting_target = 40}, "branch", "diff"},
+      lualine_c = {},
+      lualine_x = {"filetype"},
+      lualine_y = {
         {
           "diagnostics",
           sources = {"nvim_lsp"},
-          color_error = colors.red,
-          color_warn = colors.yellow,
-          color_info = colors.blue,
-          color_hint = colors.white
-          -- symbols = {error = "•", warn = "•", info = "•", hint = "•"}
+          diagnostics_color = {
+            error = "DiagnosticSignError",
+            warn = "DiagnosticSignWarn",
+            info = "DiagnosticSignInfo",
+            hint = "DiagnosticSignHint"
+          },
+          symbols = {error = "  ", warn = "  ", info = "  ", hint = " "},
+          colored = true
         }
       },
-      lualine_y = {"filetype"},
+      lualine_z = {}
+    },
+    inactive_sections = {
+      lualine_a = {},
+      lualine_b = {{"filename", path = 0, shorting_target = 40}},
+      lualine_c = {},
+      lualine_x = {"filetype"},
+      lualine_y = {},
       lualine_z = {}
     },
     extensions = {"nvim-tree", "quickfix"}

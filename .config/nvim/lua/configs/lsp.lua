@@ -1,58 +1,51 @@
--- require("lsp_signature").setup(
---   {
---     bind = true,
---     fix_pos = true,
---     floating_window = true,
---     floating_window_above_cur_line = true,
---     hint_enable = false,
---     hint_prefix = "",
---     hi_parameter = "SignatureCurrent",
---     padding = "",
---     handler_opts = {
---       border = "single"
---     },
---     extra_trigger_chars = {"("}
---   }
--- )
+vim.diagnostic.config {
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = true,
+  severity_sort = false
+}
 
 local lsp = require("lspconfig")
+local servers = require("nvim-lsp-installer.servers")
 
-local function setup_servers()
-  require("lspinstall").setup()
+local function setup_server(name)
+  local is_avail, server = servers.get_server(name)
 
-  local servers = require("lspinstall").installed_servers()
-
-  for _, server in pairs(servers) do
-    lsp[server].setup({})
-
-    lsp[server].setup(
-      {capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())}
-    )
+  if not is_avail then
+    server:install()
   end
 
-  lsp.lua.setup(
+  local default_opts = server:get_default_options()
+
+  lsp[name].setup({cmd = default_opts.cmd})
+  lsp[name].setup(
     {
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = {"vim"}
-          }
-        }
+      cmd = default_opts.cmd,
+      capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+      flags = {
+        debounce_text_changes = 150
       }
     }
   )
 end
 
-setup_servers()
+local installed_servers = {
+  "pyright",
+  "jedi_language_server",
+  "sumneko_lua",
+  "vimls",
+  "jsonls",
+  "dockerls",
+  "bashls",
+  "yamlls",
+  "gopls"
+}
 
-require("lspinstall").post_install_hook = function()
-  setup_servers()
-
-  vim.cmd("bufdo e")
+for _, server in ipairs(installed_servers) do
+  setup_server(server)
 end
 
 local v = require("vimp")
 
 v.nnoremap("<space>rn", ":lua vim.lsp.buf.rename()<CR>")
--- v.nnoremap("[g", ":lua vim.lsp.diagnostic.goto_prev()<CR>")
--- v.nnoremap("]g", ":lua vim.lsp.diagnostic.goto_next()<CR>")
