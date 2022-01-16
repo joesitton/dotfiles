@@ -1,15 +1,5 @@
+local luasnip = require("luasnip")
 local cmp = require("cmp")
-
-vim.g.floating_window_border = {
-  {"╭", "FloatBorder"},
-  {"─", "FloatBorder"},
-  {"╮", "FloatBorder"},
-  {"│", "FloatBorder"},
-  {"╯", "FloatBorder"},
-  {"─", "FloatBorder"},
-  {"╰", "FloatBorder"},
-  {"│", "FloatBorder"}
-}
 
 cmp.setup(
   {
@@ -21,8 +11,8 @@ cmp.setup(
             buffer = "[Buffer]",
             path = "[Path]",
             nvim_lsp = "[LSP]",
-            luasnip = "[LuaSnip]",
             nvim_lua = "[Lua]",
+            luasnip = "[Snippet]",
             latex_symbols = "[LaTeX]",
             rg = "[rg]",
             calc = "[Calc]",
@@ -33,41 +23,61 @@ cmp.setup(
       )
     },
     documentation = {
-      border = vim.g.floating_window_border
+      border = {
+        {"╭", "FloatBorder"},
+        {"─", "FloatBorder"},
+        {"╮", "FloatBorder"},
+        {"│", "FloatBorder"},
+        {"╯", "FloatBorder"},
+        {"─", "FloatBorder"},
+        {"╰", "FloatBorder"},
+        {"│", "FloatBorder"}
+      }
     },
     snippet = {
       expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body)
+        luasnip.lsp_expand(args.body)
       end
     },
     mapping = {
-      ["<CR>"] = cmp.mapping.confirm({select = true}),
+      ["<CR>"] = cmp.mapping.confirm({select = false}),
       ["<C-Space>"] = cmp.mapping.complete(),
-      ["<Tab>"] = function(fallback)
-        if cmp.visible() then
-          cmp.select_next_item()
-        else
-          fallback()
-        end
-      end,
-      ["<S-Tab>"] = function(fallback)
-        if cmp.visible() then
-          cmp.select_prev_item()
-        else
-          fallback()
-        end
-      end
+      ["<Tab>"] = cmp.mapping(
+        function(fallback)
+          if cmp.visible() then
+            cmp.select_next_item()
+          elseif luasnip.expand_or_jumpable() then
+            luasnip.expand_or_jump()
+          else
+            fallback()
+          end
+        end,
+        {"i", "s"}
+      ),
+      ["<S-Tab>"] = cmp.mapping(
+        function(fallback)
+          if cmp.visible() then
+            cmp.select_prev_item()
+          elseif luasnip.jumpable(-1) then
+            luasnip.jump(-1)
+          else
+            fallback()
+          end
+        end,
+        {"i", "s"}
+      )
     },
     sources = {
       {name = "nvim_lsp"},
       {name = "path"},
-      -- {name = "buffer"},
       {name = "calc"},
       {name = "emoji"},
-      {name = "rg"},
+      -- {name = "rg"},
+      {name = "buffer"},
       {name = "treesitter"},
-      {name = "latex_symbols"}
-      -- {name = "nvim_lsp_signature_help"}
+      {name = "latex_symbols"},
+      {name = "nvim_lsp_signature_help"},
+      {name = "luasnip"}
     },
     sorting = {
       comparators = {
@@ -97,17 +107,3 @@ cmp.setup.cmdline(
     )
   }
 )
-
--- cmp.setup.cmdline(
---   "/",
---   {
---     sources = cmp.config.sources(
---       {
---         {name = "rg"}
---       },
---       {
---         {name = "nvim_lsp_document_symbol"}
---       }
---     )
---   }
--- )

@@ -1,12 +1,5 @@
 local cmd = vim.cmd
 
--- cmd [[
--- augroup cursor_diag
---   autocmd!
---   autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
--- augroup END
--- ]]
-
 cmd [[ 
 augroup cursor_pos
   autocmd!
@@ -17,7 +10,7 @@ augroup END
 cmd [[ 
 augroup no_repeat_comment
   autocmd!
-  autocmd BufReadPost * :setlocal formatoptions-=cro
+  autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 augroup END
 ]]
 
@@ -29,9 +22,9 @@ augroup END
 ]]
 
 cmd [[
-augroup auto_checktime
+augroup trouble
   autocmd!
-  autocmd FocusGained,BufEnter * :checktime
+  autocmd BufEnter Trouble setlocal scrolloff=1
 augroup END
 ]]
 

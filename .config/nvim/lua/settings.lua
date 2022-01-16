@@ -4,7 +4,7 @@ local options = {
   -- Max column for syntax
   synmaxcol = 500,
   -- Clipboard
-  clipboard = "unnamedplus",
+  -- clipboard = "unnamedplus",
   -- Persistent undo
   undofile = true,
   undodir = vim.fn.stdpath("data") .. "/undodir",
@@ -54,6 +54,7 @@ local options = {
   mouse = "a",
   shortmess = "sIcAWFa",
   whichwrap = "b,s,<>[]hl",
+  -- virtualedit = "onemore",
   autoread = true,
   linebreak = true,
   lazyredraw = true,
@@ -63,7 +64,7 @@ local options = {
   showmode = false,
   backup = false,
   writebackup = false,
-  sessionoptions = "blank,buffers,curdir,folds,help,options,tabpages,winsize,resize,winpos,terminal",
+  sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal",
   completeopt = "menu,menuone,noselect"
 }
 

@@ -67,12 +67,12 @@ require("bufferline").setup(
       -- indicator
       indicator_selected = {
         guifg = colors.blue,
-        guibg = colors.bg
+        guibg = colors.gray4
       },
       -- buffers
       buffer_selected = {
         guifg = colors.fg,
-        guibg = colors.bg,
+        guibg = colors.gray4,
         gui = "none"
       },
       buffer_visible = {
@@ -81,16 +81,16 @@ require("bufferline").setup(
       },
       -- modified
       modified = {
-        guifg = colors.red,
+        guifg = colors.gray7,
         guibg = colors.black
       },
       modified_visible = {
-        guifg = colors.red,
+        guifg = colors.gray7,
         guibg = colors.gray3
       },
       modified_selected = {
-        guifg = colors.red,
-        guibg = colors.bg
+        guifg = colors.fg,
+        guibg = colors.gray4
       },
       -- pick
       pick = {
@@ -103,7 +103,7 @@ require("bufferline").setup(
       },
       pick_selected = {
         guifg = colors.yellow,
-        guibg = colors.bg
+        guibg = colors.gray4
       },
       -- duplicate
       duplicate = {
@@ -116,7 +116,7 @@ require("bufferline").setup(
       },
       duplicate_selected = {
         guifg = colors.fg,
-        guibg = colors.bg
+        guibg = colors.gray4
       },
       -- close buttons
       close_button = {
@@ -129,7 +129,7 @@ require("bufferline").setup(
       },
       close_button_selected = {
         guifg = colors.fg,
-        guibg = colors.bg
+        guibg = colors.gray4
       },
       -- separators
       separator = {
@@ -151,7 +151,7 @@ require("bufferline").setup(
       },
       tab_selected = {
         guifg = colors.blue,
-        guibg = colors.bg
+        guibg = colors.gray4
       }
     }
   }

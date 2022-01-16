@@ -36,6 +36,7 @@ alias gl='git log --oneline'
 alias mkvenv='python -m venv venv && source venv/bin/activate'
 alias n='nnn -deH'
 alias p='pueue'
+alias pip='python -m pip'
 
 # ls
 if [ "$(command -v exa)" ]; then
@@ -53,8 +54,11 @@ fi
 # vim
 if [ "$(command -v nvim)" ]; then
    alias vim='nvim'
-   alias v='vim'
+   alias vi='vim'
 fi
+
+alias tmux='tmux -2'
+alias tat='tmux a -t'
 
 # sudo group write access
 gimme() {

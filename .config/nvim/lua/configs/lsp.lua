@@ -1,51 +1,50 @@
-vim.diagnostic.config {
-  virtual_text = true,
-  signs = true,
-  underline = true,
-  update_in_insert = true,
-  severity_sort = false
-}
-
 local lsp = require("lspconfig")
-local servers = require("nvim-lsp-installer.servers")
+local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local function setup_server(name)
-  local is_avail, server = servers.get_server(name)
+  local is_avail, server = require("nvim-lsp-installer.servers").get_server(name)
 
-  if not is_avail then
-    server:install()
-  end
+  if is_avail then
+    if not server:is_installed() then
+      server:install()
+    end
 
-  local default_opts = server:get_default_options()
+    server:on_ready(
+      function()
+        server:setup({})
+      end
+    )
 
-  lsp[name].setup({cmd = default_opts.cmd})
-  lsp[name].setup(
-    {
-      cmd = default_opts.cmd,
-      capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-      flags = {
-        debounce_text_changes = 150
+    lsp[name].setup(
+      {
+        cmd = server:get_default_options().cmd,
+        capabilities = capabilities,
+        flags = {
+          debounce_text_changes = 150
+        }
       }
-    }
-  )
+    )
+  end
 end
 
-local installed_servers = {
-  "pyright",
-  "jedi_language_server",
-  "sumneko_lua",
-  "vimls",
-  "jsonls",
-  "dockerls",
-  "bashls",
-  "yamlls",
-  "gopls"
-}
+local servers = {"pyright", "gopls", "dockerls", "bashls", "ansiblels", "jsonls", "yamlls", "vimls"}
 
-for _, server in ipairs(installed_servers) do
+for _, server in ipairs(servers) do
   setup_server(server)
 end
 
-local v = require("vimp")
-
-v.nnoremap("<space>rn", ":lua vim.lsp.buf.rename()<CR>")
+lsp.sumneko_lua.setup(
+  {
+    settings = {
+      Lua = {
+        diagnostics = {
+          globals = {"vim"}
+        }
+      }
+    },
+    capabilities = capabilities,
+    flags = {
+      debounce_text_changes = 150
+    }
+  }
+)

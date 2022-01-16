@@ -1,7 +1,6 @@
 require("lightspeed").setup(
   {
-    exit_after_idle_msecs = {labeled = nil, unlabeled = 5000},
-    jump_to_first_match = true,
+    exit_after_idle_msecs = {labeled = nil, unlabeled = nil},
     jump_on_partial_input_safety_timeout = 400,
     highlight_unique_chars = true,
     grey_out_search_area = true,

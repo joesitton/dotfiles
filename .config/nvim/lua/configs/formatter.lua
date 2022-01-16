@@ -1,6 +1,5 @@
 require("formatter").setup(
   {
-    logging = false,
     filetype = {
       ["*"] = {
         -- trailing whitespace
@@ -17,12 +16,8 @@ require("formatter").setup(
         function()
           return {
             exe = "black",
-            args = {"-q"},
-            stdin = false
-          }, {
-            exe = "isort",
-            args = {"-q"},
-            stdin = false
+            args = {"-q", "-"},
+            stdin = true
           }
         end
       },

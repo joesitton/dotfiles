@@ -1,5 +1,5 @@
 # Disable DRI3 (xps 13 9510)
-export LIBGL_DRI3_DISABLE=1
+# export LIBGL_DRI3_DISABLE=1
 
 # Terminal
 export TERM=xterm-256color
@@ -7,12 +7,18 @@ export TERM=xterm-256color
 # Path
 CARGOPATH="$HOME/.cargo/bin"
 
-export PATH="${PATH}:${CARGOPATH}"
+export PYENVROOT="$HOME/.pyenv"
+PYENVPATH="$PYENVROOT/bin"
 
-export STARSHIP_CONFIG=/etc/starship/config.toml
+export PATH="${PATH}:${CARGOPATH}:${PYENVPATH}"
+
+eval "$(pyenv init --path)"
 
 # Editor
 [ "$(command -v nvim)" ] && export EDITOR=nvim || export EDITOR=vim
+
+# Lang
+export LC_ALL="en_US.UTF-8"
 
 # Pager
 export PAGER=less

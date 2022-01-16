@@ -15,11 +15,11 @@ local function fg_bg(group, fg_color, bg_color)
   cmd("hi " .. group .. " guifg=" .. fg_color .. " guibg=" .. bg_color)
 end
 
-cmd("hi Comment gui=italic")
-cmd("hi MatchParen gui=underline guibg=" .. colors.gray3)
-
 bg("Normal", "none")
 bg("NormalNC", "none")
+
+cmd("hi Comment gui=italic")
+cmd("hi MatchParen gui=underline guibg=" .. "#303030")
 
 fg("EndOfBuffer", colors.bg)
 
@@ -54,13 +54,13 @@ fg_bg("NvimTreeStatusLineNC", colors.bg, colors.bg)
 fg("NvimTreeIndentMarker", colors.gray3)
 fg("NvimTreeFolderIcon", colors.orange)
 
-bg("TreesitterContext", colors.gray3)
-
 fg("IndentBlanklineChar", colors.gray3)
 
 cmd("hi WindowPicker guifg=" .. colors.black .. " guibg=" .. colors.yellow .. " gui=bold,italic")
 
-bg("OffscreenPopup", colors.gray3)
+bg("OffscreenPopup", "#303030")
+
+fg("DevIconDockerfile", colors.blue)
 
 bg("TroubleFoldIcon", colors.bg)
 fg_bg("TroubleNormal", colors.fg, colors.bg)
@@ -74,26 +74,29 @@ fg("DiffviewFilePanelPath", colors.bg)
 
 cmd("hi MarkSignHL guifg=" .. colors.red .. " guibg=" .. colors.black .. " gui=bold,italic")
 
-for _, sign in ipairs({"Hint", "Error", "Information", "Other", "Warning"}) do
-  local fg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("TroubleSign" .. sign)), "fg#")
-
-  fg_bg("TroubleSign" .. sign, fg, colors.bg)
-end
-
 bg("GitGutterAdd", colors.black)
 bg("GitGutterChange", colors.black)
 bg("GitGutterChangeDelete", colors.black)
 bg("GitGutterDelete", colors.black)
 
+fg("DiagnosticWarn", colors.yellow)
 fg_bg("DiagnosticSignWarn", colors.yellow, colors.black)
+fg("DiagnosticError", colors.red)
 fg_bg("DiagnosticSignError", colors.red, colors.black)
+fg("DiagnosticInfo", colors.blue)
 fg_bg("DiagnosticSignInfo", colors.blue, colors.black)
+fg("DiagnosticHint", colors.green)
 fg_bg("DiagnosticSignHint", colors.green, colors.black)
 
-vim.fn.sign_define("DiagnosticSignError", {text = "", numhl = "DiagnosticSignError"})
-vim.fn.sign_define("DiagnosticSignWarn", {text = "", numhl = "DiagnosticSignWarn"})
-vim.fn.sign_define("DiagnosticSignInfo", {text = "", numhl = "DiagnosticSignInfo"})
-vim.fn.sign_define("DiagnosticSignHint", {text = "", numhl = "DiagnosticSignHint"})
+fg_bg("TroubleSignWarning", colors.yellow, colors.bg)
+fg_bg("TroubleSignError", colors.red, colors.bg)
+fg_bg("TroubleSignInformation", colors.blue, colors.bg)
+fg_bg("TroubleSignHint", colors.green, colors.bg)
+
+vim.fn.sign_define("DiagnosticSignError", {text = "", texthl = "DiagnosticSignError"})
+vim.fn.sign_define("DiagnosticSignWarn", {text = "", texthl = "DiagnosticSignWarn"})
+vim.fn.sign_define("DiagnosticSignInfo", {text = "", texthl = "DiagnosticSignInfo"})
+vim.fn.sign_define("DiagnosticSignHint", {text = "", texthl = "DiagnosticSignHint"})
 
 cmd("hi CmpItemAbbrDeprecated guifg=" .. colors.gray3 .. " guibg=NONE gui=strikethrough")
 fg("CmpItemAbbrMatch", primary)
@@ -103,6 +106,6 @@ fg("CmpItemKindInterface", colors.cyan)
 fg("CmpItemKindText", colors.cyan)
 fg("CmpItemKindFunction", colors.purple)
 fg("CmpItemKindMethod", colors.purple)
-fg("CmpItemKindKeyword", colors.gray5)
-fg("CmpItemKindProperty", colors.gray5)
-fg("CmpItemKindUnit", colors.gray5)
+fg("CmpItemKindKeyword", colors.gray7)
+fg("CmpItemKindProperty", colors.gray7)
+fg("CmpItemKindUnit", colors.gray7)

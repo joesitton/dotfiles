@@ -35,6 +35,8 @@ vim.cmd "packadd packer.nvim"
 require("packer").startup(
   {
     function(use)
+      -- Core
+
       use {
         "wbthomason/packer.nvim"
       }
@@ -52,25 +54,31 @@ require("packer").startup(
       }
 
       use {
+        "tami5/sqlite.lua"
+      }
+
+      -- Colorschemes
+
+      use {
         "RRethy/nvim-base16"
       }
 
-      use {
-        "tpope/vim-surround"
-      }
-
-      use {
-        "famiu/bufdelete.nvim"
-      }
-
-      -- use {
-      --   "folke/which-key.nvim",
-      --   config = [[require("configs.whichkey")]]
-      -- }
+      -- Filetypes
 
       use {
         "lervag/vimtex",
         ft = "tex"
+      }
+
+      use {
+        "zeek/vim-zeek",
+        ft = "zeek"
+      }
+
+      use {
+        "s3rvac/vim-syntax-yara",
+        ft = "yara",
+        config = [[autocmd BufNewFile,BufRead *.yar,*.yara setlocal filetype=yara]]
       }
 
       use {
@@ -83,20 +91,71 @@ require("packer").startup(
         event = "BufReadPost"
       }
 
+      -- Functionality
+
       use {
-        "chentau/marks.nvim",
-        config = [[require("configs.marks")]]
+        "tpope/vim-surround"
       }
 
       use {
-        "ggandor/lightspeed.nvim",
-        event = "BufReadPost",
-        config = [[require("configs.lightspeed")]]
+        "famiu/bufdelete.nvim"
       }
 
       use {
         "jghauser/mkdir.nvim",
         config = [[require("mkdir")]]
+      }
+
+      use {
+        "mhartington/formatter.nvim",
+        cmd = {"Format", "FormatWrite"},
+        config = [[require("configs.formatter")]]
+      }
+
+      use {
+        "folke/lsp-colors.nvim"
+      }
+
+      use {
+        "folke/trouble.nvim",
+        config = [[require("configs.trouble")]]
+      }
+
+      use {
+        "nvim-telescope/telescope.nvim",
+        requires = {
+          {
+            "nvim-telescope/telescope-fzy-native.nvim",
+            config = [[require("telescope").load_extension("fzy_native")]]
+          },
+          {
+            "nvim-telescope/telescope-frecency.nvim",
+            config = [[require("telescope").load_extension("frecency")]]
+          }
+        },
+        config = [[require("configs.telescope")]]
+      }
+
+      use {
+        "windwp/nvim-autopairs",
+        config = [[require("nvim-autopairs").setup()]]
+      }
+
+      use {
+        "rmagatti/auto-session",
+        config = [[require("configs.session")]]
+      }
+
+      -- use {
+      --   "ggandor/lightspeed.nvim",
+      --   event = "BufReadPost",
+      --   config = [[require("configs.lightspeed")]]
+      -- }
+
+      use {
+        "phaazon/hop.nvim",
+        event = "BufReadPost",
+        config = [[require("configs.hop")]]
       }
 
       use {
@@ -111,14 +170,26 @@ require("packer").startup(
       }
 
       use {
-        "haya14busa/incsearch.vim",
-        event = "BufReadPost",
-        config = [[require("configs.incsearch")]]
+        "kyazdani42/nvim-tree.lua",
+        setup = vim.api.nvim_set_keymap("n", "<leader>.", ":NvimTreeToggle<CR>", {}),
+        config = [[require("configs.tree")]]
       }
 
       use {
-        "dstein64/vim-startuptime",
-        cmd = "StartupTime"
+        "https://gitlab.com/yorickpeterse/nvim-window",
+        setup = vim.api.nvim_set_keymap("n", "<leader>pw", ":lua require('nvim-window').pick()<CR>", {}),
+        config = [[require("nvim-window").setup({normal_hl = "WindowPicker", hint_hl = "Search", border = "none"})]]
+      }
+
+      -- Appearance
+
+      use {
+        "kyazdani42/nvim-web-devicons"
+      }
+
+      use {
+        "chentau/marks.nvim",
+        config = [[require("configs.marks")]]
       }
 
       use {
@@ -128,21 +199,15 @@ require("packer").startup(
       }
 
       use {
-        "karb94/neoscroll.nvim",
-        config = [[require("neoscroll").setup()]],
-        keys = {"<C-d>", "<C-u>"}
+        "lukas-reineke/indent-blankline.nvim",
+        event = "BufReadPost",
+        config = [[require("configs.indentline")]]
       }
 
       use {
         "lewis6991/gitsigns.nvim",
         event = "BufReadPost",
         config = [[require("configs.gitsigns")]]
-      }
-
-      use {
-        "lukas-reineke/indent-blankline.nvim",
-        event = "BufReadPost",
-        config = [[require("configs.indentline")]]
       }
 
       use {
@@ -155,6 +220,25 @@ require("packer").startup(
         "nvim-lualine/lualine.nvim",
         event = "VimEnter",
         config = [[require("configs.lualine")]]
+      }
+
+      use {
+        "karb94/neoscroll.nvim",
+        config = [[require("neoscroll").setup()]],
+        keys = {"<C-d>", "<C-u>"}
+      }
+
+      use {
+        "haya14busa/incsearch.vim",
+        event = "BufReadPost",
+        config = [[require("configs.incsearch")]]
+      }
+
+      -- Commands
+
+      use {
+        "dstein64/vim-startuptime",
+        cmd = "StartupTime"
       }
 
       use {
@@ -174,81 +258,59 @@ require("packer").startup(
       }
 
       use {
-        "https://gitlab.com/yorickpeterse/nvim-window",
-        setup = vim.api.nvim_set_keymap("n", "<leader>pw", ":lua require('nvim-window').pick()<CR>", {}),
-        config = [[require("nvim-window").setup({normal_hl = "WindowPicker", hint_hl = "Search", border = "none"})]]
-      }
-
-      use {
-        "kyazdani42/nvim-tree.lua",
-        requires = "kyazdani42/nvim-web-devicons",
-        cmd = "NvimTreeToggle",
-        setup = vim.api.nvim_set_keymap("n", "<leader>.", ":NvimTreeToggle<CR>", {}),
-        config = [[require("configs.tree")]]
-      }
-
-      use {
         "voldikss/vim-floaterm",
         cmd = "FloatermToggle",
         setup = [[require("configs.floaterm")]]
       }
 
-      use {
-        "mhartington/formatter.nvim",
-        cmd = {"Format", "FormatWrite"},
-        config = [[require("configs.formatter")]]
-      }
-
-      use {
-        "nvim-telescope/telescope.nvim",
-        requires = {
-          "nvim-lua/plenary.nvim",
-          "kyazdani42/nvim-web-devicons",
-          "AckslD/nvim-neoclip.lua"
-        },
-        config = [[require("configs.telescope")]]
-      }
-
-      use {
-        "windwp/nvim-autopairs",
-        config = [[require("nvim-autopairs").setup()]]
-      }
+      -- Completion
 
       use {
         "hrsh7th/nvim-cmp",
         requires = {
           "hrsh7th/cmp-nvim-lsp",
-          -- "hrsh7th/cmp-buffer",
           "hrsh7th/cmp-calc",
           "hrsh7th/cmp-emoji",
           "hrsh7th/cmp-path",
           "hrsh7th/cmp-cmdline",
-          "hrsh7th/cmp-vsnip",
-          "hrsh7th/vim-vsnip",
-          -- "hrsh7th/cmp-nvim-lsp-signature-help",
-          "hrsh7th/cmp-nvim-lsp-document-symbol",
-          "lukas-reineke/cmp-rg",
+          "hrsh7th/cmp-buffer",
+          "hrsh7th/cmp-nvim-lsp-signature-help",
+          -- "lukas-reineke/cmp-rg",
           "lukas-reineke/cmp-under-comparator",
           "ray-x/cmp-treesitter",
           "onsails/lspkind-nvim",
           {
+            "abecodes/tabout.nvim",
+            config = [[require("tabout").setup()]]
+          },
+          {
             "kdheepak/cmp-latex-symbols",
             ft = "tex"
+          },
+          {
+            "L3MON4D3/LuaSnip",
+            requires = {
+              "saadparwaiz1/cmp_luasnip",
+              "rafamadriz/friendly-snippets"
+            },
+            config = [[require("luasnip/loaders/from_vscode").lazy_load()]]
           }
         },
         config = [[require("configs.cmp")]]
       }
 
+      -- LSP
+
+      use {
+        "williamboman/nvim-lsp-installer"
+      }
+
       use {
         "neovim/nvim-lspconfig",
-        requires = {
-          "williamboman/nvim-lsp-installer",
-          "ms-jpq/coq_nvim"
-          -- "ray-x/lsp_signature.nvim"
-        },
-        event = "BufReadPost",
         config = [[require("configs.lsp")]]
       }
+
+      -- Treesitter
 
       use {
         "nvim-treesitter/nvim-treesitter",
@@ -272,49 +334,6 @@ require("packer").startup(
         run = {":TSUpdate"},
         config = [[require("configs.treesitter")]]
       }
-
-      -- use {
-      --   "tanvirtin/vgit.nvim",
-      --   event = "ButfWinEnter",
-      --   requires = {
-      --     "nvim-lua/plenary.nvim"
-      --   },
-      --   config = [[ require("configs.vgit") ]]
-      -- }
-
-      -- use {
-      --   "wfxr/minimap.vim",
-      --   cmd = "MinimapToggle",
-      --   setup = [[require("configs.minimap")]]
-      -- }
-
-      -- use {
-      --   "abecodes/tabout.nvim",
-      --   config = [[require('tabout').setup()]]
-      -- }
-
-      -- use {
-      --   "edluffy/specs.nvim",
-      --   config = [[require("specs").setup({
-      --     fader = require('specs').exp_fader,
-      --   })]]
-      -- }
-
-      -- use {
-      --   "Pocco81/AutoSave.nvim",
-      --   config = [[require("configs.autosave")]]
-      -- }
-
-      -- use {
-      --   "dhruvasagar/vim-prosession",
-      --   requires = "tpope/vim-obsession",
-      --   config = [[vim.g.prosession_dir = vim.fn.stdpath("data") .. "/sessions/"]]
-      -- }
-
-      -- use {
-      --   "rmagatti/auto-session",
-      --   config = [[require("auto-session").setup()]]
-      -- }
     end,
     config = {
       compile_path = fn.stdpath("data") .. "/site/plugin/compiled_packer.lua",
