@@ -1,14 +1,11 @@
-# Disable DRI3 (xps 13 9510)
-# export LIBGL_DRI3_DISABLE=1
-
-# Terminal
-export TERM=xterm-256color
+# Lang
+export LC_ALL="en_US.UTF-8"
 
 # Path
-CARGOPATH="$HOME/.cargo/bin"
+export PYENV_ROOT="$HOME/.pyenv"
+PYENVPATH="$PYENV_ROOT/bin"
 
-export PYENVROOT="$HOME/.pyenv"
-PYENVPATH="$PYENVROOT/bin"
+CARGOPATH="$HOME/.cargo/bin"
 
 export PATH="${PATH}:${CARGOPATH}:${PYENVPATH}"
 
@@ -17,25 +14,49 @@ eval "$(pyenv init --path)"
 # Editor
 [ "$(command -v nvim)" ] && export EDITOR=nvim || export EDITOR=vim
 
-# Lang
-export LC_ALL="en_US.UTF-8"
-
 # Pager
 export PAGER=less
 
 # Ctrl-W backspace word
 export WORDCHARS=""
 
+# Starship
+export STARSHIP_CONFIG=/etc/starship/config.toml
+
+# Zsh
+export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="fg=#111111,bg=#f7ca88"
+
 # FZF
 export FZF_DEFAULT_COMMAND="rg --files --hidden -g '!{node_modules,.git,.venv,.env}'"
-export FZF_DEFAULT_OPTS="--height 50% --layout=reverse"
+export FZF_DEFAULT_OPTS="--height 100% --layout=reverse --scroll-off=5 --prompt='❯ ' --pointer=❯ --marker=* --preview='bat --theme=base16-256 --style=plain --color=always {}' --preview-window=right,border-left"
 
-# Vi-mode
-export ZVM_CURSOR_STYLE_ENABLED=false
-export KEYTIMEOUT=1
+local color00='#181818'
+local color01='#282828'
+local color02='#383838'
+local color03='#585858'
+local color04='#b8b8b8'
+local color05='#d8d8d8'
+local color06='#e8e8e8'
+local color07='#f8f8f8'
+local color08='#ab4642'
+local color09='#dc9656'
+local color0A='#f7ca88'
+local color0B='#a1b56c'
+local color0C='#86c1b9'
+local color0D='#7cafc2'
+local color0E='#ba8baf'
+local color0F='#a16946'
+
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+  --color=bg+:$color01,bg:$color00,spinner:$color0C,hl:$color0D \
+  --color=fg:$color04,header:$color0D,info:$color0A,pointer:$color0C \
+  --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D"
 
 # Java
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Qt
 export QT_QPA_PLATFORMTHEME=gtk2
+
+# Disable DRI3 (xps 13 9510)
+export LIBGL_DRI3_DISABLE=1

@@ -40,10 +40,10 @@ bg("PmenuSbar", colors.gray3)
 bg("PmenuThumb", colors.fg)
 
 bg("Floaterm", colors.bg)
-bg("TelescopeNormal", colors.bg)
-bg("TelescopePreviewNormal", colors.bg)
+-- bg("TelescopeNormal", colors.bg)
+-- bg("TelescopePreviewNormal", colors.bg)
 
-fg_bg("TelescopeBorder", primary, "none")
+-- fg_bg("TelescopeBorder", primary, "none")
 fg_bg("FloatBorder", primary, "none")
 fg_bg("FloatermBorder", primary, "none")
 

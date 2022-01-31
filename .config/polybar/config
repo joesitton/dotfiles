@@ -35,7 +35,6 @@ bottom = true
 
 font-0 = "Fira Sans Condensed:size=12;7"
 font-1 = "Iosevka Custom:size=12;7"
-font-2 = "Iosevka Custom:size=16;9"
 dpi-x = 120
 dpi-y = 120
 
@@ -46,8 +45,8 @@ border-bottom-size = 4
 border-bottom-color = ${colors.background}
 width = 1820
 
-modules-left = logo bspwm 
-modules-center = title 
+modules-left = logo bspwm title 
+modules-center = 
 modules-right = updates weather network volume battery
 
 [bar/time]

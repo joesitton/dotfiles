@@ -11,12 +11,12 @@ rm -f /var/run/user/$UID/bspwm_fifo*
 raise_polybar() { xdo raise $(xdo id -N Polybar); }
 lower_polybar() { xdo lower $(xdo id -N Polybar); }
 
+raise_polybar
+
 while read -r event _ _ wid state status; do
     if [[ "$event" == "node_state" ]]; then
         if [[ "$state $status" == "fullscreen on" ]]; then
             lower_polybar
-        elif [[ "$state $status" == "fullscreen off" ]]; then
-            raise_polybar
         else
             raise_polybar
         fi

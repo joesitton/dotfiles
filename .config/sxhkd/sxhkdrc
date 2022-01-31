@@ -2,15 +2,9 @@
 # wm independent hotkeys
 #
 
-alt + {1-9}
-    bspc desktop -f {1-9}
-
-# alt + Tab
-#     bspc node -f prev.local
-
 # terminal emulator
 super + Return
-    alacritty
+    kitty
 
 # program launcher
 super + space
@@ -25,92 +19,89 @@ super + Escape
 # bspwm hotkeys
 #
 
-# quit/restart bspwm
-super + ctrl + alt + {q,r}
-	bspc {quit,wm -r}
+# restart/quit bspwm
+super + ctrl + alt + {r,q}
+	bspc {wm -r,quit}
 
 # close and kill
 super + {w,q}
     bspc node -{c,k} || \
     bspc node $(xdo id -N Alacritty -a Scratch ).!hidden -g hidden
 
-# alternate between the tiled and monocle layout
-super + m
-	bspc desktop -l next
-
-# swap the current node and the biggest window
-super + g
-	bspc node -s biggest.window.local
-
-# cycle the tree
-super + shift + {d,a}
-    bspc node @/ -C {forward,backward}
+#
+# tree
+#
 
 # equalize and balance
-super + shift + {e,b}
+super + {e,b}
     bspc node @/ -{E,B}
 
 # mirror flip
-super + shift + backslash
+super + backslash
     bspc node @/ -F vertical
 
+# cycle the tree
+super + shift + {comma,period}
+    bspc node @/ -C {backward,forward}
+
 # rotate the tree right or left
-super + r ; {r, l}
-    bspc node @/ -R {90, 270}
+super + r ; {comma,period}
+    bspc node @/ -R {270,90}
 
 #
 # state/flags
 #
 
 # set the window state
-super + {t,shift + t,s,f}
+super + {t, shift + t, f, shift + f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
 # set the node flags
-super + shift + f ; {m,l,s}
-	bspc node -g {marked,locked,sticky}
+# super + shift + f ; {m,l,s}
+# 	bspc node -g {marked,locked,sticky}
 
 # super + shift + f ; m
-    # bspc query -N -n .marked | xargs -I@ bspc node @ -g marked && \
-    # bspc node -g marked && \
-    # dunstify -r 999 -u critical "bspwm" "Marked '$(wname $(pfw))'"
+#     bspc query -N -n .marked | xargs -I@ bspc node @ -g marked && \
+#     bspc node -g marked && \
+#     dunstify -r 999 -u critical "bspwm" "Marked '$(wname $(pfw))'"
 
 #
 # focus/swap
 #
+
+# jump to desktop
+alt + {1-9}
+    bspc desktop -f {1-9}
 
 # focus the node in the given direction
 super + {_, shift} + {h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the next/previous window in the current desktop
-super + {_, shift} + c
-	bspc node -f {next,prev}.local.!hidden.window
+super + {comma,period}
+	bspc node -f {prev,next}.local.!hidden.window
+
+alt + {_, shift} + Tab
+	bspc node -f {prev,next}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
 	bspc desktop -f {prev,next}
-    # dunstify -t 1000 -r 903 bspwm "Desktop $(bspc query -D -d focused --names)"
 
-
-# focus the last node/desktop
-super + Tab
-	bspc desktop -f last.occupied
-
-# insert receptacle
-super + shift + i ; {h,j,k,l}
-    bspc node -p {west,south,north,east} -i
-
-# clear desktop receptacles
-super + shift + i ; c
-    bspc query -N -n .leaf.local.!window | xargs -L1 -I@ bspc node @ -k
+# swap the current node and the biggest window
+super + g
+	bspc node -s biggest.window.local
 
 # send
 super + shift + s ; {1-5}
 	bspc node -d '^{1-5}'
 
 # move
-super + shift + {1-5}
+super + shift + m ; {1-5}
     bspc node -d '^{1-5}' --follow
 
 # move node to preselected area
@@ -118,10 +109,22 @@ super + shift + m ; s
     bspc node $(bspc query -N -n last.marked) -n last.!automatic --follow -t tiled || \
     bspc node -n last.!automatic --follow -t tiled
 
+# focus the last node/desktop
+# super + Tab
+# 	bspc desktop -f last.occupied
+
+# insert receptacle
+# super + shift + i ; {h,j,k,l}
+#     bspc node -p {west,south,north,east} -i
+
+# clear desktop receptacles
+# super + shift + i ; c
+#     bspc query -N -n .leaf.local.!window | xargs -L1 -I@ bspc node @ -k
+
 # move node to receptacle
-super + shift + m ; r
-    bspc node $(bspc query -N -n last.marked) -n $(bspc query -N -n .leaf.local.\!window) --follow -t tiled || \
-    bspc node -n $(bspc query -N -n .leaf.local.\!window)
+# super + shift + m ; r
+#     bspc node $(bspc query -N -n last.marked) -n $(bspc query -N -n .leaf.local.\!window) --follow -t tiled || \
+#     bspc node -n $(bspc query -N -n .leaf.local.\!window)
 
 #
 # preselect
@@ -132,17 +135,13 @@ super + alt + {h,j,k,l}
 	bspc node -p {west,south,north,east}
 
 # preselect the ratio
-super + alt + {1-9}
-	bspc node -o 0.{1-9}
+# super + alt + {1-9}
+# 	bspc node -o 0.{1-9}
 
 # cancel the preselection
 super + alt + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 	# bspc node -p cancel
-
-# cancel the preselection for the focused desktop
-# super + ctrl + shift + space
-# 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
 # move/resize
@@ -169,9 +168,6 @@ XF86MonBrightness{Down,Up}
 #
 # scripts
 #
-
-super + shift + v
-    clipcat-menu
 
 super + p
     scratch

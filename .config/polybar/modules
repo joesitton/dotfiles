@@ -34,10 +34,9 @@ label-empty = %icon%
 label-empty-foreground = ${colors.black5}
 label-empty-padding = 2
 
-# label-monocle = M
-# label-tiled = T
-# label-floating = F
-# label-pseudotiled = P
+label-marked = M
+label-locked = L
+label-sticky = S
 
 [module/title]
 type = internal/xwindow
@@ -87,7 +86,7 @@ type = internal/network
 interface = wlp0s20f3
 interval = 3
 
-label-connected =  
+label-connected =   %essid%
 
 format-connected = <label-connected>
 

@@ -71,3 +71,5 @@ local options = {
 for k, v in pairs(options) do
   vim.o[k] = v
 end
+
+vim.g.python3_host_prog = "$HOME/.config/nvim/.venv/bin/python"

@@ -1,4 +1,4 @@
-.config/nvim/venv
+.config/nvim/.venv
 .config/nvim/.plugins
 .config/nvim/.undodir
 .config/nvim/autoload

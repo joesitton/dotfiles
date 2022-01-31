@@ -87,6 +87,19 @@ require("packer").startup(
       }
 
       use {
+        "fatih/vim-go",
+        ft = "go"
+      }
+
+      use {
+        "ellisonleao/glow.nvim",
+        ft = "markdown",
+        config = [[
+          vim.g.glow_border = "rounded"
+        ]]
+      }
+
+      use {
         "sheerun/vim-polyglot",
         event = "BufReadPost"
       }
@@ -145,12 +158,6 @@ require("packer").startup(
         "rmagatti/auto-session",
         config = [[require("configs.session")]]
       }
-
-      -- use {
-      --   "ggandor/lightspeed.nvim",
-      --   event = "BufReadPost",
-      --   config = [[require("configs.lightspeed")]]
-      -- }
 
       use {
         "phaazon/hop.nvim",

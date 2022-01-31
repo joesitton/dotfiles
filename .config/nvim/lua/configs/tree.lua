@@ -36,7 +36,7 @@ require("nvim-tree").setup(
       enable = true
     },
     view = {
-      width = 25,
+      width = 30,
       auto_resize = true
     },
     git = {

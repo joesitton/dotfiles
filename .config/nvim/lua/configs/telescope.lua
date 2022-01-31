@@ -39,14 +39,14 @@ telescope.setup(
 
 local v = require("vimp")
 
-v.nnoremap("<leader>ff", ":Telescope fd theme=dropdown<CR>")
-v.nnoremap("<leader>ft", ":Telescope live_grep theme=dropdown<CR>")
-v.nnoremap("<leader>fr", ":Telescope frecency theme=dropdown<CR>")
-v.nnoremap("<leader>fm", ":Telescope marks theme=dropdown<CR>")
--- v.nnoremap("<leader>fd", ":Telescope diagnostics theme=dropdown<CR>")
+v.nnoremap("<leader>ff", ":Telescope fd<CR>")
+v.nnoremap("<leader>ft", ":Telescope live_grep<CR>")
+v.nnoremap("<leader>fr", ":Telescope frecency<CR>")
+v.nnoremap("<leader>fm", ":Telescope marks<CR>")
+v.nnoremap("<leader>fg", ":Telescope git_status<CR>")
 
--- v.nnoremap("<leader>ca", ":Telescope lsp_code_actions<CR>")
--- v.xnoremap("<leader>ca", ":Telescope lsp_range_code_actions<CR>")
+v.nnoremap("<leader>ca", ":Telescope lsp_code_actions<CR>")
+v.xnoremap("<leader>ca", ":Telescope lsp_range_code_actions<CR>")
 
--- v.nnoremap("<leader>gd", ":Telescope lsp_definitions theme=dropdown<CR>")
--- v.nnoremap("<leader>gr", ":Telescope lsp_references theme=dropdown<CR>")
+-- v.nnoremap("<leader>gd", ":Telescope lsp_definitions<CR>")
+-- v.nnoremap("<leader>gr", ":Telescope lsp_references<CR>")

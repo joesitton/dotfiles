@@ -1,43 +1,34 @@
-# Zinit
-declare -A ZINIT
-export ZINIT["HOME_DIR"]=/etc/zinit
+# Antigen
+export ADOTDIR=/etc/antigen
 
-if [ ! -f /etc/zinit/zinit.zsh ]; then
-  git clone https://github.com/zdharma/zinit.git /etc/zinit
+if [ ! -f /etc/antigen/antigen.zsh ]; then
+  curl -L git.io/antigen > /etc/antigen/antigen.zsh
 fi
 
-source /etc/zinit/zinit.zsh
+source /etc/antigen/antigen.zsh
 
-# Shell
-zinit ice lucid atload'sh scripts/base16-default-dark.sh'
-zinit light chriskempson/base16-shell
+antigen bundles <<EOF
+      zdharma-continuum/fast-syntax-highlighting
+      zsh-users/zsh-history-substring-search
+      zsh-users/zsh-autosuggestions
+      zsh-users/zsh-completions
+      le0me55i/zsh-extract
+      mdumitru/fancy-ctrl-z
+      jeffreytse/zsh-vi-mode
+      ael-code/zsh-colored-man-pages
+      trapd00r/LS_COLORS
+EOF
 
-# LS_COLORS
-zinit ice lucid atclone"dircolors -b LS_COLORS > c.zsh" atpull"%atclone" pick"c.zsh" nocompile"!"
-zinit light trapd00r/LS_COLORS
-
-# Prompt
-zinit ice lucid from"gh-r" as"program" atload'eval $(starship init zsh)'
-zinit load starship/starship
-
-# Plugins
-zinit lucid wait"1" light-mode for \
-      @zsh-users/zsh-autosuggestions \
-      @zsh-users/zsh-history-substring-search \
-      @zdharma/fast-syntax-highlighting \
-      depth"1" @jeffreytse/zsh-vi-mode \
-      @ael-code/zsh-colored-man-pages \
-      @le0me55i/zsh-extract \
-      @mdumitru/fancy-ctrl-z \
-      @mdarocha/zsh-windows-title
-
-# Zoxide
-zinit ice lucid from"gh-r" as"program" atload'eval "$(zoxide init zsh)"' atpull"%atclone" mv"zoxide* -> zoxide" pick"zoxide/zoxide"
-zinit load ajeetdsouza/zoxide
+antigen apply
 
 # Zstyles
 zstyle ":completion:*" menu select
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+
+zstyle ':completion:*' matcher-list '' \
+  'm:{a-z\-}={A-Z\_}' \
+  'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
+  'r:|?=** m:{a-z\-}={A-Z\_}'
+
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # Autcomplete
@@ -58,9 +49,9 @@ bindkey "^[[1;5D" backward-word
 
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
-# Edit commands in vim
 autoload -U edit-command-line
 zle -N edit-command-line
+bindkey "^X^E" edit-command-line
 
 # History
 SAVEHIST=10000
@@ -69,18 +60,8 @@ HISTFILE=$HOME/.zsh_history
 
 # Options
 setopt auto_cd
-
 setopt auto_pushd
 setopt pushd_ignore_dups
-
-setopt auto_menu
-
-setopt complete_in_word
-
-setopt always_to_end
-
-setopt bad_pattern
-setopt extended_glob
 
 setopt append_history
 setopt extended_history
@@ -92,15 +73,26 @@ setopt hist_reduce_blanks
 setopt hist_ignore_space
 setopt hist_verify
 
+setopt auto_menu
+
+setopt complete_in_word
+
+setopt always_to_end
+
+setopt bad_pattern
+
+setopt extended_glob
+
 setopt interactive_comments
 
 setopt auto_continue
 
-unsetopt flowcontrol
-unsetopt menu_complete
+setopt mark_dirs
+
+setopt bang_hist
 
 source /etc/zsh/zaliases
 
 eval "$(pyenv init -)"
-
-# vim: ft=zsh
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
