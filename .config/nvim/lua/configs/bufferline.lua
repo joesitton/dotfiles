@@ -12,7 +12,10 @@ v.nnoremap("<C-Right>", ":BufferLineMoveNext<CR>")
 require("bufferline").setup(
   {
     options = {
-      offsets = {{filetype = "NvimTree", text = "", padding = 1}},
+      offsets = {
+        {filetype = "NvimTree", text = "", padding = 1},
+        {filetype = "CHADTree", text = "", padding = 0}
+      },
       buffer_close_icon = "",
       modified_icon = "",
       left_trunc_marker = "",

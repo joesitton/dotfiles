@@ -1,12 +1,16 @@
-require("hop").setup()
+require("hop").setup(
+  {
+    teasing = false
+  }
+)
 
 local v = require("vimp")
 
-v.bind("no", "f", ":HopChar1CurrentLineAC<CR>")
-v.bind("no", "F", ":HopChar1CurrentLineBC<CR>")
+v.bind({"silent"}, "no", "f", ":HopChar1CurrentLineAC<CR>")
+v.bind({"silent"}, "no", "F", ":HopChar1CurrentLineBC<CR>")
 
-v.nnoremap("s", ":HopChar2AC<CR>")
-v.nnoremap("S", ":HopChar2BC<CR>")
+v.nnoremap({"silent"}, "s", ":HopChar2AC<CR>")
+v.nnoremap({"silent"}, "S", ":HopChar2BC<CR>")
 
 v.nnoremap(
   {"silent"},
@@ -29,5 +33,5 @@ v.onoremap(
   ":lua require('hop').hint_char1({direction = require('hop.hint').HintDirection.BEFORE_CURSOR, inclusive_jump = true})<CR>"
 )
 
-v.bind("no", "J", ":HopLineAC<CR>")
-v.bind("no", "K", ":HopLineBC<CR>")
+v.bind({"silent"}, "no", "J", ":HopLineAC<CR>")
+v.bind({"silent"}, "no", "K", ":HopLineBC<CR>")

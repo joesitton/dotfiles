@@ -35,7 +35,7 @@ vim.cmd "packadd packer.nvim"
 require("packer").startup(
   {
     function(use)
-      -- Core
+      -- {{{ Core
 
       use {
         "wbthomason/packer.nvim"
@@ -57,13 +57,21 @@ require("packer").startup(
         "tami5/sqlite.lua"
       }
 
-      -- Colorschemes
+      -- }}}
+
+      -- {{{ Colorschemes
 
       use {
         "RRethy/nvim-base16"
       }
 
-      -- Filetypes
+      use {
+        "folke/lsp-colors.nvim"
+      }
+
+      -- }}}
+
+      -- {{{ Filetype Specific
 
       use {
         "lervag/vimtex",
@@ -77,8 +85,8 @@ require("packer").startup(
 
       use {
         "s3rvac/vim-syntax-yara",
-        ft = "yara",
-        config = [[autocmd BufNewFile,BufRead *.yar,*.yara setlocal filetype=yara]]
+        config = vim.cmd [[autocmd BufNewFile,BufRead *.yar,*.yara setlocal filetype=yara]],
+        ft = "yara"
       }
 
       use {
@@ -93,10 +101,8 @@ require("packer").startup(
 
       use {
         "ellisonleao/glow.nvim",
-        ft = "markdown",
-        config = [[
-          vim.g.glow_border = "rounded"
-        ]]
+        config = [[ vim.g.glow_border = "rounded" ]],
+        ft = "markdown"
       }
 
       use {
@@ -104,34 +110,29 @@ require("packer").startup(
         event = "BufReadPost"
       }
 
-      -- Functionality
+      -- }}}
+
+      -- {{{ Functionality
 
       use {
         "tpope/vim-surround"
       }
 
       use {
-        "famiu/bufdelete.nvim"
+        "famiu/bufdelete.nvim",
+        cmd = {"Bdelete", "Bwipeout"}
       }
 
       use {
         "jghauser/mkdir.nvim",
-        config = [[require("mkdir")]]
+        config = [[require("mkdir")]],
+        event = "BufWritePre"
       }
 
       use {
         "mhartington/formatter.nvim",
-        cmd = {"Format", "FormatWrite"},
-        config = [[require("configs.formatter")]]
-      }
-
-      use {
-        "folke/lsp-colors.nvim"
-      }
-
-      use {
-        "folke/trouble.nvim",
-        config = [[require("configs.trouble")]]
+        config = [[require("configs.formatter")]],
+        cmd = {"Format", "FormatWrite"}
       }
 
       use {
@@ -150,83 +151,100 @@ require("packer").startup(
       }
 
       use {
-        "windwp/nvim-autopairs",
-        config = [[require("nvim-autopairs").setup()]]
-      }
-
-      use {
         "rmagatti/auto-session",
         config = [[require("configs.session")]]
       }
 
       use {
         "phaazon/hop.nvim",
+        config = [[require("configs.hop")]],
         event = "BufReadPost",
-        config = [[require("configs.hop")]]
+        keys = {"f", "F", "s", "S", "t", "T", "J", "K"}
       }
 
       use {
-        "jdhao/better-escape.vim",
+        "max397574/better-escape.nvim",
+        config = [[require("better_escape").setup()]],
         event = "InsertEnter"
       }
 
       use {
         "b3nj5m1n/kommentary",
-        event = "BufReadPost",
-        config = [[require("configs.kommentary")]]
+        config = [[require("configs.kommentary")]],
+        event = "VimEnter"
+      }
+
+      use {
+        "ThePrimeagen/harpoon",
+        requires = {
+          "nvim-telescope/telescope.nvim"
+        },
+        config = [[
+          require("harpoon").setup()
+          require("telescope").load_extension("harpoon")
+        ]]
       }
 
       use {
         "kyazdani42/nvim-tree.lua",
         setup = vim.api.nvim_set_keymap("n", "<leader>.", ":NvimTreeToggle<CR>", {}),
-        config = [[require("configs.tree")]]
+        config = [[require("configs.tree")]],
+        cmd = {"NvimTreeToggle"}
       }
+
+      -- use {
+      --   "https://gitlab.com/yorickpeterse/nvim-window",
+      --   setup = vim.api.nvim_set_keymap("n", "<leader>pw", ":lua require('nvim-window').pick()<CR>", {}),
+      --   config = [[require("nvim-window").setup({normal_hl = "WindowPicker", hint_hl = "Search", border = "none"})]]
+      -- }
+
+      -- }}}
+
+      -- {{{ Appearance
 
       use {
-        "https://gitlab.com/yorickpeterse/nvim-window",
-        setup = vim.api.nvim_set_keymap("n", "<leader>pw", ":lua require('nvim-window').pick()<CR>", {}),
-        config = [[require("nvim-window").setup({normal_hl = "WindowPicker", hint_hl = "Search", border = "none"})]]
+        "stevearc/dressing.nvim",
+        config = [[require("configs.dressing")]]
       }
-
-      -- Appearance
 
       use {
         "kyazdani42/nvim-web-devicons"
       }
 
       use {
-        "chentau/marks.nvim",
-        config = [[require("configs.marks")]]
-      }
-
-      use {
-        "norcalli/nvim-colorizer.lua",
-        event = "BufReadPost",
-        config = [[require("colorizer").setup()]]
-      }
-
-      use {
-        "lukas-reineke/indent-blankline.nvim",
-        event = "BufReadPost",
-        config = [[require("configs.indentline")]]
-      }
-
-      use {
-        "lewis6991/gitsigns.nvim",
-        event = "BufReadPost",
-        config = [[require("configs.gitsigns")]]
-      }
-
-      use {
         "akinsho/bufferline.nvim",
-        event = "VimEnter",
-        config = [[require("configs.bufferline")]]
+        config = [[require("configs.bufferline")]],
+        event = "VimEnter"
       }
 
       use {
         "nvim-lualine/lualine.nvim",
-        event = "VimEnter",
-        config = [[require("configs.lualine")]]
+        config = [[require("configs.lualine")]],
+        event = "VimEnter"
+      }
+
+      use {
+        "chentau/marks.nvim",
+        config = [[require("configs.marks")]],
+        event = "BufReadPost"
+      }
+
+      use {
+        "norcalli/nvim-colorizer.lua",
+        config = [[require("colorizer").setup()]],
+        event = "BufReadPost"
+      }
+
+      use {
+        "lukas-reineke/indent-blankline.nvim",
+        config = [[require("configs.indentline")]],
+        event = "BufReadPost"
+      }
+
+      use {
+        "lewis6991/gitsigns.nvim",
+        config = [[require("configs.gitsigns")]],
+        event = "BufReadPost"
       }
 
       use {
@@ -236,41 +254,76 @@ require("packer").startup(
       }
 
       use {
-        "haya14busa/incsearch.vim",
-        event = "BufReadPost",
-        config = [[require("configs.incsearch")]]
+        "kevinhwang91/nvim-hlslens",
+        config = [[require("configs.hlslens")]],
+        keys = {"n", "N", "#", "*", "g#", "g*"}
       }
 
-      -- Commands
+      use {
+        "petertriho/nvim-scrollbar",
+        requires = {"kevinhwang91/nvim-hlslens"},
+        config = [[require("configs.scrollbar")]],
+        event = "BufReadPost"
+      }
+
+      use {
+        "RRethy/vim-illuminate",
+        config = [[require("configs.illuminate")]],
+        event = "BufReadPost"
+      }
+
+      use {
+        "beauwilliams/focus.nvim",
+        config = [[require("configs.focus")]],
+        event = "BufReadPost"
+      }
+
+      use {
+        "luukvbaal/stabilize.nvim",
+        config = [[require("stabilize").setup()]],
+        event = "BufReadPost"
+      }
+
+      use {
+        "anuvyklack/pretty-fold.nvim",
+        config = [[require("configs.prettyfold")]],
+        event = "BufReadPost"
+      }
+
+      -- }}}
+
+      -- {{{ Commands
 
       use {
         "dstein64/vim-startuptime",
         cmd = "StartupTime"
       }
 
-      use {
-        "sindrets/winshift.nvim",
-        cmd = "WinShift",
-        setup = function()
-          vim.api.nvim_set_keymap("n", "<C-W>m", "<Cmd>WinShift<CR>", {})
-        end,
-        config = [[require("winshift").setup()]]
-      }
+      -- use {
+      --   "sindrets/winshift.nvim",
+      --   setup = function()
+      --     vim.api.nvim_set_keymap("n", "<C-W>m", "<Cmd>WinShift<CR>", {})
+      --   end,
+      --   config = [[require("winshift").setup()]],
+      --   cmd = "WinShift",
+      -- }
 
       use {
         "folke/zen-mode.nvim",
-        cmd = "ZenMode",
         setup = vim.api.nvim_set_keymap("n", "<F2>", ":ZenMode<CR>", {}),
-        config = [[require("configs.zenmode")]]
+        config = [[require("configs.zenmode")]],
+        cmd = "ZenMode"
       }
 
       use {
         "voldikss/vim-floaterm",
-        cmd = "FloatermToggle",
-        setup = [[require("configs.floaterm")]]
+        setup = [[require("configs.floaterm")]],
+        cmd = "FloatermToggle"
       }
 
-      -- Completion
+      -- }}}
+
+      -- {{{ Completion
 
       use {
         "hrsh7th/nvim-cmp",
@@ -306,7 +359,15 @@ require("packer").startup(
         config = [[require("configs.cmp")]]
       }
 
-      -- LSP
+      -- }}}
+
+      -- {{{ LSP
+
+      use {
+        "j-hui/fidget.nvim",
+        config = [[require("configs.fidget")]],
+        event = "BufReadPost"
+      }
 
       use {
         "williamboman/nvim-lsp-installer"
@@ -317,7 +378,9 @@ require("packer").startup(
         config = [[require("configs.lsp")]]
       }
 
-      -- Treesitter
+      -- }}}
+
+      -- {{{ Treesitter
 
       use {
         "nvim-treesitter/nvim-treesitter",
@@ -336,19 +399,27 @@ require("packer").startup(
               ["fullwidth"] = 1
             }
           ]]
+          },
+          {
+            "windwp/nvim-autopairs",
+            config = [[require("nvim-autopairs").setup()]]
           }
         },
         run = {":TSUpdate"},
         config = [[require("configs.treesitter")]]
       }
+
+      -- }}}
     end,
     config = {
       compile_path = fn.stdpath("data") .. "/site/plugin/compiled_packer.lua",
       display = {
         open_fn = function()
-          return require("packer.util").float({border = "single"})
+          return require("packer.util").float({border = "rounded"})
         end
       }
     }
   }
 )
+
+-- vim: foldmethod=marker

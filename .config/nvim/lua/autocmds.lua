@@ -10,7 +10,7 @@ augroup END
 cmd [[ 
 augroup no_repeat_comment
   autocmd!
-  autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+  autocmd BufNewFile,BufReadPost * setlocal formatoptions-=cro
 augroup END
 ]]
 
@@ -18,13 +18,6 @@ cmd [[
 augroup tree_pane
   autocmd!
   autocmd BufEnter NvimTree setlocal sidescrolloff=0
-augroup END
-]]
-
-cmd [[
-augroup trouble
-  autocmd!
-  autocmd BufEnter Trouble setlocal scrolloff=1
 augroup END
 ]]
 
@@ -39,6 +32,27 @@ cmd [[
 augroup highlight_yank
   autocmd!
   autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="Search", timeout=500}
+augroup END
+]]
+
+cmd [[
+augroup illuminate_hl
+  autocmd!
+  autocmd VimEnter * hi illuminatedWord gui=underline | hi illuminatedCurWord gui=none
+augroup END
+]]
+
+cmd [[
+augroup cursor_hold_diagnostics
+  autocmd!
+  autocmd CursorHold,CursorMoved * lua vim.diagnostic.open_float()
+augroup END
+]]
+
+cmd [[
+augroup auto_clear_hlslens
+  autocmd!
+  autocmd InsertEnter * :nohlsearch
 augroup END
 ]]
 

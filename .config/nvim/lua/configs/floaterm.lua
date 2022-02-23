@@ -1,9 +1,11 @@
 local g = vim.g
 
-g.floaterm_width = 0.8
-g.floaterm_height = 0.8
+g.floaterm_width = 0.99
+g.floaterm_height = 0.6
 g.floaterm_autoclose = 2
-g.floaterm_opener = 'edit'
+g.floaterm_opener = "edit"
+g.floaterm_title = ""
+g.floaterm_position = "bottom"
 
 local v = require("vimp")
 

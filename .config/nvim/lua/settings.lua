@@ -3,6 +3,7 @@ vim.cmd "colo base16-default-dark"
 local options = {
   -- Max column for syntax
   synmaxcol = 500,
+  colorcolumn = "99999",
   -- Clipboard
   -- clipboard = "unnamedplus",
   -- Persistent undo
@@ -29,7 +30,7 @@ local options = {
   -- Searching
   smartcase = true,
   ignorecase = true,
-  hlsearch = false,
+  hlsearch = true,
   incsearch = true,
   -- Timeouts
   updatetime = 100,
@@ -65,11 +66,12 @@ local options = {
   backup = false,
   writebackup = false,
   sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal",
-  completeopt = "menu,menuone,noselect"
+  completeopt = "menu,menuone,noselect",
+  guicursor = "n-v-o:block,c-i-ci-ve-sm:ver25,r-cr:hor25"
 }
 
 for k, v in pairs(options) do
   vim.o[k] = v
 end
 
-vim.g.python3_host_prog = "$HOME/.config/nvim/.venv/bin/python"
+vim.g.python3_host_prog = "/home/joe/.config/nvim/.env/bin/python"

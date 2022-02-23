@@ -2,8 +2,8 @@ local g = vim.g
 
 g.nvim_tree_indent_markers = 1
 g.nvim_tree_add_trailing = 1
-g.nvim_tree_git_hl = 1
-
+g.nvim_tree_highlight_opened_files = 1
+g.nvim_tree_git_hl = 0
 g.nvim_tree_icons = {
   default = "",
   symlink = "",
@@ -33,7 +33,17 @@ require("nvim-tree").setup(
     hijack_cursor = true,
     update_cwd = true,
     diagnostics = {
-      enable = true
+      enable = true,
+      icons = {
+        hint = " ",
+        info = " ",
+        warning = " ",
+        error = " "
+      }
+    },
+    update_focused_file = {
+      enable = true,
+      ignore_list = {}
     },
     view = {
       width = 30,
@@ -45,7 +55,7 @@ require("nvim-tree").setup(
     },
     filters = {
       dotfiles = false,
-      custom = {".git", ".cache", "node_modules", "__pycache__", ".env", "venv"}
+      custom = {"node_modules", "__pycache__", ".git", ".cache", ".env", ".venv", "env", "venv"}
     }
   }
 )

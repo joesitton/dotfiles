@@ -22,18 +22,18 @@ cmp.setup(
         }
       )
     },
-    documentation = {
-      border = {
-        {"╭", "FloatBorder"},
-        {"─", "FloatBorder"},
-        {"╮", "FloatBorder"},
-        {"│", "FloatBorder"},
-        {"╯", "FloatBorder"},
-        {"─", "FloatBorder"},
-        {"╰", "FloatBorder"},
-        {"│", "FloatBorder"}
-      }
-    },
+    -- documentation = {
+    --   border = {
+    --     {"╭", "FloatBorder"},
+    --     {"─", "FloatBorder"},
+    --     {"╮", "FloatBorder"},
+    --     {"│", "FloatBorder"},
+    --     {"╯", "FloatBorder"},
+    --     {"─", "FloatBorder"},
+    --     {"╰", "FloatBorder"},
+    --     {"│", "FloatBorder"}
+    --   }
+    -- },
     snippet = {
       expand = function(args)
         luasnip.lsp_expand(args.body)
