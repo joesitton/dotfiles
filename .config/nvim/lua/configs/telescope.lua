@@ -11,7 +11,18 @@ telescope.setup(
     defaults = {
       prompt_prefix = "❯ ",
       selection_caret = "  ",
-      scroll_strategy = "cycle",
+      scroll_strategy = "limit",
+      sort_strategy = "descending",
+      layout_strategy = "bottom_pane",
+      layout_config = {
+        bottom_pane = {
+          anchor = "SW",
+          height = 0.52,
+          width = 1,
+          prompt_position = "bottom"
+        }
+      },
+      border = true,
       mappings = {
         i = {
           ["<C-j>"] = actions.move_selection_next,

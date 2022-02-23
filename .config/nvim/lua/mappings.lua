@@ -29,3 +29,7 @@ v.vnoremap(">", ">gv")
 
 v.xnoremap("[e", ":m '<-2<CR>gv=gv")
 v.xnoremap("]e", ":m '>+1<CR>gv=gv")
+
+vim.cmd [[
+command W w !sudo tee % > dev/null
+]]

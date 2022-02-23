@@ -22,18 +22,19 @@ cmp.setup(
         }
       )
     },
-    -- documentation = {
-    --   border = {
-    --     {"╭", "FloatBorder"},
-    --     {"─", "FloatBorder"},
-    --     {"╮", "FloatBorder"},
-    --     {"│", "FloatBorder"},
-    --     {"╯", "FloatBorder"},
-    --     {"─", "FloatBorder"},
-    --     {"╰", "FloatBorder"},
-    --     {"│", "FloatBorder"}
-    --   }
-    -- },
+    documentation = {
+      winhighlight = "NormalFloat:DocMenu,FloatBorder:DocMenu"
+      --   border = {
+      --     {"╭", "FloatBorder"},
+      --     {"─", "FloatBorder"},
+      --     {"╮", "FloatBorder"},
+      --     {"│", "FloatBorder"},
+      --     {"╯", "FloatBorder"},
+      --     {"─", "FloatBorder"},
+      --     {"╰", "FloatBorder"},
+      --     {"│", "FloatBorder"}
+      --   }
+    },
     snippet = {
       expand = function(args)
         luasnip.lsp_expand(args.body)
@@ -91,6 +92,28 @@ cmp.setup(
         cmp.config.compare.order
       }
     }
+  }
+)
+
+cmp.setup.cmdline(
+  "/",
+  {
+    sources = cmp.config.sources(
+      {
+        {name = "buffer"}
+      }
+    )
+  }
+)
+
+cmp.setup.cmdline(
+  "?",
+  {
+    sources = cmp.config.sources(
+      {
+        {name = "buffer"}
+      }
+    )
   }
 )
 

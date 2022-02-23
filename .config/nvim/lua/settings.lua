@@ -30,7 +30,7 @@ local options = {
   -- Searching
   smartcase = true,
   ignorecase = true,
-  hlsearch = true,
+  hlsearch = false,
   incsearch = true,
   -- Timeouts
   updatetime = 100,

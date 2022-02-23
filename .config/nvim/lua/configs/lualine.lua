@@ -4,32 +4,32 @@ local base16_theme = {
   normal = {
     a = {bg = colors.blue, fg = colors.bg, gui = "bold"},
     b = {bg = colors.gray4, fg = colors.fg},
-    c = {bg = colors.gray3, fg = colors.fg}
+    c = {bg = colors.dark_black, fg = colors.fg}
   },
   insert = {
     a = {bg = colors.green, fg = colors.bg, gui = "bold"},
     b = {bg = colors.gray4, fg = colors.fg},
-    c = {bg = colors.gray3, fg = colors.fg}
+    c = {bg = colors.dark_black, fg = colors.fg}
   },
   visual = {
     a = {bg = colors.orange, fg = colors.bg, gui = "bold"},
     b = {bg = colors.gray4, fg = colors.fg},
-    c = {bg = colors.gray3, fg = colors.fg}
+    c = {bg = colors.dark_black, fg = colors.fg}
   },
   replace = {
     a = {bg = colors.red, fg = colors.bg, gui = "bold"},
     b = {bg = colors.gray4, fg = colors.fg},
-    c = {bg = colors.gray3, fg = colors.fg}
+    c = {bg = colors.dark_black, fg = colors.fg}
   },
   command = {
     a = {bg = colors.purple, fg = colors.bg, gui = "bold"},
     b = {bg = colors.gray4, fg = colors.fg},
-    c = {bg = colors.gray3, fg = colors.fg}
+    c = {bg = colors.dark_black, fg = colors.fg}
   },
   inactive = {
-    a = {bg = colors.black, fg = colors.gray7, gui = "bold"},
-    b = {bg = colors.black, fg = colors.gray7},
-    c = {bg = colors.black, fg = colors.gray7}
+    a = {bg = colors.dark_black, fg = colors.gray7, gui = "bold"},
+    b = {bg = colors.dark_black, fg = colors.gray7},
+    c = {bg = colors.dark_black, fg = colors.gray7}
   }
 }
 
@@ -41,7 +41,7 @@ require("lualine").setup(
       always_divide_middle = true,
       component_separators = {left = "", right = ""},
       section_separators = {left = "", right = ""},
-      disabled_filetypes = {"NvimTree", "Trouble", "Floaterm", "minimap"}
+      disabled_filetypes = {"NvimTree", "Trouble", "FTerm"}
     },
     sections = {
       lualine_a = {"mode"},

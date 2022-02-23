@@ -35,27 +35,6 @@ augroup highlight_yank
 augroup END
 ]]
 
-cmd [[
-augroup illuminate_hl
-  autocmd!
-  autocmd VimEnter * hi illuminatedWord gui=underline | hi illuminatedCurWord gui=none
-augroup END
-]]
-
-cmd [[
-augroup cursor_hold_diagnostics
-  autocmd!
-  autocmd CursorHold,CursorMoved * lua vim.diagnostic.open_float()
-augroup END
-]]
-
-cmd [[
-augroup auto_clear_hlslens
-  autocmd!
-  autocmd InsertEnter * :nohlsearch
-augroup END
-]]
-
 cmd(
   [[
 augroup config_update

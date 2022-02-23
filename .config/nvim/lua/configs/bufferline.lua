@@ -5,6 +5,7 @@ v.nnoremap("[b", ":BufferLineCyclePrev<CR>")
 v.nnoremap("]b", ":BufferLineCycleNext<CR>")
 v.nnoremap("<leader>bd", ":Bdelete<CR>")
 v.nnoremap("<leader>bD", ":Bdelete!<CR>")
+v.nnoremap("<leader>bs", ":BufferLineSortByTabs<CR>")
 v.nnoremap("<leader>pb", ":BufferLinePick<CR>")
 v.nnoremap("<C-Left>", ":BufferLineMovePrev<CR>")
 v.nnoremap("<C-Right>", ":BufferLineMoveNext<CR>")
@@ -65,7 +66,7 @@ require("bufferline").setup(
       -- fill
       fill = {
         guifg = colors.black,
-        guibg = colors.black
+        guibg = colors.dark_black
       },
       -- indicator
       indicator_selected = {

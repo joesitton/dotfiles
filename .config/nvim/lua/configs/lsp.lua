@@ -17,7 +17,7 @@ local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protoco
 local handlers = {}
 
 local on_attach = function(client)
-  require("illuminate").on_attach(client)
+  -- require("illuminate").on_attach(client)
 end
 
 local function setup_server(name)

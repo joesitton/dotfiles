@@ -188,8 +188,7 @@ require("packer").startup(
       use {
         "kyazdani42/nvim-tree.lua",
         setup = vim.api.nvim_set_keymap("n", "<leader>.", ":NvimTreeToggle<CR>", {}),
-        config = [[require("configs.tree")]],
-        cmd = {"NvimTreeToggle"}
+        config = [[require("configs.tree")]]
       }
 
       -- use {
@@ -253,24 +252,11 @@ require("packer").startup(
         keys = {"<C-d>", "<C-u>"}
       }
 
-      use {
-        "kevinhwang91/nvim-hlslens",
-        config = [[require("configs.hlslens")]],
-        keys = {"n", "N", "#", "*", "g#", "g*"}
-      }
-
-      use {
-        "petertriho/nvim-scrollbar",
-        requires = {"kevinhwang91/nvim-hlslens"},
-        config = [[require("configs.scrollbar")]],
-        event = "BufReadPost"
-      }
-
-      use {
-        "RRethy/vim-illuminate",
-        config = [[require("configs.illuminate")]],
-        event = "BufReadPost"
-      }
+      -- use {
+      --   "RRethy/vim-illuminate",
+      --   config = [[require("configs.illuminate")]],
+      --   event = "BufReadPost"
+      -- }
 
       use {
         "beauwilliams/focus.nvim",
@@ -316,9 +302,8 @@ require("packer").startup(
       }
 
       use {
-        "voldikss/vim-floaterm",
-        setup = [[require("configs.floaterm")]],
-        cmd = "FloatermToggle"
+        "numToStr/FTerm.nvim",
+        config = [[require("configs.term")]]
       }
 
       -- }}}
