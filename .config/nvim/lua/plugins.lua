@@ -122,7 +122,6 @@ require("packer").startup(
         "famiu/bufdelete.nvim",
         cmd = {"Bdelete", "Bwipeout"}
       }
-
       use {
         "jghauser/mkdir.nvim",
         config = [[require("mkdir")]],
@@ -158,8 +157,7 @@ require("packer").startup(
       use {
         "phaazon/hop.nvim",
         config = [[require("configs.hop")]],
-        event = "BufReadPost",
-        keys = {"f", "F", "s", "S", "t", "T", "J", "K"}
+        event = "BufReadPost"
       }
 
       use {
@@ -174,16 +172,16 @@ require("packer").startup(
         event = "VimEnter"
       }
 
-      use {
-        "ThePrimeagen/harpoon",
-        requires = {
-          "nvim-telescope/telescope.nvim"
-        },
-        config = [[
-          require("harpoon").setup()
-          require("telescope").load_extension("harpoon")
-        ]]
-      }
+      -- use {
+      --   "ThePrimeagen/harpoon",
+      --   requires = {
+      --     "nvim-telescope/telescope.nvim"
+      --   },
+      --   config = [[
+      --     require("harpoon").setup()
+      --     require("telescope").load_extension("harpoon")
+      --   ]]
+      -- }
 
       use {
         "kyazdani42/nvim-tree.lua",

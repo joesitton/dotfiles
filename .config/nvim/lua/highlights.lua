@@ -91,7 +91,7 @@ fg_bg("TelescopeResultsBorder", telescope_bg, telescope_bg)
 
 bg("TelescopePromptNormal", telescope_bg)
 fg_bg("TelescopePromptTitle", telescope_bg, telescope_bg)
-cmd("hi TelescopePromptPrefix gui=bold guifg=" .. colors.green .. " guibg=" .. telescope_bg)
+cmd("hi TelescopePromptPrefix gui=bold guifg=" .. colors.yellow .. " guibg=" .. telescope_bg)
 fg_bg("TelescopePromptBorder", telescope_bg, telescope_bg)
 
 fg_bg("TelescopeResultsLineNr", linenr, "none")
