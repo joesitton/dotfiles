@@ -41,7 +41,7 @@ require("lualine").setup(
       always_divide_middle = true,
       component_separators = {left = "", right = ""},
       section_separators = {left = "", right = ""},
-      disabled_filetypes = {"NvimTree", "Trouble", "FTerm"}
+      disabled_filetypes = {"NvimTree", "Trouble", "ToggleTerm"}
     },
     sections = {
       lualine_a = {"mode"},

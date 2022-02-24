@@ -15,9 +15,9 @@ augroup END
 ]]
 
 cmd [[
-augroup tree_pane
+augroup fix_tree_pos
   autocmd!
-  autocmd BufEnter NvimTree setlocal sidescrolloff=0
+  autocmd BufEnter NvimTree execute "normal! 0"
 augroup END
 ]]
 
@@ -25,6 +25,13 @@ cmd [[
 augroup auto_format
   autocmd!
   autocmd BufWritePost * silent! FormatWrite
+augroup END
+]]
+
+cmd [[
+augroup colorizer
+  autocmd!
+  autocmd BufReadPost * ColorizerAttachToBuffer
 augroup END
 ]]
 

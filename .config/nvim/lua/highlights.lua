@@ -51,6 +51,7 @@ local cursorline_bg = colors.black
 
 bg("CursorLine", cursorline_bg)
 fg_bg("CursorLineNR", colors.fg, column_bg)
+bg("Visual", colors.gray3)
 
 -- Treesitter
 
@@ -96,7 +97,7 @@ fg_bg("TelescopePromptBorder", telescope_bg, telescope_bg)
 fg_bg("TelescopeResultsLineNr", linenr, "none")
 
 cmd("hi! TelescopeSelection gui=none guifg=" .. pmenu_sel_fg .. " guibg=" .. cursorline_bg)
-cmd("hi! TelescopeSelectionCaret gui=bold guifg=" .. colors.yellow .. " guibg=" .. cursorline_bg)
+cmd("hi! TelescopeSelectionCaret gui=none guifg=" .. colors.yellow .. " guibg=" .. cursorline_bg)
 
 cmd("hi! link TelescopeMatching CmpItemAbbrMatch")
 cmd("hi! link TelescopePreviewLine Search")
@@ -128,11 +129,6 @@ fg("IndentBlanklineChar", indent_marker_fg)
 -- Dev Icons
 
 fg("DevIconDockerfile", colors.blue)
-
--- Bufferline
-
-fg_bg("BufferLineTab", colors.gray5, colors.dark_black)
-fg_bg("BufferLineTabSelected", primary, colors.bg)
 
 -- Marks
 

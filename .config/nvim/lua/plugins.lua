@@ -231,7 +231,7 @@ require("packer").startup(
       use {
         "norcalli/nvim-colorizer.lua",
         config = [[require("colorizer").setup()]],
-        event = "BufReadPost"
+        event = "BufReadPre"
       }
 
       use {
@@ -302,7 +302,7 @@ require("packer").startup(
       }
 
       use {
-        "numToStr/FTerm.nvim",
+        "akinsho/toggleterm.nvim",
         config = [[require("configs.term")]]
       }
 

@@ -1,3 +1,4 @@
+.config/nvim/.env
 .config/nvim/.venv
 .config/nvim/.plugins
 .config/nvim/.undodir

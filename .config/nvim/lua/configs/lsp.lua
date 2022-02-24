@@ -71,6 +71,7 @@ local v = require("vimp")
 
 v.nnoremap({"silent"}, "]d", ":lua vim.diagnostic.goto_next()<CR>")
 v.nnoremap({"silent"}, "[d", ":lua vim.diagnostic.goto_prev()<CR>")
+v.nnoremap({"silent"}, "H", ":lua vim.diagnostic.open_float()<CR>")
 
 v.nnoremap({"silent"}, "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>")
 v.xnoremap({"silent"}, "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>")

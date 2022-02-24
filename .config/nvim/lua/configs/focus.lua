@@ -2,6 +2,6 @@ require("focus").setup(
   {
     signcolumn = false,
     cursorline = false,
-    excluded_filetypes = {"NvimTree", "Telescope", "FTerm"}
+    excluded_filetypes = {"NvimTree", "Telescope", "ToggleTerm", "help"}
   }
 )

@@ -32,8 +32,10 @@ require("nvim-tree").setup(
   {
     hijack_cursor = true,
     update_cwd = true,
+    auto_close = true,
     diagnostics = {
       enable = true,
+      show_on_dirs = true,
       icons = {
         hint = " ",
         info = " ",
@@ -43,11 +45,19 @@ require("nvim-tree").setup(
     },
     update_focused_file = {
       enable = false,
+      update_cwd = true,
       ignore_list = {}
     },
     view = {
       width = 30,
-      auto_resize = true
+      auto_resize = true,
+      mappings = {
+        list = {
+          {key = "v", action = "vsplit"},
+          {key = "s", action = "split"},
+          {key = "r", action = "full_rename"}
+        }
+      }
     },
     git = {
       enable = true,

@@ -6,7 +6,8 @@ v.nnoremap("]b", ":BufferLineCycleNext<CR>")
 v.nnoremap("<leader>bd", ":Bdelete<CR>")
 v.nnoremap("<leader>bD", ":Bdelete!<CR>")
 v.nnoremap("<leader>bs", ":BufferLineSortByTabs<CR>")
-v.nnoremap("<leader>pb", ":BufferLinePick<CR>")
+v.nnoremap("<leader>bp", ":BufferLinePick<CR>")
+v.nnoremap("<leader>bc", ":BufferLinePickClose<CR>")
 v.nnoremap("<C-Left>", ":BufferLineMovePrev<CR>")
 v.nnoremap("<C-Right>", ":BufferLineMoveNext<CR>")
 
@@ -22,7 +23,7 @@ require("bufferline").setup(
       left_trunc_marker = "",
       right_trunc_marker = "",
       indicator_icon = "▎",
-      close_command = ":Bdelete %d",
+      close_command = ":Bdelete! %d",
       show_close_icon = false,
       max_name_length = 14,
       max_prefix_length = 13,
@@ -31,31 +32,10 @@ require("bufferline").setup(
       enforce_regular_tabs = false,
       view = "multiwindow",
       show_buffer_close_icons = true,
-      separator_style = {"", ""},
+      separator_style = {"▎", "▎"},
       always_show_bufferline = true,
       diagnostics = false,
-      sort_by = "relative_directory",
-      custom_filter = function(bufnum)
-        -- Func to filter out our managed/persistent split terms
-        local present_type, type =
-          pcall(
-          function()
-            return vim.api.nvim_buf_get_var(bufnum, "term_type")
-          end
-        )
-
-        if present_type then
-          if type == "vert" then
-            return false
-          elseif type == "hori" then
-            return false
-          else
-            return true
-          end
-        else
-          return true
-        end
-      end
+      sort_by = "id"
     },
     highlights = {
       -- background
@@ -137,8 +117,8 @@ require("bufferline").setup(
       },
       -- separators
       separator = {
-        guifg = colors.black,
-        guibg = colors.black
+        guifg = colors.dark_black,
+        guibg = colors.dark_black
       },
       separator_visible = {
         guifg = colors.black,
@@ -150,12 +130,12 @@ require("bufferline").setup(
       },
       -- tab
       tab = {
-        guifg = colors.gray7,
-        guibg = colors.black
+        guifg = colors.gray5,
+        guibg = colors.dark_black
       },
       tab_selected = {
         guifg = colors.blue,
-        guibg = colors.gray4
+        guibg = colors.dark_black
       }
     }
   }
