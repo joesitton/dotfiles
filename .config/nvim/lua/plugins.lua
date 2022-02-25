@@ -168,20 +168,9 @@ require("packer").startup(
 
       use {
         "b3nj5m1n/kommentary",
-        config = [[require("configs.kommentary")]],
-        event = "VimEnter"
+        config = [[require("configs.comments")]],
+        event = "BufReadPost"
       }
-
-      -- use {
-      --   "ThePrimeagen/harpoon",
-      --   requires = {
-      --     "nvim-telescope/telescope.nvim"
-      --   },
-      --   config = [[
-      --     require("harpoon").setup()
-      --     require("telescope").load_extension("harpoon")
-      --   ]]
-      -- }
 
       use {
         "kyazdani42/nvim-tree.lua",
@@ -189,11 +178,11 @@ require("packer").startup(
         config = [[require("configs.tree")]]
       }
 
-      -- use {
-      --   "https://gitlab.com/yorickpeterse/nvim-window",
-      --   setup = vim.api.nvim_set_keymap("n", "<leader>pw", ":lua require('nvim-window').pick()<CR>", {}),
-      --   config = [[require("nvim-window").setup({normal_hl = "WindowPicker", hint_hl = "Search", border = "none"})]]
-      -- }
+      use {
+        "https://gitlab.com/yorickpeterse/nvim-window",
+        setup = vim.api.nvim_set_keymap("n", "<leader>pw", ":lua require('nvim-window').pick()<CR>", {}),
+        config = [[require("nvim-window").setup({normal_hl = "NvimTreeWindowPicker", border = "none"})]]
+      }
 
       -- }}}
 
@@ -273,6 +262,11 @@ require("packer").startup(
         config = [[require("configs.prettyfold")]],
         event = "BufReadPost"
       }
+
+      -- use {
+      --   "folke/todo-comments.nvim",
+      --   config = [[require("todo-comments").setup()]]
+      -- }
 
       -- }}}
 

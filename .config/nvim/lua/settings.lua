@@ -5,7 +5,7 @@ local options = {
   synmaxcol = 500,
   colorcolumn = "99999",
   -- Clipboard
-  clipboard = "unnamedplus",
+  -- clipboard = "unnamedplus",
   -- Persistent undo
   undofile = true,
   undodir = vim.fn.stdpath("data") .. "/undodir",

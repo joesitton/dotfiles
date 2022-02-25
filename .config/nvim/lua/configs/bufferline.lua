@@ -5,11 +5,11 @@ v.nnoremap("[b", ":BufferLineCyclePrev<CR>")
 v.nnoremap("]b", ":BufferLineCycleNext<CR>")
 v.nnoremap("<leader>bd", ":Bdelete<CR>")
 v.nnoremap("<leader>bD", ":Bdelete!<CR>")
-v.nnoremap("<leader>bs", ":BufferLineSortByTabs<CR>")
-v.nnoremap("<leader>bp", ":BufferLinePick<CR>")
-v.nnoremap("<leader>bc", ":BufferLinePickClose<CR>")
+v.nnoremap("<leader>bs", ":BufferLineSortByDirectory<CR>")
 v.nnoremap("<C-Left>", ":BufferLineMovePrev<CR>")
 v.nnoremap("<C-Right>", ":BufferLineMoveNext<CR>")
+
+v.nnoremap("<leader>pb", ":BufferLinePick<CR>")
 
 require("bufferline").setup(
   {
@@ -32,10 +32,10 @@ require("bufferline").setup(
       enforce_regular_tabs = false,
       view = "multiwindow",
       show_buffer_close_icons = true,
-      separator_style = {"▎", "▎"},
+      separator_style = {"", ""},
       always_show_bufferline = true,
       diagnostics = false,
-      sort_by = "id"
+      sort_by = "relative_directory"
     },
     highlights = {
       -- background
@@ -118,7 +118,7 @@ require("bufferline").setup(
       -- separators
       separator = {
         guifg = colors.dark_black,
-        guibg = colors.dark_black
+        guibg = colors.black
       },
       separator_visible = {
         guifg = colors.black,

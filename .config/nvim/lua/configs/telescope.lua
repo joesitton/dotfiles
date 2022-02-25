@@ -57,6 +57,8 @@ v.nnoremap("<leader>fm", ":Telescope marks<CR>")
 v.nnoremap("<leader>fg", ":Telescope git_status<CR>")
 v.nnoremap("<leader>fd", ":Telescope diagnostics<CR>")
 v.nnoremap("<leader>fs", ":Telescope lsp_document_symbols<CR>")
+v.nnoremap("<leader>fb", ":Telescope buffers<CR>")
+-- v.nnoremap("<leader>fx", ":TodoTelescope<CR>")
 
 v.nnoremap({"silent"}, "gd", ":Telescope lsp_definitions<CR>")
 v.nnoremap({"silent"}, "gr", ":Telescope lsp_references<CR>")

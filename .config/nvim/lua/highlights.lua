@@ -121,6 +121,7 @@ fg("NvimTreeIndentMarker", indent_marker_fg)
 fg("NvimTreeFolderIcon", colors.orange)
 bg("NvimTreeCursorLine", "none")
 fg_bg("NvimTreeEndOfBuffer", nvim_tree_bg, nvim_tree_bg)
+cmd("hi! link NvimTreeWindowPicker Search")
 
 -- IndentLine
 
