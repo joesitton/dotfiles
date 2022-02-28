@@ -17,7 +17,7 @@ local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protoco
 local handlers = {}
 
 local on_attach = function(client, bufnr)
-  -- require("illuminate").on_attach(client)
+  require("illuminate").on_attach(client)
 end
 
 local function setup_server(name)
@@ -71,7 +71,7 @@ local v = require("vimp")
 
 v.nnoremap({"silent"}, "]d", ":lua vim.diagnostic.goto_next()<CR>")
 v.nnoremap({"silent"}, "[d", ":lua vim.diagnostic.goto_prev()<CR>")
-v.nnoremap({"silent"}, "H", ":lua vim.diagnostic.open_float()<CR>")
+-- v.nnoremap({"silent"}, "H", ":lua vim.diagnostic.open_float()<CR>")
 
 v.nnoremap({"silent"}, "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>")
 v.xnoremap({"silent"}, "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>")

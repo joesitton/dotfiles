@@ -9,8 +9,3 @@ require("marks").setup(
     }
   }
 )
-
-local v = require("vimp")
-
-v.nnoremap("]m", "<Plug>(Marks-next)")
-v.nnoremap("[m", "<Plug>(Marks-prev)")

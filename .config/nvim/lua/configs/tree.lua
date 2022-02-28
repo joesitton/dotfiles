@@ -30,7 +30,7 @@ g.nvim_tree_icons = {
 
 require("nvim-tree").setup(
   {
-    hijack_cursor = true,
+    hijack_cursor = false,
     update_cwd = true,
     auto_close = true,
     diagnostics = {

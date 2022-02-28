@@ -1,3 +1,9 @@
+vim.g.matchup_matchparen_offscreen = {
+  ["method"] = "popup",
+  ["highlight"] = "OffscreenPopup",
+  ["fullwidth"] = 1
+}
+
 require("nvim-treesitter.configs").setup(
   {
     ensure_installed = "maintained",

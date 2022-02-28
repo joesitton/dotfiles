@@ -184,13 +184,19 @@ require("packer").startup(
         config = [[require("nvim-window").setup({normal_hl = "NvimTreeWindowPicker", border = "none"})]]
       }
 
+      use {
+        "gbprod/cutlass.nvim",
+        config = [[require("cutlass").setup({cut_key = "X"})]]
+      }
+
       -- }}}
 
       -- {{{ Appearance
 
       use {
         "stevearc/dressing.nvim",
-        config = [[require("configs.dressing")]]
+        config = [[require("configs.dressing")]],
+        event = "VimEnter"
       }
 
       use {
@@ -239,11 +245,11 @@ require("packer").startup(
         keys = {"<C-d>", "<C-u>"}
       }
 
-      -- use {
-      --   "RRethy/vim-illuminate",
-      --   config = [[require("configs.illuminate")]],
-      --   event = "BufReadPost"
-      -- }
+      use {
+        "RRethy/vim-illuminate",
+        config = [[require("configs.illuminate")]],
+        event = "BufReadPost"
+      }
 
       use {
         "beauwilliams/focus.nvim",
@@ -303,6 +309,11 @@ require("packer").startup(
       -- {{{ Completion
 
       use {
+        "ray-x/lsp_signature.nvim",
+        config = [[require("configs.signature")]]
+      }
+
+      use {
         "hrsh7th/nvim-cmp",
         requires = {
           "hrsh7th/cmp-nvim-lsp",
@@ -311,14 +322,16 @@ require("packer").startup(
           "hrsh7th/cmp-path",
           "hrsh7th/cmp-cmdline",
           "hrsh7th/cmp-buffer",
-          "hrsh7th/cmp-nvim-lsp-signature-help",
-          -- "lukas-reineke/cmp-rg",
+          "hrsh7th/cmp-nvim-lua",
+          -- "hrsh7th/cmp-nvim-lsp-signature-help",
+          "joesitton/cmp-rg",
           "lukas-reineke/cmp-under-comparator",
           "ray-x/cmp-treesitter",
           "onsails/lspkind-nvim",
           {
             "abecodes/tabout.nvim",
-            config = [[require("tabout").setup()]]
+            config = [[require("tabout").setup()]],
+            after = "nvim-cmp"
           },
           {
             "kdheepak/cmp-latex-symbols",
@@ -368,14 +381,7 @@ require("packer").startup(
           },
           {
             "andymass/vim-matchup",
-            event = "BufReadPost",
-            config = [[
-            vim.g.matchup_matchparen_offscreen = {
-              ["method"] = "popup",
-              ["highlight"] = "OffscreenPopup",
-              ["fullwidth"] = 1
-            }
-          ]]
+            event = "BufReadPost"
           },
           {
             "windwp/nvim-autopairs",

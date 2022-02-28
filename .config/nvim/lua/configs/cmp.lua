@@ -42,7 +42,18 @@ cmp.setup(
     },
     mapping = {
       ["<CR>"] = cmp.mapping.confirm({select = false}),
-      ["<C-Space>"] = cmp.mapping.complete(),
+      ["<C-Space>"] = cmp.mapping(
+        function(fallback)
+          if cmp.visible() then
+            cmp.close()
+          elseif not cmp.visible() then
+            cmp.complete()
+          else
+            fallback()
+          end
+        end,
+        {"i"}
+      ),
       ["<Tab>"] = cmp.mapping(
         function(fallback)
           if cmp.visible() then
@@ -77,8 +88,9 @@ cmp.setup(
       {name = "buffer"},
       {name = "treesitter"},
       {name = "latex_symbols"},
-      {name = "nvim_lsp_signature_help"},
-      {name = "luasnip"}
+      -- {name = "nvim_lsp_signature_help"},
+      {name = "luasnip"},
+      {name = "nvim_lua"}
     },
     sorting = {
       comparators = {
@@ -100,7 +112,13 @@ cmp.setup.cmdline(
   {
     sources = cmp.config.sources(
       {
-        {name = "buffer"}
+        {
+          name = "rg",
+          option = {
+            additional_arguments = "--smart-case",
+            only_current_buffer = true
+          }
+        }
       }
     )
   }
@@ -111,7 +129,13 @@ cmp.setup.cmdline(
   {
     sources = cmp.config.sources(
       {
-        {name = "buffer"}
+        {
+          name = "rg",
+          option = {
+            additional_arguments = "--smart-case",
+            only_current_buffer = true
+          }
+        }
       }
     )
   }

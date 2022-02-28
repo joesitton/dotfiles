@@ -6,13 +6,16 @@ require("hop").setup(
 
 local v = require("vimp")
 
+v.bind("no", "J", ":HopLineAC<CR>")
+v.bind("no", "K", ":HopLineBC<CR>")
+
 v.nnoremap({"silent"}, "f", ":HopChar1CurrentLineAC<CR>")
 v.nnoremap({"silent"}, "F", ":HopChar1CurrentLineBC<CR>")
 v.onoremap({"silent"}, "f", ":HopChar1CurrentLineAC<CR>")
 v.onoremap({"silent"}, "F", ":HopChar1CurrentLineBC<CR>")
 
-v.nnoremap({"silent"}, "s", ":HopChar2AC<CR>")
-v.nnoremap({"silent"}, "S", ":HopChar2BC<CR>")
+v.nnoremap({"silent", "override"}, "s", ":HopChar2AC<CR>")
+v.nnoremap({"silent", "override"}, "S", ":HopChar2BC<CR>")
 
 v.nnoremap(
   {"silent"},

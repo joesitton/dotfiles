@@ -7,9 +7,6 @@ v.nnoremap("k", "gk")
 v.nnoremap("Q", "@q")
 v.nnoremap("'", "`")
 
-v.nnoremap("x", '"_x')
-v.xnoremap("x", '"_x')
-
 v.nnoremap("<leader>w", ":w<CR>")
 v.nnoremap("<leader>q", ":q!<CR>")
 v.nnoremap("<leader>z", ":wqa!<CR>")

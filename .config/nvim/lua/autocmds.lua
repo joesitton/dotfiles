@@ -42,6 +42,13 @@ augroup highlight_yank
 augroup END
 ]]
 
+cmd [[
+augroup illuminate
+  autocmd!
+  autocmd VimEnter * hi! link illuminatedWord CursorLine | hi! clear illuminatedCurWord
+augroup END
+]]
+
 cmd(
   [[
 augroup config_update

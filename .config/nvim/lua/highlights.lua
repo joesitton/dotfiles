@@ -110,7 +110,7 @@ cmd("hi! link TelescopeResultsProperty CmpItemKindProperty")
 
 -- Nvim Tree
 
-local nvim_tree_bg = colors.dark_black
+local nvim_tree_bg = colors.bg
 local indent_marker_fg = colors.dark_gray3
 
 bg("NvimTreeNormal", nvim_tree_bg)
@@ -119,7 +119,7 @@ fg_bg("NvimTreeStatusLine", nvim_tree_bg, nvim_tree_bg)
 fg_bg("NvimTreeStatusLineNC", nvim_tree_bg, nvim_tree_bg)
 fg("NvimTreeIndentMarker", indent_marker_fg)
 fg("NvimTreeFolderIcon", colors.orange)
-bg("NvimTreeCursorLine", "none")
+bg("NvimTreeCursorLine", cursorline_bg)
 fg_bg("NvimTreeEndOfBuffer", nvim_tree_bg, nvim_tree_bg)
 cmd("hi! link NvimTreeWindowPicker Search")
 
@@ -146,6 +146,12 @@ bg("GitGutterDelete", column_bg)
 
 fg_bg("FidgetTitle", colors.fg, "none")
 fg_bg("FidgetTask", primary, "none")
+
+-- Illuminate
+
+cmd("hi! link LspReferenceText illuminatedCurWord")
+cmd("hi! link LspReferenceWrite illuminatedCurWord")
+cmd("hi! link LspReferenceRead illuminatedWord")
 
 -- Diagnostics
 
@@ -179,9 +185,3 @@ fg("CmpItemKindKeyword", colors.gray7)
 fg("CmpItemKindProperty", colors.gray7)
 fg("CmpItemKindUnit", colors.gray7)
 cmd("hi CmpItemAbbrDeprecated guifg=" .. colors.dark_black .. " guibg=NONE gui=strikethrough")
-
--- Illuminate
-
-cmd("hi! link LspReferenceText illuminatedCurWord")
-cmd("hi! link LspReferenceWrite illuminatedCurWord")
-cmd("hi! link LspReferenceRead illuminatedWord")
