@@ -84,7 +84,6 @@ cmp.setup(
       {name = "path"},
       {name = "calc"},
       {name = "emoji"},
-      -- {name = "rg"},
       {name = "buffer"},
       {name = "treesitter"},
       {name = "latex_symbols"},

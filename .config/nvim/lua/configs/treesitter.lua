@@ -7,13 +7,13 @@ vim.g.matchup_matchparen_offscreen = {
 require("nvim-treesitter.configs").setup(
   {
     ensure_installed = "maintained",
-    ignore_install = {"yaml", "latex"},
+    ignore_install = {"yaml", "latex", "toml"},
     highlight = {
       enable = true
     },
-    -- indent = {
-    --   enable = true
-    -- },
+    indent = {
+      enable = true
+    },
     matchup = {
       enable = true
     },

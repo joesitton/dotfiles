@@ -1,16 +1,9 @@
 local cmd = vim.cmd
 
-cmd [[ 
-augroup cursor_pos
-  autocmd!
-  autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-augroup END
-]]
-
-cmd [[ 
+cmd [[
 augroup no_repeat_comment
   autocmd!
-  autocmd BufNewFile,BufReadPost * setlocal formatoptions-=cro
+  autocmd FileType * set formatoptions-=cro
 augroup END
 ]]
 
@@ -24,7 +17,7 @@ augroup END
 cmd [[
 augroup auto_format
   autocmd!
-  autocmd BufWritePost * silent! FormatWrite
+  autocmd BufWritePre * silent! undojoin | Neoformat
 augroup END
 ]]
 

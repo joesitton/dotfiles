@@ -1,33 +1,35 @@
 local colors = require("colors.base16")
 
+local lualine_b_bg = colors.dark_gray3
+
 local base16_theme = {
   normal = {
     a = {bg = colors.blue, fg = colors.bg, gui = "bold"},
-    b = {bg = colors.gray4, fg = colors.fg},
+    b = {bg = lualine_b_bg, fg = colors.fg},
     c = {bg = colors.dark_black, fg = colors.blue},
     x = {bg = colors.dark_black, fg = colors.gray9}
   },
   insert = {
     a = {bg = colors.green, fg = colors.bg, gui = "bold"},
-    b = {bg = colors.gray4, fg = colors.fg},
+    b = {bg = lualine_b_bg, fg = colors.fg},
     c = {bg = colors.dark_black, fg = colors.green},
     x = {bg = colors.dark_black, fg = colors.gray9}
   },
   visual = {
     a = {bg = colors.orange, fg = colors.bg, gui = "bold"},
-    b = {bg = colors.gray4, fg = colors.fg},
+    b = {bg = lualine_b_bg, fg = colors.fg},
     c = {bg = colors.dark_black, fg = colors.orange},
     x = {bg = colors.dark_black, fg = colors.gray9}
   },
   replace = {
     a = {bg = colors.red, fg = colors.bg, gui = "bold"},
-    b = {bg = colors.gray4, fg = colors.fg},
+    b = {bg = lualine_b_bg, fg = colors.fg},
     c = {bg = colors.dark_black, fg = colors.red},
     x = {bg = colors.dark_black, fg = colors.gray9}
   },
   command = {
     a = {bg = colors.purple, fg = colors.bg, gui = "bold"},
-    b = {bg = colors.gray4, fg = colors.fg},
+    b = {bg = lualine_b_bg, fg = colors.fg},
     c = {bg = colors.dark_black, fg = colors.purple},
     x = {bg = colors.dark_black, fg = colors.gray9}
   },
@@ -47,7 +49,8 @@ require("lualine").setup(
       always_divide_middle = true,
       component_separators = {left = "╲", right = "╱"},
       section_separators = {left = "", right = ""},
-      disabled_filetypes = {"NvimTree", "Trouble", "ToggleTerm"}
+      disabled_filetypes = {"NvimTree", "Trouble", "ToggleTerm", "DiffviewFiles"},
+      disabled_buftypes = {"quickfix", "prompt", "nofile"}
     },
     sections = {
       lualine_a = {
@@ -72,13 +75,6 @@ require("lualine").setup(
       lualine_c = {
         "branch",
         "diff"
-        -- {
-        --   function()
-        --     local sig = require("lsp_signature").status_line(40)
-
-        --     return sig.label .. sig.hint
-        --   end
-        -- }
       },
       lualine_x = {
         {

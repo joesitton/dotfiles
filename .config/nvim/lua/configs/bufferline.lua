@@ -35,7 +35,7 @@ require("bufferline").setup(
       separator_style = {"", ""},
       always_show_bufferline = true,
       diagnostics = false,
-      sort_by = "relative_directory"
+      sort_by = "none"
     },
     highlights = {
       -- background

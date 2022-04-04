@@ -67,11 +67,12 @@ local options = {
   writebackup = false,
   sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal",
   completeopt = "menu,menuone,noselect",
-  guicursor = "n-v-o:block,c-i-ci-ve-sm:ver25,r-cr:hor25"
+  guicursor = "n-v-o:block,c-i-ci-ve-sm:ver25,r-cr:hor25",
+  fillchars = "diff:╱,foldopen:,foldclose:"
 }
 
 for k, v in pairs(options) do
   vim.o[k] = v
 end
 
-vim.g.python3_host_prog = "/home/joe/.config/nvim/.env/bin/python"
+vim.g.python3_host_prog = "/home/joe/.config/nvim/.env/bin/python3"

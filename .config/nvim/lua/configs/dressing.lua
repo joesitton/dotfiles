@@ -6,8 +6,8 @@ require("dressing").setup(
       insert_only = true,
       anchor = "SW",
       relative = "cursor",
-      row = 0,
-      col = 0,
+      -- row = 0,
+      -- col = 0,
       border = "rounded",
       prefer_width = 40,
       max_width = nil,
@@ -19,9 +19,6 @@ require("dressing").setup(
     select = {
       enabled = true,
       backend = {"telescope"},
-      telescope = {
-        theme = "dropdown"
-      },
       format_item_override = {},
       get_config = nil
     }

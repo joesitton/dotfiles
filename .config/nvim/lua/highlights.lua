@@ -12,6 +12,10 @@ local function fg_bg(group, fg_color, bg_color)
   cmd("hi! " .. group .. " guifg=" .. fg_color .. " guibg=" .. bg_color)
 end
 
+local function fg_bg_nogui(group, fg_color, bg_color)
+  cmd("hi! " .. group .. " guifg=" .. fg_color .. " guibg=" .. bg_color .. " gui=none")
+end
+
 local colors = require("colors.base16")
 local primary = colors.blue
 
@@ -49,9 +53,9 @@ fg_bg("LineNr", linenr, column_bg)
 
 local cursorline_bg = colors.black
 
-bg("CursorLine", cursorline_bg)
+fg_bg_nogui("CursorLine", "none", cursorline_bg)
 fg_bg("CursorLineNR", colors.fg, column_bg)
-bg("Visual", colors.gray3)
+bg("Visual", colors.dark_gray3)
 
 -- Treesitter
 
@@ -73,6 +77,21 @@ fg_bg("PmenuSel", pmenu_sel_fg, pmenu_sel_bg)
 bg("PmenuSbar", pmenu_bg)
 bg("PmenuThumb", pmenu_scroll_bg)
 bg("DocMenu", pmenu_doc)
+
+-- Git
+
+fg_bg_nogui("DiffAdd", "none", colors.dark_green)
+fg_bg_nogui("DiffChange", "none", colors.dark_blue)
+fg_bg_nogui("DiffRemove", "none", colors.dark_red)
+fg_bg_nogui("DiffDelete", colors.gray5, "none")
+fg_bg_nogui("DiffText", "none", "#335e6e")
+
+-- DiffView
+fg_bg_nogui("DiffviewFilePanelRootPath", colors.purple, "none")
+fg_bg_nogui("DiffviewFilePanelTitle", colors.blue, "none")
+fg_bg("DiffviewFilePanelCounter", colors.orange, "none")
+fg_bg("DiffviewFilePanelInsertions", colors.green, "none")
+fg_bg("DiffviewFilePanelDeletions", colors.red, "none")
 
 -- Telescope
 

@@ -107,7 +107,7 @@ require("packer").startup(
 
       use {
         "sheerun/vim-polyglot",
-        event = "BufReadPost"
+        event = "VimEnter"
       }
 
       -- }}}
@@ -119,9 +119,19 @@ require("packer").startup(
       }
 
       use {
+        "tpope/vim-fugitive"
+      }
+
+      use {
+        "ethanholz/nvim-lastplace",
+        config = [[require("nvim-lastplace").setup()]]
+      }
+
+      use {
         "famiu/bufdelete.nvim",
         cmd = {"Bdelete", "Bwipeout"}
       }
+
       use {
         "jghauser/mkdir.nvim",
         config = [[require("mkdir")]],
@@ -129,9 +139,9 @@ require("packer").startup(
       }
 
       use {
-        "mhartington/formatter.nvim",
+        "sbdchd/neoformat",
         config = [[require("configs.formatter")]],
-        cmd = {"Format", "FormatWrite"}
+        cmd = "Neoformat"
       }
 
       use {
@@ -185,8 +195,35 @@ require("packer").startup(
       }
 
       use {
-        "gbprod/cutlass.nvim",
-        config = [[require("cutlass").setup({cut_key = "X"})]]
+        "godlygeek/tabular",
+        event = "BufReadPost"
+      }
+
+      use {
+        "rcarriga/vim-ultest",
+        requires = {
+          "vim-test/vim-test"
+        },
+        run = ":UpdateRemotePlugins"
+      }
+
+      use {
+        "chipsenkbeil/distant.nvim",
+        config = function()
+          require("distant").setup {
+            -- Applies Chip's personal settings to every machine you connect to
+            --
+            -- 1. Ensures that distant servers terminate with no connections
+            -- 2. Provides navigation bindings for remote directories
+            -- 3. Provides keybinding to jump into a remote file's parent directory
+            ["*"] = require("distant.settings").chip_default()
+          }
+        end
+      }
+
+      use {
+        "sindrets/diffview.nvim",
+        configs = [[require("configs.diffview")]]
       }
 
       -- }}}
@@ -223,8 +260,7 @@ require("packer").startup(
 
       use {
         "norcalli/nvim-colorizer.lua",
-        config = [[require("colorizer").setup()]],
-        event = "BufReadPre"
+        config = [[require("colorizer").setup()]]
       }
 
       use {
@@ -254,7 +290,7 @@ require("packer").startup(
       use {
         "beauwilliams/focus.nvim",
         config = [[require("configs.focus")]],
-        event = "BufReadPost"
+        cmd = "FocusEnable"
       }
 
       use {
@@ -268,11 +304,6 @@ require("packer").startup(
         config = [[require("configs.prettyfold")]],
         event = "BufReadPost"
       }
-
-      -- use {
-      --   "folke/todo-comments.nvim",
-      --   config = [[require("todo-comments").setup()]]
-      -- }
 
       -- }}}
 
@@ -323,7 +354,6 @@ require("packer").startup(
           "hrsh7th/cmp-cmdline",
           "hrsh7th/cmp-buffer",
           "hrsh7th/cmp-nvim-lua",
-          -- "hrsh7th/cmp-nvim-lsp-signature-help",
           "joesitton/cmp-rg",
           "lukas-reineke/cmp-under-comparator",
           "ray-x/cmp-treesitter",

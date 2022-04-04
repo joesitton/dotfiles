@@ -61,7 +61,18 @@ local function setup_server(name)
   end
 end
 
-local servers = {"pyright", "gopls", "dockerls", "bashls", "ansiblels", "jsonls", "yamlls", "vimls", "sumneko_lua"}
+local servers = {
+  "pyright",
+  "gopls",
+  "dockerls",
+  "bashls",
+  "ansiblels",
+  "jsonls",
+  "yamlls",
+  "vimls",
+  "sumneko_lua",
+  "rust_analyzer"
+}
 
 for _, server in ipairs(servers) do
   setup_server(server)
