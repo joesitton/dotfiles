@@ -50,7 +50,7 @@ telescope.setup(
 
 local v = require("vimp")
 
-v.nnoremap("<leader>ff", ":Telescope fd<CR>")
+v.nnoremap("<leader>ff", ":Telescope find_files find_command=fd,--hidden,-tf<CR>")
 v.nnoremap("<leader>ft", ":Telescope live_grep<CR>")
 v.nnoremap("<leader>fr", ":Telescope frecency<CR>")
 v.nnoremap("<leader>fm", ":Telescope marks<CR>")
