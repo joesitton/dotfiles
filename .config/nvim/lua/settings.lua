@@ -1,4 +1,4 @@
-vim.cmd [[silent! colo base16-default-dark]]
+vim.g.mapleader = " "
 
 local options = {
   -- Max column for syntax
@@ -75,4 +75,6 @@ for k, v in pairs(options) do
   vim.o[k] = v
 end
 
-vim.g.python3_host_prog = "/home/joe/.config/nvim/.env/bin/python3"
+vim.cmd [[silent! colo base16-default-dark]]
+
+vim.g.python3_host_prog = "/usr/share/nvim/env/bin/python3"

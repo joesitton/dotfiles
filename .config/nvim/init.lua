@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-
 local init_modules = {
   "plugins",
   "settings",
