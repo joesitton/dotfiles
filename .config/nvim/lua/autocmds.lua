@@ -10,14 +10,21 @@ augroup END
 cmd [[
 augroup fix_tree_pos
   autocmd!
-  autocmd BufEnter NvimTree execute "normal! 0"
+  autocmd BufEnter NvimTree,DiffviewFiles execute "normal! 0"
 augroup END
 ]]
 
 cmd [[
 augroup auto_format
   autocmd!
-  autocmd BufWritePre * silent! undojoin | Neoformat
+  autocmd BufWritePre * silent! undojoin | Neoformat | ColorizerAttachToBuffer
+augroup END
+]]
+
+cmd [[
+augroup vimrc_help
+  autocmd!
+  autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
 augroup END
 ]]
 
@@ -41,6 +48,13 @@ augroup illuminate
   autocmd VimEnter * hi! link illuminatedWord CursorLine | hi! clear illuminatedCurWord
 augroup END
 ]]
+
+-- cmd [[
+-- augroup ultest_runner
+--     au!
+--     au BufWritePost * UltestNearest
+-- augroup END
+-- ]]
 
 cmd(
   [[

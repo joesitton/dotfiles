@@ -54,6 +54,7 @@ fg_bg("LineNr", linenr, column_bg)
 local cursorline_bg = colors.black
 
 fg_bg_nogui("CursorLine", "none", cursorline_bg)
+cmd [[hi! CursorLine cterm=none]]
 fg_bg("CursorLineNR", colors.fg, column_bg)
 bg("Visual", colors.dark_gray3)
 
@@ -82,9 +83,9 @@ bg("DocMenu", pmenu_doc)
 
 fg_bg_nogui("DiffAdd", "none", colors.dark_green)
 fg_bg_nogui("DiffChange", "none", colors.dark_blue)
-fg_bg_nogui("DiffRemove", "none", colors.dark_red)
-fg_bg_nogui("DiffDelete", colors.gray5, "none")
-fg_bg_nogui("DiffText", "none", "#335e6e")
+fg_bg_nogui("DiffDelete", "none", colors.dark_red)
+fg_bg_nogui("DiffRemove", colors.gray5, "none")
+fg_bg_nogui("DiffText", "none", "#2c5361")
 
 -- DiffView
 fg_bg_nogui("DiffviewFilePanelRootPath", colors.purple, "none")
@@ -92,6 +93,13 @@ fg_bg_nogui("DiffviewFilePanelTitle", colors.blue, "none")
 fg_bg("DiffviewFilePanelCounter", colors.orange, "none")
 fg_bg("DiffviewFilePanelInsertions", colors.green, "none")
 fg_bg("DiffviewFilePanelDeletions", colors.red, "none")
+fg_bg("DiffviewFolderSign", colors.orange, "none")
+
+-- Neogit
+fg("NeogitFilePath", colors.purple)
+fg_bg("NeogitHunkHeader", colors.fg, colors.dark_gray3)
+fg_bg("NeogitCommitViewHeader", colors.orange, "none")
+fg_bg("NeogitFold", colors.fg, vert_split)
 
 -- Telescope
 

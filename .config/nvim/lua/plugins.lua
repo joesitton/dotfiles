@@ -195,46 +195,51 @@ require("packer").startup(
       }
 
       use {
+        "sindrets/diffview.nvim",
+        config = [[require("configs.diffview")]]
+      }
+
+      use {
+        "TimUntersberger/neogit",
+        config = [[require("configs.neogit")]]
+      }
+
+      use {
         "godlygeek/tabular",
         event = "BufReadPost"
       }
 
       use {
-        "rcarriga/vim-ultest",
-        requires = {
-          "vim-test/vim-test"
-        },
-        run = ":UpdateRemotePlugins"
+        "michaelb/sniprun",
+        cmd = "SnipRun",
+        run = "bash ./install.sh"
       }
 
-      use {
-        "chipsenkbeil/distant.nvim",
-        config = function()
-          require("distant").setup {
-            -- Applies Chip's personal settings to every machine you connect to
-            --
-            -- 1. Ensures that distant servers terminate with no connections
-            -- 2. Provides navigation bindings for remote directories
-            -- 3. Provides keybinding to jump into a remote file's parent directory
-            ["*"] = require("distant.settings").chip_default()
-          }
-        end
-      }
+      -- use {
+      --   "rcarriga/vim-ultest",
+      --   requires = {
+      --     "vim-test/vim-test"
+      --   },
+      --   run ={ ":UpdateRemotePlugins"}
+      -- }
 
-      use {
-        "sindrets/diffview.nvim",
-        configs = [[require("configs.diffview")]]
-      }
+      -- use {
+      --   "chipsenkbeil/distant.nvim",
+      --   config = function()
+      --     require("distant").setup {
+      --       -- Applies Chip's personal settings to every machine you connect to
+      --       --
+      --       -- 1. Ensures that distant servers terminate with no connections
+      --       -- 2. Provides navigation bindings for remote directories
+      --       -- 3. Provides keybinding to jump into a remote file's parent directory
+      --       ["*"] = require("distant.settings").chip_default()
+      --     }
+      --   end
+      -- }
 
       -- }}}
 
       -- {{{ Appearance
-
-      use {
-        "stevearc/dressing.nvim",
-        config = [[require("configs.dressing")]],
-        event = "VimEnter"
-      }
 
       use {
         "kyazdani42/nvim-web-devicons"
@@ -261,6 +266,7 @@ require("packer").startup(
       use {
         "norcalli/nvim-colorizer.lua",
         config = [[require("colorizer").setup()]]
+        -- event = "BufReadPost"
       }
 
       use {
@@ -305,9 +311,11 @@ require("packer").startup(
         event = "BufReadPost"
       }
 
-      -- }}}
-
-      -- {{{ Commands
+      use {
+        "stevearc/dressing.nvim",
+        config = [[require("configs.dressing")]],
+        event = "VimEnter"
+      }
 
       use {
         "dstein64/vim-startuptime",

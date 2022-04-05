@@ -10,12 +10,17 @@ require("toggleterm").setup(
     direction = "float",
     close_on_exit = true,
     shell = vim.o.shell,
+    size = function(term)
+      if term.direction == "horizontal" then
+        return 10
+      elseif term.direction == "vertical" then
+        return vim.o.columns * 0.5
+      end
+    end,
     float_opts = {
-      border = "none",
-      width = 999,
-      height = 999,
+      border = "rounded",
       highlights = {
-        border = "NormalFloat",
+        border = "FloatBorder",
         background = "NormalFloat"
       }
     }

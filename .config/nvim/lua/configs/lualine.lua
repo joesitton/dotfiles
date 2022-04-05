@@ -41,6 +41,26 @@ local base16_theme = {
   }
 }
 
+local diffviewfiles_extension = {
+  sections = {
+    lualine_b = {"filetype"}
+  },
+  inactive_sections = {
+    lualine_b = {"filetype"}
+  },
+  filetypes = {"DiffviewFiles"}
+}
+
+local diffviewhistory_extension = {
+  sections = {
+    lualine_b = {"filetype"}
+  },
+  inactive_sections = {
+    lualine_b = {"filetype"}
+  },
+  filetypes = {"DiffviewFileHistory"}
+}
+
 require("lualine").setup(
   {
     options = {
@@ -49,7 +69,7 @@ require("lualine").setup(
       always_divide_middle = true,
       component_separators = {left = "╲", right = "╱"},
       section_separators = {left = "", right = ""},
-      disabled_filetypes = {"NvimTree", "Trouble", "ToggleTerm", "DiffviewFiles"},
+      disabled_filetypes = {"NvimTree"},
       disabled_buftypes = {"quickfix", "prompt", "nofile"}
     },
     sections = {
@@ -114,7 +134,7 @@ require("lualine").setup(
       lualine_b = {
         {
           "filename",
-          path = 1,
+          path = 0,
           shorting_target = 40,
           symbols = {
             modified = " ",
@@ -127,6 +147,6 @@ require("lualine").setup(
       lualine_y = {},
       lualine_z = {}
     },
-    extensions = {"nvim-tree", "quickfix"}
+    extensions = {"nvim-tree", "quickfix", "toggleterm", "fugitive", diffviewfiles_extension, diffviewhistory_extension}
   }
 )
