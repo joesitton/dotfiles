@@ -426,7 +426,7 @@ require("packer").startup(
             config = [[require("nvim-autopairs").setup()]]
           }
         },
-        run = vim.cmd [[ silent! TSUpdate ]],
+        -- run = vim.cmd [[ silent! TSUpdate ]],
         config = [[require("configs.treesitter")]]
       }
 
