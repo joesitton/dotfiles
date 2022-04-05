@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-
 local options = {
   -- Max column for syntax
   synmaxcol = 500,

@@ -184,7 +184,6 @@ require("packer").startup(
 
       use {
         "kyazdani42/nvim-tree.lua",
-        setup = vim.api.nvim_set_keymap("n", "<leader>.", ":NvimTreeToggle<CR>", {}),
         config = [[require("configs.tree")]]
       }
 
@@ -426,7 +425,7 @@ require("packer").startup(
             config = [[require("nvim-autopairs").setup()]]
           }
         },
-        -- run = vim.cmd [[ silent! TSUpdate ]],
+        run = ":silent! TSUpdate",
         config = [[require("configs.treesitter")]]
       }
 

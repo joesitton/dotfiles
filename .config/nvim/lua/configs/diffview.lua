@@ -40,8 +40,8 @@ require("diffview").setup(
     },
     hooks = {
       diff_buf_read = function(bufnr)
-        vim.o.Illuminate_delay = 99999
-        vim.o.indent_blankline_enabled = false
+        -- vim.o.Illuminate_delay = 99999
+        -- vim.o.indent_blankline_enabled = false
         vim.o.cursorline = false
       end
     },
