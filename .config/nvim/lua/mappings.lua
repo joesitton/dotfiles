@@ -1,7 +1,6 @@
-local ok, err = pcall(require, "vimp")
+local ok, _ = pcall(require, "vimp")
 
 if not ok then
-  print("Error loading mappings.lua\n\n" .. err)
   return
 end
 
