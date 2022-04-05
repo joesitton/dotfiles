@@ -28,11 +28,4 @@ v.xnoremap("]e", ":m '>+1<CR>gv=gv")
 
 vim.cmd [[
 command! W w !sudo tee % > /dev/null
-
-function! Syn()
-  for id in synstack(line("."), col("."))
-    echo synIDattr(id, "name")
-  endfor
-endfunction
-command! -nargs=0 Syn call Syn()
 ]]

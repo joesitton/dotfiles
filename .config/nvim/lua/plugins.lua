@@ -62,7 +62,8 @@ require("packer").startup(
       -- {{{ Colorschemes
 
       use {
-        "RRethy/nvim-base16"
+        "RRethy/nvim-base16",
+        config = vim.cmd "colo base16-default-dark"
       }
 
       use {
