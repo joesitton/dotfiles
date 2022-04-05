@@ -62,8 +62,7 @@ require("packer").startup(
       -- {{{ Colorschemes
 
       use {
-        "RRethy/nvim-base16",
-        config = vim.cmd "colo base16-default-dark"
+        "RRethy/nvim-base16"
       }
 
       use {
@@ -439,7 +438,8 @@ require("packer").startup(
         open_fn = function()
           return require("packer.util").float({border = "rounded"})
         end
-      }
+      },
+      autoremove = true
     }
   }
 )

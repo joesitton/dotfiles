@@ -1,3 +1,5 @@
+vim.cmd [[silent! colo base16-default-dark]]
+
 local options = {
   -- Max column for syntax
   synmaxcol = 500,
