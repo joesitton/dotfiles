@@ -1,3 +1,10 @@
+local ok, err = pcall(require, "vimp")
+
+if not ok then
+  print("Error loading mappings.lua\n\n" .. err)
+  return
+end
+
 local v = require("vimp")
 
 v.nnoremap(";", ":")
