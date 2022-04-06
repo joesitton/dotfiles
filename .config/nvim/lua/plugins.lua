@@ -179,11 +179,14 @@ require("packer").startup(
       use {
         "b3nj5m1n/kommentary",
         config = [[require("configs.comments")]],
-        event = "BufReadPost"
+        keys = "<C-_>"
       }
 
       use {
-        "kyazdani42/nvim-tree.lua",
+        "nvim-neo-tree/neo-tree.nvim",
+        requires = {
+          "MunifTanjim/nui.nvim"
+        },
         config = [[require("configs.tree")]]
       }
 
@@ -195,18 +198,20 @@ require("packer").startup(
 
       use {
         "sindrets/diffview.nvim",
-        config = [[require("configs.diffview")]]
+        config = [[require("configs.diffview")]],
+        cmd = {"DiffviewOpen", "DiffviewFileHistory"}
       }
 
       use {
         "TimUntersberger/neogit",
-        config = [[require("configs.neogit")]]
+        config = [[require("configs.neogit")]],
+        cmd = "Neogit"
       }
 
-      use {
-        "godlygeek/tabular",
-        event = "BufReadPost"
-      }
+      -- use {
+      --   "godlygeek/tabular",
+      --   event = "BufReadPost"
+      -- }
 
       use {
         "michaelb/sniprun",
@@ -245,7 +250,7 @@ require("packer").startup(
       }
 
       use {
-        "akinsho/bufferline.nvim",
+        "romgrk/barbar.nvim",
         config = [[require("configs.bufferline")]],
         event = "VimEnter"
       }

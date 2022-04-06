@@ -88,6 +88,7 @@ fg_bg_nogui("DiffRemove", colors.gray5, "none")
 fg_bg_nogui("DiffText", "none", "#2c5361")
 
 -- DiffView
+
 fg_bg_nogui("DiffviewFilePanelRootPath", colors.purple, "none")
 fg_bg_nogui("DiffviewFilePanelTitle", colors.blue, "none")
 fg_bg("DiffviewFilePanelCounter", colors.orange, "none")
@@ -96,10 +97,40 @@ fg_bg("DiffviewFilePanelDeletions", colors.red, "none")
 fg_bg("DiffviewFolderSign", colors.orange, "none")
 
 -- Neogit
+
 fg("NeogitFilePath", colors.purple)
 fg_bg("NeogitHunkHeader", colors.fg, colors.dark_gray3)
 fg_bg("NeogitCommitViewHeader", colors.orange, "none")
 fg_bg("NeogitFold", colors.fg, vert_split)
+
+-- Barbar
+
+fg("BufferTabpages", primary)
+
+local active_buffer_bg = colors.dark_black
+
+bg("BufferCurrent", active_buffer_bg)
+-- cmd [[hi! BufferCurrent gui=italic]]
+bg("BufferCurrentIcon", active_buffer_bg)
+fg_bg("BufferCurrentMod", colors.red, active_buffer_bg)
+-- cmd [[hi! BufferCurrentMod gui=italic]]
+fg_bg("BufferCurrentSign", primary, active_buffer_bg)
+
+local visible_buffer_fg = colors.gray
+local visible_buffer_bg = colors.black
+
+bg("BufferVisible", visible_buffer_bg)
+bg("BufferVisibleIcon", visible_buffer_bg)
+fg_bg("BufferVisible", visible_buffer_fg, visible_buffer_bg)
+fg_bg("BufferVisibleSign", colors.green, visible_buffer_bg)
+
+local inactive_buffer_fg = colors.dark_gray5
+local inactive_buffer_bg = colors.black
+
+fg_bg("BufferInactive", inactive_buffer_fg, inactive_buffer_bg)
+fg_bg("BufferInactiveMod", colors.red, inactive_buffer_bg)
+bg("BufferInactiveIcon", inactive_buffer_bg)
+fg_bg("BufferInactiveSign", inactive_buffer_fg, inactive_buffer_bg)
 
 -- Telescope
 
@@ -135,20 +166,27 @@ cmd("hi! link TelescopeResultsVariable CmpItemKindVariable")
 cmd("hi! link TelescopeResultsConstant CmpItemKindConstant")
 cmd("hi! link TelescopeResultsProperty CmpItemKindProperty")
 
--- Nvim Tree
+-- Tree
 
-local nvim_tree_bg = colors.bg
+local tree_bg = colors.bg
 local indent_marker_fg = colors.dark_gray3
 
-bg("NvimTreeNormal", nvim_tree_bg)
-fg_bg("NvimTreeVertSplit", nvim_tree_bg, nvim_tree_bg)
-fg_bg("NvimTreeStatusLine", nvim_tree_bg, nvim_tree_bg)
-fg_bg("NvimTreeStatusLineNC", nvim_tree_bg, nvim_tree_bg)
-fg("NvimTreeIndentMarker", indent_marker_fg)
-fg("NvimTreeFolderIcon", colors.orange)
-bg("NvimTreeCursorLine", cursorline_bg)
-fg_bg("NvimTreeEndOfBuffer", nvim_tree_bg, nvim_tree_bg)
-cmd("hi! link NvimTreeWindowPicker Search")
+bg("NeoTreeNormal", tree_bg)
+bg("NeoTreeNormalNC", tree_bg)
+fg("TreeIndentMarker", indent_marker_fg)
+fg("TreeExpander", colors.orange)
+fg("TreeModified", colors.red)
+fg("NeoTreeDirectoryIcon", colors.orange)
+fg("NeoTreeRootName", colors.purple)
+-- cmd [[hi! NeoTreeRootName gui=none]]
+cmd [[hi! link NeoTreeFileIcon DevIconDefault]]
+
+fg_bg("NeoTreeGitUntracked", colors.red, "none")
+fg_bg("NeoTreeGitConflict", colors.red, "none")
+fg_bg("NeoTreeGitModified", colors.green, "none")
+fg_bg("NeoTreeGitRenamed", colors.purple, "none")
+fg_bg("NeoTreeGitDeleted", colors.red, "none")
+fg_bg("NeoTreeGitAdded", colors.green, "none")
 
 -- IndentLine
 

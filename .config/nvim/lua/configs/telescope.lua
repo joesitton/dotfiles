@@ -34,6 +34,31 @@ telescope.setup(
           ["<C-j>"] = actions.move_selection_next,
           ["<C-k>"] = actions.move_selection_previous
         }
+      },
+      vimgrep_arguments = {
+        "rg",
+        "--color=never",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--column",
+        "--smart-case",
+        "--trim"
+      }
+    },
+    pickers = {
+      find_files = {
+        find_command = {
+          "fd",
+          "--type=f",
+          "--strip-cwd-prefix",
+          "--hidden",
+          "--exclude=.git",
+          "--exclude=.env",
+          "--exclude=.venv",
+          "--exclude=__pycache__",
+          "--exclude=node_modules"
+        }
       }
     },
     extensions = {
@@ -50,7 +75,7 @@ telescope.setup(
 
 local v = require("vimp")
 
-v.nnoremap("<leader>ff", ":Telescope find_files find_command=fd,--hidden,-tf<CR>")
+v.nnoremap("<leader>ff", ":Telescope find_files<CR>")
 v.nnoremap("<leader>ft", ":Telescope live_grep<CR>")
 v.nnoremap("<leader>fr", ":Telescope frecency<CR>")
 v.nnoremap("<leader>fm", ":Telescope marks<CR>")
@@ -58,7 +83,6 @@ v.nnoremap("<leader>fg", ":Telescope git_status<CR>")
 v.nnoremap("<leader>fd", ":Telescope diagnostics<CR>")
 v.nnoremap("<leader>fs", ":Telescope lsp_document_symbols<CR>")
 v.nnoremap("<leader>fb", ":Telescope buffers<CR>")
--- v.nnoremap("<leader>fx", ":TodoTelescope<CR>")
 
 v.nnoremap({"silent"}, "gd", ":Telescope lsp_definitions<CR>")
 v.nnoremap({"silent"}, "gr", ":Telescope lsp_references<CR>")

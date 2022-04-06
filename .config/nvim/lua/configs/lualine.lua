@@ -61,6 +61,24 @@ local diffviewhistory_extension = {
   filetypes = {"DiffviewFileHistory"}
 }
 
+local neotree_extension = {
+  sections = {
+    lualine_b = {
+      function()
+        return "Files"
+      end
+    }
+  },
+  inactive_sections = {
+    lualine_b = {
+      function()
+        return "Files"
+      end
+    }
+  },
+  filetypes = {"neo-tree"}
+}
+
 require("lualine").setup(
   {
     options = {
@@ -147,6 +165,14 @@ require("lualine").setup(
       lualine_y = {},
       lualine_z = {}
     },
-    extensions = {"nvim-tree", "quickfix", "toggleterm", "fugitive", diffviewfiles_extension, diffviewhistory_extension}
+    extensions = {
+      "nvim-tree",
+      "quickfix",
+      "toggleterm",
+      "fugitive",
+      diffviewfiles_extension,
+      diffviewhistory_extension,
+      neotree_extension
+    }
   }
 )
