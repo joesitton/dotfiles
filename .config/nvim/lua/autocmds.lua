@@ -8,28 +8,21 @@ augroup END
 ]]
 
 cmd [[
-augroup fix_tree_pos
-  autocmd!
-  autocmd BufEnter NvimTree,DiffviewFiles execute "normal! 0"
-augroup END
-]]
-
-cmd [[
-augroup auto_format
+augroup post_save_functions
   autocmd!
   autocmd BufWritePre * silent! undojoin | Neoformat | ColorizerAttachToBuffer
 augroup END
 ]]
 
 cmd [[
-augroup vimrc_help
+augroup vimrc_help_vertical_split
   autocmd!
   autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
 augroup END
 ]]
 
 cmd [[
-augroup colorizer
+augroup attach_colorizer
   autocmd!
   autocmd BufReadPost * ColorizerAttachToBuffer
 augroup END

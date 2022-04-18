@@ -6,13 +6,49 @@ vim.g.matchup_matchparen_offscreen = {
 
 require("nvim-treesitter.configs").setup(
   {
-    ensure_installed = "maintained",
+    ensure_installed = {
+      "bash",
+      "c",
+      "cmake",
+      "comment",
+      "cpp",
+      "css",
+      "dockerfile",
+      "devicetree",
+      "go",
+      "godot_resource",
+      "gomod",
+      "gowork",
+      "help",
+      "html",
+      "http",
+      "javascript",
+      "json",
+      "json5",
+      "jsonc",
+      "latex",
+      "lua",
+      "make",
+      "markdown",
+      "ninja",
+      "perl",
+      "python",
+      "query",
+      "regex",
+      "scss",
+      "todotxt",
+      "toml",
+      "typescript",
+      "vim",
+      "yaml"
+    },
     ignore_install = {"yaml", "latex", "toml"},
     highlight = {
       enable = true
     },
-    indent = {
-      enable = true
+    context_commentstring = {
+      enable = true,
+      enable_autocmd = false
     },
     matchup = {
       enable = true

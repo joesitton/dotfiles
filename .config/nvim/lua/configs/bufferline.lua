@@ -24,7 +24,7 @@ local v = require("vimp")
 v.nnoremap("[b", ":BufferPrevious<CR>")
 v.nnoremap("]b", ":BufferNext<CR>")
 v.nnoremap("<leader>bd", ":BufferClose<CR>")
-v.nnoremap("<leader>bD", ":BufferWipeout<CR>")
+v.nnoremap("<leader>bD", ":BufferWipeout!<CR>")
 v.nnoremap("<leader>bp", ":BufferPin<CR>")
 
 v.nnoremap("<C-Left>", ":BufferMovePrevious<CR>")

@@ -45,7 +45,8 @@ local options = {
   wildignorecase = true,
   wildmode = "list:longest,full",
   -- Folds
-  foldmethod = "indent",
+  foldmethod = "expr",
+  foldexpr = "nvim_treesitter#foldexpr()",
   foldlevelstart = 999,
   -- Other
   title = true,
@@ -75,4 +76,4 @@ end
 
 vim.cmd [[silent! colo base16-default-dark]]
 
-vim.g.python3_host_prog = "/usr/share/nvim/env/bin/python3"
+vim.g.python3_host_prog = "/usr/share/nvim/venv/bin/python3"

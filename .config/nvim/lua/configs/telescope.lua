@@ -6,6 +6,10 @@ end
 
 local telescope = require("telescope")
 
+for _, ext in ipairs({"fzf", "frecency", "projects", "file_browser"}) do
+  telescope.load_extension(ext)
+end
+
 telescope.setup(
   {
     defaults = {
@@ -65,9 +69,11 @@ telescope.setup(
       frecency = {
         default_workspace = ":CWD:"
       },
-      fzy_native = {
+      fzf = {
+        fuzzy = true,
         override_generic_sorter = true,
-        override_file_sorter = true
+        override_file_sorter = true,
+        case_mode = "smart_case"
       }
     }
   }
@@ -79,10 +85,13 @@ v.nnoremap("<leader>ff", ":Telescope find_files<CR>")
 v.nnoremap("<leader>ft", ":Telescope live_grep<CR>")
 v.nnoremap("<leader>fr", ":Telescope frecency<CR>")
 v.nnoremap("<leader>fm", ":Telescope marks<CR>")
-v.nnoremap("<leader>fg", ":Telescope git_status<CR>")
 v.nnoremap("<leader>fd", ":Telescope diagnostics<CR>")
 v.nnoremap("<leader>fs", ":Telescope lsp_document_symbols<CR>")
 v.nnoremap("<leader>fb", ":Telescope buffers<CR>")
+v.nnoremap("<leader>fp", ":Telescope projects<CR>")
+
+v.nnoremap("<leader>gs", ":Telescope git_status<CR>")
+v.nnoremap("<leader>gb", ":Telescope git_branches<CR>")
 
 v.nnoremap({"silent"}, "gd", ":Telescope lsp_definitions<CR>")
 v.nnoremap({"silent"}, "gr", ":Telescope lsp_references<CR>")

@@ -17,12 +17,13 @@ require("toggleterm").setup(
         return vim.o.columns * 0.5
       end
     end,
-    float_opts = {
-      border = "rounded",
-      highlights = {
-        border = "FloatBorder",
-        background = "NormalFloat"
+    highlights = {
+      FloatBorder = {
+        link = "FloatBorder"
       }
+    },
+    float_opts = {
+      border = "rounded"
     }
   }
 )

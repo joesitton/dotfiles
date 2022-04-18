@@ -5,31 +5,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
 end
 
-local disabled_built_ins = {
-  "2html_plugin",
-  "getscript",
-  "getscriptPlugin",
-  -- "gzip",
-  "logipat",
-  "netrw",
-  "netrwPlugin",
-  "netrwSettings",
-  "netrwFileHandlers",
-  "matchit",
-  -- "tar",
-  -- "tarPlugin",
-  "rrhelper",
-  "spellfile_plugin",
-  "vimball",
-  "vimballPlugin"
-  -- "zip",
-  -- "zipPlugin"
-}
-
-for _, plugin in pairs(disabled_built_ins) do
-  vim.g["loaded_" .. plugin] = 1
-end
-
 vim.cmd "packadd packer.nvim"
 
 require("packer").startup(
@@ -39,6 +14,11 @@ require("packer").startup(
 
       use {
         "wbthomason/packer.nvim"
+      }
+
+      use {
+        "lewis6991/impatient.nvim",
+        config = [[require("impatient")]]
       }
 
       use {
@@ -57,6 +37,10 @@ require("packer").startup(
         "tami5/sqlite.lua"
       }
 
+      use {
+        "antoinemadec/FixCursorHold.nvim"
+      }
+
       -- }}}
 
       -- {{{ Colorschemes
@@ -66,7 +50,8 @@ require("packer").startup(
       }
 
       use {
-        "folke/lsp-colors.nvim"
+        "folke/lsp-colors.nvim",
+        event = "BufRead"
       }
 
       -- }}}
@@ -101,8 +86,15 @@ require("packer").startup(
 
       use {
         "ellisonleao/glow.nvim",
-        config = [[ vim.g.glow_border = "rounded" ]],
+        config = [[vim.g.glow_border = "rounded"]],
         ft = "markdown"
+      }
+
+      use {
+        "iamcco/markdown-preview.nvim",
+        run = "cd app && npm install",
+        ft = "markdown",
+        config = [[vim.g.mkdp_auto_start = 1]]
       }
 
       use {
@@ -115,16 +107,43 @@ require("packer").startup(
       -- {{{ Functionality
 
       use {
-        "tpope/vim-surround"
+        "tpope/vim-surround",
+        keys = {"c", "d", "y"}
       }
 
       use {
-        "tpope/vim-fugitive"
+        "tpope/vim-repeat"
       }
+
+      use {
+        "tpope/vim-fugitive",
+        cmd = {
+          "G",
+          "Git",
+          "Gdiffsplit",
+          "Gread",
+          "Gwrite",
+          "Ggrep",
+          "GMove",
+          "GDelete",
+          "GBrowse",
+          "GRemove",
+          "GRename",
+          "Glgrep",
+          "Gedit"
+        },
+        ft = "fugitive"
+      }
+
+      -- use {
+      --   "goolord/alpha-nvim",
+      --   config = [[require("configs.alpha")]]
+      -- }
 
       use {
         "ethanholz/nvim-lastplace",
-        config = [[require("nvim-lastplace").setup()]]
+        config = [[require("configs.lastplace")]],
+        event = "BufRead"
       }
 
       use {
@@ -145,16 +164,21 @@ require("packer").startup(
       }
 
       use {
+        "folke/which-key.nvim",
+        config = [[require("configs.whichkey")]]
+      }
+
+      use {
+        "ahmedkhalf/project.nvim",
+        config = [[require("project_nvim").setup({exclude_dirs = {"~/.local/*"}})]]
+      }
+
+      use {
         "nvim-telescope/telescope.nvim",
         requires = {
-          {
-            "nvim-telescope/telescope-fzy-native.nvim",
-            config = [[require("telescope").load_extension("fzy_native")]]
-          },
-          {
-            "nvim-telescope/telescope-frecency.nvim",
-            config = [[require("telescope").load_extension("frecency")]]
-          }
+          {"nvim-telescope/telescope-fzf-native.nvim", run = "make"},
+          "nvim-telescope/telescope-frecency.nvim",
+          "nvim-telescope/telescope-file-browser.nvim"
         },
         config = [[require("configs.telescope")]]
       }
@@ -202,12 +226,6 @@ require("packer").startup(
         cmd = {"DiffviewOpen", "DiffviewFileHistory"}
       }
 
-      use {
-        "TimUntersberger/neogit",
-        config = [[require("configs.neogit")]],
-        cmd = "Neogit"
-      }
-
       -- use {
       --   "godlygeek/tabular",
       --   event = "BufReadPost"
@@ -225,20 +243,6 @@ require("packer").startup(
       --     "vim-test/vim-test"
       --   },
       --   run ={ ":UpdateRemotePlugins"}
-      -- }
-
-      -- use {
-      --   "chipsenkbeil/distant.nvim",
-      --   config = function()
-      --     require("distant").setup {
-      --       -- Applies Chip's personal settings to every machine you connect to
-      --       --
-      --       -- 1. Ensures that distant servers terminate with no connections
-      --       -- 2. Provides navigation bindings for remote directories
-      --       -- 3. Provides keybinding to jump into a remote file's parent directory
-      --       ["*"] = require("distant.settings").chip_default()
-      --     }
-      --   end
       -- }
 
       -- }}}
@@ -267,10 +271,14 @@ require("packer").startup(
         event = "BufReadPost"
       }
 
+      -- use {
+      --   "Pocco81/AutoSave.nvim",
+      --   config = [[require("autosave").setup()]]
+      -- }
+
       use {
         "norcalli/nvim-colorizer.lua",
-        config = [[require("colorizer").setup()]]
-        -- event = "BufReadPost"
+        config = [[require("configs.colorizer")]]
       }
 
       use {
@@ -287,8 +295,8 @@ require("packer").startup(
 
       use {
         "karb94/neoscroll.nvim",
-        config = [[require("neoscroll").setup()]],
-        keys = {"<C-d>", "<C-u>"}
+        config = [[require("configs.neoscroll")]],
+        event = "WinScrolled"
       }
 
       use {
@@ -326,15 +334,6 @@ require("packer").startup(
         cmd = "StartupTime"
       }
 
-      -- use {
-      --   "sindrets/winshift.nvim",
-      --   setup = function()
-      --     vim.api.nvim_set_keymap("n", "<C-W>m", "<Cmd>WinShift<CR>", {})
-      --   end,
-      --   config = [[require("winshift").setup()]],
-      --   cmd = "WinShift",
-      -- }
-
       use {
         "folke/zen-mode.nvim",
         setup = vim.api.nvim_set_keymap("n", "<F2>", ":ZenMode<CR>", {}),
@@ -352,12 +351,8 @@ require("packer").startup(
       -- {{{ Completion
 
       use {
-        "ray-x/lsp_signature.nvim",
-        config = [[require("configs.signature")]]
-      }
-
-      use {
         "hrsh7th/nvim-cmp",
+        commit = "1558d110d7967b9276adb7840b759980a1ed0bfd",
         requires = {
           "hrsh7th/cmp-nvim-lsp",
           "hrsh7th/cmp-calc",
@@ -423,11 +418,15 @@ require("packer").startup(
           },
           {
             "andymass/vim-matchup",
-            event = "BufReadPost"
+            event = "CursorMoved"
           },
           {
             "windwp/nvim-autopairs",
-            config = [[require("nvim-autopairs").setup()]]
+            config = [[require("nvim-autopairs").setup({check_ts = true})]]
+          },
+          {
+            "JoosepAlviste/nvim-ts-context-commentstring",
+            event = "BufReadPre"
           }
         },
         run = ":silent! TSUpdate",

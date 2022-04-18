@@ -1,6 +1,9 @@
 local luasnip = require("luasnip")
 local cmp = require("cmp")
 
+local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({map_char = {tex = ""}}))
+
 cmp.setup(
   {
     formatting = {
@@ -22,19 +25,9 @@ cmp.setup(
         }
       )
     },
-    documentation = {
-      winhighlight = "NormalFloat:DocMenu,FloatBorder:DocMenu"
-      --   border = {
-      --     {"╭", "FloatBorder"},
-      --     {"─", "FloatBorder"},
-      --     {"╮", "FloatBorder"},
-      --     {"│", "FloatBorder"},
-      --     {"╯", "FloatBorder"},
-      --     {"─", "FloatBorder"},
-      --     {"╰", "FloatBorder"},
-      --     {"│", "FloatBorder"}
-      --   }
-    },
+    -- window = {
+    --   documentation = "native"
+    -- },
     snippet = {
       expand = function(args)
         luasnip.lsp_expand(args.body)
@@ -87,7 +80,6 @@ cmp.setup(
       {name = "buffer"},
       {name = "treesitter"},
       {name = "latex_symbols"},
-      -- {name = "nvim_lsp_signature_help"},
       {name = "luasnip"},
       {name = "nvim_lua"}
     },
