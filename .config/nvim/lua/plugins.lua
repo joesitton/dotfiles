@@ -93,8 +93,8 @@ require("packer").startup(
       use {
         "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
-        ft = "markdown",
-        config = [[vim.g.mkdp_auto_start = 1]]
+        config = [[vim.g.mkdp_auto_start = 1]],
+        ft = "markdown"
       }
 
       use {
@@ -116,23 +116,23 @@ require("packer").startup(
       }
 
       use {
-        "tpope/vim-fugitive",
-        cmd = {
-          "G",
-          "Git",
-          "Gdiffsplit",
-          "Gread",
-          "Gwrite",
-          "Ggrep",
-          "GMove",
-          "GDelete",
-          "GBrowse",
-          "GRemove",
-          "GRename",
-          "Glgrep",
-          "Gedit"
-        },
-        ft = "fugitive"
+        "tpope/vim-fugitive"
+        -- cmd = {
+        --   "G",
+        --   "Git",
+        --   "Gdiffsplit",
+        --   "Gread",
+        --   "Gwrite",
+        --   "Ggrep",
+        --   "GMove",
+        --   "GDelete",
+        --   "GBrowse",
+        --   "GRemove",
+        --   "GRename",
+        --   "Glgrep",
+        --   "Gedit"
+        -- },
+        -- ft = "fugitive"
       }
 
       -- use {
@@ -176,7 +176,10 @@ require("packer").startup(
       use {
         "nvim-telescope/telescope.nvim",
         requires = {
-          {"nvim-telescope/telescope-fzf-native.nvim", run = "make"},
+          {
+            "nvim-telescope/telescope-fzf-native.nvim",
+            run = "make"
+          },
           "nvim-telescope/telescope-frecency.nvim",
           "nvim-telescope/telescope-file-browser.nvim"
         },
@@ -211,13 +214,14 @@ require("packer").startup(
         requires = {
           "MunifTanjim/nui.nvim"
         },
-        config = [[require("configs.tree")]]
+        config = [[require("configs.tree")]],
+        keys = "\\"
       }
 
       use {
         "https://gitlab.com/yorickpeterse/nvim-window",
         setup = vim.api.nvim_set_keymap("n", "<leader>pw", ":lua require('nvim-window').pick()<CR>", {}),
-        config = [[require("nvim-window").setup({normal_hl = "NvimTreeWindowPicker", border = "none"})]]
+        config = [[require("nvim-window").setup({normal_hl = "Search", border = "none"})]]
       }
 
       use {
@@ -233,8 +237,8 @@ require("packer").startup(
 
       use {
         "michaelb/sniprun",
-        cmd = "SnipRun",
-        run = "bash ./install.sh"
+        run = "bash ./install.sh",
+        cmd = "SnipRun"
       }
 
       -- use {
@@ -308,7 +312,7 @@ require("packer").startup(
       use {
         "beauwilliams/focus.nvim",
         config = [[require("configs.focus")]],
-        cmd = "FocusEnable"
+        event = "BufReadPost"
       }
 
       use {
@@ -343,7 +347,8 @@ require("packer").startup(
 
       use {
         "akinsho/toggleterm.nvim",
-        config = [[require("configs.term")]]
+        config = [[require("configs.term")]],
+        keys = "<F1>"
       }
 
       -- }}}
@@ -352,7 +357,6 @@ require("packer").startup(
 
       use {
         "hrsh7th/nvim-cmp",
-        commit = "1558d110d7967b9276adb7840b759980a1ed0bfd",
         requires = {
           "hrsh7th/cmp-nvim-lsp",
           "hrsh7th/cmp-calc",
@@ -361,6 +365,9 @@ require("packer").startup(
           "hrsh7th/cmp-cmdline",
           "hrsh7th/cmp-buffer",
           "hrsh7th/cmp-nvim-lua",
+          "hrsh7th/cmp-nvim-lsp-signature-help",
+          "petertriho/cmp-git",
+          "joesitton/cmp-conventionalcommits",
           "joesitton/cmp-rg",
           "lukas-reineke/cmp-under-comparator",
           "ray-x/cmp-treesitter",

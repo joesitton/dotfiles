@@ -236,7 +236,7 @@ vim.fn.sign_define("DiagnosticSignHint", {text = "", texthl = "DiagnosticSign
 
 -- Cmp (autocomplete)
 
-cmd("hi CmpItemAbbrMatch gui=bold,underline guifg=" .. colors.fg .. " guibg=none")
+cmd("hi CmpItemAbbrMatch gui=bold guifg=" .. colors.fg .. " guibg=none")
 cmd("hi! link CmpItemAbbrMatchFuzzy CmpItemAbbrMatch")
 
 fg("CmpItemAbbrDefault", colors.gray)

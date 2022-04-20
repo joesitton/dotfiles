@@ -10,7 +10,7 @@ augroup END
 cmd [[
 augroup post_save_functions
   autocmd!
-  autocmd BufWritePre * silent! undojoin | Neoformat | ColorizerAttachToBuffer
+  autocmd BufWrite * silent! undojoin | Neoformat | ColorizerAttachToBuffer
 augroup END
 ]]
 

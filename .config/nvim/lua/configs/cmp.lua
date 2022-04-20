@@ -4,6 +4,8 @@ local cmp = require("cmp")
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({map_char = {tex = ""}}))
 
+require("cmp_git").setup()
+
 cmp.setup(
   {
     formatting = {
@@ -20,14 +22,23 @@ cmp.setup(
             rg = "[rg]",
             calc = "[Calc]",
             treesitter = "[TS]",
-            emoji = "[Emoji]"
+            emoji = "[Emoji]",
+            conventionalcommits = "[CC]",
+            cmdline_history = "[History]"
           })
         }
       )
     },
-    -- window = {
-    --   documentation = "native"
-    -- },
+    window = {
+      -- completion = {
+      --   border = "rounded",
+      --   winhighlight = "FloatBorder:FloatBorder"
+      -- },
+      documentation = {
+        -- border = "rounded",
+        winhighlight = "Normal:Pmenu"
+      }
+    },
     snippet = {
       expand = function(args)
         luasnip.lsp_expand(args.body)
@@ -81,16 +92,19 @@ cmp.setup(
       {name = "treesitter"},
       {name = "latex_symbols"},
       {name = "luasnip"},
-      {name = "nvim_lua"}
+      {name = "nvim_lua"},
+      {name = "nvim_lsp_signature_help"},
+      {name = "conventionalcommits"},
+      {name = "cmp_git"}
     },
     sorting = {
       comparators = {
         cmp.config.compare.offset,
         cmp.config.compare.exact,
+        cmp.config.compare.sort_text,
         cmp.config.compare.score,
         require("cmp-under-comparator").under,
         cmp.config.compare.kind,
-        cmp.config.compare.sort_text,
         cmp.config.compare.length,
         cmp.config.compare.order
       }
@@ -98,43 +112,36 @@ cmp.setup(
   }
 )
 
-cmp.setup.cmdline(
-  "/",
-  {
-    sources = cmp.config.sources(
-      {
+for _, cmdtype in ipairs({"?", "/"}) do
+  cmp.setup.cmdline(
+    cmdtype,
+    {
+      view = {
+        entries = {name = "custom", selection_order = "near_cursor"}
+      },
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources(
         {
-          name = "rg",
-          option = {
-            additional_arguments = "--smart-case",
-            only_current_buffer = true
+          {
+            name = "rg",
+            option = {
+              additional_arguments = "--smart-case",
+              only_current_buffer = true
+            }
           }
         }
-      }
-    )
-  }
-)
-
-cmp.setup.cmdline(
-  "?",
-  {
-    sources = cmp.config.sources(
-      {
-        {
-          name = "rg",
-          option = {
-            additional_arguments = "--smart-case",
-            only_current_buffer = true
-          }
-        }
-      }
-    )
-  }
-)
+      )
+    }
+  )
+end
 
 cmp.setup.cmdline(
   ":",
   {
+    view = {
+      entries = {name = "custom", selection_order = "near_cursor"}
+    },
+    mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources(
       {
         {name = "path"}

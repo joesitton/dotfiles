@@ -6,9 +6,8 @@ g.neoformat_basic_format_trim = 1
 g.neoformat_run_all_formatters = 1
 g.neoformat_only_msg_on_error = 1
 
-g.neoformat_lua_luafmt = {
-  exe = "luafmt",
-  args = {"-i 2"}
-}
+-- Lua
+g.neoformat_lua_luafmt = {exe = "luafmt", args = {"-i 2"}}
 
+-- Python
 g.neoformat_python_enabled = {"black", "isort"}
