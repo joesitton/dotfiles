@@ -1,5 +1,4 @@
-require("toggleterm").setup(
-  {
+require("toggleterm").setup({
     hide_numbers = true,
     shade_filetypes = {},
     shade_terminals = false,
@@ -11,24 +10,17 @@ require("toggleterm").setup(
     close_on_exit = true,
     shell = vim.o.shell,
     size = function(term)
-      if term.direction == "horizontal" then
-        return 10
-      elseif term.direction == "vertical" then
-        return vim.o.columns * 0.5
-      end
+        if term.direction == "horizontal" then
+            return 10
+        elseif term.direction == "vertical" then
+            return vim.o.columns * 0.5
+        end
     end,
-    highlights = {
-      FloatBorder = {
-        link = "FloatBorder"
-      }
-    },
-    float_opts = {
-      border = "rounded"
-    }
-  }
-)
+    highlights = { FloatBorder = { link = "FloatBorder" } },
+    float_opts = { border = "rounded" },
+})
 
 local v = require("vimp")
 
-v.nnoremap({"silent"}, "<F1>", "<CMD>execute v:count1 . 'ToggleTerm'<CR>")
-v.tnoremap({"silent"}, "<F1>", "<CMD>execute v:count1 . 'ToggleTerm'<CR>")
+v.nnoremap({ "silent" }, "<F1>", "<CMD>execute v:count1 . 'ToggleTerm'<CR>")
+v.tnoremap({ "silent" }, "<F1>", "<CMD>execute v:count1 . 'ToggleTerm'<CR>")

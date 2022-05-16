@@ -1,19 +1,19 @@
 local cmd = vim.cmd
 
 local function fg(group, color)
-  cmd("hi! " .. group .. " guifg=" .. color)
+    cmd("hi! " .. group .. " guifg=" .. color)
 end
 
 local function bg(group, color)
-  cmd("hi! " .. group .. " guibg=" .. color)
+    cmd("hi! " .. group .. " guibg=" .. color)
 end
 
 local function fg_bg(group, fg_color, bg_color)
-  cmd("hi! " .. group .. " guifg=" .. fg_color .. " guibg=" .. bg_color)
+    cmd("hi! " .. group .. " guifg=" .. fg_color .. " guibg=" .. bg_color)
 end
 
 local function fg_bg_nogui(group, fg_color, bg_color)
-  cmd("hi! " .. group .. " guifg=" .. fg_color .. " guibg=" .. bg_color .. " gui=none")
+    cmd("hi! " .. group .. " guifg=" .. fg_color .. " guibg=" .. bg_color .. " gui=none")
 end
 
 local colors = require("colors.base16")
@@ -54,7 +54,7 @@ fg_bg("LineNr", linenr, column_bg)
 local cursorline_bg = colors.black
 
 fg_bg_nogui("CursorLine", "none", cursorline_bg)
-cmd [[hi! CursorLine cterm=none]]
+cmd([[hi! CursorLine cterm=none]])
 fg_bg("CursorLineNR", colors.fg, column_bg)
 bg("Visual", colors.dark_gray3)
 
@@ -68,9 +68,9 @@ cmd("hi MatchParen gui=none guibg=" .. match_bg)
 -- Popup menus
 
 local pmenu_bg = colors.dark_gray4
-local pmenu_sel_bg = colors.dark_gray7
-local pmenu_sel_fg = colors.fg
-local pmenu_scroll_bg = colors.gray5
+local pmenu_sel_bg = colors.gray5
+local pmenu_sel_fg = "none"
+local pmenu_scroll_bg = colors.dark_gray5
 local pmenu_doc = colors.dark_gray3
 
 bg("Pmenu", pmenu_bg)
@@ -179,7 +179,7 @@ fg("TreeModified", colors.red)
 fg("NeoTreeDirectoryIcon", colors.orange)
 fg("NeoTreeRootName", colors.purple)
 -- cmd [[hi! NeoTreeRootName gui=none]]
-cmd [[hi! link NeoTreeFileIcon DevIconDefault]]
+cmd([[hi! link NeoTreeFileIcon DevIconDefault]])
 
 fg_bg("NeoTreeGitUntracked", colors.red, "none")
 fg_bg("NeoTreeGitConflict", colors.red, "none")
@@ -187,6 +187,13 @@ fg_bg("NeoTreeGitModified", colors.green, "none")
 fg_bg("NeoTreeGitRenamed", colors.purple, "none")
 fg_bg("NeoTreeGitDeleted", colors.red, "none")
 fg_bg("NeoTreeGitAdded", colors.green, "none")
+
+-- Ultest
+fg_bg("UltestPass", colors.green, column_bg)
+fg_bg("UltestFail", colors.red, column_bg)
+fg_bg("UltestRunning", colors.yellow, column_bg)
+fg("UltestSummaryNamespace", colors.purple)
+fg("UltestBorder", primary)
 
 -- IndentLine
 
@@ -229,24 +236,28 @@ fg_bg("DiagnosticSignInfo", colors.blue, column_bg)
 fg("DiagnosticHint", colors.green)
 fg_bg("DiagnosticSignHint", colors.green, column_bg)
 
-vim.fn.sign_define("DiagnosticSignError", {text = "", texthl = "DiagnosticSignError"})
-vim.fn.sign_define("DiagnosticSignWarn", {text = "", texthl = "DiagnosticSignWarn"})
-vim.fn.sign_define("DiagnosticSignInfo", {text = "", texthl = "DiagnosticSignInfo"})
-vim.fn.sign_define("DiagnosticSignHint", {text = "", texthl = "DiagnosticSignHint"})
+vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })
+vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignInfo" })
+vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
 
 -- Cmp (autocomplete)
 
 cmd("hi CmpItemAbbrMatch gui=bold guifg=" .. colors.fg .. " guibg=none")
 cmd("hi! link CmpItemAbbrMatchFuzzy CmpItemAbbrMatch")
+cmd("hi! link TelescopeResultsClass CmpItemKindClass")
 
+fg("CmpItemMenu", colors.dark_gray)
 fg("CmpItemAbbrDefault", colors.gray)
-fg("CmpItemKindVariable", colors.blue)
-fg("CmpItemKindInterface", colors.blue)
-fg("CmpItemKindFunction", colors.purple)
+fg("CmpItemKindVariable", colors.red)
+fg("CmpItemKindInterface", colors.yellow)
+fg("CmpItemKindFunction", colors.blue)
 fg("CmpItemKindMethod", colors.purple)
 fg("CmpItemKindSnippet", colors.green)
-fg("CmpItemKindText", colors.gray7)
-fg("CmpItemKindKeyword", colors.gray7)
-fg("CmpItemKindProperty", colors.gray7)
-fg("CmpItemKindUnit", colors.gray7)
-cmd("hi CmpItemAbbrDeprecated guifg=" .. colors.dark_black .. " guibg=NONE gui=strikethrough")
+fg("CmpItemKindText", colors.gray)
+fg("CmpItemKindKeyword", colors.purple)
+fg("CmpItemKindProperty", colors.purple)
+fg("CmpItemKindUnit", colors.purple)
+fg("CmpItemKindClass", colors.yellow)
+fg("CmpItemKindConstant", colors.orange)
+cmd("hi CmpItemAbbrDeprecated guifg=" .. colors.black .. " guibg=NONE gui=strikethrough")

@@ -1,63 +1,65 @@
+local colors = require("colors.base16")
+
 vim.g.matchup_matchparen_offscreen = {
-  ["method"] = "popup",
-  ["highlight"] = "OffscreenPopup",
-  ["fullwidth"] = 1
+    ["method"] = "popup",
+    ["highlight"] = "OffscreenPopup",
+    ["fullwidth"] = 1,
 }
 
-require("nvim-treesitter.configs").setup(
-  {
+require("nvim-treesitter.configs").setup({
     ensure_installed = {
-      "bash",
-      "c",
-      "cmake",
-      "comment",
-      "cpp",
-      "css",
-      "dockerfile",
-      "devicetree",
-      "go",
-      "godot_resource",
-      "gomod",
-      "gowork",
-      "help",
-      "html",
-      "http",
-      "javascript",
-      "json",
-      "json5",
-      "jsonc",
-      "latex",
-      "lua",
-      "make",
-      "markdown",
-      "ninja",
-      "perl",
-      "python",
-      "query",
-      "regex",
-      "scss",
-      "todotxt",
-      "toml",
-      "typescript",
-      "vim",
-      "yaml"
+        "bash",
+        "c",
+        "cmake",
+        "comment",
+        "cpp",
+        "css",
+        "dockerfile",
+        "devicetree",
+        "go",
+        "godot_resource",
+        "gomod",
+        "gowork",
+        "help",
+        "html",
+        "http",
+        "javascript",
+        "json",
+        "json5",
+        "jsonc",
+        "latex",
+        "lua",
+        "make",
+        "markdown",
+        "ninja",
+        "perl",
+        "python",
+        "query",
+        "regex",
+        "scss",
+        "todotxt",
+        "toml",
+        "typescript",
+        "vim",
+        "yaml",
     },
-    ignore_install = {"yaml", "latex", "toml"},
-    highlight = {
-      enable = true
-    },
-    context_commentstring = {
-      enable = true,
-      enable_autocmd = false
-    },
-    matchup = {
-      enable = true
-    },
-    autopairs = {
-      enable = true
-    },
+    ignore_install = { "yaml", "latex", "toml" },
+    highlight = { enable = true },
+    context_commentstring = { enable = true, enable_autocmd = false },
+    matchup = { enable = true },
+    autopairs = { enable = true },
     rainbow = {
-      enable = true
-    }
-  }
-)
+        enable = true,
+        colors = {
+            colors.red,
+            colors.orange,
+            colors.yellow,
+            colors.green,
+            colors.cyan,
+            colors.blue,
+            colors.purple,
+        },
+        extended_mode = true,
+        max_file_lines = nil,
+    },
+})

@@ -1,62 +1,52 @@
 local cmd = vim.cmd
 
-cmd [[
+cmd([[
 augroup no_repeat_comment
   autocmd!
-  autocmd FileType * set formatoptions-=cro
+  autocmd BufWinEnter * set formatoptions-=cro
 augroup END
-]]
+]])
 
-cmd [[
-augroup post_save_functions
-  autocmd!
-  autocmd BufWrite * silent! undojoin | Neoformat | ColorizerAttachToBuffer
-augroup END
-]]
-
-cmd [[
+cmd([[
 augroup vimrc_help_vertical_split
   autocmd!
   autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
 augroup END
-]]
+]])
 
-cmd [[
+cmd([[
 augroup attach_colorizer
   autocmd!
   autocmd BufReadPost * ColorizerAttachToBuffer
 augroup END
-]]
+]])
 
-cmd [[
+cmd([[
 augroup highlight_yank
   autocmd!
   autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="Search", timeout=500}
 augroup END
-]]
+]])
 
-cmd [[
+cmd([[
 augroup illuminate
   autocmd!
   autocmd VimEnter * hi! link illuminatedWord CursorLine | hi! clear illuminatedCurWord
 augroup END
-]]
+]])
 
--- cmd [[
--- augroup ultest_runner
---     au!
---     au BufWritePost * UltestNearest
--- augroup END
--- ]]
+cmd([[
+augroup ultest_runner
+    au!
+    au BufWritePost test* UltestNearest
+augroup END
+]])
 
-cmd(
-  [[
+cmd([[
 augroup config_update
   autocmd!
   autocmd BufWritePost plugins.lua source <afile> | PackerCompile
   autocmd BufWritePost highlights.lua source <afile>
-  autocmd ColorScheme * source ]] ..
-    vim.fn.stdpath("config") .. [[/lua/highlights.lua
+  autocmd ColorScheme * source ]] .. vim.fn.stdpath("config") .. [[/lua/highlights.lua
 augroup END
-]]
-)
+]])
