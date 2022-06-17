@@ -1,0 +1,150 @@
+#!/bin/sh
+
+bspc monitor -d 1 2 3 4 5
+
+bspc config bottom_padding          0
+bspc config top_padding             0
+bspc config border_width            1
+bspc config window_gap              10
+
+bspc config split_ratio             0.54
+
+bspc config borderless_monocle      true
+bspc config gapless_monocle         true
+bspc config single_monocle          true
+bspc config focus_follows_pointer   false
+
+bspc config normal_border_color     "#181818"
+bspc config focused_border_color    "#7cafc2"
+
+bspc rule -a Thunar state=floating
+bspc rule -a feh state=floating
+bspc rule -a Gpa state=floating rectangle=1010x750
+bspc rule -a Audacity state=floating
+bspc rule -a nitrogen state=floating
+bspc rule -a transmission-gtk state=floating
+bspc rule -a Dunst layer=above sticky=on private=on
+bspc rule -a Vmware desktop=^5 follow=on
+bspc rule -a firefox desktop=^2 follow=on
+bspc rule -a "Tor Browser" state=floating
+bspc rule -a tint2 state=floating layer=above sticky=on locked=on private=on border=off
+bspc rule -a "Grub-customizer" state=floating
+bspc rule -a "Polybar*:*:*" layer=above
+bspc rule -a "kitty:*:Scratch" state=floating sticky=on locked=on private=on border=off hidden=on focus=on layer=above rectangle=1920x700+0+0
+bspc rule -a "Lxappearance:*:Customize Look and Feel" state=floating
+bspc rule -a "firefox:*:Picture-in-Picture" state=floating sticky=on locked=on private=on border=off focus=on layer=above rectangle=633x396+1277+736
+bspc rule -a "firefox:*:Library" state=floating
+bspc rule -a "firefox:*:Navigator" state=floating
+
+$HOME/.config/polybar/launch.sh &
+
+raise_polybar() { 
+  xdo raise $(xdo id -a Polybar-no-bg) &
+  xdo raise $(xdo id -N Polybar) &
+  wait
+  xdo raise $(xdo id -a tint2)
+}
+lower_polybar() { 
+  xdo lower $(xdo id -a Polybar-no-bg) &
+  xdo lower $(xdo id -N Polybar) &
+  wait
+  xdo lower $(xdo id -a tint2)
+}
+
+bspc subscribe all | while read -r event args; do
+  case "$event" in
+
+    node_state)
+      read -r _ _ wid state status <<< "$args"
+
+      case "$state $status" in
+        "fullscreen on")
+          lower_polybar
+          ;;
+
+        "tiled on")
+          raise_polybar
+
+          bspc node -l above
+          ;;
+
+        "floating on")
+          raise_polybar
+
+          if [ "$(xdotool getwindowname $wid)" == "Scratch" ]; then
+            continue
+          fi
+
+          bspc query -N -n '.local.!sticky.!hidden' | xargs -I@ bspc node @ -l normal
+          ;;
+
+        *)
+          raise_polybar
+          ;;
+      esac
+      ;;
+
+    node_focus)
+      read -r _ _ wid state status <<< "$args"
+
+      # if [[ $(xdotool getwindowname $wid) =~ Firefox ]]; then
+      #   chwb -c 0xab4642 $wid
+      # fi
+
+      case "$(bspc query -T -n focused | jq -r .client.state)" in
+        fullscreen)
+          lower_polybar
+          ;;
+
+        tiled)
+          raise_polybar
+
+          bspc node -l above
+          ;;
+
+        floating)
+          raise_polybar
+
+          if [ "$(xdotool getwindowname $wid)" == "Scratch" ]; then
+            continue
+          fi
+
+          bspc query -N -n '.local.!sticky.!hidden' | xargs -I@ bspc node @ -l normal
+          ;;
+
+        *)
+          raise_polybar
+
+          bspc node -l normal
+          ;;
+
+      esac
+
+      ;;
+
+    node_geometry)
+      read -r _ _ wid coords <<< "$args"
+      IFS="+" read -r size x y <<< "$coords"
+      IFS="x" read -r w h <<< "$size"
+
+      if [ "$(xdotool getwindowname $wid)" == "Scratch" ]; then
+        if [[ "$x" -eq 0 && "$y" -eq 0 ]]; then
+          continue
+        fi
+
+        wmctrl -i -r "$wid" -e 0,0,0,1920,540
+      elif [ "$y" -lt 0 ]; then
+        bspc node "$wid" -v 0 "$(( y * -1 ))"
+      elif [ "$y" -gt $((1200 - 56)) ]; then
+        wmctrl -i -r "$wid" -e 0,"$x","$((1200 - 56 - 56))","$w","$h"
+      fi
+
+      ;;
+
+    *)
+      ;;
+
+  esac
+
+  # sleep 0.1
+done &

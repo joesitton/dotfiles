@@ -10,6 +10,12 @@ super + Return
 super + space
 	rofi -show drun
 
+super + p
+    scratch
+
+super + alt + e
+    emote
+
 # make sxhkd reload its configuration files
 super + Escape
 	pkill -USR1 -x sxhkd; \
@@ -20,13 +26,17 @@ super + Escape
 #
 
 # restart/quit bspwm
-super + ctrl + alt + {r,q}
-	bspc {wm -r,quit}
+super + ctrl + alt + r
+    pkill bspwmrc; \
+	bspc wm -r
+
+super + ctrl + alt + q
+    bspc quit
 
 # close and kill
 super + {w,q}
     bspc node -{c,k} || \
-    bspc node $(xdo id -N Alacritty -a Scratch ).!hidden -g hidden
+    bspc node $(xdo id -N kitty -a Scratch ).!hidden -g hidden
 
 #
 # tree
@@ -38,7 +48,8 @@ super + {e,b}
 
 # mirror flip
 super + backslash
-    bspc node @/ -F vertical
+    bspc node @/ -F vertical || \
+    bspc node @/ -F horizontal
 
 # cycle the tree
 super + shift + {comma,period}
@@ -58,7 +69,7 @@ super + {t, shift + t, f, shift + f}
 
 # alternate between the tiled and monocle layout
 super + m
-	bspc desktop -l next
+	[[ "$(bspc query -N -n .window.!hidden -d .focused | wc -l)" -gt 1 ]] && bspc desktop -l next
 
 # set the node flags
 # super + shift + f ; {m,l,s}
@@ -85,8 +96,8 @@ super + {_, shift} + {h,j,k,l}
 super + {comma,period}
 	bspc node -f {prev,next}.local.!hidden.window
 
-alt + {_, shift} + Tab
-	bspc node -f {prev,next}.local.!hidden.window
+# alt + {_, shift} + Tab
+# 	bspc node -f {prev,next}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
@@ -101,7 +112,8 @@ super + shift + s ; {1-5}
 	bspc node -d '^{1-5}'
 
 # move
-super + shift + m ; {1-5}
+# super + shift + m ; {1-5}
+super + alt + {1-5}
     bspc node -d '^{1-5}' --follow
 
 # move node to preselected area
@@ -151,7 +163,6 @@ super + alt + space
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-
 #
 # function keys
 #
@@ -163,11 +174,7 @@ XF86Audio{Lower,Raise}Volume
     volume {down, up}
 
 XF86MonBrightness{Down,Up}
-    brightness {down, up}
+    brightness {down,up} 10
 
-#
-# scripts
-#
-
-super + p
-    scratch
+shift + XF86MonBrightness{Down,Up}
+    brightness {down,up} 1

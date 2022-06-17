@@ -23,7 +23,7 @@ label-focused-padding = 2
 
 label-occupied = %icon%
 label-occupied-foreground = ${colors.foreground}
-label-occupied-underline = ${colors.black3}
+label-occupied-underline = ${colors.black7}
 label-occupied-padding = 2
 
 label-urgent = %icon%
@@ -31,12 +31,13 @@ label-urgent-foreground = ${colors.red}
 label-urgent-padding = 2
 
 label-empty = %icon%
-label-empty-foreground = ${colors.black5}
+label-empty-foreground = ${colors.black7}
 label-empty-padding = 2
 
-label-marked = M
-label-locked = L
-label-sticky = S
+label-monocle = 
+label-marked = 
+# label-locked = L
+# label-sticky = S
 
 [module/title]
 type = internal/xwindow
@@ -48,8 +49,8 @@ label-maxlen = 80
 
 [module/battery]
 type = internal/battery
-full-at = 98
-low-at = -1
+full-at = 99
+low-at = 20
 time-format = %-H:%M
 
 format-full = "<label-full> "
@@ -142,14 +143,15 @@ label-mounted = %percentage_used%%
 
 [module/crypto]
 type = custom/script
-exec = printf "%'.2f" "$(curl -s rate.sx/1btc)"
-interval = 60
+exec = printf "%'.2f" "$(curl -s rate.sx/1btc)" 2>/dev/null
+exec-if = ping -q -c 1 -W 1 1.1.1.1
+interval = 600
 
 format = $<label>
 
 format-prefix = 
 format-prefix-padding = 2
-# format-prefix-foreground = ${colors.orange}
+format-prefix-foreground = ${colors.orange}
 
 [module/weather]
 type = custom/script
@@ -166,8 +168,9 @@ exec = echo "$(pacman -Qu | wc -l)"
 interval = 300
 
 format = <label>
-format-prefix = 
+format-prefix = 
 format-prefix-padding = 2
+format-prefix-foreground = ${colors.green}
 
 click-left = /usr/local/bin/updates
 
@@ -176,7 +179,7 @@ type = custom/text
 content = │
 content-foreground = ${colors.black4}
 
-[module/stackeddate]
+[module/date]
 type = custom/script
 exec = date '+%-m/%-d/%Y'
 tail = true
@@ -184,7 +187,7 @@ interval = 1
 
 format = <label>
 
-[module/stackedtime]
+[module/time]
 type = custom/script
 exec = date '+%-I:%M %P'
 tail = true

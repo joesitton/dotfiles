@@ -18,7 +18,7 @@
 #   <sunrise>                       H:M
 #   <sunset>                        H:M
 
-format = '<icon>  <temperature>°F'
+format = '<icon>  <city>, <temperature>°F'
 interval = 300
 
 [units]
