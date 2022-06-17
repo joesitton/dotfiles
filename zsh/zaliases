@@ -1,0 +1,87 @@
+# Sudo
+alias sudo='sudo '
+alias _='sudo'
+alias pls='sudo $(fc -ln -1)'
+
+# Pacman
+alias pac='sudo pacman'
+alias pacs='yay -Ss'
+alias paci='pac -Qil'
+alias pacin='pac -S'
+alias pacinfo='pac -Si'
+alias paco='pac -Qo'
+alias pacrm='pac -Rsc'
+alias pacup='pac -Syy'
+alias pacupg='pac -Syyu'
+
+alias aurin='yay -S --noeditmenu --nodiffmenu'
+
+# Ansible
+alias ap='ansible-playbook'
+alias ac='ansible-console'
+
+# Docker
+alias dps='docker ps --format '\''table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}'\'
+alias drm='docker rm -f'
+
+# Git
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit -m'
+alias gca='git commit --amend'
+alias gcan='git commit --amend --no-edit'
+alias gp='git push'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gl='git log --oneline'
+
+# Other
+alias z='zoxide'
+alias pip='python -m pip'
+alias icat='kitty +kitten icat'
+alias fj='firejail'
+alias cht='cht.sh'
+
+# ls
+if [ "$(command -v exa)" ]; then
+  alias ls='exa --color=auto --group-directories-first -F --sort extension --color-scale'
+  alias ll='ls -lhg@ --git'
+  alias la='ll -a --git'
+  alias lS='ll --sort size -r'
+  alias lt='la -T -L 3 -I "node_modules|__pycache__|.git|.env|.venv|env|venv"'
+else
+  alias ls='ls --color=auto --group-directories-first -F -X'
+  alias ll='ls -lh'
+  alias la='ls -lAh'
+fi
+
+# vim
+if [ "$(command -v nvim)" ]; then
+   alias vim='nvim'
+   alias vi='vim'
+fi
+
+# alias tmux='tmux -2'
+# alias tat='tmux a -t'
+
+mkcd() {
+  mkdir -p $1
+  cd $1
+}
+
+# sudo group write access
+gimme() {
+    sudo chgrp sudo $@
+    sudo chmod g+w $@
+}
+
+# auto ls
+chpwd() {
+    ls;
+}
+
+eval "$(pyenv init -)"
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
+
+# vim: ft=zsh
