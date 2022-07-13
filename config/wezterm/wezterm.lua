@@ -24,11 +24,12 @@ return {
     cursor_blink_ease_in = "Constant",
     cursor_blink_ease_out = "Constant",
     cursor_blink_rate = 0,
+    window_close_confirmation = "NeverPrompt",
     colors = {
         foreground = "#f8f8f8",
-        background = "#111111",
+        background = "#101010",
         cursor_bg = "#ffffff",
-        ansi = { "#111111", "#ab4642", "#a1b56c", "#f7ca88", "#7cafc2", "#ba8baf", "#86c1b9", "#b8b8b8" },
+        ansi = { "#181818", "#ab4642", "#a1b56c", "#f7ca88", "#7cafc2", "#ba8baf", "#86c1b9", "#f8f8f8" },
         brights = { "#585858", "#ab4642", "#a1b56c", "#f7ca88", "#7cafc2", "#ba8baf", "#86c1b9", "#f8f8f8" },
         indexed = {
             [16] = "#dc9656",
