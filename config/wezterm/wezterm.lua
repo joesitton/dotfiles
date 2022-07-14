@@ -3,11 +3,12 @@ local wez = require("wezterm")
 return {
     default_prog = { "/bin/zsh" },
     font = wez.font_with_fallback({
-        "Iosevka Custom", -- g@ => <= >= <==== <->
+        { family = "Iosevka Custom", weight = "Regular" }, -- g@ => <= >= <==== <->
+        { family = "Iosevka Custom", weight = "DemiBold" }, -- g@ => <= >= <==== <->
         "Symbols Nerd Font", --  
         "JoyPixels", -- 🥔 🌩️
     }),
-    font_size = 16,
+    font_size = 16.5,
     enable_csi_u_key_encoding = true,
     window_background_opacity = 0.98,
     hide_tab_bar_if_only_one_tab = true,
@@ -17,9 +18,9 @@ return {
         left = "0.5cell",
         top = "0.25cell",
         right = "0.5cell",
-        bottom = "0.25cell",
+        bottom = 0,
     },
-    cell_width = 0.9,
+    -- cell_width = 0.9,
     animation_fps = 1,
     cursor_blink_ease_in = "Constant",
     cursor_blink_ease_out = "Constant",

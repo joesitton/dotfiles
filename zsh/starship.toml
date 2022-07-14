@@ -1,29 +1,63 @@
-right_format = "$status$time"
+format = """
+$all\
+$fill\
+$battery\
+$cmd_duration\
+$time\
+$line_break\
+$prompt\
+$jobs\
+$shell\
+$character\
+"""
+right_format = "$status"
+
+[fill]
+symbol = " "
 
 [character]
 vicmd_symbol = "[❮](bold blue)"
+# vicmd_replace_symbol = "[❮](bold red)"
+# vicmd_visual_symbol = "[❮](bold orange)"
 
 [username]
 # show_always = true
-format = "[$user]($style) on "
+format = "[$user]($style) "
 
 [hostname]
-# ssh_only = true
+# ssh_only = false
 style = "bold dimmed purple"
+format = " at [$hostname]($style) "
 
 [jobs]
-style = "bold blue"
-symbol = "+"
+style = "bold yellow"
+symbol = "▥"
 
 [time]
 disabled = false
-format = "[$time]($style)"
+format = "[$time]($style) "
 time_format = "%_I:%M %P"
 
 [status]
 disabled = false
+map_symbol = true
+not_executable_symbol = "+x "
+sigint_symbol = "^C "
+not_found_symbol = "? "
+signal_symbol = " "
 symbol = "✖ "
+format = "[$symbol$status]($style)"
 
 [directory]
-format = "[$path]($style) [$read_only]($read_only_style)"
-read_only = "🔒 "
+format = "in [$path]($style)[$read_only]($read_only_style) "
+read_only = "  "
+truncation_length = 4
+
+[git_branch]
+symbol = " "
+
+[kubernetes]
+disabled = false
+
+[cmd_duration]
+format = "took [$duration]($style) at "

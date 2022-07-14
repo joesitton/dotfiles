@@ -1,22 +1,35 @@
-# Antigen
-export ADOTDIR=/etc/antigen
+#!/bin/zsh
 
-if [ ! -f /etc/antigen/antigen.zsh ]; then
-  curl -L git.io/antigen > /etc/antigen/antigen.zsh
+if [ ! -f ${ADOTDIR}/antigen.zsh ]; then
+  mkdir -p ${ADOTDIR}
+  curl -s -L git.io/antigen > ${ADOTDIR}/antigen.zsh
 fi
 
-source /etc/antigen/antigen.zsh
+source ${ADOTDIR}/antigen.zsh
 
 antigen bundles <<EOF
-      zdharma-continuum/fast-syntax-highlighting
-      zsh-users/zsh-history-substring-search
-      zsh-users/zsh-autosuggestions
-      zsh-users/zsh-completions
-      le0me55i/zsh-extract
-      mdumitru/fancy-ctrl-z
-      jeffreytse/zsh-vi-mode
-      ael-code/zsh-colored-man-pages
-      trapd00r/LS_COLORS
+  zdharma-continuum/fast-syntax-highlighting
+  zsh-users/zsh-history-substring-search
+  zsh-users/zsh-autosuggestions
+  zsh-users/zsh-completions
+  le0me55i/zsh-extract
+  mdumitru/fancy-ctrl-z
+  jeffreytse/zsh-vi-mode
+  ael-code/zsh-colored-man-pages
+  trapd00r/LS_COLORS
+  rupa/z
+
+  # omz
+  common-aliases
+  docker
+  git
+  gitfast
+  git-flow-avh
+  git-extras
+  git-auto-fetch
+  gitignore
+  kubectl
+  ripgrep
 EOF
 
 antigen apply
@@ -30,6 +43,9 @@ zstyle ':completion:*' matcher-list '' \
   'r:|?=** m:{a-z\-}={A-Z\_}'
 
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 # Autcomplete
 autoload -Uz compinit && compinit -u
@@ -70,21 +86,16 @@ setopt hist_ignore_space
 setopt hist_verify
 
 setopt auto_menu
-
 setopt complete_in_word
-
 setopt always_to_end
-
 setopt bad_pattern
-
 setopt extended_glob
-
 setopt interactive_comments
-
 setopt auto_continue
-
 setopt mark_dirs
-
 setopt bang_hist
 
 source /etc/zsh/zaliases
+
+[ "$(command -v pyenv)" ] && eval "$(pyenv init -)"
+[ "$(command -v starship)" ] && eval "$(starship init zsh)"

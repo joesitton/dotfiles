@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + Return
-    kitty
+    wezterm start /bin/zsh
 
 # program launcher
 super + space
-	rofi -show drun
+    rofi -show drun
 
 super + p
     scratch
@@ -18,7 +18,7 @@ super + alt + e
 
 # make sxhkd reload its configuration files
 super + Escape
-	pkill -USR1 -x sxhkd; \
+    pkill -USR1 -x sxhkd; \
     dunstify sxhkd "Reloaded config"
 
 #

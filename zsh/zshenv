@@ -1,6 +1,10 @@
 # Lang
 export LC_ALL="en_US.UTF-8"
 
+# Antigen
+export ADOTDIR=/etc/zsh/antigen
+export ANTIGEN_LOG=/var/log/antigen.log
+
 # Path
 export PYENV_ROOT="$HOME/.pyenv"
 PYENVPATH="$PYENV_ROOT/bin"
@@ -9,7 +13,9 @@ GOPATH="$HOME/.go"
 
 export PATH="${PATH}:${CARGOPATH}:${PYENVPATH}:${GOPATH}"
 
-eval "$(pyenv init --path)"
+if [ "$(command -v pyenv)" ]; then
+  eval "$(pyenv init --path)"
+fi
 
 # Editor
 if [ "$(command -v nvim)" ]; then

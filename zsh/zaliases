@@ -6,7 +6,7 @@ alias pls='sudo $(fc -ln -1)'
 # Pacman
 alias pac='sudo pacman'
 alias pacs='yay -Ss'
-alias paci='pac -Qil'
+alias pacl='pac -Qil'
 alias pacin='pac -S'
 alias pacinfo='pac -Si'
 alias paco='pac -Qo'
@@ -21,26 +21,9 @@ alias ap='ansible-playbook'
 alias ac='ansible-console'
 
 # Docker
-alias dps='docker ps --format '\''table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}'\'
-alias drm='docker rm -f'
-
-# Git
-alias gs='git status'
-alias ga='git add'
-alias gc='git commit -m'
-alias gca='git commit --amend'
-alias gcan='git commit --amend --no-edit'
-alias gp='git push'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gl='git log --oneline'
-
-# Other
-alias z='zoxide'
-alias pip='python -m pip'
-alias icat='kitty +kitten icat'
-alias fj='firejail'
-alias cht='cht.sh'
+alias d='docker'
+alias dps='d ps --format '\''table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}'\'
+alias drm='d rm -f'
 
 # ls
 if [ "$(command -v exa)" ]; then
@@ -55,15 +38,23 @@ else
   alias la='ls -lAh'
 fi
 
+alias dirs='dirs -v'
+
 # vim
 if [ "$(command -v nvim)" ]; then
+   alias v='nvim'
+   alias vi='nvim'
    alias vim='nvim'
-   alias vi='vim'
 fi
 
-# alias tmux='tmux -2'
-# alias tat='tmux a -t'
+# tmux
+alias tmux='tmux -2'
+alias tat='tmux a -t'
 
+# wezterm
+alias wez='wezterm'
+
+# make dir and cd in
 mkcd() {
   mkdir -p $1
   cd $1
@@ -79,9 +70,5 @@ gimme() {
 chpwd() {
     ls;
 }
-
-eval "$(pyenv init -)"
-eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
 
 # vim: ft=zsh
