@@ -1,4 +1,5 @@
 local wez = require("wezterm")
+local action = wez.action
 
 return {
     default_prog = { "/bin/zsh" },
@@ -6,10 +7,10 @@ return {
         { family = "Iosevka Custom", weight = "Regular" }, -- g@ => <= >= <==== <->
         { family = "Iosevka Custom", weight = "DemiBold" }, -- g@ => <= >= <==== <->
         "Symbols Nerd Font", --  
-        "JoyPixels", -- 🥔 🌩️
+        "JoyPixels",
     }),
     font_size = 16.5,
-    enable_csi_u_key_encoding = true,
+    -- enable_csi_u_key_encoding = true,
     window_background_opacity = 0.98,
     hide_tab_bar_if_only_one_tab = true,
     use_fancy_tab_bar = false,
@@ -26,6 +27,12 @@ return {
     cursor_blink_ease_out = "Constant",
     cursor_blink_rate = 0,
     window_close_confirmation = "NeverPrompt",
+    keys = {
+        { key = "RightArrow", mods = "CTRL|SHIFT", action = action.ActivateTabRelative(1) },
+        { key = "LeftArrow", mods = "CTRL|SHIFT", action = action.ActivateTabRelative(-1) },
+        { key = "+", mods = "CTRL|SHIFT", action = "DisableDefaultAssignment" },
+        { key = "_", mods = "CTRL|SHIFT", action = "DisableDefaultAssignment" },
+    },
     colors = {
         foreground = "#f8f8f8",
         background = "#101010",
