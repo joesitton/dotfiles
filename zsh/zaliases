@@ -49,6 +49,7 @@ fi
 
 # tmux
 alias tmux='tmux -2'
+alias t='tmux'
 alias tat='tmux a -t'
 
 # wezterm

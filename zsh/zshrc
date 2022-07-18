@@ -99,3 +99,4 @@ source /etc/zsh/zaliases
 
 [ "$(command -v pyenv)" ] && eval "$(pyenv init -)"
 [ "$(command -v starship)" ] && eval "$(starship init zsh)"
+[ "$(command -v cog)" ] && eval $(cog generate-completions zsh)
