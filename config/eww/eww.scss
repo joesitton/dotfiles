@@ -1,0 +1,101 @@
+$background: rgba(16, 16, 16, 0.66);
+$foreground: #f8f8f8;
+$red: #AB4642;
+$green: #A1B56C;
+$yellow: #F7CA88;
+$blue: #7CAFC2;
+$purple: #BA8BAF;
+$orange: #DC9565;
+$black: #181818;
+$black2: #282828;
+$black3: #383838;
+$black4: #484848;
+$black5: #585858;
+$black6: #686868;
+$black7: #787878;
+$white: #e8e8e8;
+
+* {
+  all: unset;
+}
+
+button:hover {
+  background-color: #202020;
+}
+
+.bar {
+  padding: 0 0.75em;
+  background-color: $background;
+  color: $foreground;
+  font-family: "Fira Sans Condensed";
+}
+
+.icon-module {
+  padding: 0 10px;
+
+  .icon {
+    font-size: 22px;
+    margin-right: 8px;
+  }
+}
+
+.logo {
+  font-size: 32px;
+  color: $blue;
+}
+
+.workspaces {
+  font-family: "Symbols Nerd Font";
+
+  button {
+    margin: 0 8px;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  .focused {
+    color: $blue;
+  }
+
+  .occupied {
+    color: $white;
+  }
+
+  .urgent {
+    color: $red;
+  }
+
+  .empty {
+    color: $black7;
+  }
+}
+
+.updates {
+  .icon {
+    color: $green;
+  }
+}
+
+.network {
+  .icon {
+    color: $black7;
+  }
+
+  .upload {
+    color: $green;
+  }
+
+  .download {
+    color: $red;
+  }
+}
+
+.bitcoin .icon {
+  color: $orange;
+}
+
+.datetime {
+  margin-left: 4px;
+}

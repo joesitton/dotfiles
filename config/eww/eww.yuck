@@ -1,0 +1,126 @@
+; Bar
+(defwindow bar
+  :monitor 0
+  :hexpand false
+  :vepxand false
+  :stacking "fg"
+  :windowtype "dock"
+  :wm-ignore true
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "100%"
+                      :height "60px"
+                      :anchor "bottom center")
+  :reserve (struts :side "bottom"
+                   :distance "60px")
+  (bar :screen 0))
+
+(defwidget bar [screen]
+  (box :orientation "h"
+       :space-evenly false
+       :class "bar"
+    (box :halign "start"
+         :space-evenly false
+         :spacing 10
+      (logo)
+      (workspaces)
+      (title))
+    (box :halign "end"
+         :hexpand true
+         :space-evenly false
+         :spacing 10
+      (updates)
+      (bitcoin)
+      (weather)
+      ; (network)
+      (wifi)
+      (battery)
+      (datetime))))
+
+; Variables
+(defpoll date :interval "5m" "date '+%-m/%-d/%Y'")
+(defpoll time :interval "10s" "date '+%-I:%M %P'")
+(defpoll bitcoin :interval "5m" "printf \"$%'.f\" \"$(curl -s rate.sx/1btc)\"")
+(defpoll title :interval "0.1s" "xtitle -t 40")
+(defpoll updates :interval "1h" "pacman -Qu | wc -l")
+(defpoll battery :interval "3m" "cat /sys/class/power_supply/BAT*/capacity")
+
+(deflisten workspaces_listen "./scripts/workspaces")
+(deflisten weather_listen "wedder -c ./wedder.toml")
+(deflisten wifi_listen "nmcli c | grep wlp0s20f3 | awk '{print $1}'")
+
+; Widgets
+(defwidget icon-module [icon ?class ?onclick ?visible]
+  (button :onclick {onclick ?: onclick}
+    (box :class "${class} icon-module"
+         :orientation "h"
+         :halign "end"
+         :space-evenly false
+         :visible {visible ?: true} ; because the argument is optional
+      (label :class "icon" :text "${icon}" :visible {icon != ""})
+      (children))))
+
+(defwidget logo []
+  (box :class "logo"
+    ""))
+
+(defwidget workspaces []
+  (literal :content
+    workspaces_listen))
+
+(defwidget title []
+  (box :class "title"
+    title))
+
+(defwidget weather []
+  (icon-module :class "weather"
+               :icon ""
+               :visible {weather_listen != ""}
+    weather_listen))
+
+(defwidget updates []
+  (icon-module :class "updates"
+               :icon ""
+               :visible {updates != ""}
+    (label :text updates)))
+
+(defwidget bitcoin []
+  (icon-module :class "bitcoin"
+               :icon ""
+               :visible {bitcoin != ""}
+    (label :text bitcoin)))
+
+(defwidget network []
+  (icon-module :class "network"
+               :icon ""
+    (label :class "upload" :text "↑")
+    (label :text "${round(EWW_NET.wlp0s20f3.NET_UP / 1000000, 2)} ")
+    (label :class "download" :text "↓")
+    (label :text "${round(EWW_NET.wlp0s20f3.NET_DOWN / 1000000, 2)}")))
+
+(defwidget wifi []
+  (icon-module :class "wifi"
+               :icon ""
+    (label :text wifi_listen)))
+
+(defwidget battery []
+  (icon-module :class "battery"
+               :icon ""
+    (label :text battery)
+    "%"))
+
+(defwidget datetime []
+  (box :class "datetime"
+       :orientation "v"
+       :valign "center"
+       :space-evenly true
+    (box :orientation "h"
+         :class "modules"
+         :space-evenly false
+         :halign "end"
+      time)
+    (box :orientation "h"
+         :class "modules"
+         :space-evenly false
+         :halign "end"
+      date)))

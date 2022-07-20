@@ -1,0 +1,5 @@
+#!/bin/bash
+
+BAT="$(grep BAT /sys/class/power_supply | head -n 1)"
+
+cat /sys/class/power_supply/"$BAT"/capacity
