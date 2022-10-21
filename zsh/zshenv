@@ -1,39 +1,41 @@
 # Lang
 export LC_ALL="en_US.UTF-8"
 
-# Antigen
-export ADOTDIR=/etc/zsh/antigen
-export ANTIGEN_LOG=/var/log/antigen.log
+# Zsh
+export ZSH_CACHE_DIR="$HOME/.cache/zsh"
+export ADOTDIR="$HOME/.antigen"
 
 # Path
 export PYENV_ROOT="$HOME/.pyenv"
+
 PYENVPATH="$PYENV_ROOT/bin"
 CARGOPATH="$HOME/.cargo/bin"
-GOPATH="$HOME/.go"
+GOROOT="$HOME/.go"
+GOPATH="$GOROOT/bin"
 
-export PATH="${PATH}:${CARGOPATH}:${PYENVPATH}:${GOPATH}"
+export PATH="${PATH}:${CARGOPATH}:${PYENVPATH}:${GOPATH}:/opt/homebrew/opt/python/libexec/bin:/opt/homebrew/opt/go@1.17/bin:${KREW_ROOT:-$HOME/.krew}/bin"
 
 if [ "$(command -v pyenv)" ]; then
   eval "$(pyenv init --path)"
 fi
 
 # Editor
-if [ "$(command -v nvim)" ]; then
-  export EDITOR=nvim
-  export SYSTEMD_EDITOR=nvim
-fi
+export EDITOR=nvim
+export SYSTEMD_EDITOR=nvim
 
 # Pager
 export PAGER=less
 
 # Ctrl-W backspace word
-export WORDCHARS=""
+export WORDCHARS=${WORDCHARS/\/}
 
 # Starship
-export STARSHIP_CONFIG=/etc/zsh/starship.toml
+export STARSHIP_CONFIG="$HOME/.config/starship.toml"
 
 # Zsh
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="fg=#111111,bg=#f7ca88"
+
+export GIT_AUTO_FETCH_INTERVAL=30
 
 # FZF
 export FZF_DEFAULT_COMMAND="rg --files --hidden -g '!{node_modules,.git,.venv,.env,__pycache__}'"
@@ -62,9 +64,17 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D"
 
 # Arduino fix for bspwm
-export _JAVA_AWT_WM_NONREPARENTING=1
+# export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Disable DRI3 (xps 13 9510)
 # export LIBGL_DRI3_DISABLE=1
 
+export NEOVIDE_TRANSPARENCY=0.9
 export NEOVIDE_MULTIGRID=true
+
+# Kubernetes
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+export CLOUDSDK_PYTHON=/usr/bin/python3
+
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"

@@ -19,7 +19,6 @@ antigen bundles <<EOF
   trapd00r/LS_COLORS
   rupa/z
 
-  # omz
   common-aliases
   docker
   git
@@ -28,8 +27,11 @@ antigen bundles <<EOF
   git-extras
   git-auto-fetch
   gitignore
-  kubectl
   ripgrep
+  helm
+  gcloud
+  pyenv
+  kubectl
 EOF
 
 antigen apply
@@ -47,21 +49,30 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
+zle_highlight=('paste:none')
+
 # Autcomplete
-autoload -Uz compinit && compinit -u
+fpath+=(/opt/homebrew/share/zsh/site-functions)
+compdef kubecolor='kubectl'
+
+autoload -Uz compinit && compinit
 zmodload zsh/complist
 
-# Keybindings
-bindkey '^ ' autosuggest-execute
+# Keybinds
+function zvm_after_init() {
+  zvm_bindkey viins '^ ' autosuggest-execute
 
-bindkey "^[[A" history-substring-search-up
-bindkey "^[[B" history-substring-search-down
+  zvm_bindkey viins "^[[A" history-substring-search-up
+  zvm_bindkey viins "^[[B" history-substring-search-down
+  zvm_bindkey viins "^[[1;5C" forward-word
+  zvm_bindkey viins "^[[1;5D" backward-word
+
+  zvm_bindkey viins "^?" backward-delete-char
+  zvm_bindkey viins "^Z" fancy-ctrl-z
+}
+
 bindkey -a "k" history-substring-search-up
 bindkey -a "j" history-substring-search-down
-
-bindkey "^?" backward-delete-char
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
 
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
@@ -95,7 +106,9 @@ setopt auto_continue
 setopt mark_dirs
 setopt bang_hist
 
-source /etc/zsh/zaliases
+source "$HOME/.zsh_aliases"
 
-[ "$(command -v pyenv)" ] && eval "$(pyenv init -)"
 [ "$(command -v starship)" ] && eval "$(starship init zsh)"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform

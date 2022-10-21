@@ -1,5 +1,7 @@
 format = """
 $all\
+$kubernetes\
+$custom\
 $fill\
 $battery\
 $cmd_duration\
@@ -11,6 +13,7 @@ $shell\
 $character\
 """
 right_format = "$status"
+command_timeout = 1500
 
 [fill]
 symbol = " "
@@ -22,7 +25,7 @@ vicmd_symbol = "[❮](bold blue)"
 
 [username]
 # show_always = true
-format = "[$user]($style) "
+format = "[$user]($style) in "
 
 [hostname]
 # ssh_only = false
@@ -53,11 +56,33 @@ format = "in [$path]($style)[$read_only]($read_only_style) "
 read_only = "  "
 truncation_length = 4
 
+[cmd_duration]
+format = "took [$duration]($style) "
+
 [git_branch]
 symbol = " "
 
 [kubernetes]
+format = 'on ⛵️ [$context]($style) [$namespace](dimmed green)'
 disabled = false
 
-[cmd_duration]
-format = "took [$duration]($style) at "
+  [kubernetes.context_aliases] # gke_guardicore-49808961_us-central1_saas-test-joe
+  "gke_(?P<project_id>[\\w-]+)_(?P<region>[\\w-]+)_(?P<cluster>[\\w-]+)" = "$cluster"
+
+[helm]
+symbol = "☸️  "
+disabled = true
+
+[gcloud]
+format = "via [$symbol$account]($style) "
+disabled = true
+
+[package]
+symbol = ""
+format = "on [$symbol$version]($style) "
+# disabled = true
+
+# [custom.argocd]
+# command = "argocd context | grep '*' | awk '{print $2}'"
+# when = "grep -q '*' <(argocd context)"
+# format = "[$output](dimmed yellow) "
