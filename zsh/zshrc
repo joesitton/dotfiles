@@ -1,80 +1,154 @@
 #!/bin/zsh
 
-if [ ! -f ${ADOTDIR}/antigen.zsh ]; then
-  mkdir -p ${ADOTDIR}
-  curl -s -L git.io/antigen > ${ADOTDIR}/antigen.zsh
-fi
+# Zinit
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/psprint/zinit-4.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
 
-source ${ADOTDIR}/antigen.zsh
+zi light zdharma-continuum/z-a-bin-gem-node
+zi snippet OMZL::git.zsh
+ 
+# Prompt
+zi ice from"gh-r" \
+  atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+  atpull"%atclone" src"init.zsh" \
+  sbin"starship"
+zi light starship/starship
 
-antigen bundles <<EOF
-  zdharma-continuum/fast-syntax-highlighting
-  zsh-users/zsh-history-substring-search
-  zsh-users/zsh-autosuggestions
-  zsh-users/zsh-completions
-  le0me55i/zsh-extract
-  mdumitru/fancy-ctrl-z
-  jeffreytse/zsh-vi-mode
-  ael-code/zsh-colored-man-pages
-  trapd00r/LS_COLORS
-  rupa/z
+# Functionality
+zi ice wait"0" lucid \
+  atinit"zvm_after_init() { bindkey '^R' history-search-multi-word }"
+zi light jeffreytse/zsh-vi-mode
 
-  common-aliases
-  docker
-  git
-  gitfast
-  git-flow-avh
-  git-extras
-  git-auto-fetch
-  gitignore
-  ripgrep
-  helm
-  gcloud
-  pyenv
-  kubectl
-EOF
+zi wait"1" lucid light-mode for \
+  blockf atpull"zinit creinstall -q ." \
+  atinit"
+      zstyle ':completion:*' completer _expand _complete _ignored _approximate
+      zstyle ':completion:*' matcher-list '' \
+        'm:{a-z\-}={A-Z\_}' \
+        'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
+        'r:|?=** m:{a-z\-}={A-Z\_}'
+      zstyle ':completion:*' menu select=2
+      zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+      zstyle ':completion:*:*:*:*:processes' command 'ps -u $USER -o pid,user,comm,cmd -w -w'
+      zstyle ':completion:*:descriptions' format '[ %d ]'
+      zstyle ':completion:*:processes' command 'ps -au$USER'
+      zstyle ':completion:complete:*:options' sort false
+      zstyle ':fzf-tab:complete:_zlua:*' query-string input
+      zstyle ':fzf-tab:complete:cd:*' extra-opts --preview=$extract'exa -1 --color=always ${~ctxt[hpre]}$in'
+      zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps --pid=$in[(w)1] -o cmd --no-headers -w -w' --preview-window=down:3:wrap" \
+    zsh-users/zsh-completions \
+  atload"_zsh_autosuggest_start; bindkey '^ ' autosuggest-execute" \
+    zsh-users/zsh-autosuggestions \
+  atload'
+    zstyle ":history-search-multi-word" page-size "20"
+    zstyle ":history-search-multi-word" highlight-color fg=black,bg=yellow
+    zstyle ":plugin:history-search-multi-word" active "underline"
+    zstyle ":plugin:history-search-multi-word" reset-prompt-protect 1' \
+    zdharma-continuum/history-search-multi-word \
+  atload'bindkey "^[[A" history-substring-search-up; bindkey "^[[B" history-substring-search-down; bindkey -M vicmd "j" history-substring-search-down; bindkey -M vicmd "k" history-substring-search-up' \
+    zsh-users/zsh-history-substring-search \
+  atload"bindkey '^z' fancy-ctrl-z; bindkey -M vicmd '^z' fancy-ctrl-z" \
+    OMZP::fancy-ctrl-z \
+  hlissner/zsh-autopair
 
-antigen apply
+zi ice wait"2" lucid atload'export GIT_AUTO_FETCH_INTERVAL=30'
+zi snippet OMZP::git-auto-fetch
+
+# Colors
+zi wait"0" lucid light-mode for \
+  chriskempson/base16-shell \
+  atinit"typeset -gA FAST_HIGHLIGHT; FAST_HIGHLIGHT[git-cmsg-len]=100; zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting
+
+zi ice wait"0c" lucid \
+  atclone"local P=${${(M)OSTYPE:#*darwin*}:+g}
+      \${P}sed -i \
+      '/DIR/c\DIR 38;5;63;1' LS_COLORS; \
+      \${P}dircolors -b LS_COLORS > c.zsh" \
+  atpull'%atclone' pick"c.zsh" nocompile"!" reset-prompt \
+  atload'zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"'
+zi light trapd00r/LS_COLORS
+
+# Binaries
+zi wait"1" lucid from"gh-r" for \
+  sbin"fzf" junegunn/fzf-bin \
+  sbin"eza" eza-community/eza \
+  sbin"rg" burntsushi/ripgrep \
+  sbin"fd" @sharkdp/fd
+
+zi ice wait"1" lucid \
+  atclone"make" atpull"%atclone" \
+  sbin"fzy"
+zi light jhawthorn/fzy
+
+zi ice wait"1" lucid \
+  atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
+  atinit'export PYENV_ROOT="$PWD"' atpull"%atclone" \
+  src"zpyenv.zsh" nocompile"!" \
+  sbin"pyenv"
+zinit light pyenv/pyenv
+
+# Scripts
+zi ice wait"0" lucid
+zi snippet OMZP::z
+
+zi wait"1" lucid light-mode for \
+  sbin"git-flow-*" petervanderdoes/gitflow-avh \
+  sbin"bin/git-*" atinit"source etc/git-extras-completion.zsh" tj/git-extras
+
+# Completions
+zi wait"1" lucid as"completion" for \
+  https://github.com/agkozak/zsh-z/blob/master/_zshz \
+  https://github.com/eza-community/eza/blob/main/completions/zsh/_eza \
+  https://github.com/BurntSushi/ripgrep/blob/master/complete/_rg \
+  https://github.com/sharkdp/fd/blob/master/contrib/completion/_fd \
+  OMZP::git-flow-avh
+
+# Aliases
+zi wait"2" lucid for \
+  OMZP::git \
+  OMZP::git-extras \
+  atload"
+      alias ..='cd ..'
+      alias ...='cd ../..'
+      alias ....='cd ../../..'
+      alias .....='cd ../../../..'" \
+    OMZL::directories.zsh
+
+# TPM
+[ ! -d ~/.tmux/plugins/tpm ] && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Zstyles
-zstyle ":completion:*" menu select
-
-zstyle ':completion:*' matcher-list '' \
-  'm:{a-z\-}={A-Z\_}' \
-  'r:[^[:alpha:]]||[[:alpha:]]=** r:|=* m:{a-z\-}={A-Z\_}' \
-  'r:|?=** m:{a-z\-}={A-Z\_}'
-
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
+# Fix paste highlighting
 zle_highlight=('paste:none')
 
 # Autcomplete
 fpath+=(/opt/homebrew/share/zsh/site-functions)
-compdef kubecolor='kubectl'
 
 autoload -Uz compinit && compinit
 zmodload zsh/complist
 
 # Keybinds
-function zvm_after_init() {
-  zvm_bindkey viins '^ ' autosuggest-execute
+bindkey "^[[1;5C" forward-word
+bindkey -M vicmd "^[[1;5C" forward-word
 
-  zvm_bindkey viins "^[[A" history-substring-search-up
-  zvm_bindkey viins "^[[B" history-substring-search-down
-  zvm_bindkey viins "^[[1;5C" forward-word
-  zvm_bindkey viins "^[[1;5D" backward-word
+bindkey "^[[1;5D" backward-word
+bindkey -M vicmd "^[[1;5D" backward-word
 
-  zvm_bindkey viins "^?" backward-delete-char
-  zvm_bindkey viins "^Z" fancy-ctrl-z
-}
+bindkey -M vicmd "^W" backward-kill-word
 
-bindkey -a "k" history-substring-search-up
-bindkey -a "j" history-substring-search-down
+bindkey -M menuselect "^[[Z" reverse-menu-complete
 
-bindkey -M menuselect '^[[Z' reverse-menu-complete
+bindkey ' ' magic-space
+
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd 'vv' edit-command-line
 
 # History
 SAVEHIST=10000
@@ -106,9 +180,45 @@ setopt auto_continue
 setopt mark_dirs
 setopt bang_hist
 
-source "$HOME/.zsh_aliases"
+# Sudo
+alias sudo='sudo '
+alias pls='sudo $(fc -ln -1)'
 
-[ "$(command -v starship)" ] && eval "$(starship init zsh)"
+# ls
+if [ "$(command -v eza)" ]; then
+  alias ls='eza --color=auto --group-directories-first -F --sort extension --color-scale'
+  alias ll='ls -lhg@'
+  alias la='ll -a'
+  alias lg='ls -lhg@ --git'
+else
+  alias ls='ls --color=auto --group-directories-first -F -X'
+  alias ll='ls -lh'
+  alias la='ls -lAh'
+fi
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
+alias dirs='dirs -v'
+
+# vim
+if [ "$(command -v nvim)" ]; then
+   alias v='nvim'
+   alias vi='nvim'
+   alias vim='nvim'
+fi
+
+# tmux
+alias tmux='tmux -2'
+alias t='tmux'
+alias tat='tmux a -t'
+
+# make dir and cd in
+mkcd() {
+  mkdir -p $1
+  cd $1
+}
+
+# auto ls
+chpwd() {
+  ls
+}
+
+# vim: ft=zsh
