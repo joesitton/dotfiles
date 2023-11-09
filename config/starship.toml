@@ -38,6 +38,7 @@ symbol = "▥"
 
 [time]
 disabled = false
+style = "bold dimmed yellow"
 format = "[$time]($style) "
 time_format = "%_I:%M %P"
 
@@ -62,12 +63,21 @@ format = "took [$duration]($style) "
 [git_branch]
 symbol = " "
 
+# [git_status]
+# disabled = true
+
+# [git_metrics]
+# disabled = false
+
+# [fossil_branch]
+# disabled = false
+
 [kubernetes]
-format = 'on ⛵️ [$context]($style) [$namespace](dimmed green)'
+format = '⛴️  [$context](bold blue) [$namespace](dimmed green)'
 disabled = false
 
-  [kubernetes.context_aliases] # gke_guardicore-49808961_us-central1_saas-test-joe
-  "gke_(?P<project_id>[\\w-]+)_(?P<region>[\\w-]+)_(?P<cluster>[\\w-]+)" = "$cluster"
+  [kubernetes.context_aliases]
+  "gke_saas-(\\w+-){3,}(?P<project_id>[^_]+)_(?P<region>[^_]+)_(?P<cluster>[^_]+)" = "$cluster $project_id"
 
 [helm]
 symbol = "☸️  "
