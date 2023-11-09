@@ -1,23 +1,14 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zprofile.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zprofile.pre.zsh"
+
 # Lang
 export LC_ALL="en_US.UTF-8"
 
 # Zsh
 export ZSH_CACHE_DIR="$HOME/.cache/zsh"
-export ADOTDIR="$HOME/.antigen"
 
 # Path
-export PYENV_ROOT="$HOME/.pyenv"
-
-PYENVPATH="$PYENV_ROOT/bin"
-CARGOPATH="$HOME/.cargo/bin"
-GOROOT="$HOME/.go"
-GOPATH="$GOROOT/bin"
-
-export PATH="${PATH}:${CARGOPATH}:${PYENVPATH}:${GOPATH}:/opt/homebrew/opt/python/libexec/bin:/opt/homebrew/opt/go@1.17/bin:${KREW_ROOT:-$HOME/.krew}/bin"
-
-if [ "$(command -v pyenv)" ]; then
-  eval "$(pyenv init --path)"
-fi
+export PATH="/opt/homebrew/opt/coreutils/bin:/opt/homebrew/opt/openssl@1.1/bin:$HOME/.krew/bin:$HOME/.cargo/bin:${PATH}"
 
 # Editor
 export EDITOR=nvim
@@ -29,17 +20,9 @@ export PAGER=less
 # Ctrl-W backspace word
 export WORDCHARS=${WORDCHARS/\/}
 
-# Starship
-export STARSHIP_CONFIG="$HOME/.config/starship.toml"
-
-# Zsh
-export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="fg=#111111,bg=#f7ca88"
-
-export GIT_AUTO_FETCH_INTERVAL=30
-
 # FZF
 export FZF_DEFAULT_COMMAND="rg --files --hidden -g '!{node_modules,.git,.venv,.env,__pycache__}'"
-export FZF_DEFAULT_OPTS="--height 100% --layout=reverse --scroll-off=5 --prompt='❯ ' --pointer=❯ --marker=* --preview='bat --theme=base16-256 --style=plain --color=always {}' --preview-window=right,border-left"
+export FZF_DEFAULT_OPTS="--height 20% --layout=reverse --scroll-off=5 --prompt='❯ ' --pointer=❯ --marker=* --preview='bat --theme=base16-256 --style=plain --color=always {}' --preview-window=right,border-left"
 
 local color00='#181818'
 local color01='#282828'
@@ -78,3 +61,6 @@ export CLOUDSDK_PYTHON=/usr/bin/python3
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zprofile.post.zsh" ]] && builtin source "$HOME/.fig/shell/zprofile.post.zsh"
