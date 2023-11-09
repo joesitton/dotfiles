@@ -1,14 +1,19 @@
 #!/bin/zsh
 
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+
 # Zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
-[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/psprint/zinit-4.git "$ZINIT_HOME"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
 zi light zdharma-continuum/z-a-bin-gem-node
+
+zi ice atclone"[ -d /opt/homebrew ] && rm -f /opt/homebrew/share/zsh/site-functions/_git"
 zi snippet OMZL::git.zsh
- 
+
 # Prompt
 zi ice from"gh-r" \
   atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
@@ -18,7 +23,11 @@ zi light starship/starship
 
 # Functionality
 zi ice wait"0" lucid \
-  atinit"zvm_after_init() { bindkey '^R' history-search-multi-word }"
+  atinit"
+  export ZVM_ESCAPE_KEYTIMEOUT=0.01
+  zvm_after_init() {
+    bindkey '^R' history-search-multi-word
+  }"
 zi light jeffreytse/zsh-vi-mode
 
 zi wait"1" lucid light-mode for \
@@ -47,11 +56,16 @@ zi wait"1" lucid light-mode for \
     zstyle ":plugin:history-search-multi-word" active "underline"
     zstyle ":plugin:history-search-multi-word" reset-prompt-protect 1' \
     zdharma-continuum/history-search-multi-word \
-  atload'bindkey "^[[A" history-substring-search-up; bindkey "^[[B" history-substring-search-down; bindkey -M vicmd "j" history-substring-search-down; bindkey -M vicmd "k" history-substring-search-up' \
+  atload'
+    bindkey "^[[A" history-substring-search-up
+    bindkey "^[[B" history-substring-search-down
+    bindkey -M vicmd "j" history-substring-search-down
+    bindkey -M vicmd "k" history-substring-search-up
+    export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="fg=#111111,bg=#f7ca88"' \
     zsh-users/zsh-history-substring-search \
   atload"bindkey '^z' fancy-ctrl-z; bindkey -M vicmd '^z' fancy-ctrl-z" \
-    OMZP::fancy-ctrl-z \
-  hlissner/zsh-autopair
+    OMZP::fancy-ctrl-z
+  # hlissner/zsh-autopair
 
 zi ice wait"2" lucid atload'export GIT_AUTO_FETCH_INTERVAL=30'
 zi snippet OMZP::git-auto-fetch
@@ -64,38 +78,36 @@ zi wait"0" lucid light-mode for \
 
 zi ice wait"0c" lucid \
   atclone"local P=${${(M)OSTYPE:#*darwin*}:+g}
-      \${P}sed -i \
-      '/DIR/c\DIR 38;5;63;1' LS_COLORS; \
       \${P}dircolors -b LS_COLORS > c.zsh" \
   atpull'%atclone' pick"c.zsh" nocompile"!" reset-prompt \
   atload'zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"'
 zi light trapd00r/LS_COLORS
 
 # Binaries
-zi wait"1" lucid from"gh-r" for \
-  sbin"fzf" junegunn/fzf-bin \
-  sbin"eza" eza-community/eza \
-  sbin"rg" burntsushi/ripgrep \
-  sbin"fd" @sharkdp/fd
+# zi wait"1" lucid from"gh-r" for \
+#   sbin"fzf" junegunn/fzf-bin \
+#   sbin"eza" eza-community/eza \
+#   sbin"rg" burntsushi/ripgrep \
+#   sbin"fd" @sharkdp/fd
 
 zi ice wait"1" lucid \
   atclone"make" atpull"%atclone" \
   sbin"fzy"
 zi light jhawthorn/fzy
 
-zi ice wait"1" lucid \
-  atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
-  atinit'export PYENV_ROOT="$PWD"' atpull"%atclone" \
-  src"zpyenv.zsh" nocompile"!" \
-  sbin"pyenv"
-zinit light pyenv/pyenv
+# zi ice wait"1" lucid \
+#   atclone'PYENV_ROOT="$PWD" ./libexec/pyenv init - > zpyenv.zsh' \
+#   atinit'export PYENV_ROOT="$PWD"' atpull"%atclone" \
+#   src"zpyenv.zsh" nocompile"!" \
+#   sbin"pyenv"
+# zinit light pyenv/pyenv
 
 # Scripts
 zi ice wait"0" lucid
 zi snippet OMZP::z
 
 zi wait"1" lucid light-mode for \
-  sbin"git-flow-*" petervanderdoes/gitflow-avh \
+  sbin"git-flow*" petervanderdoes/gitflow-avh \
   sbin"bin/git-*" atinit"source etc/git-extras-completion.zsh" tj/git-extras
 
 # Completions
@@ -103,8 +115,10 @@ zi wait"1" lucid as"completion" for \
   https://github.com/agkozak/zsh-z/blob/master/_zshz \
   https://github.com/eza-community/eza/blob/main/completions/zsh/_eza \
   https://github.com/BurntSushi/ripgrep/blob/master/complete/_rg \
-  https://github.com/sharkdp/fd/blob/master/contrib/completion/_fd \
-  OMZP::git-flow-avh
+  https://github.com/sharkdp/fd/blob/master/contrib/completion/_fd
+
+zi ice wait"1" lucid
+zi snippet OMZP::git-flow-avh
 
 # Aliases
 zi wait"2" lucid for \
@@ -117,9 +131,6 @@ zi wait"2" lucid for \
       alias .....='cd ../../../..'" \
     OMZL::directories.zsh
 
-# TPM
-[ ! -d ~/.tmux/plugins/tpm ] && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
 # Zstyles
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
@@ -130,7 +141,7 @@ zle_highlight=('paste:none')
 # Autcomplete
 fpath+=(/opt/homebrew/share/zsh/site-functions)
 
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -i
 zmodload zsh/complist
 
 # Keybinds
@@ -187,9 +198,9 @@ alias pls='sudo $(fc -ln -1)'
 # ls
 if [ "$(command -v eza)" ]; then
   alias ls='eza --color=auto --group-directories-first -F --sort extension --color-scale'
-  alias ll='ls -lhg@'
+  alias ll='ls -lhg'
   alias la='ll -a'
-  alias lg='ls -lhg@ --git'
+  alias lg='ls -lhg --git'
 else
   alias ls='ls --color=auto --group-directories-first -F -X'
   alias ll='ls -lh'
@@ -210,11 +221,29 @@ alias tmux='tmux -2'
 alias t='tmux'
 alias tat='tmux a -t'
 
-# make dir and cd in
-mkcd() {
-  mkdir -p $1
-  cd $1
-}
+# others
+alias k='kubectl'
+alias kctx='kubectx'
+alias kns='kubens'
+
+alias rec='asciinema rec /tmp/recording.cast --overwrite'
+alias agg='agg --theme 181818,f8f8f8,282828,ab4642,a1b56c,f7ca88,86c1b9,ba8baf,7cafc2,f8f8f8,585858,ab4642,a1b56c,f7ca88,86c1b9,ba8baf,7cafc2,f8f8f8 --font-family "Iosevka Nerd Font" --font-size 16 /tmp/recording.cast ~/Desktop/recording.gif'
+
+# gcloud
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+
+# gvm
+[[ -s "/Users/jositto/.gvm/scripts/gvm" ]] && source "/Users/jositto/.gvm/scripts/gvm"
+
+# tpm
+[ ! -d ~/.tmux/plugins/tpm ] && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 
 # auto ls
 chpwd() {
